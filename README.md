@@ -13,7 +13,7 @@ Le README ci-dessous constitue un template à adapter et compléter pour chaque 
 Les workflows associés à ce repository (.github/workflows) permettent : 
 * D'executer Sushi pour vérifier la grammaire
 * De faire les tests avec le validator_cli
-* De publier les pages : https://ansforge.github.io/{nom du repo}/ig/{nom de la branche}
+* De publier les pages : https://ansforge.github.io/IG-securisation-transport-api-rest/ig/main
 
 # Notes
 Ce repo "IG-modele" a été créé à partir du repo [sample-ig](https://github.com/FHIR/sample-ig) de l'organisation GitHub FHIR.
