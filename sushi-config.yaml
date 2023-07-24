@@ -33,19 +33,20 @@ pages:
             title: Sécurité
         downloads.md:
             title: Téléchargements et usages
-
-    tests.md:
-        title: Tests      
+        archi_documentaire.md:
+        standards.md:
+        glossaire.md:
+ 
     about.md:
         title: A propos de ce guide
+        
 
 menu:
     Accueil: index.html
-    Description des flux:
-        Construction des flux: construction_des_flux.html
-        Flux 01: st_flux1.html
-        Flux 02: st_flux2.html
-    Tests:   tests.html
+    Description générale des flux:
+        Architecture documentaire : archi_documentaire.html
+        Standards utilisés : standards.html
+    Glossaire :   glossaire.html
     Autres ressources:
         Sécurité: securite.html
         Téléchargements et usage: downloads.html
