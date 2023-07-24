@@ -10,7 +10,7 @@
   <name value="IGsecurisationtransportapirest"/>
   <title value="Sécurisation de la couche transport API REST"/>
   <status value="draft"/>
-  <date value="2023-07-24T14:55:30+00:00"/>
+  <date value="2023-07-24T15:22:54+00:00"/>
   <publisher value="ANS"/>
   <contact>
     <name value="ANS"/>
@@ -517,7 +517,7 @@
             <valueUrl value="archi_documentaire.html"/>
           </extension>
           <nameUrl value="archi_documentaire.html"/>
-          <title value="Archi Documentaire"/>
+          <title value="Architecture documentaire"/>
           <generation value="markdown"/>
         </page>
         <page>
@@ -525,7 +525,7 @@
             <valueUrl value="standards.html"/>
           </extension>
           <nameUrl value="standards.html"/>
-          <title value="Standards"/>
+          <title value="Standards d'échange"/>
           <generation value="markdown"/>
         </page>
         <page>
@@ -533,7 +533,7 @@
             <valueUrl value="glossaire.html"/>
           </extension>
           <nameUrl value="glossaire.html"/>
-          <title value="Glossaire"/>
+          <title value="Glossaires"/>
           <generation value="markdown"/>
         </page>
       </page>
