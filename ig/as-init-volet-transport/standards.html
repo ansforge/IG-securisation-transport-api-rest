@@ -387,62 +387,19 @@ Si l’access_token est un jeton autoporteur JWS l’introspection n’est pas n
 
 <p>Ci-dessous une illustration de l’utilisation du mTLS avec OAuth 2.0.</p>
 
-<pre><code class="language-mermaid">sequenceDiagram
-title   OAUTH 2.0 + mTLS sans utilisateur
-
-//création des blocs &amp; variables
-participantgroup #palegreen **Système appelant / initiateur**
-
-participant "Fournisseur de Services" as appserver
-end 
-
-participantgroup #paleturquoise **Système cible**
-
-participant "Serveur d'autorisation" as AS
-participant "Service cible" as API
-end 
-
-
-//début de la séquence2. 
-
-group mTLS
-
-appserver-&gt;AS: 1. Client_ID + certificat 
-activate AS
-end 
-
-
-AS-&gt;appserver:2. access token
-deactivate AS
-activate appserver
-
-group OAUTH 2.0 
-
-appserver-&gt;API: 3. access_token + jeton "structure data"
-deactivate appserver
-activate API
-API-&gt;AS:  4. validation de l'access_token : introspection ou vérification locale (jeton signé)
-deactivate API
-activate AS
-
-AS-&gt;API: ok
-deactivate AS
-activate API
-end
-API-&gt;appserver: 5. accès aux données 
-deactivate API
-</code></pre>
-
-<pre><code class="language-mermaid">sequenceDiagram
-    participant dotcom
-    participant iframe
-    participant viewscreen
-    dotcom-&gt;&gt;iframe: loads html w/ iframe url
-    iframe-&gt;&gt;viewscreen: request template
-    viewscreen-&gt;&gt;iframe: html &amp; javascript
-    iframe-&gt;&gt;dotcom: iframe ready
-    dotcom-&gt;&gt;iframe: set mermaid data on iframe
-    iframe-&gt;&gt;iframe: render mermaid
+<pre><code class="language-plantuml">@startuml
+    skinparam backgroundColor #EEEBDC
+    skinparam handwritten true
+    actor Customer
+    Customer -&gt; "login()" : username &amp; password
+    "login()" -&gt; Customer : session token
+    activate "login()"
+    Customer -&gt; "placeOrder()" : session token, order info
+    "placeOrder()" -&gt; Customer : ok
+    Customer -&gt; "logout()"
+    "logout()" -&gt; Customer : ok
+    deactivate "login()"
+@enduml
 </code></pre>
 
 <p>Le détail des flux OAUH 2.0 + mTLS est défini dans la partie 7.6.3 Cas OAuth 2.0 + mTLS : accès à des données sensibles</p>
@@ -518,7 +475,7 @@ Par exemple, les hôpitaux et les EHPAD génèrent des certificats sur leur FINE
 
       <div class="inner-wrapper">
         <p>
-          IG &#169; 2020+ <a style="color:var(--footer-hyperlink-text-color)" href="https://esante.gouv.fr">ANS</a>.  Package ans.fr.securisation-transport#0.1.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Mon, Jul 24, 2023 15:54+0000">2023-07-24</span>
+          IG &#169; 2020+ <a style="color:var(--footer-hyperlink-text-color)" href="https://esante.gouv.fr">ANS</a>.  Package ans.fr.securisation-transport#0.1.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Mon, Jul 24, 2023 18:12+0000">2023-07-24</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)"></span>
                       Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |
