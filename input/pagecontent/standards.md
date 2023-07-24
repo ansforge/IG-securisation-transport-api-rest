@@ -188,64 +188,20 @@ Dans le cadre d’un workflow OAuth 2.0, l’utilisation du mTLS permet :
 
 Ci-dessous une illustration de l’utilisation du mTLS avec OAuth 2.0.
 
-```mermaid
-sequenceDiagram
-title   OAUTH 2.0 + mTLS sans utilisateur
-
-//création des blocs & variables
-participantgroup #palegreen **Système appelant / initiateur**
-
-participant "Fournisseur de Services" as appserver
-end 
-
-participantgroup #paleturquoise **Système cible**
-
-participant "Serveur d'autorisation" as AS
-participant "Service cible" as API
-end 
-
-
-//début de la séquence2. 
-
-group mTLS
-
-appserver->AS: 1. Client_ID + certificat 
-activate AS
-end 
-
-
-AS->appserver:2. access token
-deactivate AS
-activate appserver
-
-group OAUTH 2.0 
-
-appserver->API: 3. access_token + jeton "structure data"
-deactivate appserver
-activate API
-API->AS:  4. validation de l'access_token : introspection ou vérification locale (jeton signé)
-deactivate API
-activate AS
-
-AS->API: ok
-deactivate AS
-activate API
-end
-API->appserver: 5. accès aux données 
-deactivate API
-```
-
-```mermaid
-sequenceDiagram
-    participant dotcom
-    participant iframe
-    participant viewscreen
-    dotcom->>iframe: loads html w/ iframe url
-    iframe->>viewscreen: request template
-    viewscreen->>iframe: html & javascript
-    iframe->>dotcom: iframe ready
-    dotcom->>iframe: set mermaid data on iframe
-    iframe->>iframe: render mermaid
+```plantuml
+@startuml
+    skinparam backgroundColor #EEEBDC
+    skinparam handwritten true
+    actor Customer
+    Customer -> "login()" : username & password
+    "login()" -> Customer : session token
+    activate "login()"
+    Customer -> "placeOrder()" : session token, order info
+    "placeOrder()" -> Customer : ok
+    Customer -> "logout()"
+    "logout()" -> Customer : ok
+    deactivate "login()"
+@enduml
 ```
 
 Le détail des flux OAUH 2.0 + mTLS est défini dans la partie 7.6.3 Cas OAuth 2.0 + mTLS : accès à des données sensibles
