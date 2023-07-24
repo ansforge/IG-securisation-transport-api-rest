@@ -34,11 +34,11 @@ pages:
         downloads.md:
             title: Téléchargements et usages
         archi_documentaire.md:
-            title: 
+            title: Architecture documentaire
         standards.md:
-            title: 
+            title:  Standards d'échange
         glossaire.md:
-            title: 
+            title:  Glossaires
  
     about.md:
         title: A propos de ce guide
