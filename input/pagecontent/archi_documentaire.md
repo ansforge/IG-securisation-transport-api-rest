@@ -10,6 +10,7 @@ Il spécifie la couche Transport pour :
 
 <p style="text-align:center">
 <object data="role_systeme.png" type="image/png"></object>
+</p>
 
 Le Cadre d'Interopérabilité des Systèmes d'Information de Santé (CI-SIS) établit les règles pour une informatique communicative dans le domaine de la santé, du médico-social et du social. Le CI-SIS préconise des normes techniques et sémantiques pour les acteurs de la santé impliqués dans des projets d'échange et de partage de données de santé. 
 
@@ -21,11 +22,13 @@ Afin de faciliter les échanges et d’assurer l’intégrité des données tran
  
 <p style="text-align:center">
 <object data="composants_flux_REST.png" type="image/png"></object>
+</p>
 
 Par ailleurs, ce volet du CI-SIS s'insère dans l'ensemble documentaire décrit ci-dessous :
 
 <p style="text-align:center">
 <object data="architecture_documentaire.png" type="image/png"></object>
+</p>
 
 
 En dehors du volet transport du CI-SIS, il existe des référentiels d'interopérabilité à la maille :

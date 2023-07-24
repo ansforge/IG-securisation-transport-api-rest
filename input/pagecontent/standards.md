@@ -8,6 +8,7 @@ Dans une API REST, les opérations CRUD (Create, Read, Update, Delete) sont impl
 Les réponses à ces requêtes sont retournées en format JSON.
 <p style="text-align:center">
 <object data="exemple_req_REST_bearer.png" type="image/png"></object>
+</p>
 
 
 ###	Liaison avec le protocole de transport ou binding
@@ -63,6 +64,7 @@ Les scopes sont utilisés pour définir les autorisations que le client demande 
 
 <p style="text-align:center">
 <object data="schema_autorisations_scopes.png" type="image/png"></object>
+</p>
 
 
 Afin d’illustrer l’usage du scope au sein d’un processus fonctionnel, on peut prendre l’exemple simplifié d’un utilisateur qui souhaite accéder aux ressources protégées d’un service de e-santé.
@@ -74,6 +76,7 @@ Une fois le contrôle d’accès est réalisé par le serveur d’autorisation, 
 
 <p style="text-align:center">
 <object data="schema_scope_cas_metier.png" type="image/png"></object>
+</p>
 
 
 
