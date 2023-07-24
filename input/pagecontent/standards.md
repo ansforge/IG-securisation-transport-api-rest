@@ -189,7 +189,9 @@ Dans le cadre d’un workflow OAuth 2.0, l’utilisation du mTLS permet :
 Ci-dessous une illustration de l’utilisation du mTLS avec OAuth 2.0.
 
 ```mermaid
-SequenceDiagram
+sequenceDiagram
+title   OAUTH 2.0 + mTLS sans utilisateur
+
 //création des blocs & variables
 participantgroup #palegreen **Système appelant / initiateur**
 
@@ -233,6 +235,18 @@ API->appserver: 5. accès aux données
 deactivate API
 ```
 
+```mermaid
+sequenceDiagram
+    participant dotcom
+    participant iframe
+    participant viewscreen
+    dotcom->>iframe: loads html w/ iframe url
+    iframe->>viewscreen: request template
+    viewscreen->>iframe: html & javascript
+    iframe->>dotcom: iframe ready
+    dotcom->>iframe: set mermaid data on iframe
+    iframe->>iframe: render mermaid
+```
 
 Le détail des flux OAUH 2.0 + mTLS est défini dans la partie 7.6.3 Cas OAuth 2.0 + mTLS : accès à des données sensibles
 
