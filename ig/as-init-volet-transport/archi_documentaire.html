@@ -199,53 +199,69 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 
 <p style="text-align:center">
 <object data="role_systeme.png" type="image/png"></object>
+</p>
 
-Le Cadre d'Interopérabilité des Systèmes d'Information de Santé (CI-SIS) établit les règles pour une informatique communicative dans le domaine de la santé, du médico-social et du social. Le CI-SIS préconise des normes techniques et sémantiques pour les acteurs de la santé impliqués dans des projets d'échange et de partage de données de santé. 
+<p>Le Cadre d’Interopérabilité des Systèmes d’Information de Santé (CI-SIS) établit les règles pour une informatique communicative dans le domaine de la santé, du médico-social et du social. Le CI-SIS préconise des normes techniques et sémantiques pour les acteurs de la santé impliqués dans des projets d’échange et de partage de données de santé.</p>
 
-La mise en place des volets du cadre d'interopérabilité permet de minimiser les coûts d'intégration de nouvelles interfaces et les difficultés techniques d'interopérabilité, de même que de faciliter l'utilisation de produits d’éditeurs.
+<p>La mise en place des volets du cadre d’interopérabilité permet de minimiser les coûts d’intégration de nouvelles interfaces et les difficultés techniques d’interopérabilité, de même que de faciliter l’utilisation de produits d’éditeurs.</p>
 
-Les SI de santé en France sont composés de plusieurs entités indépendantes proposant un certain nombre d’applications et de services de nature hétérogène (client léger/web, client lourd, client applicatif). Les applications des différents Fournisseurs de Services (FS) sont susceptibles de communiquer entre elles. 
+<p>Les SI de santé en France sont composés de plusieurs entités indépendantes proposant un certain nombre d’applications et de services de nature hétérogène (client léger/web, client lourd, client applicatif). Les applications des différents Fournisseurs de Services (FS) sont susceptibles de communiquer entre elles.</p>
 
-Afin de faciliter les échanges et d’assurer l’intégrité des données transmises d’un SI à l’autre, il est indispensable de standardiser les échanges. C’est ainsi qu’intervient le Cadre d’Interopérabilité des SI de Santé (CI-SIS) pour résoudre les problèmes d’interopérabilité des applications de santé.
- 
+<p>Afin de faciliter les échanges et d’assurer l’intégrité des données transmises d’un SI à l’autre, il est indispensable de standardiser les échanges. C’est ainsi qu’intervient le Cadre d’Interopérabilité des SI de Santé (CI-SIS) pour résoudre les problèmes d’interopérabilité des applications de santé.
+ </p>
 <p style="text-align:center">
 <object data="composants_flux_REST.png" type="image/png"></object>
+</p>
 
-Par ailleurs, ce volet du CI-SIS s'insère dans l'ensemble documentaire décrit ci-dessous :
+<p>Par ailleurs, ce volet du CI-SIS s’insère dans l’ensemble documentaire décrit ci-dessous :</p>
 
 <p style="text-align:center">
 <object data="architecture_documentaire.png" type="image/png"></object>
+</p>
 
+<p>En dehors du volet transport du CI-SIS, il existe des référentiels d’interopérabilité à la maille :</p>
+<ul>
+  <li>
+    <p>Sémantique : décrivent les normes et terminologies standardisées et partagées qui doivent être utilisées pour décrire différentes catégories de données (diagnostics, médicaments, examens de biologie médicale, etc.). [2]</p>
+  </li>
+  <li>Syntaxique : l’interopérabilité syntaxique permet à deux ou plusieurs systèmes de communiquer et d’échanger des données. Pour être efficace, la conception de toute solution d’interopérabilité doit tenir compte de la granularité des données à partager. 
+Afin de sécuriser les échanges entre les SI de santé, le présent volet du CI-SIS définit les modalités d’autorisation d’accès à un service de santé et se base sur les protocoles OAuth 2.0 et OIDC. Les normes d’interopérabilité décrite dans le présent volet sont applicables aux applications Pro Santé Connectées et non Pro Santé Connectées.</li>
+  <li>Une application Pro Santé Connectée est une application qui permet aux professionnels de santé de se connecter à un réseau d’échange d’informations de santé, afin de faciliter la gestion des informations médicales via les MIE PSC compatibles.</li>
+  <li>Une application non Pro Santé Connectée est une application qui ne nécessite pas d’utiliser Pro Santé Connect pour accéder aux informations de santé.
+Descriptif des acteurs et des composants du cadre</li>
+</ul>
 
-En dehors du volet transport du CI-SIS, il existe des référentiels d'interopérabilité à la maille :
-*	Sémantique : décrivent les normes et terminologies standardisées et partagées qui doivent être utilisées pour décrire différentes catégories de données (diagnostics, médicaments, examens de biologie médicale, etc.). [2]
+<p>La PGSSI-S distingue :</p>
+<ul>
+  <li>Les personnes physiques : acteurs des secteurs sanitaire, médico-social et social et les usagers des SI santé.</li>
+  <li>Les usagers sont identifiés par :
+    <ul>
+      <li>L’identité INS (Identité Nationale de Santé).</li>
+      <li>L’identité locale fournie par un fournisseur de service.</li>
+    </ul>
+  </li>
+  <li>Les acteurs des secteurs sanitaire, médico-social et social sont identifiés par leur :
+    <ul>
+      <li>Numéro RPPS, (Répertoire Partagé des Professionnels de Santé) à utiliser en priorité s’il existe pour la personne à identifier : utilisé dans les cartes CPx et e-CPS.</li>
+      <li>Numéros locaux composés d’identifiants privés à portée nationale (ex : identifiants portés dans le VIHF).</li>
+    </ul>
+  </li>
+</ul>
 
-*	Syntaxique : l'interopérabilité syntaxique permet à deux ou plusieurs systèmes de communiquer et d'échanger des données. Pour être efficace, la conception de toute solution d'interopérabilité doit tenir compte de la granularité des données à partager. 
-Afin de sécuriser les échanges entre les SI de santé, le présent volet du CI-SIS définit les modalités d’autorisation d’accès à un service de santé et se base sur les protocoles OAuth 2.0 et OIDC. Les normes d’interopérabilité décrite dans le présent volet sont applicables aux applications Pro Santé Connectées et non Pro Santé Connectées.
-*	Une application Pro Santé Connectée est une application qui permet aux professionnels de santé de se connecter à un réseau d'échange d'informations de santé, afin de faciliter la gestion des informations médicales via les MIE PSC compatibles.
-*	Une application non Pro Santé Connectée est une application qui ne nécessite pas d’utiliser Pro Santé Connect pour accéder aux informations de santé.
-Descriptif des acteurs et des composants du cadre
+<p>N.B. (en cours de migration) : Le numéro ADELI (Automatisation DEs LIstes) est toléré de façon transitoire jusqu’à son remplacement définitif par l’identifiant RPPS.</p>
 
-La PGSSI-S distingue :
-*	Les personnes physiques : acteurs des secteurs sanitaire, médico-social et social et les usagers des SI santé.
--	Les usagers sont identifiés par :
-	* L’identité INS (Identité Nationale de Santé).
-    * L’identité locale fournie par un fournisseur de service.
+<ul>
+  <li>Les personnes morales : toutes les structures de soins, telles que les maisons et centres de santé, mais aussi les laboratoires de biologie médicale, les services de protection maternelle infantile ou encore les services de santé au travail. Ces dernières sont identifiées par :
+    <ul>
+      <li>Le numéro FINESS juridique (FINESS EJ) ou géographique (FINESS ET ou EG).</li>
+      <li>Le numéro SIREN ou SIRET.</li>
+    </ul>
+  </li>
+</ul>
 
--	Les acteurs des secteurs sanitaire, médico-social et social sont identifiés par leur :
-    * Numéro RPPS, (Répertoire Partagé des Professionnels de Santé) à utiliser en priorité s’il existe pour la personne à identifier : utilisé dans les cartes CPx et e-CPS.
-    * Numéros locaux composés d’identifiants privés à portée nationale (ex : identifiants portés dans le VIHF).
+<p>Pour toute information sur les référentiels d’identification des personnes physiques ou morales, se référer au corpus documentaire [3]</p>
 
-N.B. (en cours de migration) : Le numéro ADELI (Automatisation DEs LIstes) est toléré de façon transitoire jusqu’à son remplacement définitif par l’identifiant RPPS.
-
-*	Les personnes morales : toutes les structures de soins, telles que les maisons et centres de santé, mais aussi les laboratoires de biologie médicale, les services de protection maternelle infantile ou encore les services de santé au travail. Ces dernières sont identifiées par :
-    * Le numéro FINESS juridique (FINESS EJ) ou géographique (FINESS ET ou EG).
-    * Le numéro SIREN ou SIRET.
-
-Pour toute information sur les référentiels d’identification des personnes physiques ou morales, se référer au corpus documentaire [3]
-
-
-Les systèmes en jeu dans le cadre de ce volet du CI-SIS sont les suivants :
+<p>Les systèmes en jeu dans le cadre de ce volet du CI-SIS sont les suivants :</p>
 
 <table width="680">
 <tbody>
@@ -288,7 +304,6 @@ Les systèmes en jeu dans le cadre de ce volet du CI-SIS sont les suivants :
 </tr>
 </tbody>
 </table>
-</p></p></p>
 
 
 
@@ -336,7 +351,7 @@ Les systèmes en jeu dans le cadre de ce volet du CI-SIS sont les suivants :
 
       <div class="inner-wrapper">
         <p>
-          IG &#169; 2020+ <a style="color:var(--footer-hyperlink-text-color)" href="https://esante.gouv.fr">ANS</a>.  Package ans.fr.securisation-transport#0.1.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Mon, Jul 24, 2023 14:10+0000">2023-07-24</span>
+          IG &#169; 2020+ <a style="color:var(--footer-hyperlink-text-color)" href="https://esante.gouv.fr">ANS</a>.  Package ans.fr.securisation-transport#0.1.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Mon, Jul 24, 2023 14:28+0000">2023-07-24</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)"></span>
                       Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |
