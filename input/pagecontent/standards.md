@@ -188,7 +188,7 @@ Dans le cadre d’un workflow OAuth 2.0, l’utilisation du mTLS permet :
 
 Ci-dessous une illustration de l’utilisation du mTLS avec OAuth 2.0.
 
-'''mermaid
+```mermaid
 //création des blocs & variables
 participantgroup #palegreen **Système appelant / initiateur**
 
@@ -230,8 +230,7 @@ activate API
 end
 API->appserver: 5. accès aux données 
 deactivate API
-
-'''
+```
 
 
 Le détail des flux OAUH 2.0 + mTLS est défini dans la partie 7.6.3 Cas OAuth 2.0 + mTLS : accès à des données sensibles

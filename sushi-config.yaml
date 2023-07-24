@@ -34,8 +34,11 @@ pages:
         downloads.md:
             title: Téléchargements et usages
         archi_documentaire.md:
+            title: 
         standards.md:
+            title: 
         glossaire.md:
+            title: 
  
     about.md:
         title: A propos de ce guide
