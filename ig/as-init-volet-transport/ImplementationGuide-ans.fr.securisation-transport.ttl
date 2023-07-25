@@ -17,7 +17,7 @@
   fhir:name [ fhir:v "IGsecurisationtransportapirest"] ; # 
   fhir:title [ fhir:v "Sécurisation de la couche transport API REST"] ; # 
   fhir:status [ fhir:v "draft"] ; # 
-  fhir:date [ fhir:v "2023-07-25T14:59:07+00:00"^^xsd:dateTime] ; # 
+  fhir:date [ fhir:v "2023-07-25T16:08:15+00:00"^^xsd:dateTime] ; # 
   fhir:publisher [ fhir:v "ANS"] ; # 
   fhir:contact ( [
      fhir:name [ fhir:v "ANS" ] ;
@@ -582,31 +582,39 @@
            fhir:name [ fhir:v "downloads.html"^^xsd:anyURI ] ;
            fhir:title [ fhir:v "Téléchargements et usages" ] ;
            fhir:generation [ fhir:v "markdown" ]
-         ] [
-           fhir:extension ( [
-             fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name"^^xsd:anyURI ] ;
-             fhir:value [ fhir:v "archi_documentaire.html"^^xsd:anyURI ]
-           ] ) ;
-           fhir:name [ fhir:v "archi_documentaire.html"^^xsd:anyURI ] ;
-           fhir:title [ fhir:v "Architecture documentaire" ] ;
-           fhir:generation [ fhir:v "markdown" ]
-         ] [
-           fhir:extension ( [
-             fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name"^^xsd:anyURI ] ;
-             fhir:value [ fhir:v "standards.html"^^xsd:anyURI ]
-           ] ) ;
-           fhir:name [ fhir:v "standards.html"^^xsd:anyURI ] ;
-           fhir:title [ fhir:v "Standards d'échange" ] ;
-           fhir:generation [ fhir:v "markdown" ]
-         ] [
-           fhir:extension ( [
-             fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name"^^xsd:anyURI ] ;
-             fhir:value [ fhir:v "glossaire.html"^^xsd:anyURI ]
-           ] ) ;
-           fhir:name [ fhir:v "glossaire.html"^^xsd:anyURI ] ;
-           fhir:title [ fhir:v "Glossaires" ] ;
-           fhir:generation [ fhir:v "markdown" ]
          ] )
+       ] [
+         fhir:extension ( [
+           fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name"^^xsd:anyURI ] ;
+           fhir:value [ fhir:v "archi_documentaire.html"^^xsd:anyURI ]
+         ] ) ;
+         fhir:name [ fhir:v "archi_documentaire.html"^^xsd:anyURI ] ;
+         fhir:title [ fhir:v "Architecture documentaire" ] ;
+         fhir:generation [ fhir:v "markdown" ]
+       ] [
+         fhir:extension ( [
+           fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name"^^xsd:anyURI ] ;
+           fhir:value [ fhir:v "standards.html"^^xsd:anyURI ]
+         ] ) ;
+         fhir:name [ fhir:v "standards.html"^^xsd:anyURI ] ;
+         fhir:title [ fhir:v "Standards d'échange" ] ;
+         fhir:generation [ fhir:v "markdown" ]
+       ] [
+         fhir:extension ( [
+           fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name"^^xsd:anyURI ] ;
+           fhir:value [ fhir:v "glossaire.html"^^xsd:anyURI ]
+         ] ) ;
+         fhir:name [ fhir:v "glossaire.html"^^xsd:anyURI ] ;
+         fhir:title [ fhir:v "Glossaires" ] ;
+         fhir:generation [ fhir:v "markdown" ]
+       ] [
+         fhir:extension ( [
+           fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name"^^xsd:anyURI ] ;
+           fhir:value [ fhir:v "principes_securisation.html"^^xsd:anyURI ]
+         ] ) ;
+         fhir:name [ fhir:v "principes_securisation.html"^^xsd:anyURI ] ;
+         fhir:title [ fhir:v "Principes de sécurisaion" ] ;
+         fhir:generation [ fhir:v "markdown" ]
        ] [
          fhir:extension ( [
            fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name"^^xsd:anyURI ] ;

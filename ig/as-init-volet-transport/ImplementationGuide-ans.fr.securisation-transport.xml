@@ -10,7 +10,7 @@
   <name value="IGsecurisationtransportapirest"/>
   <title value="Sécurisation de la couche transport API REST"/>
   <status value="draft"/>
-  <date value="2023-07-25T14:59:07+00:00"/>
+  <date value="2023-07-25T16:08:15+00:00"/>
   <publisher value="ANS"/>
   <contact>
     <name value="ANS"/>
@@ -512,30 +512,38 @@
           <title value="Téléchargements et usages"/>
           <generation value="markdown"/>
         </page>
-        <page>
-          <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-page-name">
-            <valueUrl value="archi_documentaire.html"/>
-          </extension>
-          <nameUrl value="archi_documentaire.html"/>
-          <title value="Architecture documentaire"/>
-          <generation value="markdown"/>
-        </page>
-        <page>
-          <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-page-name">
-            <valueUrl value="standards.html"/>
-          </extension>
-          <nameUrl value="standards.html"/>
-          <title value="Standards d'échange"/>
-          <generation value="markdown"/>
-        </page>
-        <page>
-          <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-page-name">
-            <valueUrl value="glossaire.html"/>
-          </extension>
-          <nameUrl value="glossaire.html"/>
-          <title value="Glossaires"/>
-          <generation value="markdown"/>
-        </page>
+      </page>
+      <page>
+        <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-page-name">
+          <valueUrl value="archi_documentaire.html"/>
+        </extension>
+        <nameUrl value="archi_documentaire.html"/>
+        <title value="Architecture documentaire"/>
+        <generation value="markdown"/>
+      </page>
+      <page>
+        <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-page-name">
+          <valueUrl value="standards.html"/>
+        </extension>
+        <nameUrl value="standards.html"/>
+        <title value="Standards d'échange"/>
+        <generation value="markdown"/>
+      </page>
+      <page>
+        <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-page-name">
+          <valueUrl value="glossaire.html"/>
+        </extension>
+        <nameUrl value="glossaire.html"/>
+        <title value="Glossaires"/>
+        <generation value="markdown"/>
+      </page>
+      <page>
+        <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-page-name">
+          <valueUrl value="principes_securisation.html"/>
+        </extension>
+        <nameUrl value="principes_securisation.html"/>
+        <title value="Principes de sécurisaion"/>
+        <generation value="markdown"/>
       </page>
       <page>
         <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-page-name">
