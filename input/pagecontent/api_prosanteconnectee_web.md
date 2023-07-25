@@ -7,3 +7,5 @@ Le fournisseur de services, s'assure de la validité de l'access_token à sa ré
 
 Le fournisseur de services utilise l’access_token et les scopes auprès du service cible pour accéder aux données protégées.
 </p>
+
+<div style="text-align: center;">{%include diag_api_prosanteconnectee_web_general.svg%}</div>
