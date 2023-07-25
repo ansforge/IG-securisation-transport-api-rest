@@ -188,7 +188,7 @@ Dans le cadre d’un workflow OAuth 2.0, l’utilisation du mTLS permet :
 
 Ci-dessous une illustration de l’utilisation du mTLS avec OAuth 2.0.
 
-<div style="text-align: center;">{%include standard.svg%}</div>
+<div style="text-align: center;">{%include diag_mtls_oauth2_structure.svg%}</div>
 
 Le détail des flux OAUH 2.0 + mTLS est défini dans la partie 7.6.3 Cas OAuth 2.0 + mTLS : accès à des données sensibles
 
