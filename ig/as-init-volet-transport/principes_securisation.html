@@ -212,13 +212,11 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 </ul>
 
 </div>
-<p>selon les cas d’usage</p>
-
-<h2 id="confidentialité">Confidentialité</h2>
+<h3 id="confidentialité">Confidentialité</h3>
 <p>Dans le volet transport synchrone pour application mobile : la confidentialité des échanges au niveau du transport est gérée par l’encapsulation du flux dans une connexion sécurisée TLS.
 L’usage du TLS version 1.3 ou supérieure est recommandé et celui de la version 1.2 encore supporté. Les version 1.0 et 1.1 sont interdites. L’usage de SSL 3.0 ou inférieure est interdit.</p>
 
-<h2 id="intégrité">Intégrité</h2>
+<h3 id="intégrité">Intégrité</h3>
 <p>L’intégrité des échanges au niveau du transport est gérée par l’encapsulation du flux dans une connexion sécurisée TLS.</p>
 
 <h2 id="la-sécurisation-de-larchitecture-selon-les-cas-dusages">La sécurisation de l’architecture selon les cas d’usages</h2>
@@ -254,7 +252,7 @@ L’usage du TLS version 1.3 ou supérieure est recommandé et celui de la versi
 
         <p>On parle d’identification indirecte d’un professionnel de santé dans la mesure où le service cible s’appuie sur une authentification du professionnel réalisée localement par la structure.</p>
         <p>
-Dans le cas où seule la personne morale (structure) a besoin de s’authentifier, celle-ci est directe et réalisée par la connexion mTLS avec le certificat de structure.&lt;/br&gt;
+Dans le cas où seule la personne morale (structure) a besoin de s’authentifier, celle-ci est directe et réalisée par la connexion mTLS avec le certificat de structure.<br />
 L’accès à l’API se fait avec OAuth 2.0 et/ou mTLS. Si les données sont sensibles, l’utilisation d’une connexion mTLS à minima est nécessaire.<br />
 Le mTLS permet d’authentifier le client par un Client_ID_AS + mTLS au lieu de s’authentifier avec son client_secret/Client_ID_AS. Dans ce cas le client_secret n’est pas nécessaire car l’authentification est portée par le mTLS (certificat client).<br />
 La structure appelante doit fournir les informations utilisateur selon les besoins / cas d’usage métier (ex : RPPS, profession, autres informations utilisateur).
@@ -396,7 +394,7 @@ Cela évite une sursollicitation de PSC lors de l’envoie des requêtes vers le
 
       <div class="inner-wrapper">
         <p>
-          IG &#169; 2020+ <a style="color:var(--footer-hyperlink-text-color)" href="https://esante.gouv.fr">ANS</a>.  Package ans.fr.securisation-transport#0.1.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Tue, Jul 25, 2023 19:39+0000">2023-07-25</span>
+          IG &#169; 2020+ <a style="color:var(--footer-hyperlink-text-color)" href="https://esante.gouv.fr">ANS</a>.  Package ans.fr.securisation-transport#0.1.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Tue, Jul 25, 2023 19:59+0000">2023-07-25</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)"></span>
                       Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |
