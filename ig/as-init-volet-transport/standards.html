@@ -96,7 +96,7 @@
         <a href="archi_documentaire.html">Architecture documentaire</a>
       </li>
       <li>
-        <a href="standards.html">Standards utilisés</a>
+        <a href="standards.html">Standards utilisés (REST, OAUTH 2.0 ET OIDC)</a>
       </li>
       <li>
         <a href="principes_securisation.html">Principes de sécurisation</a>
@@ -201,7 +201,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
     <p><!-- white space is critical inside of capture --></p>
 <div class="markdown-toc">
 <ul id="markdown-toc">
-  <li><a href="#les-api-rest" id="markdown-toc-les-api-rest">Les API REST</a>    <ul>
+  <li><a href="#les-apis-rest" id="markdown-toc-les-apis-rest">Les APIs REST</a>    <ul>
       <li><a href="#généralités-sur-le-concept-dapi-rest-et-bonnes-pratiques" id="markdown-toc-généralités-sur-le-concept-dapi-rest-et-bonnes-pratiques">Généralités sur le concept d’API REST et bonnes pratiques</a></li>
       <li><a href="#liaison-avec-le-protocole-de-transport-ou-binding" id="markdown-toc-liaison-avec-le-protocole-de-transport-ou-binding">Liaison avec le protocole de transport ou binding</a></li>
     </ul>
@@ -209,23 +209,14 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
   <li><a href="#le-standard-openid-connect-pour-la-gestion-de-lauthentification-des-applications-pro-santé-connectées" id="markdown-toc-le-standard-openid-connect-pour-la-gestion-de-lauthentification-des-applications-pro-santé-connectées">Le standard OpenID Connect pour la gestion de l’authentification des applications Pro Santé Connectées</a></li>
   <li><a href="#le-standard-oauth-20-pour-la-gestion-des-autorisations-et-accès" id="markdown-toc-le-standard-oauth-20-pour-la-gestion-des-autorisations-et-accès">Le standard OAuth 2.0 pour la gestion des autorisations et accès</a>    <ul>
       <li><a href="#description-du-serveur-dautorisation-du-système-cible" id="markdown-toc-description-du-serveur-dautorisation-du-système-cible">Description du serveur d’autorisation du système cible</a></li>
-      <li><a href="#gestion-et-contrôle-des-accès" id="markdown-toc-gestion-et-contrôle-des-accès">Gestion et contrôle des accès</a>        <ul>
-          <li><a href="#le-contrôle-daccès-avec-les-scopes" id="markdown-toc-le-contrôle-daccès-avec-les-scopes">Le contrôle d’accès avec les scopes</a></li>
-          <li><a href="#les-normes-de-conservation-de-laccess-token" id="markdown-toc-les-normes-de-conservation-de-laccess-token">Les normes de conservation de l’access token</a></li>
-          <li><a href="#les-données-de-laccess-token" id="markdown-toc-les-données-de-laccess-token">Les données de l’access token</a></li>
-          <li><a href="#lintégration-du-mtls-dans-le-cadre-du-workflow-oauth-20" id="markdown-toc-lintégration-du-mtls-dans-le-cadre-du-workflow-oauth-20">L’intégration du mTLS dans le cadre du workflow OAuth 2.0</a></li>
-          <li><a href="#le-lien-entre-un-certificat-tls-champ-organisational-unit-sa-requête-et-la-réponse-de-laccess-token" id="markdown-toc-le-lien-entre-un-certificat-tls-champ-organisational-unit-sa-requête-et-la-réponse-de-laccess-token">Le lien entre un certificat TLS (champ Organisational Unit), sa requête et la réponse de l’access token.</a></li>
-        </ul>
-      </li>
+      <li><a href="#gestion-et-contrôle-des-accès" id="markdown-toc-gestion-et-contrôle-des-accès">Gestion et contrôle des accès</a></li>
     </ul>
   </li>
 </ul>
 
 </div>
-<p>(REST, OAUTH 2.0 ET OIDC)</p>
-
-<h1 id="les-api-rest">Les API REST</h1>
-<h2 id="généralités-sur-le-concept-dapi-rest-et-bonnes-pratiques">Généralités sur le concept d’API REST et bonnes pratiques</h2>
+<h2 id="les-apis-rest">Les APIs REST</h2>
+<h3 id="généralités-sur-le-concept-dapi-rest-et-bonnes-pratiques">Généralités sur le concept d’API REST et bonnes pratiques</h3>
 <p>
 Une API REST est une interface de programmation qui suit les principes de l'architecture REST.<br />
 Elle permet aux clients (des applications web ou mobiles) de communiquer avec un serveur en utilisant des requêtes HTTP. Les ressources cibles sont identifiées par des URLs.<br />
@@ -236,10 +227,10 @@ Les réponses à ces requêtes sont retournées en format JSON.
 <object data="exemple_req_REST_bearer.png" type="image/png"></object>
 </p>
 
-<h2 id="liaison-avec-le-protocole-de-transport-ou-binding">Liaison avec le protocole de transport ou binding</h2>
+<h3 id="liaison-avec-le-protocole-de-transport-ou-binding">Liaison avec le protocole de transport ou binding</h3>
 <p>Le protocole HTTP1.1 encapsulé dans une connexion sécurisée TLS doit être utilisé.</p>
 
-<h1 id="le-standard-openid-connect-pour-la-gestion-de-lauthentification-des-applications-pro-santé-connectées">Le standard OpenID Connect pour la gestion de l’authentification des applications Pro Santé Connectées</h1>
+<h2 id="le-standard-openid-connect-pour-la-gestion-de-lauthentification-des-applications-pro-santé-connectées">Le standard OpenID Connect pour la gestion de l’authentification des applications Pro Santé Connectées</h2>
 <p>
 Pro Santé Connect est le fournisseur d’identité de la santé pour les acteurs de santé professionnels en France. Il s’agit d’un service basé sur le protocole standard OpenID Connect.<br /> Il permet aux professionnels de santé de s’identifier de manière simple, sécurisée et unifiée.<br /> Ils se connectent aux services numériques en santé, en passant de l’un à l’autre de manière fluide.
 </p>
@@ -263,12 +254,12 @@ Pro Santé Connect est le fournisseur d’identité de la santé pour les acteur
 
 <p>La documentation technique Pro Santé Connecté [4] fournit des détails sur le fonctionnement du protocole OIDC au sein de PSC.</p>
 
-<h1 id="le-standard-oauth-20-pour-la-gestion-des-autorisations-et-accès">Le standard OAuth 2.0 pour la gestion des autorisations et accès</h1>
+<h2 id="le-standard-oauth-20-pour-la-gestion-des-autorisations-et-accès">Le standard OAuth 2.0 pour la gestion des autorisations et accès</h2>
 <p>
 OAuth 2.0 est un protocole standard d'autorisation qui permet à une application tierce d'accéder à des ressources protégées. Le protocole OAuth 2.0 définit des étapes à suivre pour obtenir et utiliser un jeton d'accès (access_token).<br /> Ce jeton est délivré par le serveur d’autorisation et permet d’accéder aux ressources d’une application protégée. <br />Les services de e-santé utilisent ce standard OAuth 2.0 pour la gestion des autorisations et des accès.
 </p>
 
-<h2 id="description-du-serveur-dautorisation-du-système-cible">Description du serveur d’autorisation du système cible</h2>
+<h3 id="description-du-serveur-dautorisation-du-système-cible">Description du serveur d’autorisation du système cible</h3>
 
 <p>OAuth 2.0 est un protocole d’autorisation qui permet à une application (le client) de se connecter aux ressources protégées sur service cible en utilisant un access_token émis par un serveur d’autorisation. Ce dernier est responsable du contrôle d’accès du client, de l’émission et de la gestion de ces jetons d’accès et de la vérification du jeton d’accès.</p>
 
@@ -279,8 +270,8 @@ OAuth 2.0 est un protocole standard d'autorisation qui permet à une application
 
 <p>La règle générale d’autorisation portera toujours sur une structure et son service. Une structure est soit une structure de santé ou une structure autorisée (proxy éditeur). </p>
 
-<h2 id="gestion-et-contrôle-des-accès">Gestion et contrôle des accès</h2>
-<h3 id="le-contrôle-daccès-avec-les-scopes">Le contrôle d’accès avec les scopes</h3>
+<h3 id="gestion-et-contrôle-des-accès">Gestion et contrôle des accès</h3>
+<h4 id="le-contrôle-daccès-avec-les-scopes">Le contrôle d’accès avec les scopes</h4>
 <ul>
   <li>Définition d’un scope dans le protocole OAuth 2.0</li>
 </ul>
@@ -307,7 +298,7 @@ Une fois le contrôle d’accès est réalisé par le serveur d’autorisation, 
 <object data="schema_scope_cas_metier.png" type="image/png"></object>
 </p>
 
-<h3 id="les-normes-de-conservation-de-laccess-token">Les normes de conservation de l’access token</h3>
+<h4 id="les-normes-de-conservation-de-laccess-token">Les normes de conservation de l’access token</h4>
 <p>La sécurité liée au stockage de l’access token et à sa conservation est définie par l’ANSSI dans le document Recommandations pour la sécurisation de la mise en œuvre du protocole OpenID Connect dans la section 3.4 Recommandation R23 à R26. [6]</p>
 
 <p>Recommandation :</p>
@@ -317,7 +308,7 @@ Afin de résoudre le problème de l’éventuelle révocation de l’access_toke
 Si l’access_token est un jeton autoporteur JWS l’introspection n’est pas nécessaire, mais si c’est un jeton JWT opaque, elle l’est.
  </p>
 
-<h3 id="les-données-de-laccess-token">Les données de l’access token</h3>
+<h4 id="les-données-de-laccess-token">Les données de l’access token</h4>
 <p>Les données de l’access token peuvent être accessibles soit dans un jeton JWT signé par le serveur d’autorisation, soit via un appel à un service d’introspection.</p>
 
 <p>Les paramètres de l’access token sont définis par les champs suivants :</p>
@@ -404,7 +395,7 @@ Si l’access_token est un jeton autoporteur JWS l’introspection n’est pas n
 </tbody>
 </table>
 
-<h3 id="lintégration-du-mtls-dans-le-cadre-du-workflow-oauth-20">L’intégration du mTLS dans le cadre du workflow OAuth 2.0</h3>
+<h4 id="lintégration-du-mtls-dans-le-cadre-du-workflow-oauth-20">L’intégration du mTLS dans le cadre du workflow OAuth 2.0</h4>
 
 <p>Dans le cadre d’un workflow OAuth 2.0, l’utilisation du mTLS permet :</p>
 
@@ -422,7 +413,7 @@ Si l’access_token est un jeton autoporteur JWS l’introspection n’est pas n
 
 <p>Le protocole TLS est assuré sur la couche transport. Le certificat client utilisé dans le mTLS peut être transmis au serveur d’autorisation. Le protocole OAUTH est réalisé sur la couche applicative et permet de faire le contrôle du certificat client et de générer un access_token. 
  </p>
-<h3 id="le-lien-entre-un-certificat-tls-champ-organisational-unit-sa-requête-et-la-réponse-de-laccess-token">Le lien entre un certificat TLS (champ Organisational Unit), sa requête et la réponse de l’access token.</h3>
+<h4 id="le-lien-entre-un-certificat-tls-champ-organisational-unit-sa-requête-et-la-réponse-de-laccess-token">Le lien entre un certificat TLS (champ Organisational Unit), sa requête et la réponse de l’access token.</h4>
 
 <p>Rappel sur les certificats émis une IGC Santé :</p>
 
@@ -491,7 +482,7 @@ Par exemple, les hôpitaux et les EHPAD génèrent des certificats sur leur FINE
 
       <div class="inner-wrapper">
         <p>
-          IG &#169; 2020+ <a style="color:var(--footer-hyperlink-text-color)" href="https://esante.gouv.fr">ANS</a>.  Package ans.fr.securisation-transport#0.1.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Tue, Jul 25, 2023 20:37+0000">2023-07-25</span>
+          IG &#169; 2020+ <a style="color:var(--footer-hyperlink-text-color)" href="https://esante.gouv.fr">ANS</a>.  Package ans.fr.securisation-transport#0.1.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Tue, Jul 25, 2023 20:59+0000">2023-07-25</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)"></span>
                       Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |
