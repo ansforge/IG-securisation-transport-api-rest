@@ -1,0 +1,414 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE HTML>
+<html xml:lang="en" xmlns="http://www.w3.org/1999/xhtml" lang="en">
+  <head>
+    <meta content="text/html;charset=utf-8" http-equiv="Content-Type"/>
+    <title>ANS.FR.SECURISATION-TRANSPORT\Appel d&#39;une API ProSantéConnectées depuis une application web - FHIR v4.0.1</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta name="author" content="http://hl7.org/fhir"/>
+
+    <link href="fhir.css" rel="stylesheet"/>
+
+    <!-- Bootstrap core CSS -->
+    <link href="assets/css/bootstrap-fhir.css" rel="stylesheet"/>
+
+    <!-- Project extras -->
+    <link href="assets/css/project.css" rel="stylesheet"/>
+    <link href="assets/css/pygments-manni.css" rel="stylesheet"/>
+    <link href="assets/css/jquery-ui.css" rel="stylesheet"/>
+  	<link href="assets/css/prism.css" rel="stylesheet" />
+    <link rel="stylesheet" href="assets/css/style-ans.css"/>
+    <link rel="stylesheet" href="assets/css/style-add-ans.css"/>
+    <!-- CSS only -->
+    <!-- Placeholder for child template CSS declarations -->
+
+    <script type="text/javascript" src="fhir-table-scripts.js"> </script>
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script src="assets/js/html5shiv.js"></script>
+    <script src="assets/js/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- Favicons -->
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="assets/ico/apple-touch-icon-144-precomposed.png"/>
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="assets/ico/apple-touch-icon-114-precomposed.png"/>
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="assets/ico/apple-touch-icon-72-precomposed.png"/>
+    <link rel="apple-touch-icon-precomposed" href="assets/ico/apple-touch-icon-57-precomposed.png"/>
+    <link rel="shortcut icon" href="assets/ico/favicon.png"/>
+  </head>
+  <body onload="document.body.style.opacity='1'">
+
+	  <script src="assets/js/prism.js"></script>
+
+    <style type="text/css">h2{--heading-prefix:"8.1"}
+    h3,h4,h5,h6{--heading-prefix:"8.1"}</style>
+    <div id="segment-header" class="segment">  <!-- segment-header -->
+      <div class="container">  <!-- container -->
+        <!-- Placeholder for child template header declarations -->
+<div id="family-nav">
+    <a id="hl7-search-lnk" no-external="true" href="http://hl7.org/fhir"><img height="50" alt="Visit the FHIR website" src="assets/images/fhir-logo-www.png"/> </a>
+  </div>
+  <div id="ans-nav">
+    <a id="hl7-logo" no-external="true" href="https://esante.gouv.fr/"><img height="50" alt="ANS Logo" src="assets/images/logo-ANS.svg"/></a>
+  </div>
+
+        <div id="ig-status">
+          <p><span style="font-size:12pt;font-weight:bold">Sécurisation de la couche transport API REST</span>
+            <br/>
+            <span style="display:inline-block;">0.1.0 - ci-build
+
+
+            </span>
+          </p>
+        </div>
+      </div> <!-- /container -->
+    </div>  <!-- /segment-header -->
+
+    <div id="segment-navbar" class="segment">  <!-- segment-navbar -->
+      <div id="stripe"> </div>
+      <div class="container">  <!-- container -->
+        <!-- HEADER CONTENT -->
+
+        <nav class="navbar navbar-inverse">
+          <!--status-bar-->
+          <div class="container">
+            <button data-target=".navbar-inverse-collapse" class="navbar-toggle" data-toggle="collapse" type="button">
+              <span class="icon-bar"> </span>
+              <span class="icon-bar"> </span>
+              <span class="icon-bar"> </span>
+            </button>
+            <a class="navbar-brand hidden" href="http://hl7.org/fhir/R4/index.html">FHIR</a>
+            <div class="nav-collapse collapse navbar-inverse-collapse">
+              <!-- menu.xml  -->
+
+<ul xmlns="http://www.w3.org/1999/xhtml" class="nav navbar-nav">
+  <li>
+    <a href="index.html">Accueil</a>
+  </li>
+  <li class="dropdown">
+    <a data-toggle="dropdown" href="#" class="dropdown-toggle">Description générale des flux
+      <b class="caret"></b>
+    </a>
+    <ul class="dropdown-menu">
+      <li>
+        <a href="archi_documentaire.html">Architecture documentaire</a>
+      </li>
+      <li>
+        <a href="standards.html">Standards utilisés</a>
+      </li>
+      <li>
+        <a href="principes_securisation.html">Principes de sécurisation</a>
+      </li>
+    </ul>
+  </li>
+  <li class="dropdown">
+    <a data-toggle="dropdown" href="#" class="dropdown-toggle">API ProSantéConnectée
+      <b class="caret"></b>
+    </a>
+    <ul class="dropdown-menu">
+      <li>
+        <a href="api_prosanteconnectee.html">Description générale</a>
+      </li>
+      <li>
+        <a href="api_prosanteconnectee_web.html">Application web</a>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <a href="glossaire.html">Glossaire</a>
+  </li>
+  <li class="dropdown">
+    <a data-toggle="dropdown" href="#" class="dropdown-toggle">Autres ressources
+      <b class="caret"></b>
+    </a>
+    <ul class="dropdown-menu">
+      <li>
+        <a href="securite.html">Sécurité</a>
+      </li>
+      <li>
+        <a href="downloads.html">Téléchargements et usage</a>
+      </li>
+      <li>
+        <a target="_blank" href="https://interop.esante.gouv.fr/ig/documentation/">Documentation sur les IG</a>
+      </li>
+      <li>
+        <a target="_blank" href="https://esante.gouv.fr/">Site de l&apos;ANS </a>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <a href="about.html">A propos de ce guide</a>
+  </li>
+</ul>
+            </div>  <!-- /.nav-collapse -->
+          </div>  <!-- /.container -->
+        </nav>  <!-- /.navbar -->
+      <!-- /HEADER CONTENT -->
+      </div>  <!-- /container -->
+    </div>  <!-- /segment-navbar -->
+    <!--status-bar-->
+
+    <div id="segment-breadcrumb" class="segment">  <!-- segment-breadcrumb -->
+      <div class="container">  <!-- container -->
+        <ul class="breadcrumb">
+          <li><a href='toc.html'><b>Table of Contents</b></a></li><li><a href='api_prosanteconnectee.html'><b>API ProSantéConnectée</b></a></li><li><b>Appel d'une API ProSantéConnectées depuis une application web</b></li>
+
+          <span style="float:right;">
+
+            <a href="api_prosanteconnectee.html">&lt;prev</a> | 
+
+            <a href="#bottom">bottom</a>
+
+          | <a href="about.html">next&gt;</a>
+
+          </span>
+
+        </ul>
+      </div>  <!-- /container -->
+    </div>  <!-- /segment-breadcrumb -->
+
+    <a name="top"> </a>
+    <div id="segment-content" class="segment">  <!-- segment-content -->
+      <div class="container">  <!-- container -->
+        <div class="row">
+          <div class="inner-wrapper">
+
+<style type="text/css">
+h2:before{color:silver;counter-increment:section;content:var(--heading-prefix) " ";}
+h3:before{color:silver;counter-increment:sub-section;content:var(--heading-prefix) "." counter(sub-section) " ";}
+h4:before{color:silver;counter-increment:composite;content:var(--heading-prefix) "." counter(sub-section) "." counter(composite) " ";}
+h5:before{color:silver;counter-increment:detail;content:var(--heading-prefix) "." counter(sub-section) "." counter(composite) "." counter(detail) " ";}
+h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefix) "." counter(sub-section) "." counter(composite) "." counter(detail) "." counter(more-detail)" ";}
+</style>
+<div class="col-12">
+  <!--ReleaseHeader--><p id="publish-box">Publication Build: This will be filled in by the publication tooling</p><!--EndReleaseHeader-->
+  <h2>Appel d&#39;une API ProSantéConnectées depuis une application web</h2>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+    <p><!-- white space is critical inside of capture --></p>
+<div>
+<!-- do not remove - needed to prevent Jekyll from adding a p tag to any non block level element in the markdown.-->
+</div>
+<p>
+L’utilisateur souhaite, via l’application web de son navigateur, accéder à des données protégées d’un service cible. L’utilisateur s’authentifie premièrement auprès de Pro Santé Connect via l’application web de son fournisseur de services.<br />
+Une fois authentifié, le fournisseur de services émet une requête auprès du serveur d'autorisation (subject_token + scope) pour accéder aux ressources.<br />
+Si le subject_token et les scopes sont jugés valides par le serveur d'autorisation, ce dernier fournit un access_token au fournisseur de services.<br />
+
+Le fournisseur de services, s'assure de la validité de l'access_token à sa réception puis envoie une requête auprès du service cible avec l’access_token contenu dans l’entête. Le service cible introspecte l’access_token auprès du serveur d’autorisation afin vérifier la validité de l’access_token et des scopes.<br />
+
+Le fournisseur de services utilise l’access_token et les scopes auprès du service cible pour accéder aux données protégées.
+</p>
+
+<div style="text-align: center;"><?xml version="1.0" encoding="UTF-8" standalone="no"?><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" contentScriptType="application/ecmascript" contentStyleType="text/css" height="697px" preserveAspectRatio="none" style="width:1182px;height:697px;background:#FFFFFF;" version="1.1" viewBox="0 0 1182 697" width="1182px" zoomAndPan="magnify"><defs><filter height="300%" id="f4bg4c1rsgto1" width="300%" x="-1" y="-1"><feGaussianBlur result="blurOut" stdDeviation="2.0" /><feColorMatrix in="blurOut" result="blurOut2" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 .4 0" /><feOffset dx="4.0" dy="4.0" in="blurOut2" result="blurOut3" /><feBlend in="SourceGraphic" in2="blurOut3" mode="normal" /></filter></defs><g><rect fill="#98FB98" height="685.8516" style="stroke:#A80036;stroke-width:1.0;" width="339.5" x="16" y="6" /><text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacing" textLength="215" x="78.25" y="18.0669">Systeme appelant / initiateur</text><rect fill="#AFEEEE" height="685.8516" style="stroke:#A80036;stroke-width:1.0;" width="422" x="754.5" y="6" /><text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacing" textLength="103" x="914" y="18.0669">Systeme cible</text><rect fill="#FFFFFF" filter="url(#f4bg4c1rsgto1)" height="83.2656" style="stroke:#A80036;stroke-width:1.0;" width="10" x="60.5" y="120.6953" /><rect fill="#FFFFFF" filter="url(#f4bg4c1rsgto1)" height="88.2656" style="stroke:#A80036;stroke-width:1.0;" width="10" x="60.5" y="233.0938" /><rect fill="#FFFFFF" filter="url(#f4bg4c1rsgto1)" height="148.5313" style="stroke:#A80036;stroke-width:1.0;" width="10" x="254.5" y="291.3594" /><rect fill="#FFFFFF" filter="url(#f4bg4c1rsgto1)" height="66.1328" style="stroke:#A80036;stroke-width:1.0;" width="10" x="254.5" y="569.4219" /><rect fill="#FFFFFF" filter="url(#f4bg4c1rsgto1)" height="88.2656" style="stroke:#A80036;stroke-width:1.0;" width="10" x="598.5" y="173.9609" /><rect fill="#FFFFFF" filter="url(#f4bg4c1rsgto1)" height="29.1328" style="stroke:#A80036;stroke-width:1.0;" width="10" x="598.5" y="350.4922" /><rect fill="#FFFFFF" filter="url(#f4bg4c1rsgto1)" height="29.1328" style="stroke:#A80036;stroke-width:1.0;" width="10" x="598.5" y="469.0234" /><rect fill="#FFFFFF" filter="url(#f4bg4c1rsgto1)" height="159.5313" style="stroke:#A80036;stroke-width:1.0;" width="10" x="837.5" y="439.8906" /><rect fill="#FFFFFF" filter="url(#f4bg4c1rsgto1)" height="251.9297" style="stroke:#000000;stroke-width:2.0;" width="677.5" x="10" y="135.6953" /><rect fill="#FFFFFF" filter="url(#f4bg4c1rsgto1)" height="205.7969" style="stroke:#000000;stroke-width:2.0;" width="963" x="157.5" y="401.625" /><line style="stroke:#A80036;stroke-width:1.0;stroke-dasharray:5.0,5.0;" x1="65" x2="65" y1="60.4297" y2="653.5547" /><line style="stroke:#A80036;stroke-width:1.0;stroke-dasharray:5.0,5.0;" x1="259.5" x2="259.5" y1="60.4297" y2="653.5547" /><line style="stroke:#A80036;stroke-width:1.0;stroke-dasharray:5.0,5.0;" x1="603.5" x2="603.5" y1="60.4297" y2="653.5547" /><line style="stroke:#A80036;stroke-width:1.0;stroke-dasharray:5.0,5.0;" x1="842.5" x2="842.5" y1="60.4297" y2="653.5547" /><line style="stroke:#A80036;stroke-width:1.0;stroke-dasharray:5.0,5.0;" x1="1120.5" x2="1120.5" y1="60.4297" y2="653.5547" /><rect fill="#FEFECE" filter="url(#f4bg4c1rsgto1)" height="30.2969" style="stroke:#A80036;stroke-width:1.5;" width="87" x="20" y="25.1328" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="73" x="27" y="45.1279">Navigateur</text><rect fill="#FEFECE" filter="url(#f4bg4c1rsgto1)" height="30.2969" style="stroke:#A80036;stroke-width:1.5;" width="87" x="20" y="652.5547" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="73" x="27" y="672.5498">Navigateur</text><rect fill="#FEFECE" filter="url(#f4bg4c1rsgto1)" height="30.2969" style="stroke:#A80036;stroke-width:1.5;" width="180" x="167.5" y="25.1328" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="166" x="174.5" y="45.1279">Fournisseur de Services</text><rect fill="#FEFECE" filter="url(#f4bg4c1rsgto1)" height="30.2969" style="stroke:#A80036;stroke-width:1.5;" width="180" x="167.5" y="652.5547" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="166" x="174.5" y="672.5498">Fournisseur de Services</text><rect fill="#FEFECE" filter="url(#f4bg4c1rsgto1)" height="30.2969" style="stroke:#A80036;stroke-width:1.5;" width="144" x="529.5" y="25.1328" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="130" x="536.5" y="45.1279">Pro Sante Connect</text><rect fill="#FEFECE" filter="url(#f4bg4c1rsgto1)" height="30.2969" style="stroke:#A80036;stroke-width:1.5;" width="144" x="529.5" y="652.5547" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="130" x="536.5" y="672.5498">Pro Sante Connect</text><rect fill="#FEFECE" filter="url(#f4bg4c1rsgto1)" height="30.2969" style="stroke:#A80036;stroke-width:1.5;" width="164" x="758.5" y="25.1328" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="150" x="765.5" y="45.1279">Serveur d'autorisation</text><rect fill="#FEFECE" filter="url(#f4bg4c1rsgto1)" height="30.2969" style="stroke:#A80036;stroke-width:1.5;" width="164" x="758.5" y="652.5547" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="150" x="765.5" y="672.5498">Serveur d'autorisation</text><rect fill="#FEFECE" filter="url(#f4bg4c1rsgto1)" height="30.2969" style="stroke:#A80036;stroke-width:1.5;" width="100" x="1068.5" y="25.1328" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="86" x="1075.5" y="45.1279">Service cible</text><rect fill="#FEFECE" filter="url(#f4bg4c1rsgto1)" height="30.2969" style="stroke:#A80036;stroke-width:1.5;" width="100" x="1068.5" y="652.5547" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="86" x="1075.5" y="672.5498">Service cible</text><rect fill="#FFFFFF" filter="url(#f4bg4c1rsgto1)" height="83.2656" style="stroke:#A80036;stroke-width:1.0;" width="10" x="60.5" y="120.6953" /><rect fill="#FFFFFF" filter="url(#f4bg4c1rsgto1)" height="88.2656" style="stroke:#A80036;stroke-width:1.0;" width="10" x="60.5" y="233.0938" /><rect fill="#FFFFFF" filter="url(#f4bg4c1rsgto1)" height="148.5313" style="stroke:#A80036;stroke-width:1.0;" width="10" x="254.5" y="291.3594" /><rect fill="#FFFFFF" filter="url(#f4bg4c1rsgto1)" height="66.1328" style="stroke:#A80036;stroke-width:1.0;" width="10" x="254.5" y="569.4219" /><rect fill="#FFFFFF" filter="url(#f4bg4c1rsgto1)" height="88.2656" style="stroke:#A80036;stroke-width:1.0;" width="10" x="598.5" y="173.9609" /><rect fill="#FFFFFF" filter="url(#f4bg4c1rsgto1)" height="29.1328" style="stroke:#A80036;stroke-width:1.0;" width="10" x="598.5" y="350.4922" /><rect fill="#FFFFFF" filter="url(#f4bg4c1rsgto1)" height="29.1328" style="stroke:#A80036;stroke-width:1.0;" width="10" x="598.5" y="469.0234" /><rect fill="#FFFFFF" filter="url(#f4bg4c1rsgto1)" height="159.5313" style="stroke:#A80036;stroke-width:1.0;" width="10" x="837.5" y="439.8906" /><polygon fill="#A80036" points="247.5,87.5625,257.5,91.5625,247.5,95.5625,251.5,91.5625" style="stroke:#A80036;stroke-width:1.0;" /><line style="stroke:#A80036;stroke-width:1.0;" x1="65.5" x2="253.5" y1="91.5625" y2="91.5625" /><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="94" x="72.5" y="86.4966">1. acces initial </text><polygon fill="#A80036" points="81.5,116.6953,71.5,120.6953,81.5,124.6953,77.5,120.6953" style="stroke:#A80036;stroke-width:1.0;" /><line style="stroke:#A80036;stroke-width:1.0;" x1="75.5" x2="258.5" y1="120.6953" y2="120.6953" /><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="65" x="87.5" y="115.6294">2. redirect</text><path d="M10,135.6953 L314,135.6953 L314,142.6953 L304,152.6953 L10,152.6953 L10,135.6953 " fill="#EEEEEE" style="stroke:#000000;stroke-width:1.0;" /><rect fill="none" height="251.9297" style="stroke:#000000;stroke-width:2.0;" width="677.5" x="10" y="135.6953" /><text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacing" textLength="259" x="25" y="148.7622">Authentification Pro Sante Connect</text><polygon fill="#A80036" points="586.5,169.9609,596.5,173.9609,586.5,177.9609,590.5,173.9609" style="stroke:#A80036;stroke-width:1.0;" /><line style="stroke:#A80036;stroke-width:1.0;" x1="70.5" x2="592.5" y1="173.9609" y2="173.9609" /><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="172" x="77.5" y="168.895">3  client_id, scope "all" PSC</text><polygon fill="#A80036" points="81.5,229.0938,71.5,233.0938,81.5,237.0938,77.5,233.0938" style="stroke:#A80036;stroke-width:1.0;" /><polygon fill="#A80036" points="586.5,229.0938,596.5,233.0938,586.5,237.0938,590.5,233.0938" style="stroke:#A80036;stroke-width:1.0;" /><line style="stroke:#A80036;stroke-width:1.0;" x1="75.5" x2="592.5" y1="233.0938" y2="233.0938" /><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="225" x="87.5" y="228.0278">4. authentification user (CPS/eCPS)</text><polygon fill="#A80036" points="81.5,258.2266,71.5,262.2266,81.5,266.2266,77.5,262.2266" style="stroke:#A80036;stroke-width:1.0;" /><line style="stroke:#A80036;stroke-width:1.0;" x1="75.5" x2="602.5" y1="262.2266" y2="262.2266" /><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="165" x="87.5" y="257.1606">5. authorization code PSC</text><polygon fill="#A80036" points="242.5,287.3594,252.5,291.3594,242.5,295.3594,246.5,291.3594" style="stroke:#A80036;stroke-width:1.0;" /><line style="stroke:#A80036;stroke-width:1.0;" x1="70.5" x2="248.5" y1="291.3594" y2="291.3594" /><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="165" x="77.5" y="286.2935">6. authorization code PSC</text><polygon fill="#A80036" points="586.5,346.4922,596.5,350.4922,586.5,354.4922,590.5,350.4922" style="stroke:#A80036;stroke-width:1.0;" /><line style="stroke:#A80036;stroke-width:1.0;" x1="264.5" x2="592.5" y1="350.4922" y2="350.4922" /><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="180" x="271.5" y="345.4263">7. authorization code PSC +</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="123" x="463.5" y="345.4263">Client_ID_FS/secret</text><polygon fill="#A80036" points="275.5,375.625,265.5,379.625,275.5,383.625,271.5,379.625" style="stroke:#A80036;stroke-width:1.0;" /><line style="stroke:#A80036;stroke-width:1.0;" x1="269.5" x2="602.5" y1="379.625" y2="379.625" /><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="255" x="281.5" y="374.5591">8. ID Token + AT + Refresh Token (PSC)</text><path d="M157.5,401.625 L311.5,401.625 L311.5,408.625 L301.5,418.625 L157.5,418.625 L157.5,401.625 " fill="#EEEEEE" style="stroke:#000000;stroke-width:1.0;" /><rect fill="none" height="205.7969" style="stroke:#000000;stroke-width:2.0;" width="963" x="157.5" y="401.625" /><text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacing" textLength="109" x="172.5" y="414.6919">OAUTH2.0 flow</text><polygon fill="#A80036" points="825.5,435.8906,835.5,439.8906,825.5,443.8906,829.5,439.8906" style="stroke:#A80036;stroke-width:1.0;" /><line style="stroke:#A80036;stroke-width:1.0;" x1="259.5" x2="831.5" y1="439.8906" y2="439.8906" /><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="485" x="266.5" y="434.8247">9. subject_token (paramètre) + Client_ID_AS (header) + scope (parametre)</text><polygon fill="#A80036" points="619.5,465.0234,609.5,469.0234,619.5,473.0234,615.5,469.0234" style="stroke:#A80036;stroke-width:1.0;" /><line style="stroke:#A80036;stroke-width:1.0;" x1="613.5" x2="836.5" y1="469.0234" y2="469.0234" /><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="210" x="625.5" y="463.9575">10. subject_token (introspection)</text><polygon fill="#A80036" points="825.5,494.1563,835.5,498.1563,825.5,502.1563,829.5,498.1563" style="stroke:#A80036;stroke-width:1.0;" /><line style="stroke:#A80036;stroke-width:1.0;" x1="603.5" x2="831.5" y1="498.1563" y2="498.1563" /><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="18" x="610.5" y="493.0903">OK</text><line style="stroke:#A80036;stroke-width:1.0;" x1="847.5" x2="889.5" y1="527.2891" y2="527.2891" /><line style="stroke:#A80036;stroke-width:1.0;" x1="889.5" x2="889.5" y1="527.2891" y2="540.2891" /><line style="stroke:#A80036;stroke-width:1.0;" x1="848.5" x2="889.5" y1="540.2891" y2="540.2891" /><polygon fill="#A80036" points="858.5,536.2891,848.5,540.2891,858.5,544.2891,854.5,540.2891" style="stroke:#A80036;stroke-width:1.0;" /><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="254" x="854.5" y="522.2231">Controle d'accès (Client_ID_AS x scope)</text><polygon fill="#A80036" points="275.5,565.4219,265.5,569.4219,275.5,573.4219,271.5,569.4219" style="stroke:#A80036;stroke-width:1.0;" /><line style="stroke:#A80036;stroke-width:1.0;" x1="269.5" x2="836.5" y1="569.4219" y2="569.4219" /><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="111" x="281.5" y="564.356">11. access_token</text><polygon fill="#A80036" points="1108.5,631.5547,1118.5,635.5547,1108.5,639.5547,1112.5,635.5547" style="stroke:#A80036;stroke-width:1.0;" /><line style="stroke:#A80036;stroke-width:1.0;" x1="259.5" x2="1114.5" y1="635.5547" y2="635.5547" /><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="253" x="266.5" y="630.4888">12. access_token + accès aux donnees</text></g></svg></div>
+
+
+
+
+</div>
+        </div>  <!-- /inner-wrapper -->
+      </div>  <!-- /row -->
+    </div>  <!-- /container -->
+  </div>  <!-- /segment-content -->
+
+  <script type="text/javascript" src="assets/js/jquery.js"> </script>     <!-- note keep space here, otherwise it will be transformed to empty tag -> fails -->
+  <script type="text/javascript" src="assets/js/jquery-ui.min.js"> </script>
+
+  <script type="text/javascript">
+    $(document).ready(function(){
+      if(window.location.hash != "") {
+          $('a[href="' + window.location.hash + '"]').click()
+      }
+    });
+  </script>
+  <a name="bottom"> </a>
+  <div id="segment-footer" igtool="footer" class="segment">  <!-- segment-footer -->
+    <div class="container">  <!-- container -->
+
+      <div style="background-color:var(--footer-nav-bg-color)">
+        <table style="width:100%">
+          <tbody>
+            <tr>
+              <td style="text-align:left">&#xA0;
+
+                <a href="api_prosanteconnectee.html">&lt;prev</a>
+
+              </td>
+              <td style="text-align:center">
+                <a href="#top">top</a>
+              </td>
+              <td style="text-align:right">&#xA0;
+
+                <a href="about.html">next&gt;</a>
+
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="inner-wrapper">
+        <p>
+          IG &#169; 2020+ <a style="color:var(--footer-hyperlink-text-color)" href="https://esante.gouv.fr">ANS</a>.  Package ans.fr.securisation-transport#0.1.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Tue, Jul 25, 2023 19:39+0000">2023-07-25</span>
+          <br/>
+          <span style="color: var(--footer-highlight-text-color)"></span>
+                      Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |
+                 <a style="color: var(--footer-hyperlink-text-color)" href="qa.html">QA Report</a>
+                  | <a style="color: #81BEF7" target="_blank" href="https://interop.esante.gouv.fr/ig/securisation-transport/history.html">Version History</a> | <a style="color: var(--footer-hyperlink-text-color)" target="_blank" href="https://github.com/ansforge/FIG_ans-ig-sample/issues/new">New Issue</a>
+                
+
+          </span>
+        </p>
+      </div>  <!-- /inner-wrapper -->
+    </div>  <!-- /container -->
+  </div>  <!-- /segment-footer -->
+  
+  <div id="segment-post-footer" class="segment hidden">  <!-- segment-post-footer -->
+    <div class="container">  <!-- container -->
+    </div>  <!-- /container -->
+  </div>  <!-- /segment-post-footer -->
+  
+  <!-- JS and analytics only. -->
+  <!-- Bootstrap core JavaScript
+  ================================================== -->
+  <!-- Placed at the end of the document so the pages load faster -->
+  <script type="text/javascript" src="assets/js/bootstrap.min.js"> </script>
+  <script type="text/javascript" src="assets/js/respond.min.js"> </script>
+  <script type="text/javascript" src="assets/js/anchor.min.js"> </script>
+  <script type="text/javascript" src="assets/js/clipboard.min.js"> </script>
+  <script type="text/javascript" src="assets/js/clipboard-btn.js"> </script>
+
+  <!-- Ajout ANS -->
+  <script src="assets/js/app.js" type="text/javascript"> </script>
+  <script src="assets/js/vendor.js" type="text/javascript"> </script>
+  <!-- Fin ajout ANS -->
+
+  <script>anchors.options.visible = 'hover'
+anchors.add()</script>
+  
+<!-- feedback form - Google forms -->
+<!-- v0.1, 2021-01-09 -->
+
+
+  
+    
+  
+
+
+
+<!-- / feedback form  -->
+
+  <!-- Analytics Below
+  ================================================== -->
+
+
+  <!-- AJOUT ANS -->
+
+<footer class="footer footer-principal" role="contentinfo">
+  <div class="footer__region1">
+    <div class="container">
+      <div class="row">
+
+        <div class="col-md-6 col-lg-4 text-center text-md-left">
+          <div class="logos">        
+            <div class="logo logo--0">
+              <a href="https://solidarites-sante.gouv.fr" title="Ministère des Solidarités et de la Santé (nouvelle fenêtre)" target="_blank" rel="nofollow">
+                
+                <img src="assets/images/logo-ministere.svg" alt="Ministère des Solidarités et de la Santé" width="133" height="77" loading="lazy" />
+                
+              </a>
+            </div>
+        
+            <div class="logo logo--1">
+              <a href="https://esante.gouv.fr/" title="Agence du numérique en santé (nouvelle fenêtre)" target="_blank" rel="nofollow">
+                
+                <img src="assets/images/logo-ANS-footer.svg" alt="Agence du numérique en santé" width="106" height="74" loading="lazy" />
+              </a>
+            </div>
+          </div>
+        </div>
+        
+        <div class="col-md-6 col-lg-4 text-center text-md-left">
+          <p class="footer__title">Agence du Numérique en Santé</p>
+          <p>2-10 Rue d'Oradour-sur-Glane 75015 Paris</p>
+
+          <!-- <div class="m-social">
+            <ul class="m-social__list">        
+              <li class="m-social__item">
+                <a class="m-social__link" href="https://www.linkedin.com/company/agence-du-numerique-en-sante/" target="_blank" rel="nofollow">
+                  <div class="m-social__icon">
+                    <svg class="svg-icon svg-linkedin" aria-hidden="true" focusable="false"><use href="assets/images/icon-sprite.svg#linkedin"></use></svg>
+                  </div>
+                  <span class="sr-only">linkedin</span>
+                </a>
+              </li>
+              <li class="m-social__item">
+                <a class="m-social__link" href="https://twitter.com/esante_gouv_fr" target="_blank" rel="nofollow">
+                  <div class="m-social__icon">
+                    <svg class="svg-icon svg-twitter" aria-hidden="true" focusable="false"><use href="assets/images/icon-sprite.svg#twitter"></use></svg>
+                  </div>
+                  <span class="sr-only">twitter</span>
+                </a>
+              </li>
+              <li class="m-social__item">
+                <a class="m-social__link" href="https://www.youtube.com/channel/UCd1zuSaU5cE1lRCpwv_HSMA" target="_blank" rel="nofollow">
+                  <div class="m-social__icon">
+                    <svg class="svg-icon svg-youtube" aria-hidden="true" focusable="false"><use href="assets/images/icon-sprite.svg#youtube"></use></svg>
+                  </div>
+                  <span class="sr-only">youtube</span>
+                </a>
+              </li>
+              <li class="m-social__item">
+                <a class="m-social__link" href="https://esante.gouv.fr/rss.xml" target="_blank" rel="nofollow">
+                  <div class="m-social__icon">
+                    <svg class="svg-icon svg-rss" aria-hidden="true" focusable="false"><use href="assets/images/icon-sprite.svg#rss"></use></svg>
+                  </div>
+                  <span class="sr-only">rss</span>
+                </a>
+              </li>
+            </ul>
+          </div> -->
+        </div>
+        
+        <div class="col-6 col-lg-4">
+          <ul class="footer-list">
+            <li class="footer-list__item footer-list__item--hasIcon">
+              <a href="mailto:ci-sis@esante.gouv.fr" class="mailto-link">
+                <svg class="svg-icon svg-angle-right" aria-hidden="true" focusable="false"><use href="assets/images/icon-sprite.svg#angle-right"></use></svg>Contact</a>
+              </li>
+              <!-- <li class="footer-list__item">
+                <a href="https://interop-pprod.esante.gouv.fr/ci-sis-specifications/wp-content/uploads/CGU_espace_de_tests_v1.1.pdf" class="file-link">Mentions légales</a>
+              </li>
+               -->
+            </ul>
+          </div>
+
+        </div>
+      </div>
+    </div>
+    
+    <!-- <div class="footer__region2">
+      <div class="container">
+        <div class="footer-contentinfo">
+          <ul class="footer-list footer-list--inline">
+
+          </ul>
+        </div>
+      </div>
+    </div> -->
+  </footer>
+  </body>
+</html>
+

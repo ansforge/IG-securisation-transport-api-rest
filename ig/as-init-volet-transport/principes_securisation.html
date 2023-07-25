@@ -3,7 +3,7 @@
 <html xml:lang="en" xmlns="http://www.w3.org/1999/xhtml" lang="en">
   <head>
     <meta content="text/html;charset=utf-8" http-equiv="Content-Type"/>
-    <title>ANS.FR.SECURISATION-TRANSPORT\Principes de sécurisaion - FHIR v4.0.1</title>
+    <title>ANS.FR.SECURISATION-TRANSPORT\Principes de sécurisation - FHIR v4.0.1</title>
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <meta name="author" content="http://hl7.org/fhir"/>
@@ -103,6 +103,19 @@
       </li>
     </ul>
   </li>
+  <li class="dropdown">
+    <a data-toggle="dropdown" href="#" class="dropdown-toggle">API ProSantéConnectée
+      <b class="caret"></b>
+    </a>
+    <ul class="dropdown-menu">
+      <li>
+        <a href="api_prosanteconnectee.html">Description générale</a>
+      </li>
+      <li>
+        <a href="api_prosanteconnectee_web.html">Application web</a>
+      </li>
+    </ul>
+  </li>
   <li>
     <a href="glossaire.html">Glossaire</a>
   </li>
@@ -140,7 +153,7 @@
     <div id="segment-breadcrumb" class="segment">  <!-- segment-breadcrumb -->
       <div class="container">  <!-- container -->
         <ul class="breadcrumb">
-          <li><a href='toc.html'><b>Table of Contents</b></a></li><li><b>Principes de sécurisaion</b></li>
+          <li><a href='toc.html'><b>Table of Contents</b></a></li><li><b>Principes de sécurisation</b></li>
 
           <span style="float:right;">
 
@@ -148,7 +161,7 @@
 
             <a href="#bottom">bottom</a>
 
-          | <a href="about.html">next&gt;</a>
+          | <a href="api_prosanteconnectee.html">next&gt;</a>
 
           </span>
 
@@ -171,7 +184,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 </style>
 <div class="col-12">
   <!--ReleaseHeader--><p id="publish-box">Publication Build: This will be filled in by the publication tooling</p><!--EndReleaseHeader-->
-  <h2>Principes de sécurisaion</h2>
+  <h2>Principes de sécurisation</h2>
   
 
 
@@ -235,42 +248,49 @@ L’usage du TLS version 1.3 ou supérieure est recommandé et celui de la versi
   <li>
     <p>Si l’API appelée est privée :</p>
 
-    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>* Cas de l’authentification indirecte de l’utilisateur au sein d’une structure
-</code></pre></div>    </div>
-  </li>
-</ul>
-
-<p>On parle d’identification indirecte d’un professionnel de santé dans la mesure où le service cible s’appuie sur une authentification du professionnel réalisée localement par la structure.</p>
-
-<p>Dans le cas où seule la personne morale (structure) a besoin de s’authentifier, celle-ci est directe et réalisée par la connexion mTLS avec le certificat de structure. 
-L’accès à l’API se fait avec OAuth 2.0 et/ou mTLS. Si les données sont sensibles, l’utilisation d’une connexion mTLS à minima est nécessaire.
-Le mTLS permet d’authentifier le client par un Client_ID_AS + mTLS au lieu de s’authentifier avec son client_secret/Client_ID_AS. Dans ce cas le client_secret n’est pas nécessaire car l’authentification est portée par le mTLS (certificat client).</p>
-
-<p>La structure appelante doit fournir les informations utilisateur selon les besoins / cas d’usage métier (ex : RPPS, profession, autres informations utilisateur).</p>
-
-<ul>
-  <li>
-    <p>Cas d’authentification directe d’un professionnel de santé</p>
-
     <ul>
-      <li>Cas d’authentification avec Pro Santé Connect :
-NB : Ce cas est décrit dans cette version du CI-SIS</li>
+      <li>
+        <p>Cas de l’authentification indirecte de l’utilisateur au sein d’une structure</p>
+
+        <p>On parle d’identification indirecte d’un professionnel de santé dans la mesure où le service cible s’appuie sur une authentification du professionnel réalisée localement par la structure.</p>
+        <p>
+Dans le cas où seule la personne morale (structure) a besoin de s’authentifier, celle-ci est directe et réalisée par la connexion mTLS avec le certificat de structure.&lt;/br&gt;
+L’accès à l’API se fait avec OAuth 2.0 et/ou mTLS. Si les données sont sensibles, l’utilisation d’une connexion mTLS à minima est nécessaire.<br />
+Le mTLS permet d’authentifier le client par un Client_ID_AS + mTLS au lieu de s’authentifier avec son client_secret/Client_ID_AS. Dans ce cas le client_secret n’est pas nécessaire car l’authentification est portée par le mTLS (certificat client).<br />
+La structure appelante doit fournir les informations utilisateur selon les besoins / cas d’usage métier (ex : RPPS, profession, autres informations utilisateur).
+</p>
+      </li>
+      <li>
+        <p>Cas d’authentification directe d’un professionnel de santé</p>
+
+        <ul>
+          <li>
+            <p>Cas d’authentification avec Pro Santé Connect :
+NB : Ce cas est décrit dans cette version du CI-SIS</p>
+
+            <p>Dans le cas où l’utilisateur a besoin de s’authentifier avec Pro Santé Connect (pour accéder à des données sensibles), l’utilisateur s’authentifie avec son MIE PSC et l’accès à l’API du système cible se fait avec OAuth 2.0.</p>
+
+            <ul>
+              <li>
+                <p>Soit le PS s’authentifie à un FS avec PSC qui fournit lui-même des données de santé.</p>
+              </li>
+              <li>
+                <p>Soit le PS accède à un service avec PSC, et doit accéder à un autre service fournisseur de données de santé par des API Pro Santé connectées.</p>
+              </li>
+            </ul>
+          </li>
+          <li>
+            <p>Cas d’authentification sans Pro Santé Connect :</p>
+
+            <p>Dans le cas où l’utilisateur a besoin de s’authentifier physiquement avec un fournisseur d’identité tiers au service cible, l’utilisateur s’authentifie selon les modalités spécifiques requises et l’accès à l’API du système cible se fait avec OAuth 2.0 avec PKCE.</p>
+
+            <p>Un serveur d’autorisation est mis à disposition à par la/les structure(s) cible(s)/appelée(s) dans le cadre de la réalisation du protocole OAuth 2.0.</p>
+          </li>
+        </ul>
+      </li>
     </ul>
   </li>
 </ul>
-
-<p>Dans le cas où l’utilisateur a besoin de s’authentifier avec Pro Santé Connect (pour accéder à des données sensibles), l’utilisateur s’authentifie avec son MIE PSC et l’accès à l’API du système cible se fait avec OAuth 2.0.</p>
-
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    * Soit le PS s’authentifie à un FS avec PSC qui fournit lui-même des données de santé.
-
-    * Soit le PS accède à un service avec PSC, et doit accéder à un autre service fournisseur de données de santé par des API Pro Santé connectées.
-
-* Cas d’authentification sans Pro Santé Connect :
-</code></pre></div></div>
-
-<p>Dans le cas où l’utilisateur a besoin de s’authentifier physiquement avec un fournisseur d’identité tiers au service cible, l’utilisateur s’authentifie selon les modalités spécifiques requises et l’accès à l’API du système cible se fait avec OAuth 2.0 avec PKCE.</p>
-
-<p>Un serveur d’autorisation est mis à disposition à par la/les structure(s) cible(s)/appelée(s) dans le cadre de la réalisation du protocole OAuth 2.0.</p>
 
 <h3 id="la-définition-des-proxys">La définition des proxys</h3>
 <p>Le proxy est un serveur applicatif mis à disposition par le système initiateur qui souhaite accéder aux données du système cible.</p>
@@ -366,7 +386,7 @@ Cela évite une sursollicitation de PSC lors de l’envoie des requêtes vers le
               </td>
               <td style="text-align:right">&#xA0;
 
-                <a href="about.html">next&gt;</a>
+                <a href="api_prosanteconnectee.html">next&gt;</a>
 
               </td>
             </tr>
@@ -376,7 +396,7 @@ Cela évite une sursollicitation de PSC lors de l’envoie des requêtes vers le
 
       <div class="inner-wrapper">
         <p>
-          IG &#169; 2020+ <a style="color:var(--footer-hyperlink-text-color)" href="https://esante.gouv.fr">ANS</a>.  Package ans.fr.securisation-transport#0.1.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Tue, Jul 25, 2023 16:08+0000">2023-07-25</span>
+          IG &#169; 2020+ <a style="color:var(--footer-hyperlink-text-color)" href="https://esante.gouv.fr">ANS</a>.  Package ans.fr.securisation-transport#0.1.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Tue, Jul 25, 2023 19:39+0000">2023-07-25</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)"></span>
                       Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |

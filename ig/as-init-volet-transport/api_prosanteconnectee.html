@@ -3,7 +3,7 @@
 <html xml:lang="en" xmlns="http://www.w3.org/1999/xhtml" lang="en">
   <head>
     <meta content="text/html;charset=utf-8" http-equiv="Content-Type"/>
-    <title>ANS.FR.SECURISATION-TRANSPORT\Architecture documentaire - FHIR v4.0.1</title>
+    <title>ANS.FR.SECURISATION-TRANSPORT\API ProSantéConnectée - FHIR v4.0.1</title>
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <meta name="author" content="http://hl7.org/fhir"/>
@@ -42,8 +42,8 @@
 
 	  <script src="assets/js/prism.js"></script>
 
-    <style type="text/css">h2{--heading-prefix:"4"}
-    h3,h4,h5,h6{--heading-prefix:"4"}</style>
+    <style type="text/css">h2{--heading-prefix:"8"}
+    h3,h4,h5,h6{--heading-prefix:"8.0"}</style>
     <div id="segment-header" class="segment">  <!-- segment-header -->
       <div class="container">  <!-- container -->
         <!-- Placeholder for child template header declarations -->
@@ -153,15 +153,15 @@
     <div id="segment-breadcrumb" class="segment">  <!-- segment-breadcrumb -->
       <div class="container">  <!-- container -->
         <ul class="breadcrumb">
-          <li><a href='toc.html'><b>Table of Contents</b></a></li><li><b>Architecture documentaire</b></li>
+          <li><a href='toc.html'><b>Table of Contents</b></a></li><li><b>API ProSantéConnectée</b></li>
 
           <span style="float:right;">
 
-            <a href="downloads.html">&lt;prev</a> | 
+            <a href="principes_securisation.html">&lt;prev</a> | 
 
             <a href="#bottom">bottom</a>
 
-          | <a href="standards.html">next&gt;</a>
+          | <a href="api_prosanteconnectee_web.html">next&gt;</a>
 
           </span>
 
@@ -184,7 +184,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 </style>
 <div class="col-12">
   <!--ReleaseHeader--><p id="publish-box">Publication Build: This will be filled in by the publication tooling</p><!--EndReleaseHeader-->
-  <h2>Architecture documentaire</h2>
+  <h2>API ProSantéConnectée</h2>
   
 
 
@@ -202,126 +202,19 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 <div>
 <!-- do not remove - needed to prevent Jekyll from adding a p tag to any non block level element in the markdown.-->
 </div>
-<p>Le positionnement du volet transport du CI-SIS dans le corpus documentaire</p>
+<p>Cas d’usage #1 : API nécessitant une authentification avec Pro Santé Connect</p>
 
-<p>Ce volet spécifie la couche Transport qui identifie les standards de transport des données et qui permet la communication des éléments d’identification et d’authentification des utilisateurs, physiques ou moraux, nécessaires à la mise en place des contrôles d’accès.</p>
+<p>Cas d’usage pour lequel le système cible nécessite une authentification de l’utilisateur par Pro Santé Connect pour l’accès à ses données. Pour ce faire, le fournisseur de services redirige d’abord l’utilisateur vers Pro Santé Connect pour l’authentifier.</p>
 
-<p>Il spécifie la couche Transport pour :</p>
+<p>Cependant, si le fournisseur de services dispose déjà d’un subject_token valide délivré par Pro Santé Connect (voir le cas d’utilisation #1a), la première étape d’authentification n’est pas nécessaire.</p>
 
-<ul>
-  <li>Un système cible offrant un service auquel il est possible de se connecter de façon synchrone.</li>
-  <li>Un système initiateur (application Web, client lourd, client natif) se connectant au service de façon synchrone.</li>
-</ul>
+<p>Une fois l’utilisateur authentifié, le fournisseur de services utilise le protocole OAuth 2.0 pour initier une requête au nom de l’utilisateur pour récupérer ses données auprès du service cible au sein du système cible.
+Le système initiateur peut être une application web ou un client lourd.</p>
 
-<p style="text-align:center">
-<object data="role_systeme.png" type="image/png"></object>
-</p>
+<p>Dans le cadre du token exchange RFC 8693 [12], le jeton échangé contre l’access_token délivré par le serveur d’autorisation OAuth 2.0 permet d’identifier l’utilisateur, il se nomme subject_token.</p>
 
-<p>Le Cadre d’Interopérabilité des Systèmes d’Information de Santé (CI-SIS) établit les règles pour une informatique communicative dans le domaine de la santé, du médico-social et du social. Le CI-SIS préconise des normes techniques et sémantiques pour les acteurs de la santé impliqués dans des projets d’échange et de partage de données de santé.</p>
+<p>Afin de garantir une cohérence avec les paramètres du RFC et dans le cas des API Pro Santé connectées : subject_token = Access Token PSC</p>
 
-<p>La mise en place des volets du cadre d’interopérabilité permet de minimiser les coûts d’intégration de nouvelles interfaces et les difficultés techniques d’interopérabilité, de même que de faciliter l’utilisation de produits d’éditeurs.</p>
-
-<p>Les SI de santé en France sont composés de plusieurs entités indépendantes proposant un certain nombre d’applications et de services de nature hétérogène (client léger/web, client lourd, client applicatif). 
-Les applications des différents Fournisseurs de Services (FS) sont susceptibles de communiquer entre elles.</p>
-
-<p>Afin de faciliter les échanges et d’assurer l’intégrité des données transmises d’un SI à l’autre, il est indispensable de standardiser les échanges. C’est ainsi qu’intervient le Cadre d’Interopérabilité des SI de Santé (CI-SIS) pour résoudre les problèmes d’interopérabilité des applications de santé.
- </p>
-<p style="text-align:center">
-<object data="composants_flux_REST.png" type="image/png"></object>
-</p>
-
-<p>Par ailleurs, ce volet du CI-SIS s’insère dans l’ensemble documentaire décrit ci-dessous :</p>
-
-<p style="text-align:center">
-<object data="architecture_documentaire.png" type="image/png"></object>
-</p>
-
-<p>En dehors du volet transport du CI-SIS, il existe des référentiels d’interopérabilité à la maille :</p>
-<ul>
-  <li>
-    <p>Sémantique : décrivent les normes et terminologies standardisées et partagées qui doivent être utilisées pour décrire différentes catégories de données (diagnostics, médicaments, examens de biologie médicale, etc.). [2]</p>
-  </li>
-  <li>Syntaxique : l’interopérabilité syntaxique permet à deux ou plusieurs systèmes de communiquer et d’échanger des données. Pour être efficace, la conception de toute solution d’interopérabilité doit tenir compte de la granularité des données à partager.<br />
-Afin de sécuriser les échanges entre les SI de santé, le présent volet du CI-SIS définit les modalités d’autorisation d’accès à un service de santé et se base sur les protocoles OAuth 2.0 et OIDC.<br />
-Les normes d’interopérabilité décrite dans le présent volet sont applicables aux applications Pro Santé Connectées et non Pro Santé Connectées.</li>
-  <li>Une application Pro Santé Connectée est une application qui permet aux professionnels de santé de se connecter à un réseau d’échange d’informations de santé, afin de faciliter la gestion des informations médicales via les MIE PSC compatibles.</li>
-  <li>Une application non Pro Santé Connectée est une application qui ne nécessite pas d’utiliser Pro Santé Connect pour accéder aux informations de santé.
-Descriptif des acteurs et des composants du cadre</li>
-</ul>
-
-<p>La PGSSI-S distingue :</p>
-<ul>
-  <li>Les personnes physiques : acteurs des secteurs sanitaire, médico-social et social et les usagers des SI santé.</li>
-  <li>Les usagers sont identifiés par :
-    <ul>
-      <li>L’identité INS (Identité Nationale de Santé).</li>
-      <li>L’identité locale fournie par un fournisseur de service.</li>
-    </ul>
-  </li>
-  <li>Les acteurs des secteurs sanitaire, médico-social et social sont identifiés par leur :
-    <ul>
-      <li>Numéro RPPS, (Répertoire Partagé des Professionnels de Santé) à utiliser en priorité s’il existe pour la personne à identifier : utilisé dans les cartes CPx et e-CPS.</li>
-      <li>Numéros locaux composés d’identifiants privés à portée nationale (ex : identifiants portés dans le VIHF).</li>
-    </ul>
-  </li>
-</ul>
-
-<p>N.B. (en cours de migration) : Le numéro ADELI (Automatisation DEs LIstes) est toléré de façon transitoire jusqu’à son remplacement définitif par l’identifiant RPPS.</p>
-
-<ul>
-  <li>Les personnes morales : toutes les structures de soins, telles que les maisons et centres de santé, mais aussi les laboratoires de biologie médicale, les services de protection maternelle infantile ou encore les services de santé au travail. Ces dernières sont identifiées par :
-    <ul>
-      <li>Le numéro FINESS juridique (FINESS EJ) ou géographique (FINESS ET ou EG).</li>
-      <li>Le numéro SIREN ou SIRET.</li>
-    </ul>
-  </li>
-</ul>
-
-<p>Pour toute information sur les référentiels d’identification des personnes physiques ou morales, se référer au corpus documentaire [3]</p>
-
-<p>Les systèmes en jeu dans le cadre de ce volet du CI-SIS sont les suivants :</p>
-
-<table width="680">
-<tbody>
-<tr>
-<td width="196">
-<p><strong>Composant</strong></p>
-</td>
-<td width="484">
-<p><strong>Typologie de client</strong></p>
-</td>
-</tr>
-<tr>
-<td width="196">
-<p><strong>Syst&egrave;me initiateur </strong></p>
-<p><strong>(client)</strong></p>
-</td>
-<td width="484">
-<p>o <strong>Client lourd</strong>&nbsp;: logiciel d&rsquo;un professionnel de sant&eacute; install&eacute; sur le poste de travail. Il peut &ecirc;tre chez un lib&eacute;ral ou bien un &eacute;tablissement de sant&eacute;.</p>
-<p>o <strong>Application mobile ou native</strong> utilis&eacute;e par un PS</p>
-<p>o <strong>Application web</strong> (client l&eacute;ger)&nbsp;: application disponible sur un navigateur web utilisable par un PS</p>
-<p>o <strong>Client applicatif</strong>&nbsp;: serveur applicatif appartenant &agrave; une structure identifi&eacute;e (la personne morale). Ce client utilise une API propos&eacute;e par le syst&egrave;me cible</p>
-</td>
-</tr>
-<tr>
-<td width="196">
-<p><strong>Syst&egrave;me cible</strong></p>
-</td>
-<td width="484">
-<p>o <strong>Serveur applicatif</strong>&nbsp;: serveur applicatif appartenant &agrave; une structure identifi&eacute;e (la personne morale). Ce serveur expose une API</p>
-</td>
-</tr>
-<tr>
-<td width="196">
-<p><strong>Fournisseur d&rsquo;identit&eacute; (Identity Provider ou IDP)</strong></p>
-</td>
-<td width="484">
-<p>o <strong>Pro Sant&eacute; Connect (PSC)</strong>&nbsp;: Fournisseur d&rsquo;identit&eacute; permettant aux PS de s&rsquo;authentifier via les MIE PSC compatibles</p>
-<p>o <strong>SI local</strong>&nbsp;: fournisseur d&rsquo;identit&eacute; propre &agrave; un service (applications non pro-sant&eacute; connect&eacute;e)</p>
-</td>
-</tr>
-</tbody>
-</table>
 
 
 
@@ -351,7 +244,7 @@ Descriptif des acteurs et des composants du cadre</li>
             <tr>
               <td style="text-align:left">&#xA0;
 
-                <a href="downloads.html">&lt;prev</a>
+                <a href="principes_securisation.html">&lt;prev</a>
 
               </td>
               <td style="text-align:center">
@@ -359,7 +252,7 @@ Descriptif des acteurs et des composants du cadre</li>
               </td>
               <td style="text-align:right">&#xA0;
 
-                <a href="standards.html">next&gt;</a>
+                <a href="api_prosanteconnectee_web.html">next&gt;</a>
 
               </td>
             </tr>
