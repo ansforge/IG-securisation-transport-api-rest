@@ -19,7 +19,7 @@ deactivate AS
 activate appserver
 
 group OAUTH 2.0 
-ppserver->API: 3. access_token + jeton "structure data"
+appserver->API: 3. access_token + jeton "structure data"
 deactivate appserver
 activate API
 API->AS:  4. validation de l'access_token : introspection ou verification locale (jeton signé)

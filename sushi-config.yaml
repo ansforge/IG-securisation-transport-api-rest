@@ -33,12 +33,14 @@ pages:
             title: Sécurité
         downloads.md:
             title: Téléchargements et usages
-        archi_documentaire.md:
-            title: Architecture documentaire
-        standards.md:
-            title:  Standards d'échange
-        glossaire.md:
-            title:  Glossaires
+    archi_documentaire.md:
+        title: Architecture documentaire
+    standards.md:
+        title:  Standards d'échange
+    glossaire.md:
+        title:  Glossaires
+    principes_securisation.md:
+        title: Principes de sécurisaion
  
     about.md:
         title: A propos de ce guide
@@ -49,6 +51,7 @@ menu:
     Description générale des flux:
         Architecture documentaire : archi_documentaire.html
         Standards utilisés : standards.html
+        Principes de sécurisation : principes_securisation.html
     Glossaire :   glossaire.html
     Autres ressources:
         Sécurité: securite.html
