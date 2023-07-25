@@ -40,7 +40,11 @@ pages:
     glossaire.md:
         title:  Glossaires
     principes_securisation.md:
-        title: Principes de sécurisaion
+        title: Principes de sécurisation
+    api_prosanteconnectee.md:
+        title: API ProSantéConnectée
+        api_prosanteconnectee_web.md:
+            title: Appel d'une API ProSantéConnectées depuis une application web
  
     about.md:
         title: A propos de ce guide
@@ -52,6 +56,8 @@ menu:
         Architecture documentaire : archi_documentaire.html
         Standards utilisés : standards.html
         Principes de sécurisation : principes_securisation.html
+    API ProSantéConnectée : api_prosanteconnectee.html
+        Application web : api_prosanteconnectee_web.html
     Glossaire :   glossaire.html
     Autres ressources:
         Sécurité: securite.html

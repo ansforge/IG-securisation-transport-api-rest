@@ -30,34 +30,34 @@ L’appel aux ressources/services cibles se fait par clé API fournie par le ser
 
 *	Si l’API appelée est privée : 
 
-        * Cas de l’authentification indirecte de l’utilisateur au sein d’une structure
+    *   Cas de l’authentification indirecte de l’utilisateur au sein d’une structure
 
 
-On parle d'identification indirecte d'un professionnel de santé dans la mesure où le service cible s'appuie sur une authentification du professionnel réalisée localement par la structure.
+        On parle d'identification indirecte d'un professionnel de santé dans la mesure où le service cible s'appuie sur une authentification du professionnel réalisée localement par la structure.
+        <p>
+        Dans le cas où seule la personne morale (structure) a besoin de s’authentifier, celle-ci est directe et réalisée par la connexion mTLS avec le certificat de structure.</br>
+        L’accès à l’API se fait avec OAuth 2.0 et/ou mTLS. Si les données sont sensibles, l’utilisation d’une connexion mTLS à minima est nécessaire.<br>
+        Le mTLS permet d’authentifier le client par un Client_ID_AS + mTLS au lieu de s’authentifier avec son client_secret/Client_ID_AS. Dans ce cas le client_secret n’est pas nécessaire car l’authentification est portée par le mTLS (certificat client).<br>
+        La structure appelante doit fournir les informations utilisateur selon les besoins / cas d’usage métier (ex : RPPS, profession, autres informations utilisateur).
+        </p>
 
-Dans le cas où seule la personne morale (structure) a besoin de s’authentifier, celle-ci est directe et réalisée par la connexion mTLS avec le certificat de structure. 
-L’accès à l’API se fait avec OAuth 2.0 et/ou mTLS. Si les données sont sensibles, l’utilisation d’une connexion mTLS à minima est nécessaire.
-Le mTLS permet d’authentifier le client par un Client_ID_AS + mTLS au lieu de s’authentifier avec son client_secret/Client_ID_AS. Dans ce cas le client_secret n’est pas nécessaire car l’authentification est portée par le mTLS (certificat client).
 
-La structure appelante doit fournir les informations utilisateur selon les besoins / cas d’usage métier (ex : RPPS, profession, autres informations utilisateur).
+    *   Cas d’authentification directe d’un professionnel de santé
 
+        *	Cas d’authentification avec Pro Santé Connect :
+            NB : Ce cas est décrit dans cette version du CI-SIS
 
-* Cas d’authentification directe d’un professionnel de santé
+            Dans le cas où l’utilisateur a besoin de s’authentifier avec Pro Santé Connect (pour accéder à des données sensibles), l’utilisateur s’authentifie avec son MIE PSC et l’accès à l’API du système cible se fait avec OAuth 2.0.
 
-    *	Cas d’authentification avec Pro Santé Connect :
-NB : Ce cas est décrit dans cette version du CI-SIS
+            *  Soit le PS s’authentifie à un FS avec PSC qui fournit lui-même des données de santé.
 
-Dans le cas où l’utilisateur a besoin de s’authentifier avec Pro Santé Connect (pour accéder à des données sensibles), l’utilisateur s’authentifie avec son MIE PSC et l’accès à l’API du système cible se fait avec OAuth 2.0.
+            * Soit le PS accède à un service avec PSC, et doit accéder à un autre service fournisseur de données de santé par des API Pro Santé connectées.
 
-        * Soit le PS s’authentifie à un FS avec PSC qui fournit lui-même des données de santé.
+        *   Cas d’authentification sans Pro Santé Connect :
 
-        * Soit le PS accède à un service avec PSC, et doit accéder à un autre service fournisseur de données de santé par des API Pro Santé connectées.
+            Dans le cas où l’utilisateur a besoin de s’authentifier physiquement avec un fournisseur d’identité tiers au service cible, l’utilisateur s’authentifie selon les modalités spécifiques requises et l’accès à l’API du système cible se fait avec OAuth 2.0 avec PKCE.
 
-    * Cas d’authentification sans Pro Santé Connect :
-
-Dans le cas où l’utilisateur a besoin de s’authentifier physiquement avec un fournisseur d’identité tiers au service cible, l’utilisateur s’authentifie selon les modalités spécifiques requises et l’accès à l’API du système cible se fait avec OAuth 2.0 avec PKCE.
-
-Un serveur d’autorisation est mis à disposition à par la/les structure(s) cible(s)/appelée(s) dans le cadre de la réalisation du protocole OAuth 2.0.
+            Un serveur d’autorisation est mis à disposition à par la/les structure(s) cible(s)/appelée(s) dans le cadre de la réalisation du protocole OAuth 2.0.
 
 ### La définition des proxys
 Le proxy est un serveur applicatif mis à disposition par le système initiateur qui souhaite accéder aux données du système cible. 

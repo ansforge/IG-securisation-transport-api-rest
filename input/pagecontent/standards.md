@@ -1,25 +1,29 @@
-#	(REST, OAUTH 2.0 ET OIDC)
+(REST, OAUTH 2.0 ET OIDC)
 
-##	Les API REST
-###	Généralités sur le concept d’API REST et bonnes pratiques
-Une API REST est une interface de programmation qui suit les principes de l'architecture REST.
-Elle permet aux clients (des applications web ou mobiles) de communiquer avec un serveur en utilisant des requêtes HTTP. Les ressources cibles sont identifiées par des URLs.
-Dans une API REST, les opérations CRUD (Create, Read, Update, Delete) sont implémentées via les méthodes dans une requête : POST, GET, PUT, et DELETE respectivement. 
+#	Les API REST
+##	Généralités sur le concept d’API REST et bonnes pratiques
+<p>
+Une API REST est une interface de programmation qui suit les principes de l'architecture REST.<br>
+Elle permet aux clients (des applications web ou mobiles) de communiquer avec un serveur en utilisant des requêtes HTTP. Les ressources cibles sont identifiées par des URLs.<br>
+Dans une API REST, les opérations CRUD (Create, Read, Update, Delete) sont implémentées via les méthodes dans une requête : POST, GET, PUT, et DELETE respectivement.<br>
 Les réponses à ces requêtes sont retournées en format JSON.
+</p>
 <p style="text-align:center">
 <object data="exemple_req_REST_bearer.png" type="image/png"></object>
 </p>
 
 
-###	Liaison avec le protocole de transport ou binding
+##	Liaison avec le protocole de transport ou binding
 Le protocole HTTP1.1 encapsulé dans une connexion sécurisée TLS doit être utilisé.
 
 
 
-##	Le standard OpenID Connect pour la gestion de l’authentification des applications Pro Santé Connectées 
-Pro Santé Connect est le fournisseur d’identité de la santé pour les acteurs de santé professionnels en France. Il s’agit d’un service basé sur le protocole standard OpenID Connect. Il permet aux professionnels de santé de s’identifier de manière simple, sécurisée et unifiée. Ils se connectent aux services numériques en santé, en passant de l’un à l’autre de manière fluide.
+#	Le standard OpenID Connect pour la gestion de l’authentification des applications Pro Santé Connectées 
+<p>
+Pro Santé Connect est le fournisseur d’identité de la santé pour les acteurs de santé professionnels en France. Il s’agit d’un service basé sur le protocole standard OpenID Connect.<br> Il permet aux professionnels de santé de s’identifier de manière simple, sécurisée et unifiée.<br> Ils se connectent aux services numériques en santé, en passant de l’un à l’autre de manière fluide.
+</p>
 
-Une application Pro Santé Connectée est une application web ou client lourd qui permet aux professionnels (PS) de s’authentifier à l’aide d’un MIE PSC compatible. Ces applications sont généralement utilisées par des établissements de santé/e-santé pour la gestion de leurs dossiers médicaux.-
+Une application Pro Santé Connectée est une application web ou client lourd qui permet aux professionnels (PS) de s’authentifier à l’aide d’un MIE PSC compatible. Ces applications sont généralement utilisées par des établissements de santé/e-santé pour la gestion de leurs dossiers médicaux.
 
 Pour accéder au service d’authentification de PSC permettant d’accéder à des API Pro Santé connectées, deux cinématiques sont disponibles :
 
@@ -38,11 +42,12 @@ La documentation technique Pro Santé Connecté [4] fournit des détails sur le 
  
 
 
-##	Le standard OAuth 2.0 pour la gestion des autorisations et accès
-OAuth 2.0 est un protocole standard d'autorisation qui permet à une application tierce d'accéder à des ressources protégées. Le protocole OAuth 2.0 définit des étapes à suivre pour obtenir et utiliser un jeton d'accès (access_token). Ce jeton est délivré par le serveur d’autorisation et permet d’accéder aux ressources d’une application protégée. Les services de e-santé utilisent ce standard OAuth 2.0 pour la gestion des autorisations et des accès.
+#	Le standard OAuth 2.0 pour la gestion des autorisations et accès
+<p>
+OAuth 2.0 est un protocole standard d'autorisation qui permet à une application tierce d'accéder à des ressources protégées. Le protocole OAuth 2.0 définit des étapes à suivre pour obtenir et utiliser un jeton d'accès (access_token).<br> Ce jeton est délivré par le serveur d’autorisation et permet d’accéder aux ressources d’une application protégée. <br>Les services de e-santé utilisent ce standard OAuth 2.0 pour la gestion des autorisations et des accès.
+</p>
 
-
-###	Description du serveur d’autorisation du système cible
+##	Description du serveur d’autorisation du système cible
 
 OAuth 2.0 est un protocole d'autorisation qui permet à une application (le client) de se connecter aux ressources protégées sur service cible en utilisant un access_token émis par un serveur d’autorisation. Ce dernier est responsable du contrôle d’accès du client, de l'émission et de la gestion de ces jetons d'accès et de la vérification du jeton d’accès.
 
@@ -54,8 +59,8 @@ Le serveur d'autorisation est un composant essentiel du flux OAuth 2.0 qui perme
 La règle générale d'autorisation portera toujours sur une structure et son service. Une structure est soit une structure de santé ou une structure autorisée (proxy éditeur). 
 
 
-###	Gestion et contrôle des accès
-####	Le contrôle d’accès avec les scopes
+##	Gestion et contrôle des accès
+###	Le contrôle d’accès avec les scopes
 *	Définition d’un scope dans le protocole OAuth 2.0 
 
 Dans le protocole OAuth 2.0, les scopes sont utilisés par le client pour demander un accès limité aux données du propriétaire de la ressource. 
@@ -68,11 +73,14 @@ Les scopes sont utilisés pour définir les autorisations que le client demande 
 
 
 Afin d’illustrer l’usage du scope au sein d’un processus fonctionnel, on peut prendre l’exemple simplifié d’un utilisateur qui souhaite accéder aux ressources protégées d’un service de e-santé.
-
+<p>
 Dans le cas des API Pro Santé Connectées, le Professionnel de Santé (PS) est redirigé vers PRO Santé CONNECT par le fournisseur de service. Une fois le PS authentifié sur PSC, celui-ci envoie les tokens PSC au fournisseur de services.
-L’authentification du fournisseur de services auprès du serveur d’autorisation se fait selon la RFC 7235 [11] c’est-à-dire avec un Client_ID_AS dans le header de sa requête suivant la méthode « Authentification Basic » qui encode les credentials en base 64.
-Le fournisseur de service envoie une requête auprès du serveur d’autorisation qui contient comme paramètres, un subject_token (dans le cas des API ProSantéConnectées : subject_token = Access Token PSC), un certificat de structure et des scopes métier.
+</p>
+<p>
+L’authentification du fournisseur de services auprès du serveur d’autorisation se fait selon la RFC 7235 [11] c’est-à-dire avec un Client_ID_AS dans le header de sa requête suivant la méthode « Authentification Basic » qui encode les credentials en base 64.<br>
+Le fournisseur de service envoie une requête auprès du serveur d’autorisation qui contient comme paramètres, un subject_token (dans le cas des API ProSantéConnectées : subject_token = Access Token PSC), un certificat de structure et des scopes métier.<br>
 Une fois le contrôle d’accès est réalisé par le serveur d’autorisation, le PS peut accéder au service de e-santé.
+</p>
 
 <p style="text-align:center">
 <object data="schema_scope_cas_metier.png" type="image/png"></object>
@@ -81,17 +89,17 @@ Une fois le contrôle d’accès est réalisé par le serveur d’autorisation, 
 
 
 
-####	Les normes de conservation de l’access token
+###	Les normes de conservation de l’access token
 La sécurité liée au stockage de l’access token et à sa conservation est définie par l’ANSSI dans le document Recommandations pour la sécurisation de la mise en œuvre du protocole OpenID Connect dans la section 3.4 Recommandation R23 à R26. [6]
 
 Recommandation : 
-
-Une fois envoyé, les attributs de validité de l’access_token pourront être conservés par le système cible, notamment au sein d’un cache au niveau du serveur d’autorisation.
-Afin de résoudre le problème de l’éventuelle révocation de l’access_token, la recommandation est de définir la durée de validité de l’access_token, émis par le serveur d’autorisation, entre 1h et 4h. Il est également fortement recommandé de vérifier la validité de l’access_token toutes les demi-heures en utilisant le service d'introspection du serveur d’autorisation. 
+<p>
+Une fois envoyé, les attributs de validité de l’access_token pourront être conservés par le système cible, notamment au sein d’un cache au niveau du serveur d’autorisation.<br>
+Afin de résoudre le problème de l’éventuelle révocation de l’access_token, la recommandation est de définir la durée de validité de l’access_token, émis par le serveur d’autorisation, entre 1h et 4h. Il est également fortement recommandé de vérifier la validité de l’access_token toutes les demi-heures en utilisant le service d'introspection du serveur d’autorisation. <br>
 Si l’access_token est un jeton autoporteur JWS l’introspection n’est pas nécessaire, mais si c’est un jeton JWT opaque, elle l’est.
- 
+ </p>
 
-####	Les données de l’access token
+###	Les données de l’access token
 Les données de l’access token peuvent être accessibles soit dans un jeton JWT signé par le serveur d'autorisation, soit via un appel à un service d'introspection.
 
 Les paramètres de l’access token sont définis par les champs suivants :
@@ -178,7 +186,7 @@ Exemple de contenu d’un access_token dont la durée de vie est d’une heure :
 </tbody>
 </table>
 
-####	L’intégration du mTLS dans le cadre du workflow OAuth 2.0
+###	L’intégration du mTLS dans le cadre du workflow OAuth 2.0
 
 Dans le cadre d’un workflow OAuth 2.0, l’utilisation du mTLS permet :
 
@@ -195,7 +203,7 @@ Le détail des flux OAUH 2.0 + mTLS est défini dans la partie 7.6.3 Cas OAuth 2
 
 Le protocole TLS est assuré sur la couche transport. Le certificat client utilisé dans le mTLS peut être transmis au serveur d’autorisation. Le protocole OAUTH est réalisé sur la couche applicative et permet de faire le contrôle du certificat client et de générer un access_token. 
  
-####	Le lien entre un certificat TLS (champ Organisational Unit), sa requête et la réponse de l’access token.
+###	Le lien entre un certificat TLS (champ Organisational Unit), sa requête et la réponse de l’access token.
 
 Rappel sur les certificats émis une IGC Santé : 
 
