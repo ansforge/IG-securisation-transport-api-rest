@@ -1,4 +1,4 @@
-#	LES STANDARDS D’ECHANGE (REST, OAUTH 2.0 ET OIDC)
+#	(REST, OAUTH 2.0 ET OIDC)
 
 ##	Les API REST
 ###	Généralités sur le concept d’API REST et bonnes pratiques
@@ -188,21 +188,7 @@ Dans le cadre d’un workflow OAuth 2.0, l’utilisation du mTLS permet :
 
 Ci-dessous une illustration de l’utilisation du mTLS avec OAuth 2.0.
 
-```plantuml
-@startuml
-    skinparam backgroundColor #EEEBDC
-    skinparam handwritten true
-    actor Customer
-    Customer -> "login()" : username & password
-    "login()" -> Customer : session token
-    activate "login()"
-    Customer -> "placeOrder()" : session token, order info
-    "placeOrder()" -> Customer : ok
-    Customer -> "logout()"
-    "logout()" -> Customer : ok
-    deactivate "login()"
-@enduml
-```
+<div style="text-align: center;">{%include standard.svg%}</div>
 
 Le détail des flux OAUH 2.0 + mTLS est défini dans la partie 7.6.3 Cas OAuth 2.0 + mTLS : accès à des données sensibles
 

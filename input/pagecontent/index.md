@@ -32,13 +32,3 @@ Une compréhension des standards OAuth 2.0 et OpenID Connect est notamment recom
 
 * un système cible offrant une API Pro Santé Connectée à laquelle il est possible de se connecter de façon synchrone.
 * un système initiateur, pouvant être une application web serveur, une application client lourd, une application mobile native ou web, se connectant à une API Pro Santé Connectée de façon synchrone.   
-
-
- 
-
-
-### Auteurs et contributeurs
-
-| Role  | Nom | Organisation | Contact |
-| --- | --- | --- | --- |
-| **Primary Editor** | Prenom Nom | Agence du Numérique en Santé | prenom.nom@address.email |

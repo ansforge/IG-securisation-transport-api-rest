@@ -1,4 +1,4 @@
-# LE POSITIONNEMENT DU CI-SIS VOLET TRANSPORT REST DANS L’EXISTANT DOCUMENTAIRE
+# Le positionnement du volet transport du CI-SIS dans le corpus documentaire
 
 
 Ce volet spécifie la couche Transport qui identifie les standards de transport des données et qui permet la communication des éléments d’identification et d’authentification des utilisateurs, physiques ou moraux, nécessaires à la mise en place des contrôles d’accès.

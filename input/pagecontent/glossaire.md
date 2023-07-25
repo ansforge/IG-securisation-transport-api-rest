@@ -1,6 +1,4 @@
- # GLOSSAIRE
-
-<p>tableau 1 : Glossaire Général</p>
+ <p>tableau 1 : Glossaire Général</p>
 
  <table width="686">
 <tbody>
