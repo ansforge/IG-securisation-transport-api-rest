@@ -54,7 +54,7 @@ menu:
     Accueil: index.html
     Description générale des flux:
         Architecture documentaire : archi_documentaire.html
-        Standards utilisés : standards.html
+        Standards utilisés (REST, OAUTH 2.0 ET OIDC) : standards.html
         Principes de sécurisation : principes_securisation.html
     API ProSantéConnectée: 
         Description générale : api_prosanteconnectee.html

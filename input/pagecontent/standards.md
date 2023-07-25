@@ -1,7 +1,5 @@
-(REST, OAUTH 2.0 ET OIDC)
-
-#	Les API REST
-##	Généralités sur le concept d’API REST et bonnes pratiques
+## Les APIs REST
+###	Généralités sur le concept d’API REST et bonnes pratiques
 <p>
 Une API REST est une interface de programmation qui suit les principes de l'architecture REST.<br>
 Elle permet aux clients (des applications web ou mobiles) de communiquer avec un serveur en utilisant des requêtes HTTP. Les ressources cibles sont identifiées par des URLs.<br>
@@ -13,12 +11,12 @@ Les réponses à ces requêtes sont retournées en format JSON.
 </p>
 
 
-##	Liaison avec le protocole de transport ou binding
+###	Liaison avec le protocole de transport ou binding
 Le protocole HTTP1.1 encapsulé dans une connexion sécurisée TLS doit être utilisé.
 
 
 
-#	Le standard OpenID Connect pour la gestion de l’authentification des applications Pro Santé Connectées 
+##	Le standard OpenID Connect pour la gestion de l’authentification des applications Pro Santé Connectées 
 <p>
 Pro Santé Connect est le fournisseur d’identité de la santé pour les acteurs de santé professionnels en France. Il s’agit d’un service basé sur le protocole standard OpenID Connect.<br> Il permet aux professionnels de santé de s’identifier de manière simple, sécurisée et unifiée.<br> Ils se connectent aux services numériques en santé, en passant de l’un à l’autre de manière fluide.
 </p>
@@ -42,12 +40,12 @@ La documentation technique Pro Santé Connecté [4] fournit des détails sur le 
  
 
 
-#	Le standard OAuth 2.0 pour la gestion des autorisations et accès
+##	Le standard OAuth 2.0 pour la gestion des autorisations et accès
 <p>
 OAuth 2.0 est un protocole standard d'autorisation qui permet à une application tierce d'accéder à des ressources protégées. Le protocole OAuth 2.0 définit des étapes à suivre pour obtenir et utiliser un jeton d'accès (access_token).<br> Ce jeton est délivré par le serveur d’autorisation et permet d’accéder aux ressources d’une application protégée. <br>Les services de e-santé utilisent ce standard OAuth 2.0 pour la gestion des autorisations et des accès.
 </p>
 
-##	Description du serveur d’autorisation du système cible
+###	Description du serveur d’autorisation du système cible
 
 OAuth 2.0 est un protocole d'autorisation qui permet à une application (le client) de se connecter aux ressources protégées sur service cible en utilisant un access_token émis par un serveur d’autorisation. Ce dernier est responsable du contrôle d’accès du client, de l'émission et de la gestion de ces jetons d'accès et de la vérification du jeton d’accès.
 
@@ -59,8 +57,8 @@ Le serveur d'autorisation est un composant essentiel du flux OAuth 2.0 qui perme
 La règle générale d'autorisation portera toujours sur une structure et son service. Une structure est soit une structure de santé ou une structure autorisée (proxy éditeur). 
 
 
-##	Gestion et contrôle des accès
-###	Le contrôle d’accès avec les scopes
+###	Gestion et contrôle des accès
+####	Le contrôle d’accès avec les scopes
 *	Définition d’un scope dans le protocole OAuth 2.0 
 
 Dans le protocole OAuth 2.0, les scopes sont utilisés par le client pour demander un accès limité aux données du propriétaire de la ressource. 
@@ -89,7 +87,7 @@ Une fois le contrôle d’accès est réalisé par le serveur d’autorisation, 
 
 
 
-###	Les normes de conservation de l’access token
+####	Les normes de conservation de l’access token
 La sécurité liée au stockage de l’access token et à sa conservation est définie par l’ANSSI dans le document Recommandations pour la sécurisation de la mise en œuvre du protocole OpenID Connect dans la section 3.4 Recommandation R23 à R26. [6]
 
 Recommandation : 
@@ -99,7 +97,7 @@ Afin de résoudre le problème de l’éventuelle révocation de l’access_toke
 Si l’access_token est un jeton autoporteur JWS l’introspection n’est pas nécessaire, mais si c’est un jeton JWT opaque, elle l’est.
  </p>
 
-###	Les données de l’access token
+####	Les données de l’access token
 Les données de l’access token peuvent être accessibles soit dans un jeton JWT signé par le serveur d'autorisation, soit via un appel à un service d'introspection.
 
 Les paramètres de l’access token sont définis par les champs suivants :
@@ -186,7 +184,7 @@ Exemple de contenu d’un access_token dont la durée de vie est d’une heure :
 </tbody>
 </table>
 
-###	L’intégration du mTLS dans le cadre du workflow OAuth 2.0
+####	L’intégration du mTLS dans le cadre du workflow OAuth 2.0
 
 Dans le cadre d’un workflow OAuth 2.0, l’utilisation du mTLS permet :
 
@@ -203,7 +201,7 @@ Le détail des flux OAUH 2.0 + mTLS est défini dans la partie 7.6.3 Cas OAuth 2
 
 Le protocole TLS est assuré sur la couche transport. Le certificat client utilisé dans le mTLS peut être transmis au serveur d’autorisation. Le protocole OAUTH est réalisé sur la couche applicative et permet de faire le contrôle du certificat client et de générer un access_token. 
  
-###	Le lien entre un certificat TLS (champ Organisational Unit), sa requête et la réponse de l’access token.
+####	Le lien entre un certificat TLS (champ Organisational Unit), sa requête et la réponse de l’access token.
 
 Rappel sur les certificats émis une IGC Santé : 
 
