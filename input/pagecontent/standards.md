@@ -190,6 +190,7 @@ Ci-dessous une illustration de l’utilisation du mTLS avec OAuth 2.0.
 
 <div style="text-align: center;">{%include diag_mtls_oauth2_structure.svg%}</div>
 
+
 Le détail des flux OAUH 2.0 + mTLS est défini dans la partie 7.6.3 Cas OAuth 2.0 + mTLS : accès à des données sensibles
 
 Le protocole TLS est assuré sur la couche transport. Le certificat client utilisé dans le mTLS peut être transmis au serveur d’autorisation. Le protocole OAUTH est réalisé sur la couche applicative et permet de faire le contrôle du certificat client et de générer un access_token. 
