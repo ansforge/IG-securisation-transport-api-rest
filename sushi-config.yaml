@@ -43,8 +43,8 @@ pages:
         title: Principes de sécurisation
     api_prosanteconnectee.md:
         title: API ProSantéConnectée
-        api_prosanteconnectee_web.md:
-            title: Appel d'une API ProSantéConnectées depuis une application web
+    api_prosanteconnectee_web.md:
+        title: Appel d'une API ProSantéConnectées depuis une application web
  
     about.md:
         title: A propos de ce guide

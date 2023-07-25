@@ -1,10 +1,8 @@
-selon les cas d'usage
-
-##	Confidentialité
+###	Confidentialité
 Dans le volet transport synchrone pour application mobile : la confidentialité des échanges au niveau du transport est gérée par l’encapsulation du flux dans une connexion sécurisée TLS.
 L’usage du TLS version 1.3 ou supérieure est recommandé et celui de la version 1.2 encore supporté. Les version 1.0 et 1.1 sont interdites. L’usage de SSL 3.0 ou inférieure est interdit.
 
-##	Intégrité
+###	Intégrité
 L’intégrité des échanges au niveau du transport est gérée par l’encapsulation du flux dans une connexion sécurisée TLS.
 
 ##	La sécurisation de l’architecture selon les cas d’usages
@@ -35,7 +33,7 @@ L’appel aux ressources/services cibles se fait par clé API fournie par le ser
 
         On parle d'identification indirecte d'un professionnel de santé dans la mesure où le service cible s'appuie sur une authentification du professionnel réalisée localement par la structure.
         <p>
-        Dans le cas où seule la personne morale (structure) a besoin de s’authentifier, celle-ci est directe et réalisée par la connexion mTLS avec le certificat de structure.</br>
+        Dans le cas où seule la personne morale (structure) a besoin de s’authentifier, celle-ci est directe et réalisée par la connexion mTLS avec le certificat de structure.<br>
         L’accès à l’API se fait avec OAuth 2.0 et/ou mTLS. Si les données sont sensibles, l’utilisation d’une connexion mTLS à minima est nécessaire.<br>
         Le mTLS permet d’authentifier le client par un Client_ID_AS + mTLS au lieu de s’authentifier avec son client_secret/Client_ID_AS. Dans ce cas le client_secret n’est pas nécessaire car l’authentification est portée par le mTLS (certificat client).<br>
         La structure appelante doit fournir les informations utilisateur selon les besoins / cas d’usage métier (ex : RPPS, profession, autres informations utilisateur).
