@@ -1,4 +1,5 @@
 @startuml
+scale 1024*768
 box  "Systeme appelant / initiateur" #palegreen
 participant "Navigateur" as n
 participant "Fournisseur de Services" as appserver
