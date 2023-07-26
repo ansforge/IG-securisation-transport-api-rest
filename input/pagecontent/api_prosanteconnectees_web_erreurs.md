@@ -1,4 +1,4 @@
-### Cas d'erreur #1a : un utilisateur déjà Pro Santé Connecté a besoin du Refresh Token PSC pour poursuivre sa navigation et accéder à une ressource
+### Cas d'erreur 1a : un utilisateur déjà Pro Santé Connecté a besoin du Refresh Token PSC pour poursuivre sa navigation et accéder à une ressource
 
 Dans ce cas, **l’utilisateur est déjà authentifié auprès de Pro Santé Connect et souhaite accéder à une ressource d’un service cible, mais son subject_token a expiré**. 
 Afin de poursuivre son parcours, le fournisseur de services a besoin de récupérer un nouveau `subject_token` grâce à son `Refresh Token` PSC encore valide (<2 min).
@@ -10,14 +10,14 @@ Une fois le `subject_token` récupéré, le serveur d’application relance une 
 
 <div style="text-align: center;">{%include diag_api_prosanteconnectee_web_AT_expired.svg%}</div>
 
-### Cas d'erreur #1b : La session PSC est expirée, l’utilisateur doit se réauthentifier sur la mire d’authentification
+### Cas d'erreur 1b : La session PSC est expirée, l’utilisateur doit se réauthentifier sur la mire d’authentification
 
 **L’utilisateur est déjà authentifié auprès de Pro Santé Connect et souhaite accéder à une ressource d’un service cible mais sa session a expiré (cookie de session > 4 heures ou 30 min d’inactivité) [4]**.
 Par conséquent, son `subject_token` ainsi que son `Refresh Token` PSC sont expirés 
 (`subject_token` > 2min et `Refresh Token` > 30min).
 
 
-#### Cas d’usage #1b.1 : Le cookie de session de l’utilisateur est expiré et redirection vers mire authentification - Application Web
+#### Cas d’usage 1b.1 : Le cookie de session de l’utilisateur est expiré et redirection vers mire authentification - Application Web
 
 Dans la navigation, si l’utilisateur a besoin des ressources nécessitant d’être connecté à **PSC**, le fournisseur de services va vérifier que la session est valide auprès de **PSC** via **cookie de session**. 
 Lors du contrôle du cookie de session par PSC, ce dernier ne valide pas son cookie de session car il a expiré (>4 heures). 
@@ -25,7 +25,7 @@ PSC renvoie une réponse d’erreur et l’URL de sa mire d’authentification a
 
 <div style="text-align: center;">{%include diag_api_prosanteconnectee_web_session_expired.svg%}</div>
 
-#### Cas d’usage #1b.2 : Tentative d’accès aux ressources avec un subject_token expiré, suivi d’une tentative de nouvellement avec Refresh Token PSC lui aussi expiré, puis redirection vers la mire authentification - Application Web 
+#### Cas d’usage 1b.2 : Tentative d’accès aux ressources avec un subject_token expiré, suivi d’une tentative de nouvellement avec Refresh Token PSC lui aussi expiré, puis redirection vers la mire authentification - Application Web 
 
 
 Lors de l’introspection du `subject_token`, **PSC** ne le valide pas car il a expiré. PSC renvoie une réponse d’erreur au fournisseur de services qui tente de renouveler son `subject_token` avec son `Refresh Token` **PSC**.
