@@ -47,6 +47,8 @@ pages:
         title: Appel d'une API ProSantéConnectées depuis une application web
     api_prosanteconnectee_web_erreurs.md:
         title: Appel d'une API ProSantéConnectées depuis une application web - cas d'erreur
+    api_prosanteconnectee_client_lourd.md:
+        title: Appel d'une API ProSantéConnectées depuis une application client lourd ou mobile
  
     about.md:
         title: A propos de ce guide
@@ -62,6 +64,7 @@ menu:
         Description générale : api_prosanteconnectee.html
         Application web : api_prosanteconnectee_web.html
         Application web - cas d'erreur : api_prosanteconnectee_web_erreurs.html
+        Application client lourd ou mobile : api_prosanteconnectee_client_lourd.html
     Glossaire :   glossaire.html
     Autres ressources:
         Sécurité: securite.html

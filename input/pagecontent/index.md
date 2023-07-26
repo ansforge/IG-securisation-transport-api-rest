@@ -21,9 +21,6 @@ Ces technologies sont documentées dans les volets transports suivants : CI-SIS 
 Ce document est destiné à un public disposant de compétences techniques avancées. 
 Une compréhension des standards OAuth 2.0 et OpenID Connect est notamment recommandée pour la lecture de ce document. 
 
-* Pour en savoir plus sur le glossaire des termes employés dans ce volet, rendez-vous sur la page <a href="glossaire.html">glossaire</a>.
-* Pour en savoir plus sur le positionnement de ce volet transport API REST par rapport aux autres volets transport existants, rendez-vous sur cette page <a href="architecture_documentaire.html">architecture documentaire</a>.
-* Pour en savoir plus sur les standards utilisés dans ce volet, rendez-vous sur cette page <a href="standards.html">standards</a>. 
  
 
 

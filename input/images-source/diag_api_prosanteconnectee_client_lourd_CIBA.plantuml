@@ -1,0 +1,84 @@
+@startuml
+scale 1024*768
+
+box  "Systeme appelant / initiateur" #palegreen
+participant "Client Lourd PS" as n
+
+
+participant "Proxy LPS API" as proxyl
+participant "Proxy LPS FS" as proxyc
+
+participant "Device d'authentification PS" as device
+end box
+
+participant "ProSanteConnect" as psc
+
+box  "Systeme cible" #paleturquoise
+participant "Serveur d'autorisation" as AS
+participant "Service cible" as API
+end box
+
+
+n->proxyl:1 : initialisation
+	activate proxyl
+proxyl->n:2 : partage du jeton applicatif
+	deactivate proxyl
+	activate n
+
+n->proxyc:3 : acces initial
+	activate proxyc
+	deactivate n
+
+group Authentification CIBA
+proxyc->psc:4 : redirect
+	activate psc
+psc->proxyc:4a: authentification reconnue
+psc->device:5 : demande d'authentification de l'utilisateur
+	activate device
+device->psc:6 : transmission du resultat de l'authentification
+	deactivate device
+proxyc->psc:7a : interrogation du statut du jeton
+psc->proxyc:7b : reponse sur le statut
+proxyc->psc:7c : interrogation du statut du jeton
+psc->proxyc:7d : reponse sur le statut
+psc->proxyc:8 : ID Token + Access Token + Refresh Token (PSC)
+end 
+
+group userinfo - OPTIONNEL
+proxyc->psc:9. subject_token
+psc->proxyc:10. userinfo (PSC)
+proxyc->n:11. OK/KO + userinfo
+	deactivate psc
+
+end
+
+
+proxyc->proxyl:12 : Tokens PSC
+	activate proxyl
+	deactivate proxyc
+
+    
+
+group OAUTH2.0 flow
+n->proxyl:13 : acces API + jeton applicatif
+	
+proxyl->AS:14 :  subject_token(parametre) + Client ID_AS(header) + scope(parametre)
+	activate AS
+	deactivate proxyl
+AS->psc:15 : subject_token (introspection)
+	activate psc
+psc->AS:OK
+	deactivate psc
+AS->AS :Controle d'acces (Client ID_AS x scopes)
+
+AS->proxyl:16. access_token
+	deactivate AS
+	activate proxyl
+end    
+    
+   
+proxyl->API:17 : access_token + acces aux données
+	deactivate proxyl
+ 
+
+@enduml
