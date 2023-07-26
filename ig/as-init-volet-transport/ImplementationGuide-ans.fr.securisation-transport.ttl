@@ -17,7 +17,7 @@
   fhir:name [ fhir:v "IGsecurisationtransportapirest"] ; # 
   fhir:title [ fhir:v "Sécurisation de la couche transport API REST"] ; # 
   fhir:status [ fhir:v "draft"] ; # 
-  fhir:date [ fhir:v "2023-07-26T18:12:37+00:00"^^xsd:dateTime] ; # 
+  fhir:date [ fhir:v "2023-07-26T18:58:46+00:00"^^xsd:dateTime] ; # 
   fhir:publisher [ fhir:v "ANS"] ; # 
   fhir:contact ( [
      fhir:name [ fhir:v "ANS" ] ;
@@ -646,6 +646,14 @@
          ] ) ;
          fhir:name [ fhir:v "api_prosanteconnectee_client_lourd.html"^^xsd:anyURI ] ;
          fhir:title [ fhir:v "Appel d'une API ProSantéConnectée depuis une application client lourd ou mobile" ] ;
+         fhir:generation [ fhir:v "markdown" ]
+       ] [
+         fhir:extension ( [
+           fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name"^^xsd:anyURI ] ;
+           fhir:value [ fhir:v "api_prosanteconnectee_userinfo.html"^^xsd:anyURI ]
+         ] ) ;
+         fhir:name [ fhir:v "api_prosanteconnectee_userinfo.html"^^xsd:anyURI ] ;
+         fhir:title [ fhir:v "Récupération et utilisation du jeton userinfo PSC" ] ;
          fhir:generation [ fhir:v "markdown" ]
        ] [
          fhir:extension ( [

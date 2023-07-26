@@ -10,7 +10,7 @@
   <name value="IGsecurisationtransportapirest"/>
   <title value="Sécurisation de la couche transport API REST"/>
   <status value="draft"/>
-  <date value="2023-07-26T18:12:37+00:00"/>
+  <date value="2023-07-26T18:58:46+00:00"/>
   <publisher value="ANS"/>
   <contact>
     <name value="ANS"/>
@@ -575,6 +575,14 @@
         </extension>
         <nameUrl value="api_prosanteconnectee_client_lourd.html"/>
         <title value="Appel d'une API ProSantéConnectée depuis une application client lourd ou mobile"/>
+        <generation value="markdown"/>
+      </page>
+      <page>
+        <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-page-name">
+          <valueUrl value="api_prosanteconnectee_userinfo.html"/>
+        </extension>
+        <nameUrl value="api_prosanteconnectee_userinfo.html"/>
+        <title value="Récupération et utilisation du jeton userinfo PSC"/>
         <generation value="markdown"/>
       </page>
       <page>

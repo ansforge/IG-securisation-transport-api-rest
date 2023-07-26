@@ -120,6 +120,9 @@
       <li>
         <a href="api_prosanteconnectee_client_lourd.html">Application client lourd ou mobile</a>
       </li>
+      <li>
+        <a href="api_prosanteconnectee_userinfo.html">Récupération et utilisation du jeton userinfo PSC</a>
+      </li>
     </ul>
   </li>
   <li>
@@ -229,7 +232,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 Cible : Fournisseur de services
 Méthode : GET</p>
 
-<p>Exemple : 
+<p><strong>Exemple de requête :</strong>
  <code class="language-plaintext highlighter-rouge">GET /application/ressource_privee
 Host: applicationserver.appelant.org
 </code></p>
@@ -241,7 +244,7 @@ Cible : Navigateur</p>
 
 <p>Le fournisseur de services renvoie un code de redirection 302 avec l’URL de Pro Santé Connect</p>
 
-<p>Exemple :</p>
+<p><strong>Exemple de requête :</strong></p>
 <div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code>302 
 Location: https://wallet.esw.esante.gouv.fr/auth?client_id<span class="o">=</span><span class="k">${</span><span class="nv">client</span><span class="p"> id</span><span class="k">}</span>&amp;redirect_uri<span class="o">=</span> <span class="k">${</span><span class="nv">callback</span><span class="p"> uri</span><span class="k">}</span> &amp;response_type<span class="o">=</span>code&amp;state<span class="o">=</span>&lt;random string&gt;&amp;scope<span class="o">=</span> openid+scope_all&amp;acr<span class="o">=</span>eidas1&amp;nonce<span class="o">=</span>&lt;random string&gt; 
 </code></pre></div></div>
@@ -261,7 +264,7 @@ Cible : Navigateur</p>
 
 <p>Une fois l’authentification terminée, PSC renvoie un code HTTP 302 pour demander au navigateur d’envoyer l’authorization code au FS.</p>
 
-<p>Exemple :</p>
+<p><strong>Exemple de requête :</strong></p>
 
 <div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code>302 Location: https://applicationserver.appelant.fr/application/callback?code<span class="o">=</span>3159339c2f1326f9fa128&amp;state<span class="o">=</span> &lt;random_string&gt;
 </code></pre></div></div>
@@ -321,7 +324,7 @@ Cible : Navigateur</p>
 Cible : Fournisseur de services
 Méthode : GET</p>
 
-<p>Exemple :</p>
+<p><strong>Exemple de requête :</strong></p>
 <div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code>GET /application/callback ?code<span class="o">=</span>3159339c2f1326f9fa128&amp;state<span class="o">=</span>&lt;random string&gt;
 Host: applicationserver.appelant.fr
 </code></pre></div></div>
@@ -340,7 +343,7 @@ Cible : Fournisseur de services</p>
 
 <p>Les détails de cette étape et des jetons délivrés sont dans la documentation [4]</p>
 
-<p>Réponse de PSC :</p>
+<p><strong>exemple de réponse :</strong></p>
 <div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code>{
 'access_token': ${access_token},
 'token_type': 'Bearer',
@@ -442,12 +445,11 @@ Une fois ces éléments introspectés et validés, <strong>le serveur d’autori
 </tbody>
 </table>
 
-<p>Exemple :</p>
+<p><strong>Exemple de requête :</strong></p>
 
 <div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code> POST /as/token.oauth2 HTTP/1.1
  Host: systemecible.example.com
  Content-Type: application/x-www-form-urlencoded
- 
 &amp;grant_type<span class="o">=</span>urn%3Aietf%3Aparams%3Aoauth%3Agrant-type%3Atoken-exchange
 &amp;subject_token<span class="o">=</span>accVkjcJyb4BWCxGsndESCJQbdFMogUC5PbRDqceLTC
 &amp;subject_token_type<span class="o">=</span> urn%3Aietf%3Aparams%3Aoauth%3Atoken-type%3Aaccess_token
@@ -490,7 +492,7 @@ Cible : Fournisseur de services</p>
 
 <p>Une fois le contrôle d’accès effectué et validé, le serveur d’autorisation forge un <code class="language-plaintext highlighter-rouge">access_token</code> permettant d’accéder au service cible et le délivre au fournisseur de services appelant.</p>
 
-<p>Exemple :</p>
+<p><strong>Exemple de réponse :</strong></p>
 <div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code>HTTP/1.1 200 OK
 Content-Type: application/json
 Cache-Control: no-cache, no-store
@@ -515,7 +517,7 @@ Méthode : GET</p>
 
 <p>Le fournisseur de services envoie une requête auprès du service cible avec l’<code class="language-plaintext highlighter-rouge">access_token</code> contenu dans l’entête. Le service cible introspecte l’<code class="language-plaintext highlighter-rouge">access_token</code> auprès du serveur d’autorisation afin vérifier la validité de ce dernier ainsi que ses <code class="language-plaintext highlighter-rouge">scopes</code> associés.</p>
 
-<p>Exemple :</p>
+<p><strong>Exemple de requête :</strong></p>
 
 <div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code>GET /resource/v1 HTTP/1.1
 Host: 
@@ -571,7 +573,7 @@ Authorization: Bearer oab3thieWohyai0eoxibaequ0Owae9oh
 
       <div class="inner-wrapper">
         <p>
-          IG &#169; 2020+ <a style="color:var(--footer-hyperlink-text-color)" href="https://esante.gouv.fr">ANS</a>.  Package ans.fr.securisation-transport#0.1.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Wed, Jul 26, 2023 18:12+0000">2023-07-26</span>
+          IG &#169; 2020+ <a style="color:var(--footer-hyperlink-text-color)" href="https://esante.gouv.fr">ANS</a>.  Package ans.fr.securisation-transport#0.1.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Wed, Jul 26, 2023 18:58+0000">2023-07-26</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)"></span>
                       Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |

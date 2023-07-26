@@ -10,7 +10,7 @@
   "name" : "IGsecurisationtransportapirest",
   "title" : "Sécurisation de la couche transport API REST",
   "status" : "draft",
-  "date" : "2023-07-26T18:12:37+00:00",
+  "date" : "2023-07-26T18:58:46+00:00",
   "publisher" : "ANS",
   "contact" : [{
     "name" : "ANS",
@@ -747,6 +747,15 @@
         }],
         "nameUrl" : "api_prosanteconnectee_client_lourd.html",
         "title" : "Appel d'une API ProSantéConnectée depuis une application client lourd ou mobile",
+        "generation" : "markdown"
+      },
+      {
+        "extension" : [{
+          "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
+          "valueUrl" : "api_prosanteconnectee_userinfo.html"
+        }],
+        "nameUrl" : "api_prosanteconnectee_userinfo.html",
+        "title" : "Récupération et utilisation du jeton userinfo PSC",
         "generation" : "markdown"
       },
       {
