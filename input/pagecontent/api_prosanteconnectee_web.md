@@ -323,7 +323,7 @@ Cible : Service cible
 Type d'appel :  Requête de ressources protégées
 Méthode : GET
 
-Le fournisseur de services envoie une requête auprès du service cible avec l’`access_token` contenu dans l’entête. Le service cible introspecte l’`access_token` auprès du serveur d’autorisation afin vérifier la validité de ce dernier ainsi que ses `scopes associés`.
+Le fournisseur de services envoie une requête auprès du service cible avec l’`access_token` contenu dans l’entête. Le service cible introspecte l’`access_token` auprès du serveur d’autorisation afin vérifier la validité de ce dernier ainsi que ses `scopes` associés.
 
 Exemple :
 

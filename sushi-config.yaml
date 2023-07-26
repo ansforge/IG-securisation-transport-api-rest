@@ -44,11 +44,11 @@ pages:
     api_prosanteconnectee.md:
         title: API ProSantéConnectée
     api_prosanteconnectee_web.md:
-        title: Appel d'une API ProSantéConnectées depuis une application web
+        title: Appel d'une API ProSantéConnectée depuis une application web
     api_prosanteconnectee_web_erreurs.md:
-        title: Appel d'une API ProSantéConnectées depuis une application web - cas d'erreur
+        title: Appel d'une API ProSantéConnectée depuis une application web - cas d'erreur
     api_prosanteconnectee_client_lourd.md:
-        title: Appel d'une API ProSantéConnectées depuis une application client lourd ou mobile
+        title: Appel d'une API ProSantéConnectée depuis une application client lourd ou mobile
  
     about.md:
         title: A propos de ce guide

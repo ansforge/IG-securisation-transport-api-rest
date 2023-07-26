@@ -281,7 +281,7 @@ Si le PS, depuis son client lourd, a besoin de préciser des champs liés à ses
 Les données passent par une application web serveur avec des redirections sur des URLs web. 
 Les données du jeton `userInfo` peuvent remonter jusqu'à l'application client lourd. 
 
-Se référer à la partie <a href="api_prosanteconnectee_web.html">appel depuis une application web</a> pour la description du flux.
+Se référer à la partie <a href="api_prosanteconnectee_web.html"> appel depuis une application web</a> pour la description du flux.
 
 <div style="text-align: center;">{%include diag_api_prosanteconnectee_client_lourd_web_pop_up.svg%}</div>
 
