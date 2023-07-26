@@ -38,7 +38,6 @@ Exemple :
 ```sh
 GET /application/ressource_privee
 Host: applicationserver.appelant.org
-
 ```
 
 
@@ -84,15 +83,13 @@ Origine : Proxy LPS API
 Cible : Serveur d’autorisation
 Méthode : POST
 
-Lors de ce flux, le fournisseur de services effectue une connexion **mTLS** avec le **certificat d'authentification de la structure** auprès du serveur d’autorisation puis s’authentifie et envoie sa requête d’échange de jetons selon le protocole OAuth 2.0. 
+*   Lors de ce flux, le fournisseur de services effectue une connexion **mTLS** avec le **certificat d'authentification de la structure** auprès du serveur d’autorisation. 
+    Puis il s’authentifie et envoie sa requête d’échange de jetons selon le protocole OAuth 2.0. 
+    Concernant l’échange de jetons, il suit la **RFC 8693 token exchange [12]**. 
 
-Concernant l’échange de jetons, il suit la **RFC 8693 token exchange [12]**. 
-
-Elle est nativement en voie d’adoption par les éditeurs du marché (méthode Delegation Token Exchange). 
-
-Le fournisseur de services envoie dans les paramètres de sa requête le `subject_token` et les `scopes` métiers auxquels il souhaite accéder.
-
-Ces derniers permettent d’authentifier la personne physique ou la personne morale appelante et de contrôler l’accès aux ressources requêtées.
+*   Elle est nativement en voie d’adoption par les éditeurs du marché (méthode Delegation Token Exchange). 
+    Le fournisseur de services envoie dans les paramètres de sa requête le `subject_token` et les `scopes` métiers auxquels il souhaite accéder.
+    Ces derniers permettent d’authentifier la personne physique ou la personne morale appelante et de contrôler l’accès aux ressources requêtées.
 
 Une fois ces éléments introspectés et validés, le serveur d’autorisation renvoie un `access_token` pour permettre au fournisseur de services d’accéder aux ressources du service cible.
 
@@ -188,25 +185,23 @@ POST /as/token.oauth2 HTTP/1.1
 &scope=
 ```
 
-L'authentification mTLS se réalise dans le cadre d’une **authentification OAuth 2.0 et suit la RFC 8705 [13]**. 
-Le fournisseur de service établit une connexion TLS mutuelle avec le serveur d’autorisation en présentant son certificat client, préalablement aux échanges applicatifs. 
+*   L'authentification mTLS se réalise dans le cadre d’une **authentification OAuth 2.0 et suit la RFC 8705 [13]**. 
+    Le fournisseur de service établit une connexion TLS mutuelle avec le serveur d’autorisation en présentant son certificat client, préalablement aux échanges applicatifs. 
 
-Le `client_secret` est remplacé par la **preuve de possession de la clé privée qui est assurée par le mTLS**. 
-En effet, le mTLS permet d’authentifier le client par un `Client_ID_AS` + mTLS au lieu de s’authentifier avec son couple `client_secret/Client_ID_AS`. 
-Autrement dit : le `client_secret` n’est pas nécessaire car l’authentification est portée par le **mTLS (certificat client IGC Santé)**.
+*   Le `client_secret` est remplacé par la **preuve de possession de la clé privée qui est assurée par le mTLS**. 
+    En effet, le `client_secret` n’est pas nécessaire car l’authentification est portée par le **mTLS (certificat client IGC Santé)**.
 
-Dans la pratique, il est envisagé d’utiliser un **certificat IGC Santé ORG AUTH_CLI** qui identifiera le fournisseur de services auprès du serveur d’autorisation en plus de son `Client_ID_AS` lors de la requête.
+*   En terme de déploiement, il est envisagé d’utiliser un **certificat IGC Santé ORG AUTH_CLI**.
 
-Le contenu du certificat, en particulier le **DN**, est accessible au serveur d’autorisation.
-
-Le **DN sujet** du certificat client possède un attribut **OU (Organizational Unit)** qui contient :
-*   L’identifiant de la structure porteuse du fournisseur de services (Structure_ID) issu du référentiel d’identité utilisé par l’IGC Santé
-*   Un attribut **CN (Common Name)** qui a une valeur libre, et qui fera le lien entre la structure et le certificat.
-
-L’attribut **CN** du certificat peut permettre de lier un certificat à la granularité d'un service d’une structure.
+*   Le contenu du certificat, en particulier le **DN**, est accessible au serveur d’autorisation.
+    Le **DN sujet** du certificat client possède un attribut **OU (Organizational Unit)** qui contient :
+    *   L’identifiant de la structure porteuse du fournisseur de services (Structure_ID) issu du référentiel d’identité utilisé par l’IGC Santé
+    *   Un attribut **CN (Common Name)** qui a une valeur libre, et qui fera le lien entre la structure et le certificat.
+        L’attribut **CN** du certificat peut permettre de lier un certificat à la granularité d'un service d’une structure.
 
 **Afin de garantir la bonne gestion des accès, le serveur d’autorisation aura la charge de faire le mapping entre le DN sujet du certificat TLS client et le `Client_ID_AS` (créé à l’enrôlement auprès du serveur d’autorisation).** 
-Si la corrélation échoue alors il doit y avoir un retour d’erreur.
+
+Si le contrôle échoue alors il doit y avoir un retour d’erreur.
 
 
 **15.	Le serveur d’autorisation vérifie auprès de PSC la validité du subject_token (introspection)**
@@ -215,9 +210,8 @@ Origine : Serveur d’autorisation
 Cible : PSC
 Méthode : POST 
 
-L’introspection du `subject_token` est défini dans la documentation PSC [4]. 
-
-La réponse de l’introspection est définie par une structure de code HTTP standard.
+*   L’introspection du `subject_token` est défini dans la documentation PSC [4]. 
+*   La réponse de l’introspection est définie par une structure de code HTTP standard.
  
 
 **16.	Le serveur d’autorisation contrôle l’accès aux ressources selon le `Client_ID_AS` et ses `scopes` puis délivre l’access_token au proxy LPS/API**
@@ -225,9 +219,9 @@ La réponse de l’introspection est définie par une structure de code HTTP sta
 Origine : Serveur d’autorisation
 Cible : Proxy LPS API
 
-Le contrôle d’accès basé sur le contrôle de l’association entre `scopes` et `Client_ID_AS` contenus dans le serveur d’autorisation. 
-
-Une fois le contrôle d’accès effectué et validé, le serveur d’autorisation émet un `access_token` permettant d’accéder au service cible et le délivre au proxy LPS API appelant.
+*   Le contrôle d’accès basé sur le contrôle de l’association entre `scopes` et `Client_ID_AS` contenus dans le serveur d’autorisation. 
+*   Une fois le contrôle d’accès effectué et validé, le serveur d’autorisation émet un `access_token` permettant d’accéder au service cible.
+    Le serveur d'autorisation délivre ce jeton au proxy LPS API appelant.
 
 **Exemple de réponse :**
 ```xml
@@ -241,7 +235,6 @@ Cache-Control: no-cache, no-store
  "token_type":"Bearer",
  "expires_in":60
 }
-
 ```
  
 **La réponse doit être conforme à la section 2.2 de la RFC 8693 Token Exchange [12].**
@@ -254,37 +247,34 @@ Cible : Service cible
 Type d’appel :  Requête de ressources protégées
 Méthode : GET
 
-Le proxy LPS API envoie une requête auprès du service cible avec l’`access_token` contenu dans l’entête. 
-Le service cible introspecte l’`access_token` du serveur d’autorisation afin vérifier sa validité et ses scopes.
+*   Le proxy LPS API envoie une requête auprès du service cible avec l’`access_token` contenu dans l’entête. 
+*   Le service cible introspecte l’`access_token` du serveur d’autorisation afin vérifier sa validité et ses scopes.
 
 **Exemple de requête** :
 ```sh 
 GET /resource/v1 HTTP/1.1
 Host: https://apifournisseurdedonnees.com/scope1/resourceX
 Authorization: Bearer oab3thieWohyai0eoxibaequ0Owae9oh
-
 ```
  
 ### Authentification via un navigateur extérieur (pop-up web)
 
-L’utilisateur souhaite accéder à des ressources chez un service cible à partir de son **client lourd**. 
+*   L’utilisateur souhaite accéder à des ressources chez un service cible à partir de son **client lourd**. 
+    Afin d’accéder à ces ressources, l’utilisateur s’authentifie auprès de **Pro Santé Connect via un navigateur extérieur (pop-up web)**.
 
-Afin d’accéder à ces ressources, l’utilisateur s’authentifie auprès de **Pro Santé Connect via un navigateur extérieur (pop-up web)**.
+*   L’authentification par une **application mobile est similaire à une authentification via un navigateur extérieur (pop-up web)**.
 
-L’authentification par une **application mobile est similaire à une authentification via un navigateur extérieur (pop-up web)**.
+*   Une fois authentifié auprès de Pro Santé Connect, le fournisseur de services émet une requête auprès du serveur d’autorisation (`subject_token + scope`) pour accéder aux ressources protégées. 
 
-Une fois authentifié auprès de Pro Santé Connect, le fournisseur de services émet une requête auprès du serveur d’autorisation (`subject_token + scope`) pour accéder aux ressources protégées. 
-
-Une fois le contrôle des `scopes` effectué, le serveur d’autorisation fournit un `access_token` au fournisseur de services (proxy API). 
-Ce dernier l’utilise dans l’entête de sa requête auprès du service cible pour accéder aux données protégées.
+*   Une fois le contrôle des `scopes` effectué, le serveur d’autorisation fournit un `access_token` au fournisseur de services (proxy API). 
+    Ce dernier l’utilise dans l’entête de sa requête auprès du service cible pour accéder aux données protégées.
 
 **Le partage d’un jeton applicatif est nécessaire en amont de la cinématique d’authentification pour permettre l’authentification du client lourd lors de la requête de ce dernier auprès du serveur d’autorisation.**
 
-Si le PS, depuis son client lourd, a besoin de préciser des champs liés à ses activités pour requêter des données auprès du service cible, un flux de récupération du jeton `userinfo` est exécuté.
+*   Si le PS, depuis son client lourd, a besoin de préciser des champs liés à ses activités pour requêter des données auprès du service cible, un flux de récupération du jeton `userinfo` est exécuté.
 
-Les données passent par une application web serveur avec des redirections sur des URLs web. 
-
-Les données du jeton `userInfo` peuvent remonter jusqu'à l'application client lourd. 
+*   Les données passent par une application web serveur avec des redirections sur des URLs web. 
+*   Les données du jeton `userInfo` peuvent remonter jusqu'à l'application client lourd. 
 
 
 
@@ -292,5 +282,5 @@ Les données du jeton `userInfo` peuvent remonter jusqu'à l'application client 
 
 ### Cas dérogatoires
 
-**Les modalités de sécurisations nécessitant de faire des échanges client-serveur entre le client lourd et le proxy LPS API fait l’objet d’un protocole HTTP.**
-**Si les systèmes cibles utilisent des protocoles hors HTTP (par exemple SMTP) cela s’inscrit hors cadre du présent volet transport de ce CI-SIS.**
+*   Les modalités de sécurisations nécessitant de faire des échanges client-serveur entre le client lourd et le proxy LPS API fait l’objet **du protocole HTTP**.
+*   Si les systèmes cibles utilisent **des protocoles hors HTTP (par exemple SMTP)** cela s’inscrit **hors cadre du présent volet transport de ce CI-SIS**.
