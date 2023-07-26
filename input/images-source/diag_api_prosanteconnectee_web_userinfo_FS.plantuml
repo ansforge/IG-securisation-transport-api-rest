@@ -1,0 +1,23 @@
+@startuml
+scale 1024*768
+box "Systeme appelant / initiateur" #palegreen
+participant "Navigateur" as n
+participant "Fournisseur de services" as proxyl
+end box
+
+participant "ProSanteConnect" as psc
+box  "Systeme cible" #paleturquoise
+participant "Serveur d'autorisation" as AS
+participant "Service cible" as API
+end box
+
+n->proxyl:1. Demande de userinfo (PSC)
+	activate proxyl
+proxyl->psc:2. subject_token + demande userinfo
+	activate psc
+    deactivate proxyl
+psc->proxyl:3. userinfo (PSC)
+
+	deactivate psc
+	
+@enduml

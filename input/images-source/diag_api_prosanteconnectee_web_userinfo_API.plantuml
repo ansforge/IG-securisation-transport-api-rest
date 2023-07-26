@@ -1,0 +1,60 @@
+@startuml
+scale 1024*768
+box  "Systeme appelant / initiateur" #palegreen
+participant "Navigateur" as n
+participant "Fournisseur de services" as appserver
+end box
+participant "ProSanteConnect" as psc
+box  "systeme cible" #paleturquoise
+participant "Serveur d'autorisation" as AS
+participant "Service cible" as API
+end box
+
+n->appserver:1. acces initial avec cookie de session (user deja PSConnecte)
+	activate appserver
+    
+    
+group Authentification Pro Sante Connect
+appserver->psc: 2. Demande de subject_token + cookie de session
+	activate psc
+psc->psc :Controle du cookie de session
+psc->appserver:3. ID Token + subject_token + Refresh Token (PSC)
+	deactivate psc
+end
+    
+    
+    
+    
+group OAUTH2.0 flow
+appserver -> AS:4. subject_token(parametre) + Client ID_AS(header) + scope(parametre)
+	deactivate appserver
+    activate AS
+AS->psc:5. subject_token (introspection)
+	activate psc
+psc->AS:OK/KO
+	deactivate psc
+AS->AS :Controle d'acces (Client ID_AS x scopes)
+AS->appserver:6. access_token
+	activate appserver
+    deactivate AS
+
+group userinfo - OPTIONNEL
+
+AS->psc:7. demande le userinfo
+	activate psc
+psc->AS: 8. userinfo (mis en cache)
+	deactivate psc
+end 
+end 
+appserver->API:9. access_token + acces aux donnees
+	deactivate appserver
+	activate API
+
+group userinfo - OPTIONNEL
+AS<-API:10. demande userinfo (en cache)
+	activate AS
+AS->API:11. userinfo
+	deactivate AS
+end
+
+@enduml

@@ -1,0 +1,37 @@
+@startuml
+scale 1024*768
+box  "Systeme appelant / initiateur" #palegreen
+participant "Navigateur" as n
+participant "Fournisseur de Services" as appserver
+end box
+participant "Pro Sante Connect" as psc
+
+box  "Systeme cible" #paleturquoise
+participant "Serveur d'autorisation" as AS
+participant "Service cible" as API
+end box
+
+n->appserver:1. acces initial avec cookie de session (user deja PSC Connecte)
+	activate appserver
+
+group Authentification Pro Sante Connect
+
+appserver->psc:2  Demande de subject_token + cookie de session
+	activate psc
+
+
+psc->>psc: <font color=red><b>controle du cookie de session
+psc->appserver:3. erreur
+end
+	deactivate psc
+appserver->n:4. Redirection vers PSC
+	activate n
+    deactivate appserver
+n->psc : 5. client_id, scope "all" PSC
+    deactivate n
+  
+	activate psc
+psc->n: 6. authentification use (MIE PSC)
+	deactivate psc
+
+@enduml
