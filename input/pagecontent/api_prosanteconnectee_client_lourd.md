@@ -218,7 +218,7 @@ L’introspection du `subject_token` est défini dans la documentation PSC [4].
 La réponse de l’introspection est définie par une structure de code HTTP standard.
  
 
-**16.	Le serveur d’autorisation contrôle l’accès aux ressources selon le `Client_ID_AS` et ses 'scopes` puis délivre l’access_token au proxy LPS/API**
+**16.	Le serveur d’autorisation contrôle l’accès aux ressources selon le `Client_ID_AS` et ses `scopes` puis délivre l’access_token au proxy LPS/API**
 
 Origine : Serveur d’autorisation
 Cible : Proxy LPS API
@@ -281,7 +281,7 @@ Si le PS, depuis son client lourd, a besoin de préciser des champs liés à ses
 Les données passent par une application web serveur avec des redirections sur des URLs web. 
 Les données du jeton `userInfo` peuvent remonter jusqu'à l'application client lourd. 
 
-Se référer à la partie <a href="api_prosanteconnectee_web.html"> appel depuis une application web</a> pour la description du flux.
+Se référer à la partie <a href="api_prosanteconnectee_web.html">appel depuis une application web</a> pour la description du flux.
 
 <div style="text-align: center;">{%include diag_api_prosanteconnectee_client_lourd_web_pop_up.svg%}</div>
 
