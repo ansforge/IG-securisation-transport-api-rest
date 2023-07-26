@@ -33,7 +33,7 @@ Origine : Client Lourd
 Cible : Proxy LPS FS
 Méthode : GET
 
-Exemple : 
+**Exemple de requête :** 
 
 ```sh
 GET /application/ressource_privee
@@ -276,11 +276,11 @@ Authorization: Bearer oab3thieWohyai0eoxibaequ0Owae9oh
 *   Les données passent par une application web serveur avec des redirections sur des URLs web. 
 *   Les données du jeton `userInfo` peuvent remonter jusqu'à l'application client lourd. 
 
-
+**Pour avoir une description complète du flux, rendez-vous sur la page <a href="api_prosanteconnetee_web">API Pro santé connectée pour application web</a>**
 
 <div style="text-align: center;">{%include diag_api_prosanteconnectee_client_lourd_web_popup.svg%}</div>
 
 ### Cas dérogatoires
 
 *   Les modalités de sécurisations nécessitant de faire des échanges client-serveur entre le client lourd et le proxy LPS API fait l’objet **du protocole HTTP**.
-*   Si les systèmes cibles utilisent **des protocoles hors HTTP (par exemple SMTP)** cela s’inscrit **hors cadre du présent volet transport de ce CI-SIS**.
+*   Si les systèmes cibles utilisent **des protocoles hors HTTP (par exemple SMTP)** cela s’inscrit **hors cadre de ce volet transport du CI-SIS**.

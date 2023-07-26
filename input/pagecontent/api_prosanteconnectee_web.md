@@ -20,7 +20,7 @@ Origine : Navigateur
 Cible : Fournisseur de services
 Méthode : GET
 
-Exemple : 
+**Exemple de requête :**
  `GET /application/ressource_privee
 Host: applicationserver.appelant.org
 `
@@ -33,7 +33,7 @@ Cible : Navigateur
 
 Le fournisseur de services renvoie un code de redirection 302 avec l’URL de Pro Santé Connect
 
-Exemple : 
+**Exemple de requête :** 
 ```sh
 302 
 Location: https://wallet.esw.esante.gouv.fr/auth?client_id=${client id}&redirect_uri= ${callback uri} &response_type=code&state=<random string>&scope= openid+scope_all&acr=eidas1&nonce=<random string> 
@@ -56,7 +56,7 @@ Cible : Navigateur
 
 Une fois l’authentification terminée, PSC renvoie un code HTTP 302 pour demander au navigateur d’envoyer l’authorization code au FS.
 
-Exemple :
+**Exemple de requête :**
 
 ```sh
 302 Location: https://applicationserver.appelant.fr/application/callback?code=3159339c2f1326f9fa128&state= <random_string>
@@ -119,7 +119,7 @@ Origine : Navigateur
 Cible : Fournisseur de services
 Méthode : GET
 
-Exemple :
+**Exemple de requête :**
 ```sh
 GET /application/callback ?code=3159339c2f1326f9fa128&state=<random string>
 Host: applicationserver.appelant.fr
@@ -141,7 +141,7 @@ Cible : Fournisseur de services
 
 Les détails de cette étape et des jetons délivrés sont dans la documentation [4]
 
-Réponse de PSC :
+**exemple de réponse :**
 ```xml
 {
 'access_token': ${access_token},
@@ -248,13 +248,12 @@ Une fois ces éléments introspectés et validés, **le serveur d’autorisation
 
 
 
-Exemple :
+**Exemple de requête :**
 
 ```sh
  POST /as/token.oauth2 HTTP/1.1
  Host: systemecible.example.com
  Content-Type: application/x-www-form-urlencoded
- 
 &grant_type=urn%3Aietf%3Aparams%3Aoauth%3Agrant-type%3Atoken-exchange
 &subject_token=accVkjcJyb4BWCxGsndESCJQbdFMogUC5PbRDqceLTC
 &subject_token_type= urn%3Aietf%3Aparams%3Aoauth%3Atoken-type%3Aaccess_token
@@ -299,7 +298,7 @@ Le contrôle d’accès est basé sur le contrôle de l’association entre `sco
 Une fois le contrôle d’accès effectué et validé, le serveur d’autorisation forge un `access_token` permettant d’accéder au service cible et le délivre au fournisseur de services appelant.
 
 
-Exemple :
+**Exemple de réponse :**
 ```xml
 HTTP/1.1 200 OK
 Content-Type: application/json
@@ -325,7 +324,7 @@ Méthode : GET
 
 Le fournisseur de services envoie une requête auprès du service cible avec l’`access_token` contenu dans l’entête. Le service cible introspecte l’`access_token` auprès du serveur d’autorisation afin vérifier la validité de ce dernier ainsi que ses `scopes` associés.
 
-Exemple :
+**Exemple de requête :**
 
 ```sh
 GET /resource/v1 HTTP/1.1

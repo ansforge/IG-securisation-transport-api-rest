@@ -49,6 +49,8 @@ pages:
         title: Appel d'une API ProSantéConnectée depuis une application web - cas d'erreur
     api_prosanteconnectee_client_lourd.md:
         title: Appel d'une API ProSantéConnectée depuis une application client lourd ou mobile
+    api_prosanteconnectee_userinfo.md:
+        title: Récupération et utilisation du jeton userinfo PSC
  
     about.md:
         title: A propos de ce guide
@@ -65,6 +67,7 @@ menu:
         Application web : api_prosanteconnectee_web.html
         Application web - cas d'erreur : api_prosanteconnectee_web_erreurs.html
         Application client lourd ou mobile : api_prosanteconnectee_client_lourd.html
+        Récupération et utilisation du jeton userinfo PSC : api_prosanteconnectee_userinfo.html
     Glossaire :   glossaire.html
     Autres ressources:
         Sécurité: securite.html
