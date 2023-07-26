@@ -238,7 +238,7 @@ Cache-Control: no-cache, no-store
 ```
  
 **La réponse doit être conforme à la section 2.2 de la RFC 8693 Token Exchange [12].**
- 
+
 
 **17.	Le proxy LPS API requête la ressource protégée auprès du service cible**
 
