@@ -3,7 +3,7 @@
 
 Un appel depuis un client lourd, comme un LPS ou un mobile, peut se faire via deux flux distincts : 
 
-*   Flux CIBA : permet à l’utilisateur de s’authentifier via son device (ex : mobile) à Pro Santé Connect – uniquement pour les MIE compatibles Actuellement, Pro Santé Connect ne permet pas une authentification avec les cartes CPS en CIBA. La cible serait de le permettre. 
+*   Flux CIBA : permet à l’utilisateur de s’authentifier à Pro Santé Connect via son application mobile eCPS et via sa carte CPS.
 *   Navigateur extérieur (pop-up web) : ouverte en parallèle du client lourd (pop-up indépendante ou onglet du navigateur système), elle permet l’authentification de l’utilisateur sur Pro Santé Connect.
 
 ### Authentification par un flux CIBA 
@@ -87,9 +87,13 @@ Méthode : POST
 Lors de ce flux, le fournisseur de services effectue une connexion **mTLS** avec le **certificat d'authentification de la structure** auprès du serveur d’autorisation puis s’authentifie et envoie sa requête d’échange de jetons selon le protocole OAuth 2.0. 
 
 Concernant l’échange de jetons, il suit la **RFC 8693 token exchange [12]**. 
+
 Elle est nativement en voie d’adoption par les éditeurs du marché (méthode Delegation Token Exchange). 
+
 Le fournisseur de services envoie dans les paramètres de sa requête le `subject_token` et les `scopes` métiers auxquels il souhaite accéder.
+
 Ces derniers permettent d’authentifier la personne physique ou la personne morale appelante et de contrôler l’accès aux ressources requêtées.
+
 Une fois ces éléments introspectés et validés, le serveur d’autorisation renvoie un `access_token` pour permettre au fournisseur de services d’accéder aux ressources du service cible.
 
 <table width="633">
@@ -178,7 +182,6 @@ Une fois ces éléments introspectés et validés, le serveur d’autorisation r
 POST /as/token.oauth2 HTTP/1.1
  Host: systemecible.example.com
  Content-Type: application/x-www-form-urlencoded
- 
 &grant_type=urn%3Aietf%3Aparams%3Aoauth%3Agrant-type%3Atoken-exchange
 &subject_token=accVkjcJyb4BWCxGsndESCJQbdFMogUC5PbRDqceLTC
 &subject_token_type= urn%3Aietf%3Aparams%3Aoauth%3Atoken-type%3Aaccess_token
@@ -195,6 +198,7 @@ Autrement dit : le `client_secret` n’est pas nécessaire car l’authentificat
 Dans la pratique, il est envisagé d’utiliser un **certificat IGC Santé ORG AUTH_CLI** qui identifiera le fournisseur de services auprès du serveur d’autorisation en plus de son `Client_ID_AS` lors de la requête.
 
 Le contenu du certificat, en particulier le **DN**, est accessible au serveur d’autorisation.
+
 Le **DN sujet** du certificat client possède un attribut **OU (Organizational Unit)** qui contient :
 *   L’identifiant de la structure porteuse du fournisseur de services (Structure_ID) issu du référentiel d’identité utilisé par l’IGC Santé
 *   Un attribut **CN (Common Name)** qui a une valeur libre, et qui fera le lien entre la structure et le certificat.
@@ -212,6 +216,7 @@ Cible : PSC
 Méthode : POST 
 
 L’introspection du `subject_token` est défini dans la documentation PSC [4]. 
+
 La réponse de l’introspection est définie par une structure de code HTTP standard.
  
 
@@ -263,18 +268,22 @@ Authorization: Bearer oab3thieWohyai0eoxibaequ0Owae9oh
 ### Authentification via un navigateur extérieur (pop-up web)
 
 L’utilisateur souhaite accéder à des ressources chez un service cible à partir de son **client lourd**. 
+
 Afin d’accéder à ces ressources, l’utilisateur s’authentifie auprès de **Pro Santé Connect via un navigateur extérieur (pop-up web)**.
 
 L’authentification par une **application mobile est similaire à une authentification via un navigateur extérieur (pop-up web)**.
 
 Une fois authentifié auprès de Pro Santé Connect, le fournisseur de services émet une requête auprès du serveur d’autorisation (`subject_token + scope`) pour accéder aux ressources protégées. 
+
 Une fois le contrôle des `scopes` effectué, le serveur d’autorisation fournit un `access_token` au fournisseur de services (proxy API). 
 Ce dernier l’utilise dans l’entête de sa requête auprès du service cible pour accéder aux données protégées.
 
 **Le partage d’un jeton applicatif est nécessaire en amont de la cinématique d’authentification pour permettre l’authentification du client lourd lors de la requête de ce dernier auprès du serveur d’autorisation.**
 
 Si le PS, depuis son client lourd, a besoin de préciser des champs liés à ses activités pour requêter des données auprès du service cible, un flux de récupération du jeton `userinfo` est exécuté.
+
 Les données passent par une application web serveur avec des redirections sur des URLs web. 
+
 Les données du jeton `userInfo` peuvent remonter jusqu'à l'application client lourd. 
 
 
