@@ -278,7 +278,7 @@ Authorization: Bearer oab3thieWohyai0eoxibaequ0Owae9oh
 
 
 
-<div style="text-align: center;">{%include diag_api_prosanteconnectee_client_lourd_web_pop_up.svg%}</div>
+<div style="text-align: center;">{%include diag_api_prosanteconnectee_client_lourd_web_popup.svg%}</div>
 
 ### Cas dérogatoires
 
