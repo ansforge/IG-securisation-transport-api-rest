@@ -3,7 +3,7 @@
 <html xml:lang="en" xmlns="http://www.w3.org/1999/xhtml" lang="en">
   <head>
     <meta content="text/html;charset=utf-8" http-equiv="Content-Type"/>
-    <title>ANS.FR.SECURISATION-TRANSPORT\Appel d&#39;une API ProSantéConnectées depuis une application web - FHIR v4.0.1</title>
+    <title>ANS.FR.SECURISATION-TRANSPORT\Appel d&#39;une API ProSantéConnectée depuis une application web - FHIR v4.0.1</title>
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <meta name="author" content="http://hl7.org/fhir"/>
@@ -117,6 +117,9 @@
       <li>
         <a href="api_prosanteconnectee_web_erreurs.html">Application web - cas d&apos;erreur</a>
       </li>
+      <li>
+        <a href="api_prosanteconnectee_client_lourd.html">Application client lourd ou mobile</a>
+      </li>
     </ul>
   </li>
   <li>
@@ -156,7 +159,7 @@
     <div id="segment-breadcrumb" class="segment">  <!-- segment-breadcrumb -->
       <div class="container">  <!-- container -->
         <ul class="breadcrumb">
-          <li><a href='toc.html'><b>Table of Contents</b></a></li><li><b>Appel d'une API ProSantéConnectées depuis une application web</b></li>
+          <li><a href='toc.html'><b>Table of Contents</b></a></li><li><b>Appel d'une API ProSantéConnectée depuis une application web</b></li>
 
           <span style="float:right;">
 
@@ -187,7 +190,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 </style>
 <div class="col-12">
   <!--ReleaseHeader--><p id="publish-box">Publication Build: This will be filled in by the publication tooling</p><!--EndReleaseHeader-->
-  <h2>Appel d&#39;une API ProSantéConnectées depuis une application web</h2>
+  <h2>Appel d&#39;une API ProSantéConnectée depuis une application web</h2>
   
 
 
@@ -510,7 +513,7 @@ Cible : Service cible
 Type d’appel :  Requête de ressources protégées
 Méthode : GET</p>
 
-<p>Le fournisseur de services envoie une requête auprès du service cible avec l’<code class="language-plaintext highlighter-rouge">access_token</code> contenu dans l’entête. Le service cible introspecte l’<code class="language-plaintext highlighter-rouge">access_token</code> auprès du serveur d’autorisation afin vérifier la validité de ce dernier ainsi que ses <code class="language-plaintext highlighter-rouge">scopes associés</code>.</p>
+<p>Le fournisseur de services envoie une requête auprès du service cible avec l’<code class="language-plaintext highlighter-rouge">access_token</code> contenu dans l’entête. Le service cible introspecte l’<code class="language-plaintext highlighter-rouge">access_token</code> auprès du serveur d’autorisation afin vérifier la validité de ce dernier ainsi que ses <code class="language-plaintext highlighter-rouge">scopes</code> associés.</p>
 
 <p>Exemple :</p>
 
@@ -568,7 +571,7 @@ Authorization: Bearer oab3thieWohyai0eoxibaequ0Owae9oh
 
       <div class="inner-wrapper">
         <p>
-          IG &#169; 2020+ <a style="color:var(--footer-hyperlink-text-color)" href="https://esante.gouv.fr">ANS</a>.  Package ans.fr.securisation-transport#0.1.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Wed, Jul 26, 2023 13:31+0000">2023-07-26</span>
+          IG &#169; 2020+ <a style="color:var(--footer-hyperlink-text-color)" href="https://esante.gouv.fr">ANS</a>.  Package ans.fr.securisation-transport#0.1.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Wed, Jul 26, 2023 15:58+0000">2023-07-26</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)"></span>
                       Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |

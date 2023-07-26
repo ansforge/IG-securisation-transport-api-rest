@@ -10,7 +10,7 @@
   <name value="IGsecurisationtransportapirest"/>
   <title value="Sécurisation de la couche transport API REST"/>
   <status value="draft"/>
-  <date value="2023-07-26T13:31:58+00:00"/>
+  <date value="2023-07-26T15:58:50+00:00"/>
   <publisher value="ANS"/>
   <contact>
     <name value="ANS"/>
@@ -558,7 +558,7 @@
           <valueUrl value="api_prosanteconnectee_web.html"/>
         </extension>
         <nameUrl value="api_prosanteconnectee_web.html"/>
-        <title value="Appel d'une API ProSantéConnectées depuis une application web"/>
+        <title value="Appel d'une API ProSantéConnectée depuis une application web"/>
         <generation value="markdown"/>
       </page>
       <page>
@@ -566,7 +566,15 @@
           <valueUrl value="api_prosanteconnectee_web_erreurs.html"/>
         </extension>
         <nameUrl value="api_prosanteconnectee_web_erreurs.html"/>
-        <title value="Appel d'une API ProSantéConnectées depuis une application web - cas d'erreur"/>
+        <title value="Appel d'une API ProSantéConnectée depuis une application web - cas d'erreur"/>
+        <generation value="markdown"/>
+      </page>
+      <page>
+        <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-page-name">
+          <valueUrl value="api_prosanteconnectee_client_lourd.html"/>
+        </extension>
+        <nameUrl value="api_prosanteconnectee_client_lourd.html"/>
+        <title value="Appel d'une API ProSantéConnectée depuis une application client lourd ou mobile"/>
         <generation value="markdown"/>
       </page>
       <page>

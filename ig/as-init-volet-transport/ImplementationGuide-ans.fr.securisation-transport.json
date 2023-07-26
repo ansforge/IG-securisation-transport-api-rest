@@ -10,7 +10,7 @@
   "name" : "IGsecurisationtransportapirest",
   "title" : "Sécurisation de la couche transport API REST",
   "status" : "draft",
-  "date" : "2023-07-26T13:31:58+00:00",
+  "date" : "2023-07-26T15:58:50+00:00",
   "publisher" : "ANS",
   "contact" : [{
     "name" : "ANS",
@@ -728,7 +728,7 @@
           "valueUrl" : "api_prosanteconnectee_web.html"
         }],
         "nameUrl" : "api_prosanteconnectee_web.html",
-        "title" : "Appel d'une API ProSantéConnectées depuis une application web",
+        "title" : "Appel d'une API ProSantéConnectée depuis une application web",
         "generation" : "markdown"
       },
       {
@@ -737,7 +737,16 @@
           "valueUrl" : "api_prosanteconnectee_web_erreurs.html"
         }],
         "nameUrl" : "api_prosanteconnectee_web_erreurs.html",
-        "title" : "Appel d'une API ProSantéConnectées depuis une application web - cas d'erreur",
+        "title" : "Appel d'une API ProSantéConnectée depuis une application web - cas d'erreur",
+        "generation" : "markdown"
+      },
+      {
+        "extension" : [{
+          "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
+          "valueUrl" : "api_prosanteconnectee_client_lourd.html"
+        }],
+        "nameUrl" : "api_prosanteconnectee_client_lourd.html",
+        "title" : "Appel d'une API ProSantéConnectée depuis une application client lourd ou mobile",
         "generation" : "markdown"
       },
       {
