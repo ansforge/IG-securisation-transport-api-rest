@@ -9,4 +9,4 @@ Le système initiateur peut être une application web ou un client lourd.
 
 Dans le cadre du **token exchange RFC 8693 [12]**, le jeton échangé contre l’`access_token` délivré par le serveur d’autorisation `OAuth 2.0` permet d’identifier l’utilisateur, il se nomme `subject_token`.
 
-**Afin de garantir une cohérence avec les paramètres du RFC et dans le cas des API Pro Santé connectées : `subject_token` = `Access Token PSC`**
+**Afin de garantir une cohérence avec les paramètres de la RFC et dans le cas des API Pro Santé connectées : `subject_token` = `Access Token PSC`**
