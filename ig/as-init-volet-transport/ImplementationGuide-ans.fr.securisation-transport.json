@@ -10,7 +10,7 @@
   "name" : "IGsecurisationtransportapirest",
   "title" : "Sécurisation de la couche transport API REST",
   "status" : "active",
-  "date" : "2023-07-27T13:54:56+00:00",
+  "date" : "2023-07-27T13:58:00+00:00",
   "publisher" : "ANS",
   "contact" : [{
     "name" : "ANS",
@@ -665,7 +665,7 @@
           "valueUrl" : "api_prosanteconnectee_web_erreurs.html"
         }],
         "nameUrl" : "api_prosanteconnectee_web_erreurs.html",
-        "title" : "Appel d'une API ProSantéConnectée depuis une application web - cas d'erreur",
+        "title" : "Appel d'une API ProSantéConnectée depuis une application web - cas d'erreurs",
         "generation" : "markdown"
       },
       {
