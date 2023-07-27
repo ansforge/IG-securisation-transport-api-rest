@@ -418,15 +418,16 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 
 <p>Exemple de contenu d’un <code class="language-plaintext highlighter-rouge">access_token</code> dont la durée de vie est d’une heure :</p>
 
-<table width="100%">
-<tbody>
-<tr>
-<td>
-<p>{<br /> "iss": "https://server.example.com",<br /> "sub": "identifiant_national",<br /> "aud": [Ressource A, Ressource B], <br /> "nonce": "n-0S6_WzA2Mj",<br /> "exp": 1626921770,<br /> "iat": 1311280970,<br /> "scope": &ldquo;scope 2 scope 3&rdquo;,<br /> }</p>
-</td>
-</tr>
-</tbody>
-</table>
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
+</span><span class="nl">"iss"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://server.example.com"</span><span class="p">,</span><span class="w">
+</span><span class="nl">"sub"</span><span class="p">:</span><span class="w"> </span><span class="s2">"identifiant_national"</span><span class="p">,</span><span class="w">
+</span><span class="nl">"aud"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="err">Ressource</span><span class="w"> </span><span class="err">A</span><span class="p">,</span><span class="w"> </span><span class="err">Ressource</span><span class="w"> </span><span class="err">B</span><span class="p">],</span><span class="w">
+</span><span class="nl">"nonce"</span><span class="p">:</span><span class="w"> </span><span class="s2">"n-0S6_WzA2Mj"</span><span class="p">,</span><span class="w">
+</span><span class="nl">"exp"</span><span class="p">:</span><span class="w"> </span><span class="mi">1626921770</span><span class="p">,</span><span class="w">
+</span><span class="nl">"iat"</span><span class="p">:</span><span class="w"> </span><span class="mi">1311280970</span><span class="p">,</span><span class="w">
+</span><span class="nl">"scope"</span><span class="p">:</span><span class="w"> </span><span class="err">“scope</span><span class="w"> </span><span class="mi">2</span><span class="w"> </span><span class="err">scope</span><span class="w"> </span><span class="mi">3</span><span class="err">”</span><span class="p">,</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div></div>
 
 <h5 id="lintégration-du-mtls-dans-le-cadre-du-workflow-oauth-20">L’intégration du mTLS dans le cadre du workflow <code class="language-plaintext highlighter-rouge">OAuth 2.0</code></h5>
 
@@ -537,7 +538,7 @@ Par exemple, les hôpitaux et les EHPAD génèrent des certificats sur leur FINE
 
       <div class="inner-wrapper">
         <p>
-          IG &#169; 2020+ <a style="color:var(--footer-hyperlink-text-color)" href="https://esante.gouv.fr">ANS</a>.  Package ans.fr.securisation-transport#1.1.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Thu, Jul 27, 2023 13:49+0000">2023-07-27</span>
+          IG &#169; 2020+ <a style="color:var(--footer-hyperlink-text-color)" href="https://esante.gouv.fr">ANS</a>.  Package ans.fr.securisation-transport#1.1.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Thu, Jul 27, 2023 13:54+0000">2023-07-27</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)"></span>
                       Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |
