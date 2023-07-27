@@ -224,18 +224,18 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 <div>
 <!-- do not remove - needed to prevent Jekyll from adding a p tag to any non block level element in the markdown.-->
 </div>
-<p>Cas d’usage #1 : API nécessitant une authentification avec Pro Santé Connect</p>
 
-<p>Cas d’usage pour lequel le système cible nécessite une authentification de l’utilisateur par Pro Santé Connect pour l’accès à ses données. Pour ce faire, le fournisseur de services redirige d’abord l’utilisateur vers Pro Santé Connect pour l’authentifier.</p>
+<p>Cas d’usage pour lequel le système cible nécessite une authentification de l’utilisateur par <strong>Pro Santé Connect</strong> pour l’accès à ses données. 
+Pour ce faire, le fournisseur de services redirige d’abord l’utilisateur vers Pro Santé Connect pour l’authentifier.</p>
 
-<p>Cependant, si le fournisseur de services dispose déjà d’un subject_token valide délivré par Pro Santé Connect (voir le cas d’utilisation #1a), la première étape d’authentification n’est pas nécessaire.</p>
+<p>Cependant, si le fournisseur de services dispose déjà d’un <code class="language-plaintext highlighter-rouge">subject_token</code> valide délivré par Pro Santé Connect (voir le cas d’utilisation 1a), la première étape d’authentification n’est pas nécessaire.</p>
 
-<p>Une fois l’utilisateur authentifié, le fournisseur de services utilise le protocole OAuth 2.0 pour initier une requête au nom de l’utilisateur pour récupérer ses données auprès du service cible au sein du système cible.
+<p>Une fois l’utilisateur authentifié, le fournisseur de services utilise le protocole <code class="language-plaintext highlighter-rouge">OAuth 2.0</code> pour initier une requête au nom de l’utilisateur pour récupérer ses données auprès du service cible au sein du système cible.
 Le système initiateur peut être une application web ou un client lourd.</p>
 
-<p>Dans le cadre du token exchange RFC 8693 [12], le jeton échangé contre l’access_token délivré par le serveur d’autorisation OAuth 2.0 permet d’identifier l’utilisateur, il se nomme subject_token.</p>
+<p>Dans le cadre du <strong>token exchange RFC 8693 [12]</strong>, le jeton échangé contre l’<code class="language-plaintext highlighter-rouge">access_token</code> délivré par le serveur d’autorisation <code class="language-plaintext highlighter-rouge">OAuth 2.0</code> permet d’identifier l’utilisateur, il se nomme <code class="language-plaintext highlighter-rouge">subject_token</code>.</p>
 
-<p>Afin de garantir une cohérence avec les paramètres du RFC et dans le cas des API Pro Santé connectées : subject_token = Access Token PSC</p>
+<p><strong>Afin de garantir une cohérence avec les paramètres du RFC et dans le cas des API Pro Santé connectées : <code class="language-plaintext highlighter-rouge">subject_token</code> = <code class="language-plaintext highlighter-rouge">Access Token PSC</code></strong></p>
 
 
 
@@ -284,7 +284,7 @@ Le système initiateur peut être une application web ou un client lourd.</p>
 
       <div class="inner-wrapper">
         <p>
-          IG &#169; 2020+ <a style="color:var(--footer-hyperlink-text-color)" href="https://esante.gouv.fr">ANS</a>.  Package ans.fr.securisation-transport#1.1.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Thu, Jul 27, 2023 13:15+0000">2023-07-27</span>
+          IG &#169; 2020+ <a style="color:var(--footer-hyperlink-text-color)" href="https://esante.gouv.fr">ANS</a>.  Package ans.fr.securisation-transport#1.1.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Thu, Jul 27, 2023 13:25+0000">2023-07-27</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)"></span>
                       Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |
