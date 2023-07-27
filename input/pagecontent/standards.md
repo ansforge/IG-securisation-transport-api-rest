@@ -195,15 +195,17 @@ Les paramètres de l’`access token` sont définis par les champs suivants :
 
 Exemple de contenu d’un `access_token` dont la durée de vie est d’une heure : 
 
-<table width="100%">
-<tbody>
-<tr>
-<td>
-<p>{<br /> "iss": "https://server.example.com",<br /> "sub": "identifiant_national",<br /> "aud": [Ressource A, Ressource B], <br /> "nonce": "n-0S6_WzA2Mj",<br /> "exp": 1626921770,<br /> "iat": 1311280970,<br /> "scope": &ldquo;scope 2 scope 3&rdquo;,<br /> }</p>
-</td>
-</tr>
-</tbody>
-</table>
+```json
+{
+"iss": "https://server.example.com",
+"sub": "identifiant_national",
+"aud": [Ressource A, Ressource B],
+"nonce": "n-0S6_WzA2Mj",
+"exp": 1626921770,
+"iat": 1311280970,
+"scope": “scope 2 scope 3”,
+}
+```
 
 #####	L’intégration du mTLS dans le cadre du workflow `OAuth 2.0`
 
