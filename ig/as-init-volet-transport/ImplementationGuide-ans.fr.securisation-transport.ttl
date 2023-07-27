@@ -17,7 +17,7 @@
   fhir:name [ fhir:v "IGsecurisationtransportapirest"] ; # 
   fhir:title [ fhir:v "Sécurisation de la couche transport API REST"] ; # 
   fhir:status [ fhir:v "draft"] ; # 
-  fhir:date [ fhir:v "2023-07-26T20:02:07+00:00"^^xsd:dateTime] ; # 
+  fhir:date [ fhir:v "2023-07-27T12:00:41+00:00"^^xsd:dateTime] ; # 
   fhir:publisher [ fhir:v "ANS"] ; # 
   fhir:contact ( [
      fhir:name [ fhir:v "ANS" ] ;
@@ -662,6 +662,14 @@
          ] ) ;
          fhir:name [ fhir:v "api_prosanteconnectee_donnees_metiers.html"^^xsd:anyURI ] ;
          fhir:title [ fhir:v "Appel d'une API ProSantéConnectée avec des données métiers complémentaires" ] ;
+         fhir:generation [ fhir:v "markdown" ]
+       ] [
+         fhir:extension ( [
+           fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name"^^xsd:anyURI ] ;
+           fhir:value [ fhir:v "documents_de_reference.html"^^xsd:anyURI ]
+         ] ) ;
+         fhir:name [ fhir:v "documents_de_reference.html"^^xsd:anyURI ] ;
+         fhir:title [ fhir:v "Documents de référence" ] ;
          fhir:generation [ fhir:v "markdown" ]
        ] [
          fhir:extension ( [

@@ -128,8 +128,18 @@
       </li>
     </ul>
   </li>
-  <li>
-    <a href="glossaire.html">Glossaire</a>
+  <li class="dropdown">
+    <a data-toggle="dropdown" href="#" class="dropdown-toggle">Glossaire et documents de référence
+      <b class="caret"></b>
+    </a>
+    <ul class="dropdown-menu">
+      <li>
+        <a href="glossaire.html">Glossaire</a>
+      </li>
+      <li>
+        <a href="documents_de_reference.html">Documents de référence</a>
+      </li>
+    </ul>
   </li>
   <li class="dropdown">
     <a data-toggle="dropdown" href="#" class="dropdown-toggle">Autres ressources
@@ -211,10 +221,16 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 
 
     <p><!-- white space is critical inside of capture --></p>
-<div>
-<!-- do not remove - needed to prevent Jekyll from adding a p tag to any non block level element in the markdown.-->
+<div class="markdown-toc">
+<ul id="markdown-toc">
+  <li><a href="#le-positionnement-du-volet-transport-du-ci-sis-dans-le-corpus-documentaire" id="markdown-toc-le-positionnement-du-volet-transport-du-ci-sis-dans-le-corpus-documentaire">Le positionnement du volet transport du CI-SIS dans le corpus documentaire</a></li>
+  <li><a href="#les-différents-type-de-volets-du-ci-sis" id="markdown-toc-les-différents-type-de-volets-du-ci-sis">Les différents type de volets du CI-SIS</a></li>
+  <li><a href="#typologie-des-appplications-et-services-connernés-par-le-volet-transport-du-ci-sis" id="markdown-toc-typologie-des-appplications-et-services-connernés-par-le-volet-transport-du-ci-sis">Typologie des appplications et services connernés par le volet transport du CI-SIS</a></li>
+  <li><a href="#descriptif-des-acteurs-et-des-composants-du-volet-transport" id="markdown-toc-descriptif-des-acteurs-et-des-composants-du-volet-transport">Descriptif des acteurs et des composants du volet transport</a></li>
+</ul>
+
 </div>
-<p>Le positionnement du volet transport du CI-SIS dans le corpus documentaire</p>
+<h3 id="le-positionnement-du-volet-transport-du-ci-sis-dans-le-corpus-documentaire">Le positionnement du volet transport du CI-SIS dans le corpus documentaire</h3>
 
 <p>Ce volet spécifie la couche Transport qui identifie les standards de transport des données et qui permet la communication des éléments d’identification et d’authentification des utilisateurs, physiques ou moraux, nécessaires à la mise en place des contrôles d’accès.</p>
 
@@ -229,14 +245,16 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 <object data="role_systeme.png" type="image/png"></object>
 </p>
 
-<p>Le Cadre d’Interopérabilité des Systèmes d’Information de Santé (CI-SIS) établit les règles pour une informatique communicative dans le domaine de la santé, du médico-social et du social. Le CI-SIS préconise des normes techniques et sémantiques pour les acteurs de la santé impliqués dans des projets d’échange et de partage de données de santé.</p>
+<p>Le <strong>Cadre d’Interopérabilité des Systèmes d’Information de Santé (CI-SIS)</strong> établit les règles pour une informatique communicative dans le domaine de la santé, du médico-social et du social. Le CI-SIS préconise des normes techniques et sémantiques pour les acteurs de la santé impliqués dans des projets d’échange et de partage de données de santé.</p>
 
 <p>La mise en place des volets du cadre d’interopérabilité permet de minimiser les coûts d’intégration de nouvelles interfaces et les difficultés techniques d’interopérabilité, de même que de faciliter l’utilisation de produits d’éditeurs.</p>
 
 <p>Les SI de santé en France sont composés de plusieurs entités indépendantes proposant un certain nombre d’applications et de services de nature hétérogène (client léger/web, client lourd, client applicatif). 
-Les applications des différents Fournisseurs de Services (FS) sont susceptibles de communiquer entre elles.</p>
+<strong>Les applications des différents Fournisseurs de Services (FS) sont susceptibles de communiquer entre elles</strong>.</p>
 
-<p>Afin de faciliter les échanges et d’assurer l’intégrité des données transmises d’un SI à l’autre, il est indispensable de standardiser les échanges. C’est ainsi qu’intervient le Cadre d’Interopérabilité des SI de Santé (CI-SIS) pour résoudre les problèmes d’interopérabilité des applications de santé.
+<p>Afin de faciliter les échanges et d’assurer l’intégrité des données transmises d’un SI à l’autre, il est indispensable de standardiser les échanges.</p>
+
+<p><strong>C’est ainsi qu’intervient le Cadre d’Interopérabilité des SI de Santé (CI-SIS) pour résoudre les problèmes d’interopérabilité des applications de santé</strong>.
  </p>
 <p style="text-align:center">
 <object data="composants_flux_REST.png" type="image/png"></object>
@@ -248,18 +266,27 @@ Les applications des différents Fournisseurs de Services (FS) sont susceptibles
 <object data="architecture_documentaire.png" type="image/png"></object>
 </p>
 
+<h3 id="les-différents-type-de-volets-du-ci-sis">Les différents type de volets du CI-SIS</h3>
+
 <p>En dehors du volet transport du CI-SIS, il existe des référentiels d’interopérabilité à la maille :</p>
 <ul>
   <li>
-    <p>Sémantique : décrivent les normes et terminologies standardisées et partagées qui doivent être utilisées pour décrire différentes catégories de données (diagnostics, médicaments, examens de biologie médicale, etc.). [2]</p>
+    <p><strong>Sémantique :</strong> décrivent les normes et terminologies standardisées et partagées qui doivent être utilisées pour décrire différentes catégories de données (diagnostics, médicaments, examens de biologie médicale, etc.). [2]</p>
   </li>
-  <li>Syntaxique : l’interopérabilité syntaxique permet à deux ou plusieurs systèmes de communiquer et d’échanger des données. Pour être efficace, la conception de toute solution d’interopérabilité doit tenir compte de la granularité des données à partager.<br />
-Afin de sécuriser les échanges entre les SI de santé, le présent volet du CI-SIS définit les modalités d’autorisation d’accès à un service de santé et se base sur les protocoles OAuth 2.0 et OIDC.<br />
-Les normes d’interopérabilité décrite dans le présent volet sont applicables aux applications Pro Santé Connectées et non Pro Santé Connectées.</li>
-  <li>Une application Pro Santé Connectée est une application qui permet aux professionnels de santé de se connecter à un réseau d’échange d’informations de santé, afin de faciliter la gestion des informations médicales via les MIE PSC compatibles.</li>
-  <li>Une application non Pro Santé Connectée est une application qui ne nécessite pas d’utiliser Pro Santé Connect pour accéder aux informations de santé.
-Descriptif des acteurs et des composants du cadre</li>
+  <li>
+    <p><strong>Syntaxique :</strong> l’interopérabilité syntaxique permet à deux ou plusieurs systèmes de communiquer et d’échanger des données. Pour être efficace, la conception de toute solution d’interopérabilité doit tenir compte de la granularité des données à partager.<br />
+Afin de sécuriser les échanges entre les SI de santé, le présent volet du CI-SIS définit les modalités d’autorisation d’accès à un service de santé et se base sur les protocoles OAuth 2.0 et OIDC.<br /></p>
+  </li>
 </ul>
+
+<h3 id="typologie-des-appplications-et-services-connernés-par-le-volet-transport-du-ci-sis">Typologie des appplications et services connernés par le volet transport du CI-SIS</h3>
+<p>Les normes d’interopérabilité décrite dans le présent volet sont applicables aux applications Pro Santé Connectées et non Pro Santé Connectées.</p>
+<ul>
+  <li>Une application Pro Santé Connectée est une application qui permet aux professionnels de santé de se connecter à un réseau d’échange d’informations de santé, afin de faciliter la gestion des informations médicales via les MIE PSC compatibles.</li>
+  <li>Une application non Pro Santé Connectée est une application qui ne nécessite pas d’utiliser Pro Santé Connect pour accéder aux informations de santé.</li>
+</ul>
+
+<h3 id="descriptif-des-acteurs-et-des-composants-du-volet-transport">Descriptif des acteurs et des composants du volet transport</h3>
 
 <p>La PGSSI-S distingue :</p>
 <ul>
@@ -278,7 +305,7 @@ Descriptif des acteurs et des composants du cadre</li>
   </li>
 </ul>
 
-<p>N.B. (en cours de migration) : Le numéro ADELI (Automatisation DEs LIstes) est toléré de façon transitoire jusqu’à son remplacement définitif par l’identifiant RPPS.</p>
+<p><strong>N.B. (en cours de migration) : Le numéro ADELI (Automatisation DEs LIstes) est toléré de façon transitoire jusqu’à son remplacement définitif par l’identifiant RPPS.</strong></p>
 
 <ul>
   <li>Les personnes morales : toutes les structures de soins, telles que les maisons et centres de santé, mais aussi les laboratoires de biologie médicale, les services de protection maternelle infantile ou encore les services de santé au travail. Ces dernières sont identifiées par :
@@ -381,7 +408,7 @@ Descriptif des acteurs et des composants du cadre</li>
 
       <div class="inner-wrapper">
         <p>
-          IG &#169; 2020+ <a style="color:var(--footer-hyperlink-text-color)" href="https://esante.gouv.fr">ANS</a>.  Package ans.fr.securisation-transport#0.1.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Wed, Jul 26, 2023 20:02+0000">2023-07-26</span>
+          IG &#169; 2020+ <a style="color:var(--footer-hyperlink-text-color)" href="https://esante.gouv.fr">ANS</a>.  Package ans.fr.securisation-transport#0.1.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Thu, Jul 27, 2023 12:00+0000">2023-07-27</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)"></span>
                       Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |

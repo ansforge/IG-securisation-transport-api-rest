@@ -10,7 +10,7 @@
   "name" : "IGsecurisationtransportapirest",
   "title" : "Sécurisation de la couche transport API REST",
   "status" : "draft",
-  "date" : "2023-07-26T20:02:07+00:00",
+  "date" : "2023-07-27T12:00:41+00:00",
   "publisher" : "ANS",
   "contact" : [{
     "name" : "ANS",
@@ -765,6 +765,15 @@
         }],
         "nameUrl" : "api_prosanteconnectee_donnees_metiers.html",
         "title" : "Appel d'une API ProSantéConnectée avec des données métiers complémentaires",
+        "generation" : "markdown"
+      },
+      {
+        "extension" : [{
+          "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
+          "valueUrl" : "documents_de_reference.html"
+        }],
+        "nameUrl" : "documents_de_reference.html",
+        "title" : "Documents de référence",
         "generation" : "markdown"
       },
       {

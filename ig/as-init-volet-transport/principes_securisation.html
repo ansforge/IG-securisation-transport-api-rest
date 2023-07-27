@@ -128,8 +128,18 @@
       </li>
     </ul>
   </li>
-  <li>
-    <a href="glossaire.html">Glossaire</a>
+  <li class="dropdown">
+    <a data-toggle="dropdown" href="#" class="dropdown-toggle">Glossaire et documents de référence
+      <b class="caret"></b>
+    </a>
+    <ul class="dropdown-menu">
+      <li>
+        <a href="glossaire.html">Glossaire</a>
+      </li>
+      <li>
+        <a href="documents_de_reference.html">Documents de référence</a>
+      </li>
+    </ul>
   </li>
   <li class="dropdown">
     <a data-toggle="dropdown" href="#" class="dropdown-toggle">Autres ressources
@@ -215,70 +225,72 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 <ul id="markdown-toc">
   <li><a href="#confidentialité" id="markdown-toc-confidentialité">Confidentialité</a></li>
   <li><a href="#intégrité" id="markdown-toc-intégrité">Intégrité</a></li>
-  <li><a href="#la-sécurisation-de-larchitecture-selon-les-cas-dusages" id="markdown-toc-la-sécurisation-de-larchitecture-selon-les-cas-dusages">La sécurisation de l’architecture selon les cas d’usages</a>    <ul>
-      <li><a href="#les-niveaux-de-sensibilité-des-données" id="markdown-toc-les-niveaux-de-sensibilité-des-données">Les niveaux de sensibilité des données</a></li>
-      <li><a href="#la-déclinaison-des-spécifications-par-cas-dusages-et-exigences-de-sécurité" id="markdown-toc-la-déclinaison-des-spécifications-par-cas-dusages-et-exigences-de-sécurité">La déclinaison des spécifications par cas d’usages et exigences de sécurité</a></li>
-      <li><a href="#la-définition-des-proxys" id="markdown-toc-la-définition-des-proxys">La définition des proxys</a></li>
-    </ul>
-  </li>
+  <li><a href="#la-sécurisation-de-larchitecture-selon-les-cas-dusages" id="markdown-toc-la-sécurisation-de-larchitecture-selon-les-cas-dusages">La sécurisation de l’architecture selon les cas d’usages</a></li>
 </ul>
 
 </div>
 <h3 id="confidentialité">Confidentialité</h3>
 <p>Dans le volet transport synchrone pour application mobile : la confidentialité des échanges au niveau du transport est gérée par l’encapsulation du flux dans une connexion sécurisée TLS.
-L’usage du TLS version 1.3 ou supérieure est recommandé et celui de la version 1.2 encore supporté. Les version 1.0 et 1.1 sont interdites. L’usage de SSL 3.0 ou inférieure est interdit.</p>
+L’usage du <strong>TLS version 1.3 ou supérieure est recommandé</strong> et celui de la version 1.2 encore supporté.
+<strong>Les version 1.0 et 1.1 sont interdites</strong>. L’usage de SSL 3.0 ou inférieure est interdit.</p>
 
 <h3 id="intégrité">Intégrité</h3>
 <p>L’intégrité des échanges au niveau du transport est gérée par l’encapsulation du flux dans une connexion sécurisée TLS.</p>
 
-<h2 id="la-sécurisation-de-larchitecture-selon-les-cas-dusages">La sécurisation de l’architecture selon les cas d’usages</h2>
-<h3 id="les-niveaux-de-sensibilité-des-données">Les niveaux de sensibilité des données</h3>
+<h3 id="la-sécurisation-de-larchitecture-selon-les-cas-dusages">La sécurisation de l’architecture selon les cas d’usages</h3>
+<h4 id="les-niveaux-de-sensibilité-des-données">Les niveaux de sensibilité des données</h4>
 <p>La PGSSI-S met en avant des référentiels d’identification électronique pour personnes physiques et morales définis dans les documents suivants [11] et [12].</p>
 
-<p>Dans le cadre des API PSC Connectées, les données échangées sont des données sensibles qui nécessitent une architecture sécurisée.</p>
+<p>Dans le cadre des <strong>API Pro Santé Connectées</strong>, les données échangées sont des données sensibles qui nécessitent une architecture sécurisée.</p>
 
-<p>Dans le cadre des API non PSC Connectées et du cas d’usage authentification d’une structure par OAuth 2.0, le s données échangées sont des données non-sensibles et sont dites restreintes.</p>
+<p>Dans le cadre des <strong>API non Pro Santé Connectées</strong> et du cas d’usage authentification d’une structure par 
+<code class="language-plaintext highlighter-rouge">OAuth 2.0</code> , les données échangées sont des données non-sensibles et sont dites restreintes.</p>
 
-<p>Dans le cadre d’une authentification par mTLS et par mTLS + OAuth 2.0, les données échangées sont des données sensibles qui nécessitent une architecture sécurisée.</p>
+<p>Dans le cadre d’une authentification par mTLS et par <strong>mTLS + <code class="language-plaintext highlighter-rouge">OAuth 2.0</code></strong>, les données échangées sont des données sensibles qui nécessitent une architecture sécurisée.</p>
 
-<p>Le présent volet du CI-SIS a pour objectif de présenter les méthodes pour sécuriser les échanges de données selon la sensibilité de la donnée échangée. 
+<p><strong>Le présent volet tranport du CI-SIS a pour objectif de présenter les méthodes pour sécuriser les échanges de données selon la sensibilité de la donnée échangée.</strong>
  </p>
-<h3 id="la-déclinaison-des-spécifications-par-cas-dusages-et-exigences-de-sécurité">La déclinaison des spécifications par cas d’usages et exigences de sécurité</h3>
+<h4 id="la-déclinaison-des-spécifications-par-cas-dusages-et-exigences-de-sécurité">La déclinaison des spécifications par cas d’usages et exigences de sécurité</h4>
 <p>L’objectif de la section présentée ci-dessous est de décrire les spécifications techniques permettant les échanges entre les différents SI Santé de façon sécurisée.</p>
 
 <p>Les éléments permettant de déterminer le niveau de sensibilité de la donnée sont explicités dans la documentation de la PGSSI-S.</p>
 
 <ul>
-  <li>Si l’API appelée est publique :</li>
-</ul>
-
-<p>L’appel aux ressources/services cibles se fait par clé API fournie par le service cible à la suite d’un enrôlement de l’application appelante. Le service cible n’exige pas d’authentification en plus de la part du système initiateur, car les données exposées sont publiques.</p>
-
-<ul>
   <li>
-    <p>Si l’API appelée est privée :</p>
+    <p>Si l’API appelée est <strong>publique</strong> :</p>
+
+    <ul>
+      <li>L’appel aux ressources/services cibles se fait par clé API fournie par le service cible à la suite d’un enrôlement de l’application appelante.</li>
+      <li>Le service cible n’exige pas d’authentification en plus de la part du système initiateur, car les données exposées sont publiques.</li>
+    </ul>
+  </li>
+  <li>
+    <p>Si l’API appelée est <strong>privée</strong> :</p>
 
     <ul>
       <li>
-        <p>Cas de l’authentification indirecte de l’utilisateur au sein d’une structure</p>
+        <p>Cas de <strong>l’authentification indirecte de l’utilisateur au sein d’une structure</strong></p>
 
         <p>On parle d’identification indirecte d’un professionnel de santé dans la mesure où le service cible s’appuie sur une authentification du professionnel réalisée localement par la structure.</p>
-        <p>
-Dans le cas où seule la personne morale (structure) a besoin de s’authentifier, celle-ci est directe et réalisée par la connexion mTLS avec le certificat de structure.<br />
-L’accès à l’API se fait avec OAuth 2.0 et/ou mTLS. Si les données sont sensibles, l’utilisation d’une connexion mTLS à minima est nécessaire.<br />
-Le mTLS permet d’authentifier le client par un Client_ID_AS + mTLS au lieu de s’authentifier avec son client_secret/Client_ID_AS. Dans ce cas le client_secret n’est pas nécessaire car l’authentification est portée par le mTLS (certificat client).<br />
-La structure appelante doit fournir les informations utilisateur selon les besoins / cas d’usage métier (ex : RPPS, profession, autres informations utilisateur).
-</p>
+
+        <p>Dans le cas où seule la personne morale (structure) a besoin de s’authentifier, celle-ci est directe et réalisée par la <strong>connexion mTLS avec le certificat de structure</strong>.</p>
+
+        <p>L’accès à l’API se fait avec <strong><code class="language-plaintext highlighter-rouge">OAuth 2.0</code> et/ou mTLS</strong>. Si les données sont sensibles, l’utilisation d’une connexion mTLS à minima est nécessaire.</p>
+
+        <p>Le mTLS permet d’authentifier le client par un <strong><code class="language-plaintext highlighter-rouge">Client_ID_AS</code> + mTLS</strong> au lieu de s’authentifier avec son client_secret/Client_ID_AS. Dans ce cas le client_secret n’est pas nécessaire car l’authentification est portée par le mTLS (certificat client).</p>
+
+        <p>La structure appelante doit fournir les informations utilisateur selon les besoins / cas d’usage métier.
+(ex : RPPS, profession, autres informations utilisateur).</p>
       </li>
       <li>
-        <p>Cas d’authentification directe d’un professionnel de santé</p>
+        <p>Cas <strong>d’authentification directe d’un professionnel de santé</strong></p>
 
         <ul>
           <li>
             <p>Cas d’authentification avec Pro Santé Connect :
-NB : Ce cas est décrit dans cette version du CI-SIS</p>
+<strong>NB : Ce cas est décrit dans cette version du CI-SIS</strong></p>
 
-            <p>Dans le cas où l’utilisateur a besoin de s’authentifier avec Pro Santé Connect (pour accéder à des données sensibles), l’utilisateur s’authentifie avec son MIE PSC et l’accès à l’API du système cible se fait avec OAuth 2.0.</p>
+            <p>Dans le cas où l’utilisateur a besoin de s’authentifier avec Pro Santé Connect (pour accéder à des données sensibles), l’utilisateur s’authentifie avec son MIE PSC et l’accès à l’API du système cible se fait avec <code class="language-plaintext highlighter-rouge">OAuth 2.0</code>.</p>
 
             <ul>
               <li>
@@ -288,13 +300,17 @@ NB : Ce cas est décrit dans cette version du CI-SIS</p>
                 <p>Soit le PS accède à un service avec PSC, et doit accéder à un autre service fournisseur de données de santé par des API Pro Santé connectées.</p>
               </li>
             </ul>
+
+            <p>Pour plus de détail sur le mode d’authentification sur les APIs Pro Santé Connectées, rendez-vous sur les pages :
+<a href="api_prosanteconnectee_web.html">Appel d’une API Pro Santé Connectée depuis une application web</a> et 
+<a href="api_prosanteconnectee_client_lourd.html">Appel d’une API Pro Santé Connectée depuis une application client lourd ou mobile</a></p>
           </li>
           <li>
             <p>Cas d’authentification sans Pro Santé Connect :</p>
 
-            <p>Dans le cas où l’utilisateur a besoin de s’authentifier physiquement avec un fournisseur d’identité tiers au service cible, l’utilisateur s’authentifie selon les modalités spécifiques requises et l’accès à l’API du système cible se fait avec OAuth 2.0 avec PKCE.</p>
+            <p>Dans le cas où l’utilisateur a besoin de s’authentifier physiquement avec un fournisseur d’identité tiers au service cible, l’utilisateur s’authentifie selon les modalités spécifiques requises et l’accès à l’API du système cible se fait avec <code class="language-plaintext highlighter-rouge">OAuth 2.0</code> avec <code class="language-plaintext highlighter-rouge">PKCE</code>.</p>
 
-            <p>Un serveur d’autorisation est mis à disposition à par la/les structure(s) cible(s)/appelée(s) dans le cadre de la réalisation du protocole OAuth 2.0.</p>
+            <p><strong>Un serveur d’autorisation est mis à disposition à par la/les structure(s) cible(s)/appelée(s) dans le cadre de la réalisation du protocole <code class="language-plaintext highlighter-rouge">OAuth 2.0</code>.</strong></p>
           </li>
         </ul>
       </li>
@@ -302,22 +318,22 @@ NB : Ce cas est décrit dans cette version du CI-SIS</p>
   </li>
 </ul>
 
-<h3 id="la-définition-des-proxys">La définition des proxys</h3>
+<h4 id="la-définition-des-proxys">La définition des proxys</h4>
 <p>Le proxy est un serveur applicatif mis à disposition par le système initiateur qui souhaite accéder aux données du système cible.</p>
 
 <p>L’utilisation d’un proxy est motivée par des enjeux de :</p>
 
-<p>Sécurisation :</p>
+<p><strong>Sécurisation :</strong></p>
 <ul>
-  <li>Par la gestion des credentials pour s’authentifier sur PSC et sur le serveur d’autorisation du service cible. Chaque proxy détiendra un Client_ID_AS et un certificat TLS client.</li>
-  <li>Séparation de la gestion des credentials entre le module qui utilise l’access_token (Fournisseur des services pour le cas web et Proxy API/LPS pour le cas client lourd) et le module qui le demande (navigateur, mobile ou LPS). Le proxy empêche donc la remontée de ces informations au niveau de l’instance qui les demandent.</li>
-  <li>Un contrôle d’accès d’un proxy au service cible réalisé grâce aux scopes</li>
+  <li>Par la gestion des credentials pour s’authentifier sur PSC et sur le serveur d’autorisation du service cible. Chaque proxy détiendra un <code class="language-plaintext highlighter-rouge">Client_ID_AS</code> et un <strong>certificat TLS client</strong>.</li>
+  <li>Séparation de la gestion des credentials entre le module qui utilise l’<code class="language-plaintext highlighter-rouge">access_token</code> (Fournisseur des services pour le cas web et Proxy API/LPS pour le cas client lourd) et le module qui le demande (navigateur, mobile ou LPS). Le proxy évite donc la remontée de ces informations au niveau de l’instance qui les demandent.</li>
+  <li>Un contrôle d’accès d’un proxy au service cible réalisé grâce aux <code class="language-plaintext highlighter-rouge">scopes</code></li>
 </ul>
 
-<p>Découplage des requêtes au service cible et des requêtes vers PSC :</p>
+<p><strong>Découplage des requêtes au service cible et des requêtes vers PSC :</strong></p>
 <ul>
-  <li>L’access token PSC est utilisé une seule fois pour initier l’authentification sur le service cible lors de l’échange de jetons : subject_token (access_token PSC) contre un access_token</li>
-  <li>La durée de validité de l’access_token API est de 1h contre 2 minutes pour l’access_token PSC.
+  <li>L’<code class="language-plaintext highlighter-rouge">access token</code> PSC est utilisé une seule fois pour initier l’authentification sur le service cible lors de l’échange de jetons : <code class="language-plaintext highlighter-rouge">subject_token</code> (<code class="language-plaintext highlighter-rouge">access_token PSC</code>) contre un <code class="language-plaintext highlighter-rouge">access_token API</code>.</li>
+  <li>La durée de validité de l’<code class="language-plaintext highlighter-rouge">access_token API</code> est de 1h contre 2 minutes pour l’access_token PSC.
 Cela évite une sursollicitation de PSC lors de l’envoie des requêtes vers le service cible.</li>
 </ul>
 
@@ -325,23 +341,25 @@ Cela évite une sursollicitation de PSC lors de l’envoie des requêtes vers le
 <object data="role_proxy.png" type="image/png"></object>
 </p>
 
-<p>Un proxy est soumis aux exigences de sécurité suivantes :</p>
+<p><strong>Un proxy est soumis aux exigences de sécurité suivantes :</strong></p>
 
 <ul>
   <li>Sécurisation de la connexion entre chaque instance qui demande les tokens (Navigateur ou LPS) et l’instance qui l’utilise (FS pour le cas web et proxy LPS FS/API pour le cas client lourd).</li>
-  <li>Fiabilité dans le mapping entre l’instance demandant les tokens et celle qui l’utilise. Par exemple, on souhaite s’assurer que subject_token délivré par PSC est bien distingué par le proxy de l’access_token délivré par le serveur d’autorisation.</li>
+  <li>Fiabilité dans le mapping entre l’instance demandant les tokens et celle qui l’utilise.</li>
 </ul>
 
-<p>L’outil utilisé pour la sécurisation des échanges et la bonne affection des jetons entre le client et le proxy varient selon le type de client :</p>
+<p>Par exemple, on souhaite s’assurer que <code class="language-plaintext highlighter-rouge">subject_token</code> délivré par PSC est bien distingué par le proxy de l’<code class="language-plaintext highlighter-rouge">access_token</code> délivré par le serveur d’autorisation.</p>
+
+<p><strong>L’outil utilisé pour la sécurisation des échanges et la bonne affection des jetons entre le client et le proxy varient selon le type de client :</strong></p>
 
 <ul>
   <li>Si le client est un navigateur, un cookie applicatif avec une durée de vie limitée est initié par le proxy et est utilisé par le navigateur pour chaque nouvelle requête.</li>
-  <li>Si le client est lourd, un jeton applicatif avec une durée de vie limitée est initié par le proxy et est utilisé par le client lourd pour chaque nouvelle requête</li>
+  <li>Si le client est un client lourd, un jeton applicatif avec une durée de vie limitée est initié par le proxy et est utilisé par le client lourd pour chaque nouvelle requête</li>
 </ul>
 
-<p>Dans les deux cas, un mapping par couple (clé,valeur) du type (ID jeton applicatif / ID cookie applicatif ; token ) est utilisé pour permettre au proxy qui manipulent ces tokens de les distinguer.</p>
+<p><strong>Dans les deux cas, un mapping par couple (clé,valeur) du type (ID jeton applicatif / ID cookie applicatif ; token ) est utilisé pour permettre au proxy qui manipulent ces tokens de les distinguer.</strong></p>
 
-<p>Dans le cas des clients lourds, les différences quantitatives de cardinalité entre les instances LPS client, les proxys LPS et les serveurs d’autorisation sont décrites ci-dessous, du point de vue des éditeurs, pour l’accès à un seul service cible :</p>
+<p>Dans le cas des clients lourds, les <strong>différences quantitatives de cardinalités</strong> entre les instances LPS client, les proxys LPS et les serveurs d’autorisation sont décrites ci-dessous, du point de vue des éditeurs, pour l’accès à un seul service cible :</p>
 
 <p style="text-align:center">
 <object data="cardinalites_LPS_proxy_SA.png" type="image/png"></object>
@@ -355,7 +373,7 @@ Cela évite une sursollicitation de PSC lors de l’envoie des requêtes vers le
 <object data="cardinalites_SA_proxy.png" type="image/png"></object>
 </p>
 
-<p>Les proxys LPS API et LPS FS ont été rendus distincts car leurs rôles le sont. Il est toutefois possible pour un éditeur de regrouper ces deux fonctions au sein d’une même structure logicielle lors de l’implémentation de la sécurisation de l’architecture.</p>
+<p><strong>Les proxys LPS API et LPS FS ont été rendus distincts car leurs rôles le sont. Il est toutefois possible pour un éditeur de regrouper ces deux fonctions au sein d’une même structure logicielle lors de l’implémentation de la sécurisation de l’architecture.</strong></p>
 
 <p> </p>
 
@@ -406,7 +424,7 @@ Cela évite une sursollicitation de PSC lors de l’envoie des requêtes vers le
 
       <div class="inner-wrapper">
         <p>
-          IG &#169; 2020+ <a style="color:var(--footer-hyperlink-text-color)" href="https://esante.gouv.fr">ANS</a>.  Package ans.fr.securisation-transport#0.1.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Wed, Jul 26, 2023 20:02+0000">2023-07-26</span>
+          IG &#169; 2020+ <a style="color:var(--footer-hyperlink-text-color)" href="https://esante.gouv.fr">ANS</a>.  Package ans.fr.securisation-transport#0.1.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Thu, Jul 27, 2023 12:00+0000">2023-07-27</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)"></span>
                       Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |
