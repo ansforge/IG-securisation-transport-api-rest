@@ -53,6 +53,8 @@ pages:
         title: Récupération et utilisation du jeton userinfo PSC
     api_prosanteconnectee_donnees_metiers.md:
         title: Appel d'une API ProSantéConnectée avec des données métiers complémentaires
+    documents_de_reference.md:
+        title: Documents de référence
  
     about.md:
         title: A propos de ce guide
@@ -71,7 +73,9 @@ menu:
         Application client lourd ou mobile : api_prosanteconnectee_client_lourd.html
         Récupération et utilisation du jeton userinfo PSC : api_prosanteconnectee_userinfo.html
         Passage de données métiers de l'application cliente vers l'API  : api_prosanteconnectee_donnees_metiers.html
-    Glossaire :   glossaire.html
+    Glossaire et documents de référence:  
+        Glossaire: glossaire.html
+        Documents de référence: documents_de_reference.html
     Autres ressources:
         Sécurité: securite.html
         Téléchargements et usage: downloads.html

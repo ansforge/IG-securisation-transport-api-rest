@@ -1,67 +1,83 @@
-## Les APIs REST
-###	Généralités sur le concept d’API REST et bonnes pratiques
-<p>
-Une API REST est une interface de programmation qui suit les principes de l'architecture REST.<br>
-Elle permet aux clients (des applications web ou mobiles) de communiquer avec un serveur en utilisant des requêtes HTTP. Les ressources cibles sont identifiées par des URLs.<br>
-Dans une API REST, les opérations CRUD (Create, Read, Update, Delete) sont implémentées via les méthodes dans une requête : POST, GET, PUT, et DELETE respectivement.<br>
-Les réponses à ces requêtes sont retournées en format JSON.
-</p>
+### Les APIs REST
+####	Généralités sur le concept d’API REST et bonnes pratiques
+
+Une **API REST** est une interface de programmation qui suit les principes de l'architecture REST.
+
+Elle permet aux clients (des applications web ou mobiles) de communiquer avec un serveur en utilisant des requêtes HTTP. Les ressources cibles sont identifiées par des URLs.
+
+Dans une API REST, les opérations **CRUD (Create, Read, Update, Delete)** sont implémentées via les méthodes dans une requête : **POST, GET, PUT, et DELETE** respectivement.
+
+Les réponses à ces requêtes sont retournées en format `JSON`.
+
 <p style="text-align:center">
 <object data="exemple_req_REST_bearer.png" type="image/png"></object>
 </p>
 
 
-###	Liaison avec le protocole de transport ou binding
+####	Liaison avec le protocole de transport ou binding
 Le protocole HTTP1.1 encapsulé dans une connexion sécurisée TLS doit être utilisé.
 
 
 
-##	Le standard OpenID Connect pour la gestion de l’authentification des applications Pro Santé Connectées 
-<p>
-Pro Santé Connect est le fournisseur d’identité de la santé pour les acteurs de santé professionnels en France. Il s’agit d’un service basé sur le protocole standard OpenID Connect.<br> Il permet aux professionnels de santé de s’identifier de manière simple, sécurisée et unifiée.<br> Ils se connectent aux services numériques en santé, en passant de l’un à l’autre de manière fluide.
-</p>
+###	Le standard OpenID Connect pour la gestion de l’authentification des applications Pro Santé Connectées 
 
-Une application Pro Santé Connectée est une application web ou client lourd qui permet aux professionnels (PS) de s’authentifier à l’aide d’un MIE PSC compatible. Ces applications sont généralement utilisées par des établissements de santé/e-santé pour la gestion de leurs dossiers médicaux.
+**Pro Santé Connect** est le **fournisseur d’identité** de la santé pour les acteurs de santé professionnels en France. Il s’agit d’un service basé sur le protocole standard `OpenID Connect`. 
 
-Pour accéder au service d’authentification de PSC permettant d’accéder à des API Pro Santé connectées, deux cinématiques sont disponibles :
+Il permet aux professionnels de santé de s’identifier de manière simple, sécurisée et unifiée.
 
-*	Via le flux authorization code [4] 
-*	Via le flux Client Initiated Backchannel Authentication (CIBA) [5] 
+Ils se connectent aux services numériques en santé, en passant de l’un à l’autre de manière fluide.
 
-Description du protocole OpenID Connect
 
-OpenID Connect (OIDC) est un protocole d'authentification qui s'appuie sur OAuth 2.0 pour fournir une identification sécurisée et basée sur des jetons pour les applications Web et mobiles. 
+Une application Pro Santé Connectée est une application web ou client lourd qui permet aux professionnels (PS) de s’authentifier à l’aide d’un MIE PSC compatible. 
 
-OIDC fournit une couche d'authentification supplémentaire au-dessus d’OAuth 2.0, qui permet aux clients d'obtenir des informations d'identification et de profil sur les utilisateurs en utilisant des ID tokens.
+Ces applications sont généralement utilisées par des établissements de santé/e-santé pour la gestion de leurs dossiers médicaux.
 
-Ce protocole utilise des jetons JSON Web Tokens (JWT) pour échanger des informations d'identification entre l'application cliente, le fournisseur d'identité et le service/système cible.
+Pour accéder au service d’authentification de PSC permettant d’accéder à des **API Pro Santé connectées**, deux cinématiques sont disponibles :
 
-La documentation technique Pro Santé Connecté [4] fournit des détails sur le fonctionnement du protocole OIDC au sein de PSC. 
+*	Via le `flux authorization code` [4] 
+*	Via le flux `Client Initiated Backchannel Authentication (CIBA)` [5] 
+
+Description du protocole `OpenID Connect`
+
+`OpenID Connect (OIDC)` est un protocole d'authentification qui s'appuie sur `OAuth 2.0` pour fournir une identification sécurisée et basée sur des jetons pour les applications Web et mobiles. 
+
+`OIDC` fournit une couche d'authentification supplémentaire au-dessus d’`OAuth 2.0`, qui permet aux clients d'obtenir des informations d'identification et de profil sur les utilisateurs en utilisant des `ID tokens`.
+
+Ce protocole utilise des jetons `JSON Web Tokens (JWT)` pour échanger des informations d'identification entre l'application cliente, le fournisseur d'identité et le service/système cible.
+
+La documentation technique Pro Santé Connecté [4] fournit des détails sur le fonctionnement du protocole `OIDC` au sein de PSC. 
  
 
 
-##	Le standard OAuth 2.0 pour la gestion des autorisations et accès
-<p>
-OAuth 2.0 est un protocole standard d'autorisation qui permet à une application tierce d'accéder à des ressources protégées. Le protocole OAuth 2.0 définit des étapes à suivre pour obtenir et utiliser un jeton d'accès (access_token).<br> Ce jeton est délivré par le serveur d’autorisation et permet d’accéder aux ressources d’une application protégée. <br>Les services de e-santé utilisent ce standard OAuth 2.0 pour la gestion des autorisations et des accès.
-</p>
+###	Le standard OAuth 2.0 pour la gestion des autorisations et accès
 
-###	Description du serveur d’autorisation du système cible
+`OAuth 2.0` est un protocole standard d'autorisation qui permet à une application tierce d'accéder à des ressources protégées. Le protocole `OAuth 2.0` définit des étapes à suivre pour obtenir et utiliser un jeton d'accès (`access_token`).
 
-OAuth 2.0 est un protocole d'autorisation qui permet à une application (le client) de se connecter aux ressources protégées sur service cible en utilisant un access_token émis par un serveur d’autorisation. Ce dernier est responsable du contrôle d’accès du client, de l'émission et de la gestion de ces jetons d'accès et de la vérification du jeton d’accès.
+Ce jeton est délivré par le serveur d’autorisation et permet d’accéder aux ressources d’une application protégée. 
 
-D’autre part, le serveur d’autorisation va effectuer le contrôle d’accès sur les scopes de l’application appelante à l’aide de l’identifiant du client (Client_ID_AS) et des scopes associés dans la requête.
-À l’issue du contrôle d’accès, le serveur d’autorisation va délivrer un jeton d’accès (access_token) permettant d’accéder aux ressources du système cible.
+Les services de e-santé utilisent ce standard `OAuth 2.0` pour la gestion des autorisations et des accès.
 
-Le serveur d'autorisation est un composant essentiel du flux OAuth 2.0 qui permet de garantir la sécurité et la confidentialité des données de l'utilisateur et doit être implémenté côté service/système cible.
+
+####	Description du serveur d’autorisation du système cible
+
+`OAuth 2.0` est un protocole d'autorisation qui permet à une application (le client) de se connecter aux ressources protégées sur service cible en utilisant un access_token émis par un serveur d’autorisation. 
+
+Ce dernier est responsable du contrôle d’accès du client, de l'émission et de la gestion de ces jetons d'accès et de la vérification du jeton d’accès.
+
+D’autre part, le serveur d’autorisation va effectuer le contrôle d’accès sur les scopes de l’application appelante à l’aide de l’identifiant du client (`Client_ID_AS`) et des `scopes` associés dans la requête.
+
+À l’issue du contrôle d’accès, le serveur d’autorisation va délivrer un jeton d’accès (`access_token`) permettant d’accéder aux ressources du système cible.
+
+Le serveur d'autorisation est un composant essentiel du flux `OAuth 2.0`qui permet de garantir la sécurité et la confidentialité des données de l'utilisateur et doit être implémenté côté service/système cible.
 
 La règle générale d'autorisation portera toujours sur une structure et son service. Une structure est soit une structure de santé ou une structure autorisée (proxy éditeur). 
 
 
-###	Gestion et contrôle des accès
-####	Le contrôle d’accès avec les scopes
-*	Définition d’un scope dans le protocole OAuth 2.0 
+####	Gestion et contrôle des accès
+#####	Le contrôle d’accès avec les scopes
+*	Définition d’un `scope` dans le protocole `OAuth 2.0` 
 
-Dans le protocole OAuth 2.0, les scopes sont utilisés par le client pour demander un accès limité aux données du propriétaire de la ressource. 
+Dans le protocole `OAuth 2.0`, les `scopes` sont utilisés par le client pour demander un accès limité aux données du propriétaire de la ressource. 
 
 Les scopes sont utilisés pour définir les autorisations que le client demande auprès du service cible propriétaire de la ressource. Ils décrivent les actions que l'application sera autorisée à effectuer ou le périmètre de données sur lequel l'application sera autorisée d'agir.
 
@@ -70,37 +86,42 @@ Les scopes sont utilisés pour définir les autorisations que le client demande 
 </p>
 
 
-Afin d’illustrer l’usage du scope au sein d’un processus fonctionnel, on peut prendre l’exemple simplifié d’un utilisateur qui souhaite accéder aux ressources protégées d’un service de e-santé.
-<p>
-Dans le cas des API Pro Santé Connectées, le Professionnel de Santé (PS) est redirigé vers PRO Santé CONNECT par le fournisseur de service. Une fois le PS authentifié sur PSC, celui-ci envoie les tokens PSC au fournisseur de services.
-</p>
-<p>
-L’authentification du fournisseur de services auprès du serveur d’autorisation se fait selon la RFC 7235 [11] c’est-à-dire avec un Client_ID_AS dans le header de sa requête suivant la méthode « Authentification Basic » qui encode les credentials en base 64.<br>
-Le fournisseur de service envoie une requête auprès du serveur d’autorisation qui contient comme paramètres, un subject_token (dans le cas des API ProSantéConnectées : subject_token = Access Token PSC), un certificat de structure et des scopes métier.<br>
+Afin d’illustrer l’usage du `scope` au sein d’un processus fonctionnel, on peut prendre l’exemple simplifié d’un utilisateur qui souhaite accéder aux ressources protégées d’un service de e-santé.
+
+Dans le cas des **API Pro Santé Connectées**, le Professionnel de Santé (PS) est redirigé vers PRO Santé CONNECT par le fournisseur de service. 
+
+Une fois le PS authentifié sur PSC, celui-ci envoie les tokens PSC au fournisseur de services.
+
+
+L’authentification du fournisseur de services auprès du serveur d’autorisation se fait selon la RFC 7235 [11] c’est-à-dire avec un `Client_ID_AS` dans le header de sa requête suivant la méthode `Authentification Basic` qui encode les credentials en base 64.
+
+Le fournisseur de service envoie une requête auprès du serveur d’autorisation qui contient comme paramètres, un `subject_token` (dans le cas des API ProSantéConnectées : `subject_token` = `Access Token PSC`), un certificat de structure et des `scopes métier`.
+
 Une fois le contrôle d’accès est réalisé par le serveur d’autorisation, le PS peut accéder au service de e-santé.
-</p>
 
 <p style="text-align:center">
 <object data="schema_scope_cas_metier.png" type="image/png"></object>
 </p>
 
 
-
-
-####	Les normes de conservation de l’access token
-La sécurité liée au stockage de l’access token et à sa conservation est définie par l’ANSSI dans le document Recommandations pour la sécurisation de la mise en œuvre du protocole OpenID Connect dans la section 3.4 Recommandation R23 à R26. [6]
+#####	Les normes de conservation de l’access token
+La sécurité liée au stockage de l’access token et à sa conservation est définie par l’ANSSI dans le document Recommandations pour la sécurisation de la mise en œuvre du protocole `OpenID Connect` dans la section 3.4 Recommandation R23 à R26. [6]
 
 Recommandation : 
-<p>
-Une fois envoyé, les attributs de validité de l’access_token pourront être conservés par le système cible, notamment au sein d’un cache au niveau du serveur d’autorisation.<br>
-Afin de résoudre le problème de l’éventuelle révocation de l’access_token, la recommandation est de définir la durée de validité de l’access_token, émis par le serveur d’autorisation, entre 1h et 4h. Il est également fortement recommandé de vérifier la validité de l’access_token toutes les demi-heures en utilisant le service d'introspection du serveur d’autorisation. <br>
-Si l’access_token est un jeton autoporteur JWS l’introspection n’est pas nécessaire, mais si c’est un jeton JWT opaque, elle l’est.
- </p>
 
-####	Les données de l’access token
-Les données de l’access token peuvent être accessibles soit dans un jeton JWT signé par le serveur d'autorisation, soit via un appel à un service d'introspection.
+Une fois envoyé, les attributs de validité de l’access_token pourront être conservés par le système cible, notamment au sein d’un cache au niveau du serveur d’autorisation.
 
-Les paramètres de l’access token sont définis par les champs suivants :
+Afin de résoudre le problème de l’éventuelle révocation de l’`access_token`, la recommandation est de définir la durée de validité de l’`access_token`, émis par le serveur d’autorisation, entre 1h et 4h. 
+
+Il est également fortement recommandé de vérifier la validité de l’`access_token` toutes les demi-heures en utilisant le service d'introspection du serveur d’autorisation. 
+
+Si l’`access_token` est un jeton autoporteur `JWS` l’introspection n’est pas nécessaire, mais si c’est un jeton `JWT` opaque, elle l’est.
+
+
+#####	Les données de l’`access token`
+Les données de l’access token peuvent être accessibles soit dans un jeton `JWT` signé (`JWS`) par le serveur d'autorisation, soit via un appel à un service d'introspection.
+
+Les paramètres de l’`access token` sont définis par les champs suivants :
 
 <table>
 <tbody>
@@ -172,7 +193,7 @@ Les paramètres de l’access token sont définis par les champs suivants :
 </tbody>
 </table>
 
-Exemple de contenu d’un access_token dont la durée de vie est d’une heure : 
+Exemple de contenu d’un `access_token` dont la durée de vie est d’une heure : 
 
 <table width="100%">
 <tbody>
@@ -184,32 +205,53 @@ Exemple de contenu d’un access_token dont la durée de vie est d’une heure :
 </tbody>
 </table>
 
-####	L’intégration du mTLS dans le cadre du workflow OAuth 2.0
+#####	L’intégration du mTLS dans le cadre du workflow `OAuth 2.0`
 
-Dans le cadre d’un workflow OAuth 2.0, l’utilisation du mTLS permet :
+Dans le cadre d’un workflow `OAuth 2.0`, l’utilisation du **mTLS** permet :
 
 *	La sécurisation des échanges (chiffrement)
 *	L’authentification du client vis-à-vis du serveur
 *	L’authentification du serveur vis-à-vis du client
 
-Ci-dessous une illustration de l’utilisation du mTLS avec OAuth 2.0.
+Ci-dessous une illustration de l’utilisation du mTLS avec `OAuth 2.0`.
 
 <div style="text-align: center;">{%include diag_mtls_oauth2_structure.svg%}</div>
 
 
-Le détail des flux OAUH 2.0 + mTLS est défini dans la partie 7.6.3 Cas OAuth 2.0 + mTLS : accès à des données sensibles
+Le détail des flux `OAUTH 2.0` + **mTLS** est défini dans : 
+*   Les pages concernant les APIs Pro Santé Connectées,
+*   Les pages concernant l'authentification d'une structure via un flux OAuth 2.0 + mTLS : accès à des données sensibles
 
-Le protocole TLS est assuré sur la couche transport. Le certificat client utilisé dans le mTLS peut être transmis au serveur d’autorisation. Le protocole OAUTH est réalisé sur la couche applicative et permet de faire le contrôle du certificat client et de générer un access_token. 
+Le protocole TLS est assuré sur la couche transport. 
+
+Le certificat client utilisé dans le mTLS peut être transmis au serveur d’autorisation. 
+
+Le protocole `OAUTH2` est réalisé sur la couche applicative et permet de faire le contrôle du certificat client et de générer un `access_token`. 
+
+**Nota Bene :**
+Dans le cas des APIs Pro Santé Connectées, l'authentification sur le serveur d'autorisation du service cible n'utilise pas la méthode `Authentification Basic` mais une authentification mTLS.
+
+Pour plus de détail sur le mode d'authentification sur les APIs Pro Santé Connectées, rendez-vous sur les pages :
+<a href="api_prosanteconnectee_web.html">Appel d'une API Pro Santé Connectée depuis une application web</a> et 
+<a href="api_prosanteconnectee_client_lourd.html">Appel d'une API Pro Santé Connectée depuis une application client lourd ou mobile</a>
+
+
  
-####	Le lien entre un certificat TLS (champ Organisational Unit), sa requête et la réponse de l’access token.
+#####	Le lien entre un certificat TLS (champ Organisational Unit), sa requête et la réponse de l’access token.
 
 Rappel sur les certificats émis une IGC Santé : 
 
-Un certificat de personne morale (également appelé certificat d'entreprise) est un document électronique qui identifie une personne morale, telle qu'une entreprise, une organisation gouvernementale ou une association, auprès d'une autorité de certification (AC). Il sert à garantir l'authenticité et l'intégrité des communications électroniques émises par la personne morale, en fournissant une signature électronique associée à son identité.
+Un **certificat de personne morale (également appelé certificat d'organisation)** est un document électronique qui identifie une personne morale, telle qu'une entreprise, une organisation gouvernementale ou une association, auprès d'une **autorité de certification (AC)**. 
 
-Un certificat serveur (également appelé certificat SSL/TLS) est un document électronique qui identifie un serveur web auprès d'une autorité de certification (AC). Il est utilisé pour garantir l'authenticité et la confidentialité des communications entre un navigateur web et un serveur, en chiffrant les données échangées. Les certificats serveur sont utilisés pour sécuriser les connexions HTTPS, qui sont devenues la norme pour les sites web.
+Il sert à garantir l'authenticité et l'intégrité des communications électroniques émises par la personne morale, en fournissant une signature électronique associée à son identité.
 
-Recommandation :
+Un certificat serveur SSL/TLS est un document électronique qui identifie un serveur web auprès d'une autorité de certification (AC). 
+
+Il est utilisé pour garantir l'authenticité et la confidentialité des communications entre un navigateur web et un serveur, en chiffrant les données échangées. 
+
+Les certificats serveur sont utilisés pour sécuriser les connexions HTTPS, qui sont devenues la norme pour les sites web.
+
+**Recommandation :**
 
 *	L’attribut OU du certificat issu de l’IGC Santé contient un identifiant de type struct_IdNat qui lui-même est constitué d’un préfixe suivi de l’identifiant SIRET ou FINESS.
 *	Pour une structure de santé, le FINESS pourra être le FINESS juridique.
