@@ -264,43 +264,51 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 <ul id="markdown-toc">
   <li><a href="#introduction" id="markdown-toc-introduction">Introduction</a></li>
   <li><a href="#description-générale-des-flux-du-volet-transport" id="markdown-toc-description-générale-des-flux-du-volet-transport">Description Générale des flux du volet transport</a></li>
-  <li><a href="#description-des-flux-spécifiques-aux-apis-pro-santé-connectées" id="markdown-toc-description-des-flux-spécifiques-aux-apis-pro-santé-connectées">Description des flux spécifiques aux APIs Pro Santé Connectées</a></li>
+  <li><a href="#description-des-flux-spécifiques-à-une-api-prosantéconnectée" id="markdown-toc-description-des-flux-spécifiques-à-une-api-prosantéconnectée">Description des flux spécifiques à une API ProSantéConnectée</a></li>
 </ul>
 
 </div>
 <h3 id="introduction">Introduction</h3>
 
-<p>Ce document présente les modalités de sécurisation des API REST afin de garantir l’interopérabilité des systèmes d’information de santé en France. Il concerne la couche de transport et est indépendant des cas d’usages fonctionnels traités par ces API.</p>
+<p>Ce document présente les modalités de sécurisation des <strong>API REST</strong> afin de garantir l’interopérabilité des systèmes d’information de santé en France.</p>
+
+<p><strong>Il concerne la couche de transport et est indépendant des cas d’usages fonctionnels traités par ces API.</strong></p>
 
 <p>L’interopérabilité des Systèmes d’Information (SI) est un enjeu majeur pour les services de la e-santé en France. L’objectif de l’interopérabilité est de faciliter les échanges entre les différents SI tout en garantissant la bonne sécurisation des données partagées entre ces SI.</p>
 
 <p>Ce volet du Cadre d’Interopérabilité des Systèmes d’Information (CI-SIS) prend en compte les éléments suivants :</p>
 
 <ul>
-  <li>Les exigences de sécurité les plus élevées, en particulier celles qui concernent la protection des access token et des informations sensibles.</li>
-  <li>La conformité aux normes d’architecture technique et la conformité aux exigences de la Politique Générale de Sécurité des Systèmes d’Information de Santé (PGSSI-S).</li>
-  <li>Les spécificités sectorielles de la e-santé en France, telles que les identifiants sectoriels, Pro Santé Connect ou encore IGC Santé.</li>
-  <li>Les standards techniques de sécurité actuels, tels que OAuth 2.0, OpenID Connect, l’API REST, etc.</li>
+  <li>Les exigences de sécurité les plus élevées, en particulier celles qui concernent la protection des <code class="language-plaintext highlighter-rouge">access token</code> et des informations sensibles.</li>
+  <li>La conformité aux normes d’architecture technique et la conformité aux exigences de la <strong>Politique Générale de Sécurité des Systèmes d’Information de Santé (PGSSI-S)</strong>.</li>
+  <li>Les spécificités sectorielles de la e-santé en France, telles que les <strong>identifiants sectoriels, Pro Santé Connect ou encore IGC Santé.</strong></li>
+  <li>Les standards techniques de sécurité actuels, tels que <code class="language-plaintext highlighter-rouge">OAuth 2.0, OpenID Connect, l’API REST</code>, etc.</li>
 </ul>
 
 <h3 id="description-générale-des-flux-du-volet-transport">Description Générale des flux du volet transport</h3>
 
-<p>Ce volet transport du cadre d’interopérabilité doit permettre de garantir l’intégration de ces nouvelles technologies. Cela passe notamment par la mise en place de protocoles d’authentification, de contrôle d’accès et de gestion des identités.
-À noter que les technologies existantes, telles que le SAMLV2, l’API SOAP, etc. ne sont plus préconisées en cible. Elles sont toutefois utilisées dans l’architecture provisoire Services cibles existants utilisant une assertion SAML.
-Ces technologies sont documentées dans les volets transports suivants : CI-SIS Volet Transport Synchrone Client Lourd et CI AMO Volet Transport Synchrone pour les services de l’Assurance Maladie [1].</p>
+<p>Ce volet transport du cadre d’interopérabilité doit permettre de garantir l’intégration de ces nouvelles technologies. 
+Cela passe notamment par la mise en place de protocoles d’authentification, de contrôle d’accès et de gestion des identités.</p>
+
+<p>À noter que les technologies existantes, telles que le <strong>SAMLV2, l’API SOAP</strong>, etc. ne sont plus préconisées en cible.</p>
+
+<p>Elles sont toutefois utilisées dans l’architecture provisoire Services cibles existants utilisant une assertion SAML.</p>
+
+<p><strong>Ces technologies sont documentées dans les volets transports suivants : CI-SIS Volet Transport Synchrone Client Lourd et CI AMO Volet Transport Synchrone pour les services de l’Assurance Maladie [1].</strong></p>
 
 <p>Ce document est destiné à un public disposant de compétences techniques avancées. 
-Une compréhension des standards OAuth 2.0 et OpenID Connect est notamment recommandée pour la lecture de ce document.</p>
+Une compréhension des standards <code class="language-plaintext highlighter-rouge">OAuth 2.0 et OpenID Connect</code> est notamment recommandée pour la lecture de ce document.</p>
 
 <p> </p>
-
-<h3 id="description-des-flux-spécifiques-aux-apis-pro-santé-connectées">Description des flux spécifiques aux APIs Pro Santé Connectées</h3>
-<p>Ce volet spécifie les protocoles de transport à utiliser pour les flux entre : </p>
+<h3 id="description-des-flux-spécifiques-à-une-api-prosantéconnectée">Description des flux spécifiques à une API ProSantéConnectée</h3>
+<p>Ce volet spécifie les protocoles de transport à utiliser pour les flux entre :</p>
 
 <ul>
-  <li>un système cible offrant une API Pro Santé Connectée à laquelle il est possible de se connecter de façon synchrone.</li>
-  <li>un système initiateur, pouvant être une application web serveur, une application client lourd, une application mobile native ou web, se connectant à une API Pro Santé Connectée de façon synchrone.</li>
+  <li>un système cible offrant une API ProSantéConnectée à laquelle il est possible de se connecter de façon synchrone.</li>
+  <li>un système initiateur, pouvant être une application web serveur, une application client lourd, une application mobile native ou web, se connectant à une API ProSantéConnectée de façon synchrone.</li>
 </ul>
+
+<p>Pour en savoir plus sur les flux relatifs à une API ProSantéConnectée, rendez-vous sur les pages accessible via le menu “API ProSantéConnectée”.</p>
 
 
 
@@ -349,7 +357,7 @@ Une compréhension des standards OAuth 2.0 et OpenID Connect est notamment recom
 
       <div class="inner-wrapper">
         <p>
-          IG &#169; 2020+ <a style="color:var(--footer-hyperlink-text-color)" href="https://esante.gouv.fr">ANS</a>.  Package ans.fr.securisation-transport#0.1.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Thu, Jul 27, 2023 12:00+0000">2023-07-27</span>
+          IG &#169; 2020+ <a style="color:var(--footer-hyperlink-text-color)" href="https://esante.gouv.fr">ANS</a>.  Package ans.fr.securisation-transport#0.1.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Thu, Jul 27, 2023 12:17+0000">2023-07-27</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)"></span>
                       Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |
