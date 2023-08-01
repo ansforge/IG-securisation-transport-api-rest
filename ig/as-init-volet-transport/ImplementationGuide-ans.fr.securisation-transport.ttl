@@ -17,7 +17,7 @@
   fhir:name [ fhir:v "IGsecurisationtransportapirest"] ; # 
   fhir:title [ fhir:v "Sécurisation de la couche transport API REST"] ; # 
   fhir:status [ fhir:v "active"] ; # 
-  fhir:date [ fhir:v "2023-07-27T13:58:19+00:00"^^xsd:dateTime] ; # 
+  fhir:date [ fhir:v "2023-08-01T11:57:31+00:00"^^xsd:dateTime] ; # 
   fhir:publisher [ fhir:v "ANS"] ; # 
   fhir:contact ( [
      fhir:name [ fhir:v "ANS" ] ;
@@ -528,27 +528,36 @@
        ] [
          fhir:extension ( [
            fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name"^^xsd:anyURI ] ;
-           fhir:value [ fhir:v "archi_documentaire.html"^^xsd:anyURI ]
+           fhir:value [ fhir:v "principes_generaux_du_volet.html"^^xsd:anyURI ]
          ] ) ;
-         fhir:name [ fhir:v "archi_documentaire.html"^^xsd:anyURI ] ;
-         fhir:title [ fhir:v "Architecture documentaire" ] ;
-         fhir:generation [ fhir:v "markdown" ]
-       ] [
-         fhir:extension ( [
-           fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name"^^xsd:anyURI ] ;
-           fhir:value [ fhir:v "standards.html"^^xsd:anyURI ]
-         ] ) ;
-         fhir:name [ fhir:v "standards.html"^^xsd:anyURI ] ;
-         fhir:title [ fhir:v "Standards d'échange" ] ;
-         fhir:generation [ fhir:v "markdown" ]
-       ] [
-         fhir:extension ( [
-           fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name"^^xsd:anyURI ] ;
-           fhir:value [ fhir:v "principes_securisation.html"^^xsd:anyURI ]
-         ] ) ;
-         fhir:name [ fhir:v "principes_securisation.html"^^xsd:anyURI ] ;
-         fhir:title [ fhir:v "Principes de sécurisation" ] ;
-         fhir:generation [ fhir:v "markdown" ]
+         fhir:name [ fhir:v "principes_generaux_du_volet.html"^^xsd:anyURI ] ;
+         fhir:title [ fhir:v "Principes généraux de ce volet" ] ;
+         fhir:generation [ fhir:v "markdown" ] ;
+         fhir:page ( [
+           fhir:extension ( [
+             fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name"^^xsd:anyURI ] ;
+             fhir:value [ fhir:v "archi_documentaire.html"^^xsd:anyURI ]
+           ] ) ;
+           fhir:name [ fhir:v "archi_documentaire.html"^^xsd:anyURI ] ;
+           fhir:title [ fhir:v "Architecture documentaire" ] ;
+           fhir:generation [ fhir:v "markdown" ]
+         ] [
+           fhir:extension ( [
+             fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name"^^xsd:anyURI ] ;
+             fhir:value [ fhir:v "standards.html"^^xsd:anyURI ]
+           ] ) ;
+           fhir:name [ fhir:v "standards.html"^^xsd:anyURI ] ;
+           fhir:title [ fhir:v "Standards d'échange" ] ;
+           fhir:generation [ fhir:v "markdown" ]
+         ] [
+           fhir:extension ( [
+             fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name"^^xsd:anyURI ] ;
+             fhir:value [ fhir:v "principes_securisation.html"^^xsd:anyURI ]
+           ] ) ;
+           fhir:name [ fhir:v "principes_securisation.html"^^xsd:anyURI ] ;
+           fhir:title [ fhir:v "Principes de sécurisation" ] ;
+           fhir:generation [ fhir:v "markdown" ]
+         ] )
        ] [
          fhir:extension ( [
            fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name"^^xsd:anyURI ] ;
@@ -556,47 +565,48 @@
          ] ) ;
          fhir:name [ fhir:v "api_prosanteconnectee.html"^^xsd:anyURI ] ;
          fhir:title [ fhir:v "API ProSantéConnectée" ] ;
-         fhir:generation [ fhir:v "markdown" ]
-       ] [
-         fhir:extension ( [
-           fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name"^^xsd:anyURI ] ;
-           fhir:value [ fhir:v "api_prosanteconnectee_web.html"^^xsd:anyURI ]
-         ] ) ;
-         fhir:name [ fhir:v "api_prosanteconnectee_web.html"^^xsd:anyURI ] ;
-         fhir:title [ fhir:v "Appel d'une API ProSantéConnectée depuis une application web" ] ;
-         fhir:generation [ fhir:v "markdown" ]
-       ] [
-         fhir:extension ( [
-           fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name"^^xsd:anyURI ] ;
-           fhir:value [ fhir:v "api_prosanteconnectee_web_erreurs.html"^^xsd:anyURI ]
-         ] ) ;
-         fhir:name [ fhir:v "api_prosanteconnectee_web_erreurs.html"^^xsd:anyURI ] ;
-         fhir:title [ fhir:v "Appel d'une API ProSantéConnectée depuis une application web - cas d'erreurs" ] ;
-         fhir:generation [ fhir:v "markdown" ]
-       ] [
-         fhir:extension ( [
-           fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name"^^xsd:anyURI ] ;
-           fhir:value [ fhir:v "api_prosanteconnectee_client_lourd.html"^^xsd:anyURI ]
-         ] ) ;
-         fhir:name [ fhir:v "api_prosanteconnectee_client_lourd.html"^^xsd:anyURI ] ;
-         fhir:title [ fhir:v "Appel d'une API ProSantéConnectée depuis une application client lourd ou mobile" ] ;
-         fhir:generation [ fhir:v "markdown" ]
-       ] [
-         fhir:extension ( [
-           fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name"^^xsd:anyURI ] ;
-           fhir:value [ fhir:v "api_prosanteconnectee_userinfo.html"^^xsd:anyURI ]
-         ] ) ;
-         fhir:name [ fhir:v "api_prosanteconnectee_userinfo.html"^^xsd:anyURI ] ;
-         fhir:title [ fhir:v "Récupération et utilisation du jeton userinfo PSC" ] ;
-         fhir:generation [ fhir:v "markdown" ]
-       ] [
-         fhir:extension ( [
-           fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name"^^xsd:anyURI ] ;
-           fhir:value [ fhir:v "api_prosanteconnectee_donnees_metiers.html"^^xsd:anyURI ]
-         ] ) ;
-         fhir:name [ fhir:v "api_prosanteconnectee_donnees_metiers.html"^^xsd:anyURI ] ;
-         fhir:title [ fhir:v "Appel d'une API ProSantéConnectée avec des données métiers complémentaires" ] ;
-         fhir:generation [ fhir:v "markdown" ]
+         fhir:generation [ fhir:v "markdown" ] ;
+         fhir:page ( [
+           fhir:extension ( [
+             fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name"^^xsd:anyURI ] ;
+             fhir:value [ fhir:v "api_prosanteconnectee_web.html"^^xsd:anyURI ]
+           ] ) ;
+           fhir:name [ fhir:v "api_prosanteconnectee_web.html"^^xsd:anyURI ] ;
+           fhir:title [ fhir:v "Appel d'une API ProSantéConnectée depuis une application web" ] ;
+           fhir:generation [ fhir:v "markdown" ]
+         ] [
+           fhir:extension ( [
+             fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name"^^xsd:anyURI ] ;
+             fhir:value [ fhir:v "api_prosanteconnectee_web_erreurs.html"^^xsd:anyURI ]
+           ] ) ;
+           fhir:name [ fhir:v "api_prosanteconnectee_web_erreurs.html"^^xsd:anyURI ] ;
+           fhir:title [ fhir:v "Appel d'une API ProSantéConnectée depuis une application web - cas d'erreurs" ] ;
+           fhir:generation [ fhir:v "markdown" ]
+         ] [
+           fhir:extension ( [
+             fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name"^^xsd:anyURI ] ;
+             fhir:value [ fhir:v "api_prosanteconnectee_client_lourd.html"^^xsd:anyURI ]
+           ] ) ;
+           fhir:name [ fhir:v "api_prosanteconnectee_client_lourd.html"^^xsd:anyURI ] ;
+           fhir:title [ fhir:v "Appel d'une API ProSantéConnectée depuis une application client lourd ou mobile" ] ;
+           fhir:generation [ fhir:v "markdown" ]
+         ] [
+           fhir:extension ( [
+             fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name"^^xsd:anyURI ] ;
+             fhir:value [ fhir:v "api_prosanteconnectee_userinfo.html"^^xsd:anyURI ]
+           ] ) ;
+           fhir:name [ fhir:v "api_prosanteconnectee_userinfo.html"^^xsd:anyURI ] ;
+           fhir:title [ fhir:v "Récupération et utilisation du jeton userinfo PSC" ] ;
+           fhir:generation [ fhir:v "markdown" ]
+         ] [
+           fhir:extension ( [
+             fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name"^^xsd:anyURI ] ;
+             fhir:value [ fhir:v "api_prosanteconnectee_donnees_metiers.html"^^xsd:anyURI ]
+           ] ) ;
+           fhir:name [ fhir:v "api_prosanteconnectee_donnees_metiers.html"^^xsd:anyURI ] ;
+           fhir:title [ fhir:v "Appel d'une API ProSantéConnectée avec des données métiers complémentaires" ] ;
+           fhir:generation [ fhir:v "markdown" ]
+         ] )
        ] [
          fhir:extension ( [
            fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name"^^xsd:anyURI ] ;
@@ -613,64 +623,6 @@
          fhir:name [ fhir:v "documents_de_reference.html"^^xsd:anyURI ] ;
          fhir:title [ fhir:v "Documents de référence" ] ;
          fhir:generation [ fhir:v "markdown" ]
-       ] [
-         fhir:extension ( [
-           fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name"^^xsd:anyURI ] ;
-           fhir:value [ fhir:v "specifications_techniques.html"^^xsd:anyURI ]
-         ] ) ;
-         fhir:name [ fhir:v "specifications_techniques.html"^^xsd:anyURI ] ;
-         fhir:title [ fhir:v "Specifications Techniques" ] ;
-         fhir:generation [ fhir:v "markdown" ] ;
-         fhir:page ( [
-           fhir:extension ( [
-             fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name"^^xsd:anyURI ] ;
-             fhir:value [ fhir:v "construction_des_flux.html"^^xsd:anyURI ]
-           ] ) ;
-           fhir:name [ fhir:v "construction_des_flux.html"^^xsd:anyURI ] ;
-           fhir:title [ fhir:v "Construction Des Flux" ] ;
-           fhir:generation [ fhir:v "markdown" ]
-         ] [
-           fhir:extension ( [
-             fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name"^^xsd:anyURI ] ;
-             fhir:value [ fhir:v "st_flux1.html"^^xsd:anyURI ]
-           ] ) ;
-           fhir:name [ fhir:v "st_flux1.html"^^xsd:anyURI ] ;
-           fhir:title [ fhir:v "Flux 01" ] ;
-           fhir:generation [ fhir:v "markdown" ]
-         ] [
-           fhir:extension ( [
-             fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name"^^xsd:anyURI ] ;
-             fhir:value [ fhir:v "st_flux2.html"^^xsd:anyURI ]
-           ] ) ;
-           fhir:name [ fhir:v "st_flux2.html"^^xsd:anyURI ] ;
-           fhir:title [ fhir:v "Flux 02" ] ;
-           fhir:generation [ fhir:v "markdown" ]
-         ] )
-       ] [
-         fhir:extension ( [
-           fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name"^^xsd:anyURI ] ;
-           fhir:value [ fhir:v "autres_ressources.html"^^xsd:anyURI ]
-         ] ) ;
-         fhir:name [ fhir:v "autres_ressources.html"^^xsd:anyURI ] ;
-         fhir:title [ fhir:v "Autres Ressources" ] ;
-         fhir:generation [ fhir:v "markdown" ] ;
-         fhir:page ( [
-           fhir:extension ( [
-             fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name"^^xsd:anyURI ] ;
-             fhir:value [ fhir:v "securite.html"^^xsd:anyURI ]
-           ] ) ;
-           fhir:name [ fhir:v "securite.html"^^xsd:anyURI ] ;
-           fhir:title [ fhir:v "Sécurité" ] ;
-           fhir:generation [ fhir:v "markdown" ]
-         ] [
-           fhir:extension ( [
-             fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name"^^xsd:anyURI ] ;
-             fhir:value [ fhir:v "downloads.html"^^xsd:anyURI ]
-           ] ) ;
-           fhir:name [ fhir:v "downloads.html"^^xsd:anyURI ] ;
-           fhir:title [ fhir:v "Téléchargements et usages" ] ;
-           fhir:generation [ fhir:v "markdown" ]
-         ] )
        ] [
          fhir:extension ( [
            fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name"^^xsd:anyURI ] ;

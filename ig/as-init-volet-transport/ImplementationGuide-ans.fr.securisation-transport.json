@@ -10,7 +10,7 @@
   "name" : "IGsecurisationtransportapirest",
   "title" : "Sécurisation de la couche transport API REST",
   "status" : "active",
-  "date" : "2023-07-27T13:58:19+00:00",
+  "date" : "2023-08-01T11:57:31+00:00",
   "publisher" : "ANS",
   "contact" : [{
     "name" : "ANS",
@@ -617,29 +617,38 @@
       {
         "extension" : [{
           "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
-          "valueUrl" : "archi_documentaire.html"
+          "valueUrl" : "principes_generaux_du_volet.html"
         }],
-        "nameUrl" : "archi_documentaire.html",
-        "title" : "Architecture documentaire",
-        "generation" : "markdown"
-      },
-      {
-        "extension" : [{
-          "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
-          "valueUrl" : "standards.html"
-        }],
-        "nameUrl" : "standards.html",
-        "title" : "Standards d'échange",
-        "generation" : "markdown"
-      },
-      {
-        "extension" : [{
-          "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
-          "valueUrl" : "principes_securisation.html"
-        }],
-        "nameUrl" : "principes_securisation.html",
-        "title" : "Principes de sécurisation",
-        "generation" : "markdown"
+        "nameUrl" : "principes_generaux_du_volet.html",
+        "title" : "Principes généraux de ce volet",
+        "generation" : "markdown",
+        "page" : [{
+          "extension" : [{
+            "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
+            "valueUrl" : "archi_documentaire.html"
+          }],
+          "nameUrl" : "archi_documentaire.html",
+          "title" : "Architecture documentaire",
+          "generation" : "markdown"
+        },
+        {
+          "extension" : [{
+            "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
+            "valueUrl" : "standards.html"
+          }],
+          "nameUrl" : "standards.html",
+          "title" : "Standards d'échange",
+          "generation" : "markdown"
+        },
+        {
+          "extension" : [{
+            "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
+            "valueUrl" : "principes_securisation.html"
+          }],
+          "nameUrl" : "principes_securisation.html",
+          "title" : "Principes de sécurisation",
+          "generation" : "markdown"
+        }]
       },
       {
         "extension" : [{
@@ -648,52 +657,52 @@
         }],
         "nameUrl" : "api_prosanteconnectee.html",
         "title" : "API ProSantéConnectée",
-        "generation" : "markdown"
-      },
-      {
-        "extension" : [{
-          "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
-          "valueUrl" : "api_prosanteconnectee_web.html"
-        }],
-        "nameUrl" : "api_prosanteconnectee_web.html",
-        "title" : "Appel d'une API ProSantéConnectée depuis une application web",
-        "generation" : "markdown"
-      },
-      {
-        "extension" : [{
-          "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
-          "valueUrl" : "api_prosanteconnectee_web_erreurs.html"
-        }],
-        "nameUrl" : "api_prosanteconnectee_web_erreurs.html",
-        "title" : "Appel d'une API ProSantéConnectée depuis une application web - cas d'erreurs",
-        "generation" : "markdown"
-      },
-      {
-        "extension" : [{
-          "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
-          "valueUrl" : "api_prosanteconnectee_client_lourd.html"
-        }],
-        "nameUrl" : "api_prosanteconnectee_client_lourd.html",
-        "title" : "Appel d'une API ProSantéConnectée depuis une application client lourd ou mobile",
-        "generation" : "markdown"
-      },
-      {
-        "extension" : [{
-          "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
-          "valueUrl" : "api_prosanteconnectee_userinfo.html"
-        }],
-        "nameUrl" : "api_prosanteconnectee_userinfo.html",
-        "title" : "Récupération et utilisation du jeton userinfo PSC",
-        "generation" : "markdown"
-      },
-      {
-        "extension" : [{
-          "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
-          "valueUrl" : "api_prosanteconnectee_donnees_metiers.html"
-        }],
-        "nameUrl" : "api_prosanteconnectee_donnees_metiers.html",
-        "title" : "Appel d'une API ProSantéConnectée avec des données métiers complémentaires",
-        "generation" : "markdown"
+        "generation" : "markdown",
+        "page" : [{
+          "extension" : [{
+            "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
+            "valueUrl" : "api_prosanteconnectee_web.html"
+          }],
+          "nameUrl" : "api_prosanteconnectee_web.html",
+          "title" : "Appel d'une API ProSantéConnectée depuis une application web",
+          "generation" : "markdown"
+        },
+        {
+          "extension" : [{
+            "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
+            "valueUrl" : "api_prosanteconnectee_web_erreurs.html"
+          }],
+          "nameUrl" : "api_prosanteconnectee_web_erreurs.html",
+          "title" : "Appel d'une API ProSantéConnectée depuis une application web - cas d'erreurs",
+          "generation" : "markdown"
+        },
+        {
+          "extension" : [{
+            "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
+            "valueUrl" : "api_prosanteconnectee_client_lourd.html"
+          }],
+          "nameUrl" : "api_prosanteconnectee_client_lourd.html",
+          "title" : "Appel d'une API ProSantéConnectée depuis une application client lourd ou mobile",
+          "generation" : "markdown"
+        },
+        {
+          "extension" : [{
+            "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
+            "valueUrl" : "api_prosanteconnectee_userinfo.html"
+          }],
+          "nameUrl" : "api_prosanteconnectee_userinfo.html",
+          "title" : "Récupération et utilisation du jeton userinfo PSC",
+          "generation" : "markdown"
+        },
+        {
+          "extension" : [{
+            "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
+            "valueUrl" : "api_prosanteconnectee_donnees_metiers.html"
+          }],
+          "nameUrl" : "api_prosanteconnectee_donnees_metiers.html",
+          "title" : "Appel d'une API ProSantéConnectée avec des données métiers complémentaires",
+          "generation" : "markdown"
+        }]
       },
       {
         "extension" : [{
@@ -712,69 +721,6 @@
         "nameUrl" : "documents_de_reference.html",
         "title" : "Documents de référence",
         "generation" : "markdown"
-      },
-      {
-        "extension" : [{
-          "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
-          "valueUrl" : "specifications_techniques.html"
-        }],
-        "nameUrl" : "specifications_techniques.html",
-        "title" : "Specifications Techniques",
-        "generation" : "markdown",
-        "page" : [{
-          "extension" : [{
-            "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
-            "valueUrl" : "construction_des_flux.html"
-          }],
-          "nameUrl" : "construction_des_flux.html",
-          "title" : "Construction Des Flux",
-          "generation" : "markdown"
-        },
-        {
-          "extension" : [{
-            "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
-            "valueUrl" : "st_flux1.html"
-          }],
-          "nameUrl" : "st_flux1.html",
-          "title" : "Flux 01",
-          "generation" : "markdown"
-        },
-        {
-          "extension" : [{
-            "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
-            "valueUrl" : "st_flux2.html"
-          }],
-          "nameUrl" : "st_flux2.html",
-          "title" : "Flux 02",
-          "generation" : "markdown"
-        }]
-      },
-      {
-        "extension" : [{
-          "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
-          "valueUrl" : "autres_ressources.html"
-        }],
-        "nameUrl" : "autres_ressources.html",
-        "title" : "Autres Ressources",
-        "generation" : "markdown",
-        "page" : [{
-          "extension" : [{
-            "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
-            "valueUrl" : "securite.html"
-          }],
-          "nameUrl" : "securite.html",
-          "title" : "Sécurité",
-          "generation" : "markdown"
-        },
-        {
-          "extension" : [{
-            "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
-            "valueUrl" : "downloads.html"
-          }],
-          "nameUrl" : "downloads.html",
-          "title" : "Téléchargements et usages",
-          "generation" : "markdown"
-        }]
       },
       {
         "extension" : [{

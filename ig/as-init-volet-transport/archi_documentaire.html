@@ -42,8 +42,8 @@
 
 	  <script src="assets/js/prism.js"></script>
 
-    <style type="text/css">h2{--heading-prefix:"2"}
-    h3,h4,h5,h6{--heading-prefix:"2"}</style>
+    <style type="text/css">h2{--heading-prefix:"2.1"}
+    h3,h4,h5,h6{--heading-prefix:"2.1"}</style>
     <div id="segment-header" class="segment">  <!-- segment-header -->
       <div class="container">  <!-- container -->
         <!-- Placeholder for child template header declarations -->
@@ -93,6 +93,9 @@
     </a>
     <ul class="dropdown-menu">
       <li>
+        <a href="principes_generaux_du_volet.html">Principes généraux de ce volet</a>
+      </li>
+      <li>
         <a href="archi_documentaire.html">Architecture documentaire</a>
       </li>
       <li>
@@ -141,25 +144,6 @@
       </li>
     </ul>
   </li>
-  <li class="dropdown">
-    <a data-toggle="dropdown" href="#" class="dropdown-toggle">Autres ressources
-      <b class="caret"></b>
-    </a>
-    <ul class="dropdown-menu">
-      <li>
-        <a href="securite.html">Sécurité</a>
-      </li>
-      <li>
-        <a href="downloads.html">Téléchargements et usage</a>
-      </li>
-      <li>
-        <a target="_blank" href="https://interop.esante.gouv.fr/ig/documentation/">Documentation sur les IG</a>
-      </li>
-      <li>
-        <a target="_blank" href="https://esante.gouv.fr/">Site de l&apos;ANS </a>
-      </li>
-    </ul>
-  </li>
   <li>
     <a href="about.html">A propos de ce guide</a>
   </li>
@@ -175,11 +159,11 @@
     <div id="segment-breadcrumb" class="segment">  <!-- segment-breadcrumb -->
       <div class="container">  <!-- container -->
         <ul class="breadcrumb">
-          <li><a href='toc.html'><b>Table of Contents</b></a></li><li><b>Architecture documentaire</b></li>
+          <li><a href='toc.html'><b>Table of Contents</b></a></li><li><a href='principes_generaux_du_volet.html'><b>Principes généraux de ce volet</b></a></li><li><b>Architecture documentaire</b></li>
 
           <span style="float:right;">
 
-            <a href="index.html">&lt;prev</a> | 
+            <a href="principes_generaux_du_volet.html">&lt;prev</a> | 
 
             <a href="#bottom">bottom</a>
 
@@ -221,70 +205,14 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 
 
     <p><!-- white space is critical inside of capture --></p>
-<div class="markdown-toc">
-<ul id="markdown-toc">
-  <li><a href="#le-positionnement-du-volet-transport-du-ci-sis-dans-le-corpus-documentaire" id="markdown-toc-le-positionnement-du-volet-transport-du-ci-sis-dans-le-corpus-documentaire">Le positionnement du volet transport du CI-SIS dans le corpus documentaire</a></li>
-  <li><a href="#les-différents-type-de-volets-du-ci-sis" id="markdown-toc-les-différents-type-de-volets-du-ci-sis">Les différents type de volets du CI-SIS</a></li>
-  <li><a href="#typologie-des-appplications-et-services-connernés-par-le-volet-transport-du-ci-sis" id="markdown-toc-typologie-des-appplications-et-services-connernés-par-le-volet-transport-du-ci-sis">Typologie des appplications et services connernés par le volet transport du CI-SIS</a></li>
-  <li><a href="#descriptif-des-acteurs-et-des-composants-du-volet-transport" id="markdown-toc-descriptif-des-acteurs-et-des-composants-du-volet-transport">Descriptif des acteurs et des composants du volet transport</a></li>
-</ul>
-
+<div>
+<!-- do not remove - needed to prevent Jekyll from adding a p tag to any non block level element in the markdown.-->
 </div>
-<h3 id="le-positionnement-du-volet-transport-du-ci-sis-dans-le-corpus-documentaire">Le positionnement du volet transport du CI-SIS dans le corpus documentaire</h3>
-
-<p>Ce volet spécifie la couche Transport qui identifie les standards de transport des données et qui permet la communication des éléments d’identification et d’authentification des utilisateurs, physiques ou moraux, nécessaires à la mise en place des contrôles d’accès.</p>
-
-<p>Il spécifie la couche Transport pour :</p>
-
-<ul>
-  <li>Un système cible offrant un service auquel il est possible de se connecter de façon synchrone.</li>
-  <li>Un système initiateur (application Web, client lourd, client natif) se connectant au service de façon synchrone.</li>
-</ul>
-
-<p style="text-align:center">
-<object data="role_systeme.png" type="image/png"></object>
-</p>
-
-<p>Le <strong>Cadre d’Interopérabilité des Systèmes d’Information de Santé (CI-SIS)</strong> établit les règles pour une informatique communicative dans le domaine de la santé, du médico-social et du social. Le CI-SIS préconise des normes techniques et sémantiques pour les acteurs de la santé impliqués dans des projets d’échange et de partage de données de santé.</p>
-
-<p>La mise en place des volets du cadre d’interopérabilité permet de minimiser les coûts d’intégration de nouvelles interfaces et les difficultés techniques d’interopérabilité, de même que de faciliter l’utilisation de produits d’éditeurs.</p>
-
-<p>Les SI de santé en France sont composés de plusieurs entités indépendantes proposant un certain nombre d’applications et de services de nature hétérogène (client léger/web, client lourd, client applicatif). 
-<strong>Les applications des différents Fournisseurs de Services (FS) sont susceptibles de communiquer entre elles</strong>.</p>
-
-<p>Afin de faciliter les échanges et d’assurer l’intégrité des données transmises d’un SI à l’autre, il est indispensable de standardiser les échanges.</p>
-
-<p><strong>C’est ainsi qu’intervient le Cadre d’Interopérabilité des SI de Santé (CI-SIS) pour résoudre les problèmes d’interopérabilité des applications de santé</strong>.
- </p>
-<p style="text-align:center">
-<object data="composants_flux_REST.png" type="image/png"></object>
-</p>
-
-<p>Par ailleurs, ce volet du CI-SIS s’insère dans l’ensemble documentaire décrit ci-dessous :</p>
+<p>Ce volet du CI-SIS s’insère dans l’ensemble documentaire décrit ci-dessous :</p>
 
 <p style="text-align:center">
 <object data="architecture_documentaire.png" type="image/png"></object>
 </p>
-
-<h3 id="les-différents-type-de-volets-du-ci-sis">Les différents type de volets du CI-SIS</h3>
-
-<p>En dehors du volet transport du CI-SIS, il existe des référentiels d’interopérabilité à la maille :</p>
-<ul>
-  <li>
-    <p><strong>Sémantique :</strong> décrivent les normes et terminologies standardisées et partagées qui doivent être utilisées pour décrire différentes catégories de données (diagnostics, médicaments, examens de biologie médicale, etc.). [2]</p>
-  </li>
-  <li>
-    <p><strong>Syntaxique :</strong> l’interopérabilité syntaxique permet à deux ou plusieurs systèmes de communiquer et d’échanger des données. Pour être efficace, la conception de toute solution d’interopérabilité doit tenir compte de la granularité des données à partager.<br />
-Afin de sécuriser les échanges entre les SI de santé, le présent volet du CI-SIS définit les modalités d’autorisation d’accès à un service de santé et se base sur les protocoles OAuth 2.0 et OIDC.<br /></p>
-  </li>
-</ul>
-
-<h3 id="typologie-des-appplications-et-services-connernés-par-le-volet-transport-du-ci-sis">Typologie des appplications et services connernés par le volet transport du CI-SIS</h3>
-<p>Les normes d’interopérabilité décrite dans le présent volet sont applicables aux applications Pro Santé Connectées et non Pro Santé Connectées.</p>
-<ul>
-  <li>Une application Pro Santé Connectée est une application qui permet aux professionnels de santé de se connecter à un réseau d’échange d’informations de santé, afin de faciliter la gestion des informations médicales via les MIE PSC compatibles.</li>
-  <li>Une application non Pro Santé Connectée est une application qui ne nécessite pas d’utiliser Pro Santé Connect pour accéder aux informations de santé.</li>
-</ul>
 
 <h3 id="descriptif-des-acteurs-et-des-composants-du-volet-transport">Descriptif des acteurs et des composants du volet transport</h3>
 
@@ -390,7 +318,7 @@ Afin de sécuriser les échanges entre les SI de santé, le présent volet du CI
             <tr>
               <td style="text-align:left">&#xA0;
 
-                <a href="index.html">&lt;prev</a>
+                <a href="principes_generaux_du_volet.html">&lt;prev</a>
 
               </td>
               <td style="text-align:center">
@@ -408,7 +336,7 @@ Afin de sécuriser les échanges entre les SI de santé, le présent volet du CI
 
       <div class="inner-wrapper">
         <p>
-          IG &#169; 2020+ <a style="color:var(--footer-hyperlink-text-color)" href="https://esante.gouv.fr">ANS</a>.  Package ans.fr.securisation-transport#1.1.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Thu, Jul 27, 2023 13:58+0000">2023-07-27</span>
+          IG &#169; 2020+ <a style="color:var(--footer-hyperlink-text-color)" href="https://esante.gouv.fr">ANS</a>.  Package ans.fr.securisation-transport#1.1.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Tue, Aug 1, 2023 11:57+0000">2023-08-01</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)"></span>
                       Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |
