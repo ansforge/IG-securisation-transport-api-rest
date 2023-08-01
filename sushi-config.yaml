@@ -54,7 +54,7 @@ pages:
 menu:
     Accueil: index.html
     Description générale des flux:
-        Principes généraux de ce volet : principe_generaux_du_volet.html
+        Principes généraux de ce volet : principes_generaux_du_volet.html
         Architecture documentaire : archi_documentaire.html
         Standards utilisés (REST, OAUTH 2.0 ET OIDC) : standards.html
         Principes de sécurisation : principes_securisation.html
