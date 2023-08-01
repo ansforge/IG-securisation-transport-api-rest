@@ -34,7 +34,7 @@ En dehors du volet transport du CI-SIS, il existe des référentiels d'interopé
 *	**Syntaxique :** l'interopérabilité syntaxique permet à deux ou plusieurs systèmes de communiquer et d'échanger des données. Pour être efficace, la conception de toute solution d'interopérabilité doit tenir compte de la granularité des données à partager.<br>
 Afin de sécuriser les échanges entre les SI de santé, le présent volet du CI-SIS définit les modalités d’autorisation d’accès à un service de santé et se base sur les protocoles OAuth 2.0 et OIDC.<br>
 
-### Typologie des appplications et services connernés par le volet transport du CI-SIS
+### Typologie des appplications et services concernés par le volet transport du CI-SIS
 Les normes d’interopérabilité décrite dans le présent volet sont applicables aux applications Pro Santé Connectées et non Pro Santé Connectées.
 *	Une application Pro Santé Connectée est une application qui permet aux professionnels de santé de se connecter à un réseau d'échange d'informations de santé, afin de faciliter la gestion des informations médicales via les MIE PSC compatibles.
 *	Une application non Pro Santé Connectée est une application qui ne nécessite pas d’utiliser Pro Santé Connect pour accéder aux informations de santé.
