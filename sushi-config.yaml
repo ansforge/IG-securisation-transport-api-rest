@@ -21,7 +21,7 @@ parameters:
 pages:
     index.md:
         title: Accueil
-    principes_generaux_du volet.md:
+    principes_generaux_du_volet.md:
         title: Principes généraux de ce volet
         archi_documentaire.md:
             title: Architecture documentaire
