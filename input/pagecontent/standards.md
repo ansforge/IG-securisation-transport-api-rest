@@ -92,8 +92,10 @@ Dans le cas des **API Pro Santé Connectées**, le Professionnel de Santé (PS) 
 
 Une fois le PS authentifié sur PSC, celui-ci envoie les tokens PSC au fournisseur de services.
 
+L’authentification du fournisseur de services auprès du serveur d’autorisation se fait selon la RFC 7235 [11] c’est-à-dire avec un `Client_ID_AS` dans le header de sa requête.
 
-L’authentification du fournisseur de services auprès du serveur d’autorisation se fait selon la RFC 7235 [11] c’est-à-dire avec un `Client_ID_AS` dans le header de sa requête suivant la méthode `Authentification Basic` qui encode les credentials en base 64.
+* Dans Le cas des APIs ProSantéConnectées, il d'agit d'une authentification mTLS.
+* Dans le cas des APIs non ProSantéConnectées, il s'agit d'une authentication de type `Authentification Basic` qui encode les credentials en base 64.
 
 Le fournisseur de service envoie une requête auprès du serveur d’autorisation qui contient comme paramètres, un `subject_token` (dans le cas des API ProSantéConnectées : `subject_token` = `Access Token PSC`), un certificat de structure et des `scopes métier`.
 
@@ -206,6 +208,9 @@ Exemple de contenu d’un `access_token` dont la durée de vie est d’une heure
 "scope": “scope 2 scope 3”,
 }
 ```
+
+* L'attribut nonce n'est pas nécessaire dans les APIs ProSanté Connectées.
+
 
 #####	L’intégration du mTLS dans le cadre du workflow `OAuth 2.0`
 
