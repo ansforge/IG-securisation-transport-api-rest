@@ -374,7 +374,7 @@ Une fois ces éléments introspectés et validés, <strong>le serveur d’autori
 <p>Obligatoire d&rsquo;apr&egrave;s la documentation officielle (OAuth 2.0)</p>
 </td>
 <td width="106">
-<p>Obligatoire pour l&rsquo;interop&eacute;rabilit&eacute; des SIS</p>
+<p>Obligatoire dans ce volet du CI-SIS</p>
 </td>
 <td width="293">
 <p>Valeur</p>
@@ -438,8 +438,29 @@ Une fois ces éléments introspectés et validés, <strong>le serveur d’autori
 <p>= scopes m&eacute;tier</p>
 </td>
 </tr>
+<tr>
+<td width="132">
+<p>cnf</p>
+</td>
+<td width="102">
+<p>Non</p>
+</td>
+<td width="106">
+<p>Oui</p>
+</td>
+<td width="293">
+<p>Empreinte du certificat TLS client utilis&eacute; pour la requ&ecirc;te token exchange et pour la requ&ecirc;te m&eacute;tier</p>
+</td>
+</tr>
 </tbody>
 </table>
+
+<p><strong>Exemple d’attribut cnf :</strong></p>
+
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
+</span><span class="nl">"x5t#S256"</span><span class="p">:</span><span class="w"> </span><span class="s2">"YTIzYThiYThjNWNmNTYyZWVkMjE3YmRhM2Y1OWM1MzA3NzAyOWQyMWY4YzY4MjZiYzU2OGY4ODU0ODZhN2RhMA=="</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div></div>
 
 <p><strong>Exemple de requête :</strong></p>
 
@@ -486,7 +507,7 @@ Cible : Fournisseur de services</p>
 
 <p>Le contrôle d’accès est basé sur le contrôle de l’association entre <code class="language-plaintext highlighter-rouge">scopes</code> et <code class="language-plaintext highlighter-rouge">Client_ID_AS</code> contenus dans le serveur d’autorisation.</p>
 
-<p>Une fois le contrôle d’accès effectué et validé, le serveur d’autorisation forge un <code class="language-plaintext highlighter-rouge">access_token</code> permettant d’accéder au service cible et le délivre au fournisseur de services appelant.</p>
+<p>Une fois le contrôle d’accès effectué et validé, le serveur d’autorisation émet un <code class="language-plaintext highlighter-rouge">access_token</code> permettant d’accéder au service cible et le délivre au fournisseur de services appelant.</p>
 
 <p><strong>Exemple de réponse :</strong></p>
 <div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code>HTTP/1.1 200 OK
@@ -511,7 +532,12 @@ Cible : Service cible
 Type d’appel :  Requête de ressources protégées
 Méthode : GET</p>
 
-<p>Le fournisseur de services envoie une requête auprès du service cible avec l’<code class="language-plaintext highlighter-rouge">access_token</code> contenu dans l’entête. Le service cible introspecte l’<code class="language-plaintext highlighter-rouge">access_token</code> auprès du serveur d’autorisation afin vérifier la validité de ce dernier ainsi que ses <code class="language-plaintext highlighter-rouge">scopes</code> associés.</p>
+<p>Le fournisseur de services envoie une requête auprès du service cible avec l’<code class="language-plaintext highlighter-rouge">access_token</code> contenu dans l’entête. Le service cible réalise les contrôles suivants :</p>
+<ul>
+  <li>introspection de l’<code class="language-plaintext highlighter-rouge">access_token</code> auprès du serveur d’autorisation afin vérifier la validité de ce dernier,</li>
+  <li>vérification des <code class="language-plaintext highlighter-rouge">scopes</code> associés à l’<code class="language-plaintext highlighter-rouge">access_token</code>,</li>
+  <li>vérification du lien entre le certificat TLS client utilisé pour la requête au ressources protégées et l’<code class="language-plaintext highlighter-rouge">access_token</code> via l’attribut cnf selon la RFC 7519 [3].</li>
+</ul>
 
 <p><strong>Exemple de requête :</strong></p>
 
@@ -569,7 +595,7 @@ Authorization: Bearer oab3thieWohyai0eoxibaequ0Owae9oh
 
       <div class="inner-wrapper">
         <p>
-          IG &#169; 2020+ <a style="color:var(--footer-hyperlink-text-color)" href="https://esante.gouv.fr">ANS</a>.  Package ans.fr.securisation-transport#1.1.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Tue, Nov 21, 2023 17:08+0000">2023-11-21</span>
+          IG &#169; 2020+ <a style="color:var(--footer-hyperlink-text-color)" href="https://esante.gouv.fr">ANS</a>.  Package ans.fr.securisation-transport#1.1.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Wed, Nov 22, 2023 15:40+0000">2023-11-22</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)"></span>
                       Liens: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table des matières </a> |
