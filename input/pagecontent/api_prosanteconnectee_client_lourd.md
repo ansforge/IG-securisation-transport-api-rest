@@ -99,11 +99,11 @@ Une fois ces éléments introspectés et validés, le serveur d’autorisation r
 <td width="132">
 <p>Param&egrave;tres</p>
 </td>
-<td width="94">
+<td width="102">
 <p>Obligatoire d&rsquo;apr&egrave;s la documentation officielle (OAuth 2.0)</p>
 </td>
-<td width="113">
-<p>Obligatoire pour l&rsquo;interop&eacute;rabilit&eacute; des SIS</p>
+<td width="106">
+<p>Obligatoire dans ce volet du CI-SIS</p>
 </td>
 <td width="293">
 <p>Valeur</p>
@@ -113,10 +113,10 @@ Une fois ces éléments introspectés et validés, le serveur d’autorisation r
 <td width="132">
 <p>grant_type</p>
 </td>
-<td width="94">
+<td width="102">
 <p>Oui</p>
 </td>
-<td width="113">
+<td width="106">
 <p>Oui</p>
 </td>
 <td width="293">
@@ -127,10 +127,10 @@ Une fois ces éléments introspectés et validés, le serveur d’autorisation r
 <td width="132">
 <p>subject_token</p>
 </td>
-<td width="94">
+<td width="102">
 <p>Oui</p>
 </td>
-<td width="113">
+<td width="106">
 <p>Oui</p>
 </td>
 <td width="293">
@@ -141,25 +141,25 @@ Une fois ces éléments introspectés et validés, le serveur d’autorisation r
 <td width="132">
 <p>subject_token_type</p>
 </td>
-<td width="94">
+<td width="102">
 <p>Oui</p>
 </td>
-<td width="113">
+<td width="106">
 <p>Oui</p>
 </td>
 <td width="293">
-<p>urn:ietf:params:oauth:token-type:jwt<br>
-<b>ou bien</b><br>urn:ietf:params:oauth:token-type:access_token</p>
+<p>urn:ietf:params:oauth:token-type:jwt<br></p>
+<p><b>ou bien</b> urn:ietf:params:oauth:token-type:access_token</p>
 </td>
 </tr>
 <tr>
 <td width="132">
-<p>scope</p>
+<p>Scope</p>
 </td>
-<td width="94">
+<td width="102">
 <p>Non</p>
 </td>
-<td width="113">
+<td width="106">
 <p>Oui</p>
 </td>
 <td width="293">
@@ -167,11 +167,30 @@ Une fois ces éléments introspectés et validés, le serveur d’autorisation r
 <p>= scopes m&eacute;tier</p>
 </td>
 </tr>
+<tr>
+<td width="132">
+<p>cnf</p>
+</td>
+<td width="102">
+<p>Non</p>
+</td>
+<td width="106">
+<p>Oui</p>
+</td>
+<td width="293">
+<p>Empreinte du certificat TLS client utilis&eacute; pour la requ&ecirc;te token exchange et pour la requ&ecirc;te m&eacute;tier</p>
+</td>
+</tr>
 </tbody>
 </table>
 
+**Exemple d'attribut cnf :**
 
-
+```json
+{
+"x5t#S256": "YTIzYThiYThjNWNmNTYyZWVkMjE3YmRhM2Y1OWM1MzA3NzAyOWQyMWY4YzY4MjZiYzU2OGY4ODU0ODZhN2RhMA=="
+}
+```
 
 **Exemple de requête :**
 
@@ -247,8 +266,11 @@ Cible : Service cible
 Type d’appel :  Requête de ressources protégées
 Méthode : GET
 
-*   Le proxy LPS API envoie une requête auprès du service cible avec l’`access_token` contenu dans l’entête. 
-*   Le service cible introspecte l’`access_token` du serveur d’autorisation afin vérifier sa validité et ses scopes.
+Le proxy LPS API envoie une requête auprès du service cible avec l’`access_token` contenu dans l’entête. Le service cible réalise les contrôles suivants :
+* introspection de l’`access_token` auprès du serveur d’autorisation afin vérifier la validité de ce dernier,
+* vérification des `scopes` associés à l’`access_token`,
+* vérification du lien entre le certificat TLS client utilisé pour la requête au ressources protégées et l’`access_token` via l'attribut cnf selon la RFC 7519 [3].
+
 
 **Exemple de requête** :
 ```sh 

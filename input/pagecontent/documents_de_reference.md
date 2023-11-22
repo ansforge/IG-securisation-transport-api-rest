@@ -39,7 +39,7 @@
 <tbody>
 <tr>
 <td width="640">
-<p>Documents de r&eacute;f&eacute;rence</p>
+<p>RFC de r&eacute;f&eacute;rence</p>
 </td>
 </tr>
 <tr>
@@ -49,7 +49,7 @@
 <p>[3] RFC 8705 OAuth 2.0 mTLS Client Authentication and Certificate-Bound Access Tokens : <a href="https://www.rfc-editor.org/rfc/rfc8705">https://www.rfc-editor.org/rfc/rfc8705</a></p>
 <p>[4] RFC 7636 4.1 Code Verifier et 4.2 Code Challenge <a href="https://www.rfc-editor.org/rfc/rfc7636%23section-4.1">https://www.rfc-editor.org/rfc/rfc7636#section-4.1</a></p>
 <p>[5] RFC 6749 Authorization Request <a href="https://www.rfc-editor.org/rfc/rfc6749#section-4.1.1">https://www.rfc-editor.org/rfc/rfc6749#section-4.1.1</a></p>
-<p>RFC 6749 Authorization Code Grant <a href="https://www.rfc-editor.org/rfc/rfc6749#section-4.1.1:~:text=4.3.1.%20%20Authorization%20Request%20and%20Response">https://www.rfc-editor.org/rfc/rfc6749#section-4.1.1:~:text=4.3.1.%20%20Authorization%20Request%20and%20Response</a></p>
+<p>[6] RFC 7519 JSON Web Token (JWT) <a href="https://datatracker.ietf.org/doc/html/rfc7519">https://datatracker.ietf.org/doc/html/rfc7519</a></p>
 </td>
 </tr>
 </tbody>

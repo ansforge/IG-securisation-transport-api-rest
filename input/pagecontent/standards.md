@@ -156,7 +156,7 @@ Les paramètres de l’`access token` sont définis par les champs suivants :
 <p>aud</p>
 </td>
 <td width="519">
-<p>Identifiant ou liste d'identifiants des ressources qui peuvent &ecirc;tre accessibles avec ce jeton</p>
+<p>Identifiant ou liste d'identifiants des services cibles qui peuvent être accessibles avec ce jeton</p>
 </td>
 </tr>
 <tr>
