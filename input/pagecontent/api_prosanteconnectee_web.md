@@ -1,23 +1,23 @@
 
-L’utilisateur souhaite, via l’application web de son navigateur, accéder à des données protégées d’un service cible. L’utilisateur s’authentifie premièrement auprès de Pro Santé Connect via l’application web de son fournisseur de services.
+* L’utilisateur souhaite, via l’application web de son navigateur, accéder à des données protégées d’un service cible. 
+* L’utilisateur s’authentifie premièrement auprès de Pro Santé Connect via le proxy LPS/API de son fournisseur de services.
+* Une fois authentifié, le proxy LPS/API du fournisseur de services émet une requête auprès du serveur d'autorisation du service cible (`subject_token + scope`) pour accéder à ses ressources protégées.
 
-Une fois authentifié, le fournisseur de services émet une requête auprès du serveur d'autorisation (`subject_token + scope`) pour accéder aux ressources.
+Si le `subject_token` et les `scopes` sont jugés valides par le serveur d'autorisation, ce dernier fournit un `access_token` au proxy LPS/API du fournisseur de services.
 
-Si le `subject_token` et les `scopes` sont jugés valides par le serveur d'autorisation, ce dernier fournit un `access_token` au fournisseur de services.
+Le proxy LPS/API du fournisseur de services, s'assure de la validité de `l'access_token` à sa réception puis envoie une requête auprès du service cible avec `l'access_token` contenu dans l’entête. Le service cible introspecte `l'access_token` auprès du serveur d’autorisation afin vérifier la validité de l’access_token et des scopes.<br>
 
-Le fournisseur de services, s'assure de la validité de `l'access_token` à sa réception puis envoie une requête auprès du service cible avec `l'access_token` contenu dans l’entête. Le service cible introspecte `l'access_token` auprès du serveur d’autorisation afin vérifier la validité de l’access_token et des scopes.<br>
-
-Le fournisseur de services utilise `l'access_token` et les `scopes` auprès du service cible pour accéder aux données protégées.
+Le proxy LPS/API du fournisseur de services utilise `l'access_token` et les `scopes` auprès du service cible pour accéder aux ressources protégées.
 
 
 <div style="text-align: center;">{%include diag_api_prosanteconnectee_web_general.svg%}</div>
 
 **Description du workflow :**
 
-**1.	Depuis le navigateur, l’utilisateur souhaite accéder à des données protégées d’un service cible**
+**1.	Depuis le navigateur, l’utilisateur souhaite accéder aux ressources protégées d’un service cible**
 
 Origine : Navigateur
-Cible : Fournisseur de services
+Cible : proxy LPS/API du Fournisseur de services
 Méthode : GET
 
 **Exemple de requête :**
@@ -26,12 +26,12 @@ Host: applicationserver.appelant.org
 `
 
 
-**2.	Le fournisseur de services redirige le navigateur vers Pro Santé Connect pour authentifier l’utilisateur**
+**2.	Le proxy LPS/API du fournisseur de services redirige le navigateur vers Pro Santé Connect pour authentifier l’utilisateur**
 
-Origine : Fournisseur de services
+Origine : proxy LPS/API du Fournisseur de services
 Cible : Navigateur
 
-Le fournisseur de services renvoie un code de redirection 302 avec l’URL de Pro Santé Connect
+Le proxy LPS/API du fournisseur de services renvoie un code de redirection 302 avec l’URL de Pro Santé Connect
 
 **Exemple de requête :** 
 ```sh
@@ -107,16 +107,16 @@ Pro Santé Connect redirige l’utilisateur vers la callback URI avec en paramè
 <p>Oui</p>
 </td>
 <td width="262">
-<p>Valeur envoy&eacute;e par le Fournisseur de services lors de la demande d&rsquo;autorisation</p>
+<p>Valeur envoy&eacute;e par le proxy LPS/API du Fournisseur de services lors de la demande d&rsquo;autorisation</p>
 </td>
 </tr>
 </tbody>
 </table>
 
-**6.	Le navigateur envoie l’authorization code vers le fournisseur de services**
+**6.	Le navigateur envoie l’authorization code vers le proxy LPS/API du fournisseur de services**
 
 Origine : Navigateur
-Cible : Fournisseur de services
+Cible : proxy LPS/API du Fournisseur de services
 Méthode : GET
 
 **Exemple de requête :**
@@ -126,18 +126,18 @@ Host: applicationserver.appelant.fr
 ```
  
 
-**7.	Le fournisseur de services s’authentifie auprès de PSC avec l’authorization code PSC et son Client_ID_FS et certificat TLS**
+**7.	Le proxy LPS/API du fournisseur de services s’authentifie auprès de PSC avec l’authorization code PSC et son Client_ID_FS et certificat TLS**
 
-Origine : Fournisseur de services
+Origine : proxy LPS/API du Fournisseur de services
 Cible : Pro Santé Connect
 
-L’authentification du serveur d’application est décrite dans la documentation [4]
+L’authentification du proxy LPS/API est décrite dans la documentation [4]
 
 
 **8.	Pro Santé Connect vérifie l’authorization code et génère un ID Token, un access token PSC et un Refresh Token (PSC)**
 
 Origine : Pro Santé Connect
-Cible : Fournisseur de services
+Cible : Proxy LPS/API du Fournisseur de services
 
 Les détails de cette étape et des jetons délivrés sont dans la documentation [4]
 
@@ -154,20 +154,20 @@ Les détails de cette étape et des jetons délivrés sont dans la documentation
  
 
 
-**9.	Le fournisseur de services s’authentifie et demande un échange de jetons auprès du serveur d’autorisation avec un subject_token, certificat de structure et scopes métier**
+**9.	Le proxy LPS/API du fournisseur de services s’authentifie et demande un échange de jetons auprès du serveur d’autorisation avec un subject_token, certificat de structure et scopes métier**
 NB : La section OAUTH2.0 Flow n’est pas dépendante du type de FS
 
-Origine : Fournisseur de services
+Origine : Proxy LPS/API du Fournisseur de services 
 Cible : Serveur d’autorisation
 Méthode : POST
 
-Lors de ce flux, le fournisseur de services effectue une connexion mTLs avec le certificat de structure, auprès du serveur d’autorisation puis s’authentifie et envoie sa requête d’échange de jetons selon le protocole OAuth 2.0. 
+Lors de ce flux, le proxy LPS/API du fournisseur de services effectue une connexion mTLs avec le certificat de structure, auprès du serveur d’autorisation puis s’authentifie et envoie sa requête d’échange de jetons selon le protocole OAuth 2.0. 
 
 Concernant l’échange de jetons, il suit le cadre définit par le Token Exchange dans la **RFC 8693 [12].** Elle est nativement **en voie d’adoption par les éditeurs du marché (méthode Delegation Token Exchange).**
 
-Le fournisseur de services envoie dans les paramètres de sa requête le subject_token et les scopes métiers auxquels il souhaite accéder.
+Le proxy LPS/API du fournisseur de services envoie dans les paramètres de sa requête le subject_token et les scopes métiers auxquels il souhaite accéder.
 Ces derniers permettent d’authentifier la personne physique ou la personne morale appelante et de contrôler l’accès aux ressources requêtées.
-Une fois ces éléments introspectés et validés, **le serveur d’autorisation renvoie un access_token pour permettre au fournisseur de services d’accéder aux ressources du service cible.**
+Une fois ces éléments introspectés et validés, **le serveur d’autorisation renvoie un access_token pour permettre au proxy LPS/API du fournisseur de services d’accéder aux ressources du service cible.**
 
 <table width="633">
 <tbody>
@@ -283,7 +283,7 @@ Une fois ces éléments introspectés et validés, **le serveur d’autorisation
 
 
 Concernant la connexion mTLS, elle se réalise dans le cadre d’une authentification OAuth 2.0 et suit la **RFC 8705 [13].**  
-Le fournisseur de service établit une **connexion TLS mutuelle (mTLS)** avec le serveur d’autorisation en présentant son certificat client, préalablement aux échanges applicatifs. 
+Le proxy LPS/API du fournisseur de service établit une **connexion TLS mutuelle (mTLS)** avec le serveur d’autorisation en présentant son certificat client, préalablement aux échanges applicatifs. 
 
 Le `client_secret` est remplacé par la preuve de possession de la clé privée qui est assurée par le mTLS. En effet, le mTLS permet d’authentifier le client par un `Client_ID_AS` + **mTLS** au lieu de s’authentifier avec son `client_secret`/`Client_ID_AS`. 
 Dans ce cas le `client_secret` n’est pas nécessaire car l’authentification est portée par le mTLS (certificat client IGC Santé).
@@ -308,10 +308,10 @@ Méthode : POST
 L’introspection du subject_token est définie dans la documentation PSC [8]. La réponse de l’introspection est définie par une structure de code HTTP standard.
 
 
-**11.	Le serveur d’autorisation contrôle l’accès aux ressources selon le Client_ID_AS et les scopes du fournisseur de services puis lui délivre l’access_token**
+**11.	Le serveur d’autorisation contrôle l’accès aux ressources selon le Client_ID_AS et les scopes du proxy LPS/API du fournisseur de services puis lui délivre l’access_token**
 
 Origine : Serveur d’autorisation
-Cible : Fournisseur de services
+Cible : Proxy LPS/API du Fournisseur de services
 
 Le contrôle d’accès est basé sur le contrôle de l’association entre `scopes` et `Client_ID_AS` contenus dans le serveur d’autorisation. 
 
@@ -335,14 +335,14 @@ Cache-Control: no-cache, no-store
 La requête vers le serveur d'autorisation et la réponse doivent suivre la section 2.2 du RFC Token Exchange [12]
  
 
-**12.	Le fournisseur de services requête la ressource protégée auprès du service cible**
+**12.	Le proxy LPS/API du fournisseur de services requête la ressource protégée auprès du service cible**
 
-Origine :  Fournisseur de services
+Origine : Proxy LPS/API du Fournisseur de services
 Cible : Service cible
 Type d'appel :  Requête de ressources protégées
 Méthode : GET
 
-Le fournisseur de services envoie une requête auprès du service cible avec l’`access_token` contenu dans l’entête. Le service cible réalise les contrôles suivants :
+Le proxy LPS/API du fournisseur de services envoie une requête auprès du service cible avec l’`access_token` contenu dans l’entête. Le service cible réalise les contrôles suivants :
 * introspection de l’`access_token` auprès du serveur d’autorisation afin vérifier la validité de ce dernier,
 * vérification des `scopes` associés à l’`access_token`,
 * vérification du lien entre le certificat TLS client utilisé pour la requête au ressources protégées et l’`access_token` via l'attribut cnf selon la RFC 7519 [3].
@@ -356,6 +356,6 @@ Authorization: Bearer oab3thieWohyai0eoxibaequ0Owae9oh
 ```
 
 
-Une fois l’introspection validée, le fournisseur de services a accès aux ressources protégées du service cible.
+Une fois l’introspection validée, le proxy LPS/API du fournisseur de services a accès aux ressources protégées du service cible.
 
 
