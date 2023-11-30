@@ -1,5 +1,5 @@
 {
-  "date" : "Wed, 29 Nov, 2023 18:34:58 +0000",
+  "date" : "Thu, 30 Nov, 2023 09:43:26 +0000",
   "doco" : "For each file: start is seconds after start activity occurred. Length = milliseconds activity took",
   "files" : [
     {
@@ -8,52 +8,57 @@
       "processes" : [
         {
           "activity" : "load",
-          "start" : 26,
-          "length" : 50
+          "start" : 23,
+          "length" : 67
         },
         {
           "activity" : "checkR4R4B",
-          "start" : 26,
-          "length" : 5
+          "start" : 23,
+          "length" : 13
         },
         {
           "activity" : "generateNarratives",
-          "start" : 26,
-          "length" : 65
+          "start" : 23,
+          "length" : 91
         },
         {
           "activity" : "validate",
-          "start" : 26,
-          "length" : 2635
+          "start" : 23,
+          "length" : 2734
         },
         {
-          "activity" : "scanForUsageStats",
-          "start" : 29,
+          "activity" : "checkConformanceResources",
+          "start" : 26,
           "length" : 1
         },
         {
-          "activity" : "validate",
-          "start" : 29,
+          "activity" : "scanForUsageStats",
+          "start" : 26,
           "length" : 1
         },
         {
           "activity" : "generate1",
-          "start" : 29,
-          "length" : 109
+          "start" : 26,
+          "length" : 115
         },
         {
           "activity" : "generate2",
-          "start" : 33,
-          "length" : 67
+          "start" : 30,
+          "length" : 77
+        },
+        {
+          "activity" : "generateExampleZip",
+          "start" : 37,
+          "length" : 1
         },
         {
           "activity" : "generateValidationPack",
-          "start" : 40,
-          "length" : 2
+          "start" : 37,
+          "length" : 3
         },
         {
           "activity" : "scanExamplesForR5",
-          "start" : 43,
+          "start" : 39,
           "length" : 2
         }
       ]
