@@ -3,7 +3,7 @@ scale 1024*768
 
 box  "Systeme appelant / initiateur" #palegreen
 participant "Navigateur" as n
-participant "Fournisseur de services" as appserver
+participant "Fournisseur de services et proxy LPS/API" as appserver
 end box
 participant "ProSanteConnect" as psc
 box  "Systeme cible" #paleturquoise
