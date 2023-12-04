@@ -6,11 +6,11 @@
     <status value="extensions"/><div xmlns="http://www.w3.org/1999/xhtml"><h2>IGsecurisationtransportapirest</h2><p>The official URL for this implementation guide is: </p><pre>https://interop.esante.gouv.fr/ig/securisation-transport/ImplementationGuide/ans.fr.securisation-transport</pre></div>
   </text>
   <url value="https://interop.esante.gouv.fr/ig/securisation-transport/ImplementationGuide/ans.fr.securisation-transport"/>
-  <version value="1.1.0"/>
+  <version value="1.2.0"/>
   <name value="IGsecurisationtransportapirest"/>
-  <title value="Sécurisation de la couche transport API REST"/>
+  <title value="Sécurisation de la couche transport API REST Pro Santé Connectée"/>
   <status value="active"/>
-  <date value="2023-12-04T14:15:40+00:00"/>
+  <date value="2023-12-04T14:40:49+00:00"/>
   <publisher value="ANS"/>
   <contact>
     <name value="ANS"/>
