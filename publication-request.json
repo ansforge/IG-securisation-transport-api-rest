@@ -1,7 +1,7 @@
 {
     "package-id" : "ans.fr.securisation-transport",
     "version" : "1.2.0",
-    "path" : "https://interop.esante.gouv.fr/ig/securisationtransport/1.2.0",
+    "path" : "https://interop.esante.gouv.fr/ig/securisation-transport/1.2.0",
     "mode" : "milestone",
     "status" : "release",
     "sequence" : "trial-use",
