@@ -10,7 +10,7 @@
   <name value="IGsecurisationtransportapirest"/>
   <title value="Sécurisation de la couche transport API REST Pro Santé Connectée"/>
   <status value="active"/>
-  <date value="2023-12-04T14:51:54+00:00"/>
+  <date value="2023-12-04T15:02:42+00:00"/>
   <publisher value="ANS"/>
   <contact>
     <name value="ANS"/>
@@ -574,14 +574,6 @@
         </extension>
         <nameUrl value="documents_de_reference.html"/>
         <title value="Documents de référence"/>
-        <generation value="markdown"/>
-      </page>
-      <page>
-        <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-page-name">
-          <valueUrl value="about.html"/>
-        </extension>
-        <nameUrl value="about.html"/>
-        <title value="A propos de ce guide"/>
         <generation value="markdown"/>
       </page>
     </page>
