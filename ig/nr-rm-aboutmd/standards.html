@@ -1,0 +1,688 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE HTML>
+<html xml:lang="en" xmlns="http://www.w3.org/1999/xhtml" lang="en">
+  <head>
+    <meta content="text/html;charset=utf-8" http-equiv="Content-Type"/>
+    <title>Standards d&#39;échange - Sécurisation de la couche transport API REST Pro Santé Connectée v1.2.0</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta name="author" content="http://hl7.org/fhir"/>
+
+    <link href="fhir.css" rel="stylesheet"/>
+
+    <!-- Bootstrap core CSS -->
+    <link href="assets/css/bootstrap-fhir.css" rel="stylesheet"/>
+
+    <!-- Project extras -->
+    <link href="assets/css/project.css" rel="stylesheet"/>
+    <link href="assets/css/pygments-manni.css" rel="stylesheet"/>
+    <link href="assets/css/jquery-ui.css" rel="stylesheet"/>
+  	<link href="assets/css/prism.css" rel="stylesheet" />
+    <link rel="stylesheet" href="assets/css/style-ans.css"/>
+    <link rel="stylesheet" href="assets/css/style-add-ans.css"/>
+    <!-- Placeholder for child template CSS declarations -->
+
+    <script type="text/javascript" src="fhir-table-scripts.js"> </script>
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script src="assets/js/html5shiv.js"></script>
+    <script src="assets/js/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- Favicons -->
+    <link rel="fhir-logo" sizes="144x144" href="assets/ico/icon-fhir-144.png"/>
+    <link rel="fhir-logo" sizes="114x114" href="assets/ico/icon-fhir-114.png"/>
+    <link rel="fhir-logo" sizes="72x72" href="assets/ico/icon-fhir-72.png"/>
+    <link rel="fhir-logo" href="assets/ico/icon-fhir-57.png"/>
+    <link rel="shortcut icon" href="assets/ico/favicon.png"/>
+  </head>
+  <body onload="document.body.style.opacity='1'">
+
+	  <script src="assets/js/prism.js"></script>
+
+    <style type="text/css">h2{--heading-prefix:"2.2"}
+    h3,h4,h5,h6{--heading-prefix:"2.2"}</style>
+    <div id="segment-header" class="segment">  <!-- segment-header -->
+      <div class="container">  <!-- container -->
+        <!-- Placeholder for child template header declarations -->
+<div id="family-nav">
+  <a id="hl7-search-lnk" no-external="true" href="http://hl7.org/fhir"><img height="50" alt="Visit the FHIR website" src="assets/images/fhir-logo-www.png"/> </a>
+</div>
+<div id="ans-nav" style="line-height: 50px; float: left; margin-top: 4px; margin-bottom: 8px; color: #808080; ">
+  <a id="hl7-logo" no-external="true" href="https://esante.gouv.fr/"><img height="50" alt="ANS Logo" src="assets/images/logo-ANS.svg"/></a>
+</div>
+
+        <div id="ig-status">
+          <p><span style="font-size:12pt;font-weight:bold">Sécurisation de la couche transport API REST Pro Santé Connectée</span>
+            <br/>
+            <span style="display:inline-block;">1.2.0 - ci-build
+
+
+
+  <img alt="France flag" src="assets/images/fra.svg" height="16" title="France"/>
+
+
+            </span>
+          </p>
+        </div>
+      </div> <!-- /container -->
+    </div>  <!-- /segment-header -->
+
+    <div id="segment-navbar" class="segment">  <!-- segment-navbar -->
+      <div id="stripe"> </div>
+      <div class="container">  <!-- container -->
+        <!-- HEADER CONTENT -->
+
+        <nav class="navbar navbar-inverse">
+          <!--status-bar-->
+          <div class="container">
+            <button data-target=".navbar-inverse-collapse" class="navbar-toggle" data-toggle="collapse" type="button">
+              <span class="icon-bar"> </span>
+              <span class="icon-bar"> </span>
+              <span class="icon-bar"> </span>
+            </button>
+            <a class="navbar-brand hidden" href="http://hl7.org/fhir/R4/index.html">FHIR</a>
+            <div class="nav-collapse collapse navbar-inverse-collapse">
+              <!-- menu.xml  -->
+
+<ul xmlns="http://www.w3.org/1999/xhtml" class="nav navbar-nav">
+  <li>
+    <a href="index.html">Accueil</a>
+  </li>
+  <li class="dropdown">
+    <a data-toggle="dropdown" href="#" class="dropdown-toggle">Description générale des flux
+      <b class="caret"></b>
+    </a>
+    <ul class="dropdown-menu">
+      <li>
+        <a href="principes_generaux_du_volet.html">Principes généraux de ce volet</a>
+      </li>
+      <li>
+        <a href="archi_documentaire.html">Architecture documentaire</a>
+      </li>
+      <li>
+        <a href="standards.html">Standards utilisés (REST, OAUTH 2.0 ET OIDC)</a>
+      </li>
+      <li>
+        <a href="principes_securisation.html">Principes de sécurisation</a>
+      </li>
+    </ul>
+  </li>
+  <li class="dropdown">
+    <a data-toggle="dropdown" href="#" class="dropdown-toggle">API ProSantéConnectée
+      <b class="caret"></b>
+    </a>
+    <ul class="dropdown-menu">
+      <li>
+        <a href="api_prosanteconnectee.html">Description générale</a>
+      </li>
+      <li>
+        <a href="api_prosanteconnectee_web.html">Application web</a>
+      </li>
+      <li>
+        <a href="api_prosanteconnectee_web_erreurs.html">Application web - cas d&apos;erreurs</a>
+      </li>
+      <li>
+        <a href="api_prosanteconnectee_client_lourd.html">Application client lourd ou mobile</a>
+      </li>
+      <li>
+        <a href="api_prosanteconnectee_userinfo.html">Récupération et utilisation du jeton userinfo PSC</a>
+      </li>
+      <li>
+        <a href="api_prosanteconnectee_donnees_metiers.html">Passage de données métiers de l&apos;application cliente vers l&apos;API</a>
+      </li>
+    </ul>
+  </li>
+  <li class="dropdown">
+    <a data-toggle="dropdown" href="#" class="dropdown-toggle">Glossaire et documents de référence
+      <b class="caret"></b>
+    </a>
+    <ul class="dropdown-menu">
+      <li>
+        <a href="glossaire.html">Glossaire</a>
+      </li>
+      <li>
+        <a href="documents_de_reference.html">Documents de référence</a>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <a target="_blank" href="https://interop.esante.gouv.fr/ig/">Liste des guides</a>
+  </li>
+</ul>
+            </div>  <!-- /.nav-collapse -->
+          </div>  <!-- /.container -->
+        </nav>  <!-- /.navbar -->
+      <!-- /HEADER CONTENT -->
+      </div>  <!-- /container -->
+    </div>  <!-- /segment-navbar -->
+    <!--status-bar-->
+
+    <div id="segment-breadcrumb" class="segment">  <!-- segment-breadcrumb -->
+      <div class="container">  <!-- container -->
+        <ul class="breadcrumb">
+          <li><a href='toc.html'><b>Table of Contents</b></a></li><li><a href='principes_generaux_du_volet.html'><b>Principes généraux de ce volet</b></a></li><li><b>Standards d'échange</b></li>
+
+          <span style="float:right;">
+
+            <a href="archi_documentaire.html">&lt;prev</a> | 
+
+            <a href="#bottom">bottom</a>
+
+          | <a href="principes_securisation.html">next&gt;</a>
+
+          </span>
+
+        </ul>
+      </div>  <!-- /container -->
+    </div>  <!-- /segment-breadcrumb -->
+
+    <a name="top"> </a>
+    <div id="segment-content" class="segment">  <!-- segment-content -->
+      <div class="container">  <!-- container -->
+        <div class="row">
+          <div class="inner-wrapper">
+
+<style type="text/css">
+h2:before{color:silver;counter-increment:section;content:var(--heading-prefix) " ";}
+h3:before{color:silver;counter-increment:sub-section;content:var(--heading-prefix) "." counter(sub-section) " ";}
+h4:before{color:silver;counter-increment:composite;content:var(--heading-prefix) "." counter(sub-section) "." counter(composite) " ";}
+h5:before{color:silver;counter-increment:detail;content:var(--heading-prefix) "." counter(sub-section) "." counter(composite) "." counter(detail) " ";}
+h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefix) "." counter(sub-section) "." counter(composite) "." counter(detail) "." counter(more-detail)" ";}
+</style>
+<div class="col-12">
+  <!--ReleaseHeader--><p id="publish-box">Sécurisation de la couche transport API REST Pro Santé Connectée - Local Development build (v1.2.0) built by the FHIR (HL7® FHIR® Standard) Build Tools. See the <a href="https://interop.esante.gouv.fr/ig/securisation-transport/history.html">Directory of published versions</a></p><!--EndReleaseHeader-->
+  <h2>Standards d&#39;échange</h2>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+    <p><!-- white space is critical inside of capture --></p>
+<div class="markdown-toc">
+<ul id="markdown-toc">
+  <li><a href="#les-apis-rest" id="markdown-toc-les-apis-rest">Les APIs REST</a></li>
+  <li><a href="#le-standard-openid-connect-pour-la-gestion-de-lauthentification-des-applications-pro-santé-connectées" id="markdown-toc-le-standard-openid-connect-pour-la-gestion-de-lauthentification-des-applications-pro-santé-connectées">Le standard OpenID Connect pour la gestion de l’authentification des applications Pro Santé Connectées</a></li>
+  <li><a href="#le-standard-oauth-20-pour-la-gestion-des-autorisations-et-accès" id="markdown-toc-le-standard-oauth-20-pour-la-gestion-des-autorisations-et-accès">Le standard OAuth 2.0 pour la gestion des autorisations et accès</a></li>
+</ul>
+
+</div>
+<h3 id="les-apis-rest">Les APIs REST</h3>
+<h4 id="généralités-sur-le-concept-dapi-rest-et-bonnes-pratiques">Généralités sur le concept d’API REST et bonnes pratiques</h4>
+
+<p>Une <strong>API REST</strong> est une interface de programmation qui suit les principes de l’architecture REST.</p>
+
+<p>Elle permet aux clients (des applications web ou mobiles) de communiquer avec un serveur en utilisant des requêtes HTTP. Les ressources cibles sont identifiées par des URLs.</p>
+
+<p>Dans une API REST, les opérations <strong>CRUD (Create, Read, Update, Delete)</strong> sont implémentées via les méthodes dans une requête : <strong>POST, GET, PUT, et DELETE</strong> respectivement.</p>
+
+<p>Les réponses à ces requêtes sont retournées en format <code class="language-plaintext highlighter-rouge">JSON</code>.</p>
+
+<p style="text-align:center">
+<object data="exemple_req_REST_bearer.png" type="image/png"></object>
+</p>
+
+<h4 id="liaison-avec-le-protocole-de-transport-ou-binding">Liaison avec le protocole de transport ou binding</h4>
+<p>Le protocole HTTP1.1 encapsulé dans une connexion sécurisée TLS doit être utilisé.</p>
+
+<h3 id="le-standard-openid-connect-pour-la-gestion-de-lauthentification-des-applications-pro-santé-connectées">Le standard OpenID Connect pour la gestion de l’authentification des applications Pro Santé Connectées</h3>
+
+<p><strong>Pro Santé Connect</strong> est le <strong>fournisseur d’identité</strong> de la santé pour les acteurs de santé professionnels en France. Il s’agit d’un service basé sur le protocole standard <code class="language-plaintext highlighter-rouge">OpenID Connect</code>.</p>
+
+<p>Il permet aux professionnels de santé de s’identifier de manière simple, sécurisée et unifiée.</p>
+
+<p>Ils se connectent aux services numériques en santé, en passant de l’un à l’autre de manière fluide.</p>
+
+<p>Une application Pro Santé Connectée est une application web ou client lourd qui permet aux professionnels (PS) de s’authentifier à l’aide d’un MIE PSC compatible.</p>
+
+<p>Ces applications sont généralement utilisées par des établissements de santé/e-santé pour la gestion de leurs dossiers médicaux.</p>
+
+<p>Pour accéder au service d’authentification de PSC permettant d’accéder à des <strong>API Pro Santé connectées</strong>, deux cinématiques sont disponibles :</p>
+
+<ul>
+  <li>Via le <code class="language-plaintext highlighter-rouge">flux authorization code</code> [4]</li>
+  <li>Via le flux <code class="language-plaintext highlighter-rouge">Client Initiated Backchannel Authentication (CIBA)</code> [5]</li>
+</ul>
+
+<p>Description du protocole <code class="language-plaintext highlighter-rouge">OpenID Connect</code></p>
+
+<p><code class="language-plaintext highlighter-rouge">OpenID Connect (OIDC)</code> est un protocole d’authentification qui s’appuie sur <code class="language-plaintext highlighter-rouge">OAuth 2.0</code> pour fournir une identification sécurisée et basée sur des jetons pour les applications Web et mobiles.</p>
+
+<p><code class="language-plaintext highlighter-rouge">OIDC</code> fournit une couche d’authentification supplémentaire au-dessus d’<code class="language-plaintext highlighter-rouge">OAuth 2.0</code>, qui permet aux clients d’obtenir des informations d’identification et de profil sur les utilisateurs en utilisant des <code class="language-plaintext highlighter-rouge">ID tokens</code>.</p>
+
+<p>Ce protocole utilise des jetons <code class="language-plaintext highlighter-rouge">JSON Web Tokens (JWT)</code> pour échanger des informations d’identification entre l’application cliente, le fournisseur d’identité et le service/système cible.</p>
+
+<p>La documentation technique Pro Santé Connecté [4] fournit des détails sur le fonctionnement du protocole <code class="language-plaintext highlighter-rouge">OIDC</code> au sein de PSC.</p>
+
+<h3 id="le-standard-oauth-20-pour-la-gestion-des-autorisations-et-accès">Le standard OAuth 2.0 pour la gestion des autorisations et accès</h3>
+
+<p><code class="language-plaintext highlighter-rouge">OAuth 2.0</code> est un protocole standard d’autorisation qui permet à une application tierce d’accéder à des ressources protégées. Le protocole <code class="language-plaintext highlighter-rouge">OAuth 2.0</code> définit des étapes à suivre pour obtenir et utiliser un jeton d’accès (<code class="language-plaintext highlighter-rouge">access_token</code>).</p>
+
+<p>Ce jeton est délivré par le serveur d’autorisation et permet d’accéder aux ressources d’une application protégée.</p>
+
+<p>Les services de e-santé utilisent ce standard <code class="language-plaintext highlighter-rouge">OAuth 2.0</code> pour la gestion des autorisations et des accès.</p>
+
+<h4 id="description-du-serveur-dautorisation-du-système-cible">Description du serveur d’autorisation du système cible</h4>
+
+<p><code class="language-plaintext highlighter-rouge">OAuth 2.0</code> est un protocole d’autorisation qui permet à une application (le client) de se connecter aux ressources protégées sur service cible en utilisant un access_token émis par un serveur d’autorisation.</p>
+
+<p>Ce dernier est responsable du contrôle d’accès du client, de l’émission et de la gestion de ces jetons d’accès et de la vérification du jeton d’accès.</p>
+
+<p>D’autre part, le serveur d’autorisation va effectuer le contrôle d’accès sur les scopes de l’application appelante à l’aide de l’identifiant du client (<code class="language-plaintext highlighter-rouge">Client_ID_AS</code>) et des <code class="language-plaintext highlighter-rouge">scopes</code> associés dans la requête.</p>
+
+<p>À l’issue du contrôle d’accès, le serveur d’autorisation va délivrer un jeton d’accès (<code class="language-plaintext highlighter-rouge">access_token</code>) permettant d’accéder aux ressources du système cible.</p>
+
+<p>Le serveur d’autorisation est un composant essentiel du flux <code class="language-plaintext highlighter-rouge">OAuth 2.0</code>qui permet de garantir la sécurité et la confidentialité des données de l’utilisateur et doit être implémenté côté service/système cible.</p>
+
+<p>La règle générale d’autorisation portera toujours sur une structure et son service. Une structure est soit une structure de santé ou une structure autorisée (proxy éditeur). </p>
+
+<h4 id="gestion-et-contrôle-des-accès">Gestion et contrôle des accès</h4>
+<h5 id="le-contrôle-daccès-avec-les-scopes">Le contrôle d’accès avec les scopes</h5>
+<ul>
+  <li>Définition d’un <code class="language-plaintext highlighter-rouge">scope</code> dans le protocole <code class="language-plaintext highlighter-rouge">OAuth 2.0</code></li>
+</ul>
+
+<p>Dans le protocole <code class="language-plaintext highlighter-rouge">OAuth 2.0</code>, les <code class="language-plaintext highlighter-rouge">scopes</code> sont utilisés par le client pour demander un accès limité aux données du propriétaire de la ressource.</p>
+
+<p>Les scopes sont utilisés pour définir les autorisations que le client demande auprès du service cible propriétaire de la ressource. Ils décrivent les actions que l’application sera autorisée à effectuer ou le périmètre de données sur lequel l’application sera autorisée d’agir.</p>
+
+<p style="text-align:center">
+<object data="schema_autorisations_scopes.png" type="image/png"></object>
+</p>
+
+<p>Afin d’illustrer l’usage du <code class="language-plaintext highlighter-rouge">scope</code> au sein d’un processus fonctionnel, on peut prendre l’exemple simplifié d’un utilisateur qui souhaite accéder aux ressources protégées d’un service de e-santé.</p>
+
+<p>Dans le cas des <strong>API Pro Santé Connectées</strong>, le Professionnel de Santé (PS) est redirigé vers PRO Santé CONNECT par le fournisseur de service.</p>
+
+<p>Une fois le PS authentifié sur PSC, celui-ci envoie les tokens PSC au fournisseur de services.</p>
+
+<p>L’authentification du fournisseur de services auprès du serveur d’autorisation se fait selon la RFC 7235 [11] c’est-à-dire avec un <code class="language-plaintext highlighter-rouge">Client_ID_AS</code> dans le header de sa requête.</p>
+
+<ul>
+  <li>Dans Le cas des APIs ProSantéConnectées, il d’agit d’une authentification mTLS.</li>
+  <li>Dans le cas des APIs non ProSantéConnectées, il s’agit d’une authentication de type <code class="language-plaintext highlighter-rouge">Authentification Basic</code> qui encode les credentials en base 64.</li>
+</ul>
+
+<p>Le fournisseur de service envoie une requête auprès du serveur d’autorisation qui contient comme paramètres, un <code class="language-plaintext highlighter-rouge">subject_token</code> (dans le cas des API ProSantéConnectées : <code class="language-plaintext highlighter-rouge">subject_token</code> = <code class="language-plaintext highlighter-rouge">Access Token PSC</code>), un certificat de structure et des <code class="language-plaintext highlighter-rouge">scopes métier</code>.</p>
+
+<p>Une fois le contrôle d’accès est réalisé par le serveur d’autorisation, le PS peut accéder au service de e-santé.</p>
+
+<p style="text-align:center">
+<object data="schema_scope_cas_metier.png" type="image/png"></object>
+</p>
+
+<h5 id="les-normes-de-conservation-de-laccess-token">Les normes de conservation de l’access token</h5>
+<p>La sécurité liée au stockage de l’access token et à sa conservation est définie par l’ANSSI dans le document Recommandations pour la sécurisation de la mise en œuvre du protocole <code class="language-plaintext highlighter-rouge">OpenID Connect</code> dans la section 3.4 Recommandation R23 à R26. [6]</p>
+
+<p>Recommandation :</p>
+
+<p>Une fois envoyé, les attributs de validité de l’access_token pourront être conservés par le système cible, notamment au sein d’un cache au niveau du serveur d’autorisation.</p>
+
+<p>Afin de résoudre le problème de l’éventuelle révocation de l’<code class="language-plaintext highlighter-rouge">access_token</code>, la recommandation est de définir la durée de validité de l’<code class="language-plaintext highlighter-rouge">access_token</code>, émis par le serveur d’autorisation, entre 1h et 4h.</p>
+
+<p>Il est également fortement recommandé de vérifier la validité de l’<code class="language-plaintext highlighter-rouge">access_token</code> toutes les demi-heures en utilisant le service d’introspection du serveur d’autorisation.</p>
+
+<p>Si l’<code class="language-plaintext highlighter-rouge">access_token</code> est un jeton autoporteur <code class="language-plaintext highlighter-rouge">JWS</code> l’introspection n’est pas nécessaire, mais si c’est un jeton <code class="language-plaintext highlighter-rouge">JWT</code> opaque, elle l’est.</p>
+
+<h5 id="les-données-de-laccess-token">Les données de l’<code class="language-plaintext highlighter-rouge">access token</code></h5>
+<p>Les données de l’access token peuvent être accessibles soit dans un jeton <code class="language-plaintext highlighter-rouge">JWT</code> signé (<code class="language-plaintext highlighter-rouge">JWS</code>) par le serveur d’autorisation, soit via un appel à un service d’introspection.</p>
+
+<p>Les paramètres de l’<code class="language-plaintext highlighter-rouge">access token</code> sont définis par les champs suivants :</p>
+
+<table>
+<tbody>
+<tr>
+<td width="113">
+<p><strong>Champs</strong></p>
+</td>
+<td width="519">
+<p><strong>Description</strong></p>
+</td>
+</tr>
+<tr>
+<td width="113">
+<p>iss</p>
+</td>
+<td width="519">
+<p>Identifiant de l'&eacute;metteur du jeton</p>
+</td>
+</tr>
+<tr>
+<td width="113">
+<p>sub</p>
+</td>
+<td width="519">
+<p>Identifiant de l'utilisateur pour lequel le jeton a &eacute;t&eacute; &eacute;mis</p>
+</td>
+</tr>
+<tr>
+<td width="113">
+<p>aud</p>
+</td>
+<td width="519">
+<p>Identifiant ou liste d'identifiants des services cibles qui peuvent être accessibles avec ce jeton</p>
+</td>
+</tr>
+<tr>
+<td width="113">
+<p>nonce</p>
+</td>
+<td width="519">
+<p>Cha&icirc;ne de caract&egrave;res al&eacute;atoires unique qui peut &ecirc;tre utilis&eacute;e pour identifier les &eacute;changes entre le client et le serveur</p>
+</td>
+</tr>
+<tr>
+<td width="113">
+<p>exp</p>
+</td>
+<td width="519">
+<p>Heure d'expiration du jeton, apr&egrave;s laquelle il ne sera plus valide.</p>
+<p>Il est de la responsabilit&eacute; des services de d&eacute;terminer la dur&eacute;e de vie de l&rsquo;access token (une dur&eacute;e de vie pas trop courte est &agrave; privil&eacute;gier)</p>
+</td>
+</tr>
+<tr>
+<td width="113">
+<p>iat</p>
+</td>
+<td width="519">
+<p>Heure &agrave; laquelle le jeton a &eacute;t&eacute; &eacute;mis</p>
+</td>
+</tr>
+<tr>
+<td width="113">
+<p>scope</p>
+</td>
+<td width="519">
+<p>D&eacute;finit le type et le p&eacute;rim&egrave;tre des ressources octroy&eacute;es par le serveur d&rsquo;autorisation. Sur cette base, le serveur d'autorisation authentifie l'utilisateur et recueille son consentement pour la transmission des ressources</p>
+</td>
+</tr>
+</tbody>
+</table>
+
+<p>Exemple de contenu d’un <code class="language-plaintext highlighter-rouge">access_token</code> dont la durée de vie est d’une heure :</p>
+
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
+</span><span class="nl">"iss"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://server.example.com"</span><span class="p">,</span><span class="w">
+</span><span class="nl">"sub"</span><span class="p">:</span><span class="w"> </span><span class="s2">"identifiant_national"</span><span class="p">,</span><span class="w">
+</span><span class="nl">"aud"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="err">Ressource</span><span class="w"> </span><span class="err">A</span><span class="p">,</span><span class="w"> </span><span class="err">Ressource</span><span class="w"> </span><span class="err">B</span><span class="p">],</span><span class="w">
+</span><span class="nl">"nonce"</span><span class="p">:</span><span class="w"> </span><span class="s2">"n-0S6_WzA2Mj"</span><span class="p">,</span><span class="w">
+</span><span class="nl">"exp"</span><span class="p">:</span><span class="w"> </span><span class="mi">1626921770</span><span class="p">,</span><span class="w">
+</span><span class="nl">"iat"</span><span class="p">:</span><span class="w"> </span><span class="mi">1311280970</span><span class="p">,</span><span class="w">
+</span><span class="nl">"scope"</span><span class="p">:</span><span class="w"> </span><span class="err">“scope</span><span class="w"> </span><span class="mi">2</span><span class="w"> </span><span class="err">scope</span><span class="w"> </span><span class="mi">3</span><span class="err">”</span><span class="p">,</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div></div>
+
+<ul>
+  <li>L’attribut nonce n’est pas nécessaire dans les APIs ProSanté Connectées.</li>
+</ul>
+
+<h5 id="lintégration-du-mtls-dans-le-cadre-du-workflow-oauth-20">L’intégration du mTLS dans le cadre du workflow <code class="language-plaintext highlighter-rouge">OAuth 2.0</code></h5>
+
+<p>Dans le cadre d’un workflow <code class="language-plaintext highlighter-rouge">OAuth 2.0</code>, l’utilisation du <strong>mTLS</strong> permet :</p>
+
+<ul>
+  <li>La sécurisation des échanges (chiffrement)</li>
+  <li>L’authentification du client vis-à-vis du serveur</li>
+  <li>L’authentification du serveur vis-à-vis du client</li>
+</ul>
+
+<p>Ci-dessous une illustration de l’utilisation du mTLS avec <code class="language-plaintext highlighter-rouge">OAuth 2.0</code>.</p>
+
+<div style="text-align: center;"><?xml version="1.0" encoding="us-ascii" standalone="no"?><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" contentStyleType="text/css" height="353px" preserveAspectRatio="none" style="width:912px;height:353px;background:#FFFFFF;" version="1.1" viewBox="0 0 912 353" width="912px" zoomAndPan="magnify"><defs /><g><rect fill="#98FB98" height="341.7891" style="stroke:#181818;stroke-width:0.5;" width="221" x="1" y="6" /><text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacing" textLength="215" x="4" y="18.0669">Systeme appelant / initiateur</text><rect fill="#AFEEEE" height="341.7891" style="stroke:#181818;stroke-width:0.5;" width="676" x="224" y="6" /><text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacing" textLength="103" x="510.5" y="18.0669">Systeme cible</text><rect fill="#FFFFFF" height="53.2656" style="stroke:#181818;stroke-width:1.0;" width="10" x="106.5" y="147.8281" /><rect fill="#FFFFFF" height="36.1328" style="stroke:#181818;stroke-width:1.0;" width="10" x="305" y="111.6953" /><rect fill="#FFFFFF" height="29.1328" style="stroke:#181818;stroke-width:1.0;" width="10" x="305" y="230.2266" /><rect fill="#FFFFFF" height="29.1328" style="stroke:#181818;stroke-width:1.0;" width="10" x="841" y="201.0938" /><rect fill="#FFFFFF" height="36.1328" style="stroke:#181818;stroke-width:1.0;" width="10" x="841" y="259.3594" /><rect fill="none" height="46.2656" style="stroke:#000000;stroke-width:1.5;" width="390.5" x="11.5" y="73.4297" /><rect fill="none" height="104.5313" style="stroke:#000000;stroke-width:1.5;" width="894.5" x="11.5" y="162.8281" /><line style="stroke:#181818;stroke-width:0.5;stroke-dasharray:5.0,5.0;" x1="111.5" x2="111.5" y1="56.4297" y2="313.4922" /><line style="stroke:#181818;stroke-width:0.5;stroke-dasharray:5.0,5.0;" x1="310" x2="310" y1="56.4297" y2="313.4922" /><line style="stroke:#181818;stroke-width:0.5;stroke-dasharray:5.0,5.0;" x1="846" x2="846" y1="56.4297" y2="313.4922" /><rect fill="#E2E2F0" height="30.2969" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="180" x="21.5" y="25.1328" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="166" x="28.5" y="45.1279">Fournisseur de Services</text><rect fill="#E2E2F0" height="30.2969" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="180" x="21.5" y="312.4922" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="166" x="28.5" y="332.4873">Fournisseur de Services</text><rect fill="#E2E2F0" height="30.2969" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="164" x="228" y="25.1328" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="150" x="235" y="45.1279">Serveur d'autorisation</text><rect fill="#E2E2F0" height="30.2969" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="164" x="228" y="312.4922" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="150" x="235" y="332.4873">Serveur d'autorisation</text><rect fill="#E2E2F0" height="30.2969" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="100" x="796" y="25.1328" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="86" x="803" y="45.1279">Service cible</text><rect fill="#E2E2F0" height="30.2969" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="100" x="796" y="312.4922" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="86" x="803" y="332.4873">Service cible</text><rect fill="#FFFFFF" height="53.2656" style="stroke:#181818;stroke-width:1.0;" width="10" x="106.5" y="147.8281" /><rect fill="#FFFFFF" height="36.1328" style="stroke:#181818;stroke-width:1.0;" width="10" x="305" y="111.6953" /><rect fill="#FFFFFF" height="29.1328" style="stroke:#181818;stroke-width:1.0;" width="10" x="305" y="230.2266" /><rect fill="#FFFFFF" height="29.1328" style="stroke:#181818;stroke-width:1.0;" width="10" x="841" y="201.0938" /><rect fill="#FFFFFF" height="36.1328" style="stroke:#181818;stroke-width:1.0;" width="10" x="841" y="259.3594" /><path d="M11.5,73.4297 L95.5,73.4297 L95.5,80.5625 L85.5,90.5625 L11.5,90.5625 L11.5,73.4297 " fill="#EEEEEE" style="stroke:#000000;stroke-width:1.5;" /><rect fill="none" height="46.2656" style="stroke:#000000;stroke-width:1.5;" width="390.5" x="11.5" y="73.4297" /><text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacing" textLength="39" x="26.5" y="86.4966">mTLS</text><polygon fill="#181818" points="293,107.6953,303,111.6953,293,115.6953,297,111.6953" style="stroke:#181818;stroke-width:1.0;" /><line style="stroke:#181818;stroke-width:1.0;" x1="111.5" x2="299" y1="111.6953" y2="111.6953" /><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="146" x="118.5" y="106.6294">1. Client_ID + certificat</text><polygon fill="#181818" points="127.5,143.8281,117.5,147.8281,127.5,151.8281,123.5,147.8281" style="stroke:#181818;stroke-width:1.0;" /><line style="stroke:#181818;stroke-width:1.0;" x1="121.5" x2="309" y1="147.8281" y2="147.8281" /><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="100" x="133.5" y="142.7622">2. access token</text><path d="M11.5,162.8281 L134.5,162.8281 L134.5,169.9609 L124.5,179.9609 L11.5,179.9609 L11.5,162.8281 " fill="#EEEEEE" style="stroke:#000000;stroke-width:1.5;" /><rect fill="none" height="104.5313" style="stroke:#000000;stroke-width:1.5;" width="894.5" x="11.5" y="162.8281" /><text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacing" textLength="78" x="26.5" y="175.895">OAUTH 2.0</text><polygon fill="#181818" points="829,197.0938,839,201.0938,829,205.0938,833,201.0938" style="stroke:#181818;stroke-width:1.0;" /><line style="stroke:#181818;stroke-width:1.0;" x1="111.5" x2="835" y1="201.0938" y2="201.0938" /><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="259" x="118.5" y="196.0278">3. access_token + jeton "structure data"</text><polygon fill="#181818" points="326,226.2266,316,230.2266,326,234.2266,322,230.2266" style="stroke:#181818;stroke-width:1.0;" /><line style="stroke:#181818;stroke-width:1.0;" x1="320" x2="845" y1="230.2266" y2="230.2266" /><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="507" x="332" y="225.1606">4. validation de l'access_token : introspection ou verification locale (jeton sign&#233;)</text><polygon fill="#181818" points="829,255.3594,839,259.3594,829,263.3594,833,259.3594" style="stroke:#181818;stroke-width:1.0;" /><line style="stroke:#181818;stroke-width:1.0;" x1="310" x2="835" y1="259.3594" y2="259.3594" /><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="15" x="317" y="254.2935">ok</text><polygon fill="#181818" points="122.5,291.4922,112.5,295.4922,122.5,299.4922,118.5,295.4922" style="stroke:#181818;stroke-width:1.0;" /><line style="stroke:#181818;stroke-width:1.0;" x1="116.5" x2="845" y1="295.4922" y2="295.4922" /><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="139" x="128.5" y="290.4263">5. acces aux donnees</text></g></svg></div>
+
+<p>Le détail des flux <code class="language-plaintext highlighter-rouge">OAUTH 2.0</code> + <strong>mTLS</strong> est défini dans :</p>
+<ul>
+  <li>Les pages concernant les APIs Pro Santé Connectées,</li>
+  <li>Les pages concernant l’authentification d’une structure via un flux OAuth 2.0 + mTLS : accès à des données sensibles</li>
+</ul>
+
+<p>Le protocole TLS est assuré sur la couche transport.</p>
+
+<p>Le certificat client utilisé dans le mTLS peut être transmis au serveur d’autorisation.</p>
+
+<p>Le protocole <code class="language-plaintext highlighter-rouge">OAUTH2</code> est réalisé sur la couche applicative et permet de faire le contrôle du certificat client et de générer un <code class="language-plaintext highlighter-rouge">access_token</code>.</p>
+
+<p><strong>Nota Bene :</strong>
+Dans le cas des APIs Pro Santé Connectées, l’authentification sur le serveur d’autorisation du service cible n’utilise pas la méthode <code class="language-plaintext highlighter-rouge">Authentification Basic</code> mais une authentification mTLS.</p>
+
+<p>Pour plus de détail sur le mode d’authentification sur les APIs Pro Santé Connectées, rendez-vous sur les pages :
+<a href="api_prosanteconnectee_web.html">Appel d’une API Pro Santé Connectée depuis une application web</a> et 
+<a href="api_prosanteconnectee_client_lourd.html">Appel d’une API Pro Santé Connectée depuis une application client lourd ou mobile</a></p>
+
+<p> </p>
+<h5 id="le-lien-entre-un-certificat-tls-champ-organisational-unit-sa-requête-et-la-réponse-de-laccess-token">Le lien entre un certificat TLS (champ Organisational Unit), sa requête et la réponse de l’access token.</h5>
+
+<p>Rappel sur les certificats émis une IGC Santé :</p>
+
+<p>Un <strong>certificat de personne morale (également appelé certificat d’organisation)</strong> est un document électronique qui identifie une personne morale, telle qu’une entreprise, une organisation gouvernementale ou une association, auprès d’une <strong>autorité de certification (AC)</strong>.</p>
+
+<p>Il sert à garantir l’authenticité et l’intégrité des communications électroniques émises par la personne morale, en fournissant une signature électronique associée à son identité.</p>
+
+<p>Un certificat serveur SSL/TLS est un document électronique qui identifie un serveur web auprès d’une autorité de certification (AC).</p>
+
+<p>Il est utilisé pour garantir l’authenticité et la confidentialité des communications entre un navigateur web et un serveur, en chiffrant les données échangées.</p>
+
+<p>Les certificats serveur sont utilisés pour sécuriser les connexions HTTPS, qui sont devenues la norme pour les sites web.</p>
+
+<p><strong>Recommandation :</strong></p>
+
+<ul>
+  <li>L’attribut OU du certificat issu de l’IGC Santé contient un identifiant de type struct_IdNat qui lui-même est constitué d’un préfixe suivi de l’identifiant SIRET ou FINESS.</li>
+  <li>Pour une structure de santé, le FINESS pourra être le FINESS juridique.
+Par exemple, les hôpitaux et les EHPAD génèrent des certificats sur leur FINESS juridique</li>
+</ul>
+
+<p>Pour plus de précisions sur le contenu du certificat, voir le document [7]</p>
+
+<p>Pour plus de précisions sur le contenu du struct_IdNat voir la section 5.5 [8]</p>
+
+<p>Si certaines structures souhaitent indiquer le FINESS géographique, elles le pourront, mais la recommandation reste le FINESS juridique.</p>
+
+
+
+
+</div>
+        </div>  <!-- /inner-wrapper -->
+      </div>  <!-- /row -->
+    </div>  <!-- /container -->
+  </div>  <!-- /segment-content -->
+
+  <script type="text/javascript" src="assets/js/jquery.js"> </script>     <!-- note keep space here, otherwise it will be transformed to empty tag -> fails -->
+  <script type="text/javascript" src="assets/js/jquery-ui.min.js"> </script>
+
+  <script type="text/javascript">
+    $(document).ready(function(){
+      if(window.location.hash != "") {
+          $('a[href="' + window.location.hash + '"]').click()
+      }
+    });
+  </script>
+  <a name="bottom"> </a>
+  <div id="segment-footer" igtool="footer" class="segment">  <!-- segment-footer -->
+    <div class="container">  <!-- container -->
+
+      <div style="background-color:var(--footer-nav-bg-color)">
+        <table style="width:100%">
+          <tbody>
+            <tr>
+              <td style="text-align:left">&#xA0;
+
+                <a href="archi_documentaire.html">&lt;prev</a>
+
+              </td>
+              <td style="text-align:center">
+                <a href="#top">top</a>
+              </td>
+              <td style="text-align:right">&#xA0;
+
+                <a href="principes_securisation.html">next&gt;</a>
+
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="inner-wrapper">
+        <p>
+          IG &#169; 2020+ <a style="color:var(--footer-hyperlink-text-color)" href="https://esante.gouv.fr">ANS</a>.  Package ans.fr.securisation-transport#1.2.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Mon, Dec 4, 2023 15:00+0000">2023-12-04</span>
+          <br/>
+          <span style="color: var(--footer-highlight-text-color)"></span>
+                      Liens: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table des matières </a> |
+                 <a style="color: var(--footer-hyperlink-text-color)" href="qa.html">QA </a> |
+                 <a style="color: var(--footer-hyperlink-text-color)" target="_blank" href="https://interop.esante.gouv.fr/ig/securisation-transport/history.html">Historique des versions </a>
+                  | <a style="color: var(--footer-hyperlink-text-color)" target="_blank" href="https://github.com/ansforge/FIG_ans-ig-sample/issues/new">New Issue</a>
+                
+
+          </span>
+        </p>
+      </div>  <!-- /inner-wrapper -->
+    </div>  <!-- /container -->
+  </div>  <!-- /segment-footer -->
+  
+  <div id="segment-post-footer" class="segment hidden">  <!-- segment-post-footer -->
+    <div class="container">  <!-- container -->
+    </div>  <!-- /container -->
+  </div>  <!-- /segment-post-footer -->
+  
+  <!-- JS and analytics only. -->
+  <!-- Bootstrap core JavaScript
+  ================================================== -->
+  <!-- Placed at the end of the document so the pages load faster -->
+  <script type="text/javascript" src="assets/js/bootstrap.min.js"> </script>
+  <script type="text/javascript" src="assets/js/respond.min.js"> </script>
+  <script type="text/javascript" src="assets/js/anchor.min.js"> </script>
+  <script type="text/javascript" src="assets/js/clipboard.min.js"> </script>
+  <script type="text/javascript" src="assets/js/clipboard-btn.js"> </script>
+
+  <!-- Ajout ANS -->
+  <script src="assets/js/app.js" type="text/javascript"> </script>
+  <script src="assets/js/vendor.js" type="text/javascript"> </script>
+  <!-- Fin ajout ANS -->
+
+  <script>anchors.options.visible = 'hover'
+anchors.add()</script>
+  
+<!-- feedback form - Google forms -->
+<!-- v0.1, 2021-01-09 -->
+
+
+  
+    
+  
+
+
+
+<!-- / feedback form  -->
+
+  <!-- Analytics Below
+  ================================================== -->
+
+
+  <!-- AJOUT ANS -->
+
+<footer class="footer footer-principal" role="contentinfo">
+  <div class="footer__region1">
+    <div class="container">
+      <div class="row">
+
+        <div class="col-md-6 col-lg-4 text-center text-md-left">
+          <div class="logos">        
+            <div class="logo logo--0">
+              <a href="https://solidarites-sante.gouv.fr" title="Ministère des Solidarités et de la Santé (nouvelle fenêtre)" target="_blank" rel="nofollow">
+                
+                <img src="assets/images/logo-ministere.svg" alt="Ministère des Solidarités et de la Santé" width="133" height="77" loading="lazy" />
+                
+              </a>
+            </div>
+        
+            <div class="logo logo--1">
+              <a href="https://esante.gouv.fr/" title="Agence du numérique en santé (nouvelle fenêtre)" target="_blank" rel="nofollow">
+                
+                <img src="assets/images/logo-ANS-footer.svg" alt="Agence du numérique en santé" width="106" height="74" loading="lazy" />
+              </a>
+            </div>
+          </div>
+        </div>
+        
+        <div class="col-md-6 col-lg-4 text-center text-md-left">
+          <p class="footer__title">Agence du Numérique en Santé</p>
+          <p>2-10 Rue d'Oradour-sur-Glane 75015 Paris</p>
+
+          <!-- <div class="m-social">
+            <ul class="m-social__list">        
+              <li class="m-social__item">
+                <a class="m-social__link" href="https://www.linkedin.com/company/agence-du-numerique-en-sante/" target="_blank" rel="nofollow">
+                  <div class="m-social__icon">
+                    <svg class="svg-icon svg-linkedin" aria-hidden="true" focusable="false"><use href="assets/images/icon-sprite.svg#linkedin"></use></svg>
+                  </div>
+                  <span class="sr-only">linkedin</span>
+                </a>
+              </li>
+              <li class="m-social__item">
+                <a class="m-social__link" href="https://twitter.com/esante_gouv_fr" target="_blank" rel="nofollow">
+                  <div class="m-social__icon">
+                    <svg class="svg-icon svg-twitter" aria-hidden="true" focusable="false"><use href="assets/images/icon-sprite.svg#twitter"></use></svg>
+                  </div>
+                  <span class="sr-only">twitter</span>
+                </a>
+              </li>
+              <li class="m-social__item">
+                <a class="m-social__link" href="https://www.youtube.com/channel/UCd1zuSaU5cE1lRCpwv_HSMA" target="_blank" rel="nofollow">
+                  <div class="m-social__icon">
+                    <svg class="svg-icon svg-youtube" aria-hidden="true" focusable="false"><use href="assets/images/icon-sprite.svg#youtube"></use></svg>
+                  </div>
+                  <span class="sr-only">youtube</span>
+                </a>
+              </li>
+              <li class="m-social__item">
+                <a class="m-social__link" href="https://esante.gouv.fr/rss.xml" target="_blank" rel="nofollow">
+                  <div class="m-social__icon">
+                    <svg class="svg-icon svg-rss" aria-hidden="true" focusable="false"><use href="assets/images/icon-sprite.svg#rss"></use></svg>
+                  </div>
+                  <span class="sr-only">rss</span>
+                </a>
+              </li>
+            </ul>
+          </div> -->
+        </div>
+        
+        <div class="col-6 col-lg-4">
+          <ul class="footer-list">
+            <li class="footer-list__item footer-list__item--hasIcon">
+              <a href="mailto:ci-sis@esante.gouv.fr" class="mailto-link">
+                <svg class="svg-icon svg-angle-right" aria-hidden="true" focusable="false"><use href="assets/images/icon-sprite.svg#angle-right"></use></svg>Contact</a>
+              </li>
+              <!-- <li class="footer-list__item">
+                <a href="https://interop-pprod.esante.gouv.fr/ci-sis-specifications/wp-content/uploads/CGU_espace_de_tests_v1.1.pdf" class="file-link">Mentions légales</a>
+              </li>
+               -->
+            </ul>
+          </div>
+
+        </div>
+      </div>
+    </div>
+    
+    <!-- <div class="footer__region2">
+      <div class="container">
+        <div class="footer-contentinfo">
+          <ul class="footer-list footer-list--inline">
+
+          </ul>
+        </div>
+      </div>
+    </div> -->
+  </footer>
+  </body>
+</html>
+
