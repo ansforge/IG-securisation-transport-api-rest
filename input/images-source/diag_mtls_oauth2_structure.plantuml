@@ -1,0 +1,35 @@
+@startuml
+
+box "Systeme appelant / initiateur" #palegreen
+participant "Fournisseur de Services" as appserver
+end box
+
+box "Systeme cible" #paleturquoise
+participant "Serveur d'autorisation" as AS
+participant "Service cible" as API
+end box
+
+group mTLS
+appserver->AS: 1. Client_ID + certificat 
+activate AS
+end 
+
+AS->appserver:2. access token
+deactivate AS
+activate appserver
+
+group OAUTH 2.0 
+appserver->API: 3. access_token + jeton "structure data"
+deactivate appserver
+activate API
+API->AS:  4. validation de l'access_token : introspection ou verification locale (jeton signé)
+deactivate API
+activate AS
+AS->API: ok
+deactivate AS
+activate API
+end
+API->appserver: 5. acces aux donnees 
+deactivate API
+
+@enduml

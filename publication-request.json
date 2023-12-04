@@ -1,0 +1,14 @@
+{
+    "package-id" : "ans.fr.securisation-transport",
+    "version" : "1.2.0",
+    "path" : "https://interop.esante.gouv.fr/ig/securisation-transport",
+    "mode" : "milestone",
+    "status" : "release",
+    "sequence" : "trial-use",
+    "title" : "Sécurisation de la couche transport API REST Pro Santé Connectée",
+    "desc" : "Prise en compte des demandes de changements sur les flux OAUTH2 : ajout de l'attribut cnf dans l'acces token API (certificate binding),suppression de l'attribut nonce dans l'access token API, correction sur la valeur de l'attribut subject_token_type dans la requête OAUTH2 token exchange, ajout d'une précision sur la valeur de l'attribut aud dans l'access token API, suppression du paramètre Authorization Basic de la requête OAUTH2 token exchange",
+    "descmd" : "Prise en compte des demandes de changements sur les flux OAUTH2 : \najout de l'attribut cnf dans l'acces token API (certificate binding),\nsuppression de l'attribut nonce dans l'access token API, \ncorrection sur la valeur de l'attribut subject_token_type dans la requête OAUTH2 token exchange, \najout d'une précision sur la valeur de l'attribut aud dans l'access token API, \nsuppression du paramètre Authorization Basic de la requête OAUTH2 token exchange",
+    "ci-build" : "https://ansforge.github.io/IG-securisation-transport-api-rest/ig/main",
+    "category" : "Security",
+    "introduction" : "Volet transport du CI-SIS qui décrit les modalités de sécurisation des APIs REST et des APIs ProSantéConnectées."
+  }

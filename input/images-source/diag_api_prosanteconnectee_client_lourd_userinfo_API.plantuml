@@ -1,0 +1,61 @@
+@startuml
+scale 1024*768
+
+box  "Systeme appelant / initiateur" #palegreen
+participant "Client Lourd" as n
+participant "Proxy LPS API" as appserver
+end box
+
+participant "ProSanteConnect" as psc
+
+box  "Systeme cible" #paleturquoise
+participant "Serveur d'autorisation" as AS
+participant "Service cible" as API
+end box
+
+n->appserver:1. acces initial avec cookie de session (user deja PSConnecte)
+	activate appserver
+    
+    
+group Authentification Pro Sante Connect
+appserver->psc: 2. Demande de subject_token + cookie de session
+	activate psc
+psc->psc :Controle du cookie de session
+psc->appserver:3. ID Token + subject_token + Refresh Token (PSC)
+	deactivate psc
+end
+    
+    
+    
+    
+group OAUTH2.0 flow
+appserver -> AS:4. subject_token(parametre) + Client ID_AS(header) + scope(parametre)
+	deactivate appserver
+    activate AS
+AS->psc:5. subject_token (introspection)
+	activate psc
+psc->AS:OK/KO
+	deactivate psc
+AS->AS :Controle d'acces (Client ID_AS x scopes)
+AS->appserver:6. access_token
+	activate appserver
+    deactivate AS
+
+
+
+end 
+appserver->API:10. access_token + acces aux donnees
+	deactivate appserver
+    group userinfo
+API->AS:7. demande userinfo 
+AS->psc:7. demande le userinfo
+	activate psc
+psc->AS: 8. userinfo
+		deactivate psc
+        	activate AS
+AS->API:9. userinfo (en cache)
+	deactivate AS
+end 
+
+@enduml
+

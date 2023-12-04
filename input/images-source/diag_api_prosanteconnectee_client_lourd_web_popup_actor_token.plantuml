@@ -1,0 +1,78 @@
+@startuml
+scale 1024*768
+
+box  "Systeme appelant / initiateur" #palegreen
+participant "Client Lourd" as n
+participant "Proxy LPS API" as appserver
+end box
+
+participant "ProSanteConnect" as psc
+
+box  "Systeme cible" #paleturquoise
+participant "Serveur d'autorisation" as AS
+participant "Service cible" as API
+end box
+
+
+n->appserver:1 : initialisation
+	activate appserver
+    activate n
+appserver->n:2 : partage du jeton applicatif
+	
+
+
+
+n->appserver:3. acces initial
+	
+appserver->n:4. redirect
+    deactivate appserver 
+
+group Authentification Pro Sante Connect
+
+n->psc:5. client_id, scope "all" PSC
+	activate psc
+	deactivate n
+psc<->n:6. authentification user (CPS/eCPS)
+activate n
+psc->n:7. authorization code PSC
+	deactivate psc
+n->appserver:8. authorization code PSC
+	activate appserver
+    deactivate n
+appserver->psc: 8. authorization code PSC + 	Client ID_FS/secret
+	activate psc
+psc->appserver: 9. ID Token + AT + Refresh Token (PSC)
+	deactivate psc
+end 
+
+
+group userinfo - OPTIONNEL
+appserver->psc:10. subject_token
+	activate psc
+psc->appserver:11. userinfo (PSC)
+	deactivate psc
+appserver->n:12. OK/KO + userinfo
+end
+
+
+
+
+group OAUTH2.0 flow
+
+n->appserver:13 . acces API + jeton applicatif
+appserver->AS:14. subject_token(parametre) + actor_token (parametre) + scope(parametre)
+	deactivate appserver
+	activate AS
+AS->psc:15. subject_token (introspection)
+	activate psc
+psc->AS:OK
+	deactivate psc
+AS->AS : Controle d'acces (Client ID_AS x scopes)
+AS->appserver:16. access_token
+	activate appserver
+	deactivate AS
+end 
+appserver->API:17. access_token + acces aux donnees
+	deactivate appserver
+
+@enduml
