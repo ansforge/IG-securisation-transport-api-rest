@@ -3,12 +3,12 @@
 id: ans.fr.securisation-transport
 canonical: https://interop.esante.gouv.fr/ig/securisation-transport # the last part of canonical and id must be the same
 name: IG-securisation-transport-api-rest
-title: Sécurisation de la couche transport API REST
+title: Sécurisation de la couche transport API REST Pro Santé Connectée
 publisher:
   name: ANS
   url: https://esante.gouv.fr
 status: active
-version: 1.1.0 # shall conforms to Semantic Versioning https://fr.wiktionary.org/wiki/SemVer
+version: 1.2.0 # shall conforms to Semantic Versioning https://fr.wiktionary.org/wiki/SemVer
 fhirVersion: 4.0.1
 copyrightYear: 2020+
 releaseLabel: ci-build
