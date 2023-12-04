@@ -1,8 +1,8 @@
-﻿/home/runner/work/IG-securisation-transport-api-rest/IG-securisation-transport-api-rest/fsh-generated/resources/ImplementationGuide-ans.fr.securisationtransport.json: line 1, col 14854, Error - ImplementationGuide.definition.resource: minimum required = 1, but only found 0 (from http://hl7.org/fhir/StructureDefinition/ImplementationGuide|4.0.1) (STRUCTURE)
+﻿/home/runner/work/IG-securisation-transport-api-rest/IG-securisation-transport-api-rest/fsh-generated/resources/ImplementationGuide-ans.fr.securisation-transport.json: line 1, col 14862, Error - ImplementationGuide.definition.resource: minimum required = 1, but only found 0 (from http://hl7.org/fhir/StructureDefinition/ImplementationGuide|4.0.1) (STRUCTURE)
 
 IGsecurisationtransportapirest : Validation Results
 =========================================
 
 err = 1, warn = 4, info = 0
 IG Publisher Version: 1.5.5
-Generated Mon Dec 04 17:01:04 UTC 2023. FHIR version 4.0.1 for ans.fr.securisationtransport#1.2.0 (canonical = https://interop.esante.gouv.fr/ig/securisationtransport)
+Generated Mon Dec 04 17:12:20 UTC 2023. FHIR version 4.0.1 for ans.fr.securisation-transport#1.2.0 (canonical = https://interop.esante.gouv.fr/ig/securisation-transport)
