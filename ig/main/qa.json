@@ -3,11 +3,11 @@
   "name" : "IGsecurisationtransportapirest",
   "package-id" : "ans.fr.securisation-transport",
   "ig-ver" : "1.2.0",
-  "date" : "Mon, 04 Dec, 2023 20:13:00 +0000",
+  "date" : "Mon, 04 Dec, 2023 20:22:23 +0000",
   "errs" : 1,
   "warnings" : 4,
   "hints" : 0,
   "version" : "4.0.1",
   "tool" : "5.0.0 (3)",
-  "maxMemory" : 1153262992
+  "maxMemory" : 1270841344
 }
