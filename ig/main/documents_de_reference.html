@@ -3,7 +3,7 @@
 <html xml:lang="en" xmlns="http://www.w3.org/1999/xhtml" lang="en">
   <head>
     <meta content="text/html;charset=utf-8" http-equiv="Content-Type"/>
-    <title>ANS.FR.SECURISATION-TRANSPORT\Sécurité - FHIR v4.0.1</title>
+    <title>Documents de référence - Sécurisation de la couche transport API REST Pro Santé Connectée v1.2.0</title>
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <meta name="author" content="http://hl7.org/fhir"/>
@@ -20,7 +20,6 @@
   	<link href="assets/css/prism.css" rel="stylesheet" />
     <link rel="stylesheet" href="assets/css/style-ans.css"/>
     <link rel="stylesheet" href="assets/css/style-add-ans.css"/>
-    <!-- CSS only -->
     <!-- Placeholder for child template CSS declarations -->
 
     <script type="text/javascript" src="fhir-table-scripts.js"> </script>
@@ -32,32 +31,32 @@
     <![endif]-->
 
     <!-- Favicons -->
-    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="assets/ico/apple-touch-icon-144-precomposed.png"/>
-    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="assets/ico/apple-touch-icon-114-precomposed.png"/>
-    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="assets/ico/apple-touch-icon-72-precomposed.png"/>
-    <link rel="apple-touch-icon-precomposed" href="assets/ico/apple-touch-icon-57-precomposed.png"/>
+    <link rel="fhir-logo" sizes="144x144" href="assets/ico/icon-fhir-144.png"/>
+    <link rel="fhir-logo" sizes="114x114" href="assets/ico/icon-fhir-114.png"/>
+    <link rel="fhir-logo" sizes="72x72" href="assets/ico/icon-fhir-72.png"/>
+    <link rel="fhir-logo" href="assets/ico/icon-fhir-57.png"/>
     <link rel="shortcut icon" href="assets/ico/favicon.png"/>
   </head>
   <body onload="document.body.style.opacity='1'">
 
 	  <script src="assets/js/prism.js"></script>
 
-    <style type="text/css">h2{--heading-prefix:"3.1"}
-    h3,h4,h5,h6{--heading-prefix:"3.1"}</style>
+    <style type="text/css">h2{--heading-prefix:"5"}
+    h3,h4,h5,h6{--heading-prefix:"5"}</style>
     <div id="segment-header" class="segment">  <!-- segment-header -->
       <div class="container">  <!-- container -->
         <!-- Placeholder for child template header declarations -->
 <div id="family-nav">
-    <a id="hl7-search-lnk" no-external="true" href="http://hl7.org/fhir"><img height="50" alt="Visit the FHIR website" src="assets/images/fhir-logo-www.png"/> </a>
-  </div>
-  <div id="ans-nav">
-    <a id="hl7-logo" no-external="true" href="https://esante.gouv.fr/"><img height="50" alt="ANS Logo" src="assets/images/logo-ANS.svg"/></a>
-  </div>
+  <a id="hl7-search-lnk" no-external="true" href="http://hl7.org/fhir"><img height="50" alt="Visit the FHIR website" src="assets/images/fhir-logo-www.png"/> </a>
+</div>
+<div id="ans-nav" style="line-height: 50px; float: left; margin-top: 4px; margin-bottom: 8px; color: #808080; ">
+  <a id="hl7-logo" no-external="true" href="https://esante.gouv.fr/"><img height="50" alt="ANS Logo" src="assets/images/logo-ANS.svg"/></a>
+</div>
 
         <div id="ig-status">
-          <p><span style="font-size:12pt;font-weight:bold">Sécurisation de la couche transport API REST</span>
+          <p><span style="font-size:12pt;font-weight:bold">Sécurisation de la couche transport API REST Pro Santé Connectée</span>
             <br/>
-            <span style="display:inline-block;">0.1.0 - ci-build
+            <span style="display:inline-block;">1.2.0 - ci-build
 
 
             </span>
@@ -88,40 +87,59 @@
     <a href="index.html">Accueil</a>
   </li>
   <li class="dropdown">
-    <a data-toggle="dropdown" href="#" class="dropdown-toggle">Description des flux
+    <a data-toggle="dropdown" href="#" class="dropdown-toggle">Description générale des flux
       <b class="caret"></b>
     </a>
     <ul class="dropdown-menu">
       <li>
-        <a href="construction_des_flux.html">Construction des flux</a>
+        <a href="principes_generaux_du_volet.html">Principes généraux de ce volet</a>
       </li>
       <li>
-        <a href="st_flux1.html">Flux 01</a>
+        <a href="archi_documentaire.html">Architecture documentaire</a>
       </li>
       <li>
-        <a href="st_flux2.html">Flux 02</a>
+        <a href="standards.html">Standards utilisés (REST, OAUTH 2.0 ET OIDC)</a>
+      </li>
+      <li>
+        <a href="principes_securisation.html">Principes de sécurisation</a>
       </li>
     </ul>
   </li>
-  <li>
-    <a href="tests.html">Tests</a>
-  </li>
   <li class="dropdown">
-    <a data-toggle="dropdown" href="#" class="dropdown-toggle">Autres ressources
+    <a data-toggle="dropdown" href="#" class="dropdown-toggle">API ProSantéConnectée
       <b class="caret"></b>
     </a>
     <ul class="dropdown-menu">
       <li>
-        <a href="securite.html">Sécurité</a>
+        <a href="api_prosanteconnectee.html">Description générale</a>
       </li>
       <li>
-        <a href="downloads.html">Téléchargements et usage</a>
+        <a href="api_prosanteconnectee_web.html">Application web</a>
       </li>
       <li>
-        <a target="_blank" href="https://interop.esante.gouv.fr/ig/documentation/">Documentation sur les IG</a>
+        <a href="api_prosanteconnectee_web_erreurs.html">Application web - cas d&apos;erreurs</a>
       </li>
       <li>
-        <a target="_blank" href="https://esante.gouv.fr/">Site de l&apos;ANS </a>
+        <a href="api_prosanteconnectee_client_lourd.html">Application client lourd ou mobile</a>
+      </li>
+      <li>
+        <a href="api_prosanteconnectee_userinfo.html">Récupération et utilisation du jeton userinfo PSC</a>
+      </li>
+      <li>
+        <a href="api_prosanteconnectee_donnees_metiers.html">Passage de données métiers de l&apos;application cliente vers l&apos;API</a>
+      </li>
+    </ul>
+  </li>
+  <li class="dropdown">
+    <a data-toggle="dropdown" href="#" class="dropdown-toggle">Glossaire et documents de référence
+      <b class="caret"></b>
+    </a>
+    <ul class="dropdown-menu">
+      <li>
+        <a href="glossaire.html">Glossaire</a>
+      </li>
+      <li>
+        <a href="documents_de_reference.html">Documents de référence</a>
       </li>
     </ul>
   </li>
@@ -140,15 +158,15 @@
     <div id="segment-breadcrumb" class="segment">  <!-- segment-breadcrumb -->
       <div class="container">  <!-- container -->
         <ul class="breadcrumb">
-          <li><a href='toc.html'><b>Table of Contents</b></a></li><li><a href='autres_ressources.html'><b>Autres Ressources</b></a></li><li><b>Sécurité</b></li>
+          <li><a href='toc.html'><b>Table of Contents</b></a></li><li><b>Documents de référence</b></li>
 
           <span style="float:right;">
 
-            <a href="autres_ressources.html">&lt;prev</a> | 
+            <a href="glossaire.html">&lt;prev</a> | 
 
             <a href="#bottom">bottom</a>
 
-          | <a href="downloads.html">next&gt;</a>
+          | <a href="about.html">next&gt;</a>
 
           </span>
 
@@ -170,8 +188,8 @@ h5:before{color:silver;counter-increment:detail;content:var(--heading-prefix) ".
 h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefix) "." counter(sub-section) "." counter(composite) "." counter(detail) "." counter(more-detail)" ";}
 </style>
 <div class="col-12">
-  <!--ReleaseHeader--><p id="publish-box">Publication Build: This will be filled in by the publication tooling</p><!--EndReleaseHeader-->
-  <h2>Sécurité</h2>
+  <!--ReleaseHeader--><p id="publish-box">Sécurisation de la couche transport API REST Pro Santé Connectée - Local Development build (v1.2.0) built by the FHIR (HL7® FHIR® Standard) Build Tools. See the <a href="https://interop.esante.gouv.fr/ig/securisation-transport/history.html">Directory of published versions</a></p><!--EndReleaseHeader-->
+  <h2>Documents de référence</h2>
   
 
 
@@ -189,14 +207,61 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 <div>
 <!-- do not remove - needed to prevent Jekyll from adding a p tag to any non block level element in the markdown.-->
 </div>
-<h3 id="sécurité">Sécurité</h3>
+<table>
+<tbody>
+<tr>
+<td width="640">
+<p>Documents de r&eacute;f&eacute;rence</p>
+</td>
+</tr>
+<tr>
+<td width="640">
+<p>[1] ANS&nbsp;: CI-SIS Volet Transport Synchrone pour Client Lourd</p>
+<p><a href="https://esante.gouv.fr/volet-transport-synchrone-pour-client-lourd">https://esante.gouv.fr/volet-transport-synchrone-pour-client-lourd</a></p>
+<p>GIE SESAM VITALE : CI AMO Volet transport synchrone pour les t&eacute;l&eacute;services de l&rsquo;Assurance Maladie</p>
+<p><a href="https://industriels.sesam-vitale.fr/group/integrer-tlsi">https://industriels.sesam-vitale.fr/group/integrer-tlsi</a>&nbsp;</p>
+<p>[2] ANS : SMT Serveur Multi Terminologie</p>
+<p><a href="https://esante.gouv.fr/produits-services/smt">https://esante.gouv.fr/produits-services/smt</a></p>
+<p>[3] ANS&nbsp;: Corpus documentaire PGSSI-S</p>
+<p><a href="https://esante.gouv.fr/produits-services/pgssi-s/corpus-documentaire?field_thematique_pgssi_target_id%5B745%5D=745&amp;field_type_document_pgssi_target_id%5B759%5D=759">https://esante.gouv.fr/produits-services/pgssi-s/corpus-documentaire?field_thematique_pgssi_target_id%5B745%5D=745&amp;field_type_document_pgssi_target_id%5B759%5D=759</a></p>
+<p>[4] ANS : Document technique Concept de base du protocole OpenID Connect</p>
+<p><a href="https://industriels.esante.gouv.fr/produits-et-services/pro-sante-connect/documentation-technique">https://industriels.esante.gouv.fr/produits-et-services/pro-sante-connect/documentation-technique</a></p>
+<p>[5] ANS&nbsp;: CIBA</p>
+<p><a href="https://industriels.esante.gouv.fr/produits-et-services/pro-sante-connect/ciba">https://industriels.esante.gouv.fr/produits-et-services/pro-sante-connect/ciba</a></p>
+<p>[6] GUIDE ANSSI&nbsp;: Recommendations pour la s&eacute;curisation de la mise en &oelig;uvre du protocole Open ID connect</p>
+<p><a href="https://www.ssi.gouv.fr/uploads/2020/09/anssi-guide-recommandations_pour_la_securisation_de_la_mise_en_oeuvre_du_protocole_openid_connect-v1.0.pdf">https://www.ssi.gouv.fr/uploads/2020/09/anssi-guide-recommandations_pour_la_securisation_de_la_mise_en_oeuvre_du_protocole_openid_connect-v1.0.pdf</a></p>
+<p>[7] IGC Sant&eacute;&nbsp;: Les gabarits des certificats X.509 et des CRLs</p>
+<p><a href="http://igc-sante.esante.gouv.fr/DA/DA-CONTRATS-TYPE-V1.0.pdf">http://igc-sante.esante.gouv.fr/DA/DA-CONTRATS-TYPE-V1.0.pdf</a></p>
+<p>[8] ANS&nbsp;: Sources des donn&eacute;es personnes et structures</p>
+<p><a href="https://esante.gouv.fr/annexe-sources-des-donnees-personnes-et-structures">https://esante.gouv.fr/annexe-sources-des-donnees-personnes-et-structures</a></p>
+<p>[9] ANS&nbsp;: Introspection&nbsp;</p>
+<p><a href="https://industriels.esante.gouv.fr/produits-et-services/pro-sante-connect/l-introspection">https://industriels.esante.gouv.fr/produits-et-services/pro-sante-connect/l-introspection</a></p>
+<p>[10] ANS&nbsp;: User Info</p>
+<p><a href="https://industriels.esante.gouv.fr/produits-et-services/pro-sante-connect/userinfo">https://industriels.esante.gouv.fr/produits-et-services/pro-sante-connect/userinfo</a></p>
+</td>
+</tr>
+</tbody>
+</table>
 
-<p>Les données véhiculées à travers ces flux sont des données à caractère personnel contenant notamment des données médicales sensibles qu’il convient de protéger.</p>
-
-<p>Cette section présente les éventuelles recommandations de sécurité qui s’appliquent à cet Implementation Guidegit status
-. Il s’agit d’un sous-ensemble lié à la dimension interopérabilité de dispositions de sécurité plus globales visant à couvrir les exigences de sécurité d’un système cible.</p>
-
-<p>Il est du ressort du responsable de traitement du système cible de mettre en œuvre des dispositions de sécurité adaptées à son analyse de risques pour le service. En fonction de sa politique de sécurité, il peut choisir ou pas de mettre en œuvre les dispositions spécifiques décrites dans cette section. Les référentiels de sécurité édités par l’ANS fournissent des recommandations sur ce sujet.</p>
+<table>
+<tbody>
+<tr>
+<td width="640">
+<p>RFC de r&eacute;f&eacute;rence</p>
+</td>
+</tr>
+<tr>
+<td width="640">
+<p>[1] RFC 7235&nbsp;Authentification Basic : <a href="https://www.rfc-editor.org/rfc/rfc7235">https://www.rfc-editor.org/rfc/rfc7235</a></p>
+<p>[2] RFC 8693 OAuth 2.0 Token Exchange : <a href="https://www.rfc-editor.org/rfc/rfc8693.html">https://www.rfc-editor.org/rfc/rfc8693.html</a></p>
+<p>[3] RFC 8705 OAuth 2.0 mTLS Client Authentication and Certificate-Bound Access Tokens : <a href="https://www.rfc-editor.org/rfc/rfc8705">https://www.rfc-editor.org/rfc/rfc8705</a></p>
+<p>[4] RFC 7636 4.1 Code Verifier et 4.2 Code Challenge <a href="https://www.rfc-editor.org/rfc/rfc7636%23section-4.1">https://www.rfc-editor.org/rfc/rfc7636#section-4.1</a></p>
+<p>[5] RFC 6749 Authorization Request <a href="https://www.rfc-editor.org/rfc/rfc6749#section-4.1.1">https://www.rfc-editor.org/rfc/rfc6749#section-4.1.1</a></p>
+<p>[6] RFC 7519 JSON Web Token (JWT) <a href="https://datatracker.ietf.org/doc/html/rfc7519">https://datatracker.ietf.org/doc/html/rfc7519</a></p>
+</td>
+</tr>
+</tbody>
+</table>
 
 
 
@@ -226,7 +291,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
             <tr>
               <td style="text-align:left">&#xA0;
 
-                <a href="autres_ressources.html">&lt;prev</a>
+                <a href="glossaire.html">&lt;prev</a>
 
               </td>
               <td style="text-align:center">
@@ -234,7 +299,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
               </td>
               <td style="text-align:right">&#xA0;
 
-                <a href="downloads.html">next&gt;</a>
+                <a href="about.html">next&gt;</a>
 
               </td>
             </tr>
@@ -244,12 +309,13 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 
       <div class="inner-wrapper">
         <p>
-          IG &#169; 2020+ <a style="color:var(--footer-hyperlink-text-color)" href="https://esante.gouv.fr">ANS</a>.  Package ans.fr.securisation-transport#0.1.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Wed, Jul 12, 2023 10:23+0000">2023-07-12</span>
+          IG &#169; 2020+ <a style="color:var(--footer-hyperlink-text-color)" href="https://esante.gouv.fr">ANS</a>.  Package ans.fr.securisation-transport#1.2.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Mon, Dec 4, 2023 14:48+0000">2023-12-04</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)"></span>
-                      Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |
-                 <a style="color: var(--footer-hyperlink-text-color)" href="qa.html">QA Report</a>
-                  | <a style="color: #81BEF7" target="_blank" href="https://interop.esante.gouv.fr/ig/securisation-transport/history.html">Version History</a> | <a style="color: var(--footer-hyperlink-text-color)" target="_blank" href="https://github.com/ansforge/FIG_ans-ig-sample/issues/new">New Issue</a>
+                      Liens: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table des matières </a> |
+                 <a style="color: var(--footer-hyperlink-text-color)" href="qa.html">QA </a> |
+                 <a style="color: var(--footer-hyperlink-text-color)" target="_blank" href="https://interop.esante.gouv.fr/ig/securisation-transport/history.html">Historique des versions </a>
+                  | <a style="color: var(--footer-hyperlink-text-color)" target="_blank" href="https://github.com/ansforge/FIG_ans-ig-sample/issues/new">New Issue</a>
                 
 
           </span>

@@ -1,5 +1,6 @@
 {
-  "version" : "0.1.0",
-  "date" : "20230712102258",
+  "version" : "1.2.0",
+  "date" : "20231204144735",
+  "notForPublication" : true,
   "name" : "ans.fr.securisation-transport.r4"
 }

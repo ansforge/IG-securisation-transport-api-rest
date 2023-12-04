@@ -1,50 +1,55 @@
 {
-  "date" : "Wed, 12 Jul, 2023 10:23:29 +0000",
+  "date" : "Mon, 04 Dec, 2023 14:48:02 +0000",
   "doco" : "For each file: start is seconds after start activity occurred. Length = milliseconds activity took",
   "files" : [
     {
       "name" : "/fsh-generated/resources/ImplementationGuide-ans.fr.securisation-transport.json",
-      "size" : 2563,
+      "size" : 3660,
       "processes" : [
         {
           "activity" : "load",
-          "start" : 30,
-          "length" : 53
+          "start" : 26,
+          "length" : 67
         },
         {
           "activity" : "checkR4R4B",
-          "start" : 30,
+          "start" : 26,
           "length" : 4
         },
         {
           "activity" : "generateNarratives",
-          "start" : 30,
-          "length" : 106
+          "start" : 26,
+          "length" : 88
         },
         {
           "activity" : "validate",
-          "start" : 30,
-          "length" : 3959
+          "start" : 26,
+          "length" : 2065
         },
         {
           "activity" : "generate1",
-          "start" : 34,
-          "length" : 71
+          "start" : 28,
+          "length" : 102
         },
         {
           "activity" : "generate2",
-          "start" : 37,
-          "length" : 62
+          "start" : 33,
+          "length" : 70
         },
         {
           "activity" : "generateExampleZip",
-          "start" : 45,
+          "start" : 40,
           "length" : 1
         },
         {
           "activity" : "generateValidationPack",
-          "start" : 46,
-          "length" : 2
+          "start" : 40,
+          "length" : 3
+        },
+        {
+          "activity" : "scanExamplesForR5",
+          "start" : 43,
+          "length" : 3
         }
       ]
     }

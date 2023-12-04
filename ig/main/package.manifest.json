@@ -1,6 +1,6 @@
 {
-  "version" : "0.1.0",
+  "version" : "1.2.0",
   "fhirVersion" : ["4.0.1"],
-  "date" : "20230712102258",
+  "date" : "20231204144735",
   "name" : "ans.fr.securisation-transport"
 }
