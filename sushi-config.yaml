@@ -46,11 +46,6 @@ pages:
         title:  Glossaires
     documents_de_reference.md:
         title: Documents de référence
- 
- 
-    about.md:
-        title: A propos de ce guide
-        
 
 menu:
     Accueil: index.html
@@ -69,5 +64,4 @@ menu:
     Glossaire et documents de référence:  
         Glossaire: glossaire.html
         Documents de référence: documents_de_reference.html
-
-    A propos de ce guide: about.html
+    Liste des guides: new-tab https://interop.esante.gouv.fr/ig/
