@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <ImplementationGuide xmlns="http://hl7.org/fhir">
-  <id value="ans.fr.securisation-transport"/>
+  <id value="ans.fr.securisationtransport"/>
   <text>
-    <status value="extensions"/><div xmlns="http://www.w3.org/1999/xhtml"><h2>IGsecurisationtransportapirest</h2><p>The official URL for this implementation guide is: </p><pre>https://interop.esante.gouv.fr/ig/securisation-transport/ImplementationGuide/ans.fr.securisation-transport</pre></div>
+    <status value="extensions"/><div xmlns="http://www.w3.org/1999/xhtml"><h2>IGsecurisationtransportapirest</h2><p>The official URL for this implementation guide is: </p><pre>https://interop.esante.gouv.fr/ig/securisationtransport/ImplementationGuide/ans.fr.securisationtransport</pre></div>
   </text>
-  <url value="https://interop.esante.gouv.fr/ig/securisation-transport/ImplementationGuide/ans.fr.securisation-transport"/>
+  <url value="https://interop.esante.gouv.fr/ig/securisationtransport/ImplementationGuide/ans.fr.securisationtransport"/>
   <version value="1.2.0"/>
   <name value="IGsecurisationtransportapirest"/>
   <title value="Sécurisation de la couche transport API REST Pro Santé Connectée"/>
   <status value="active"/>
-  <date value="2023-12-04T16:38:24+00:00"/>
+  <date value="2023-12-04T16:58:39+00:00"/>
   <publisher value="ANS"/>
   <contact>
     <name value="ANS"/>
@@ -26,7 +26,7 @@
       <display value="FRANCE"/>
     </coding>
   </jurisdiction>
-  <packageId value="ans.fr.securisation-transport"/>
+  <packageId value="ans.fr.securisationtransport"/>
   <license value="CC0-1.0"/>
   <fhirVersion value="4.0.1"/>
   <dependsOn id="hl7tx">
@@ -131,7 +131,7 @@
         <valueString value="path-history"/>
       </extension>
       <extension url="value">
-        <valueString value="https://interop.esante.gouv.fr/ig/securisation-transport/history.html"/>
+        <valueString value="https://interop.esante.gouv.fr/ig/securisationtransport/history.html"/>
       </extension>
     </extension>
     <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
@@ -342,7 +342,7 @@
         <valueCode value="path-history"/>
       </extension>
       <extension url="value">
-        <valueString value="https://interop.esante.gouv.fr/ig/securisation-transport/history.html"/>
+        <valueString value="https://interop.esante.gouv.fr/ig/securisationtransport/history.html"/>
       </extension>
     </extension>
     <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
