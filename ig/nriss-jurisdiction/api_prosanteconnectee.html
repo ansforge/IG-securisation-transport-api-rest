@@ -3,7 +3,7 @@
 <html xml:lang="en" xmlns="http://www.w3.org/1999/xhtml" lang="en">
   <head>
     <meta content="text/html;charset=utf-8" http-equiv="Content-Type"/>
-    <title>Construction Des Flux - Sécurisation de la couche transport API REST v0.1.0</title>
+    <title>API ProSantéConnectée - Sécurisation de la couche transport API REST Pro Santé Connectée v1.2.0</title>
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <meta name="author" content="http://hl7.org/fhir"/>
@@ -41,8 +41,8 @@
 
 	  <script src="assets/js/prism.js"></script>
 
-    <style type="text/css">h2{--heading-prefix:"2.1"}
-    h3,h4,h5,h6{--heading-prefix:"2.1"}</style>
+    <style type="text/css">h2{--heading-prefix:"3"}
+    h3,h4,h5,h6{--heading-prefix:"3.0"}</style>
     <div id="segment-header" class="segment">  <!-- segment-header -->
       <div class="container">  <!-- container -->
         <!-- Placeholder for child template header declarations -->
@@ -54,9 +54,9 @@
 </div>
 
         <div id="ig-status">
-          <p><span style="font-size:12pt;font-weight:bold">Sécurisation de la couche transport API REST</span>
+          <p><span style="font-size:12pt;font-weight:bold">Sécurisation de la couche transport API REST Pro Santé Connectée</span>
             <br/>
-            <span style="display:inline-block;">0.1.0 - ci-build
+            <span style="display:inline-block;">1.2.0 - ci-build
 
 
 
@@ -91,40 +91,59 @@
     <a href="index.html">Accueil</a>
   </li>
   <li class="dropdown">
-    <a data-toggle="dropdown" href="#" class="dropdown-toggle">Description des flux
+    <a data-toggle="dropdown" href="#" class="dropdown-toggle">Description générale des flux
       <b class="caret"></b>
     </a>
     <ul class="dropdown-menu">
       <li>
-        <a href="construction_des_flux.html">Construction des flux</a>
+        <a href="principes_generaux_du_volet.html">Principes généraux de ce volet</a>
       </li>
       <li>
-        <a href="st_flux1.html">Flux 01</a>
+        <a href="archi_documentaire.html">Architecture documentaire</a>
       </li>
       <li>
-        <a href="st_flux2.html">Flux 02</a>
+        <a href="standards.html">Standards utilisés (REST, OAUTH 2.0 ET OIDC)</a>
+      </li>
+      <li>
+        <a href="principes_securisation.html">Principes de sécurisation</a>
       </li>
     </ul>
   </li>
-  <li>
-    <a href="tests.html">Tests</a>
-  </li>
   <li class="dropdown">
-    <a data-toggle="dropdown" href="#" class="dropdown-toggle">Autres ressources
+    <a data-toggle="dropdown" href="#" class="dropdown-toggle">API ProSantéConnectée
       <b class="caret"></b>
     </a>
     <ul class="dropdown-menu">
       <li>
-        <a href="securite.html">Sécurité</a>
+        <a href="api_prosanteconnectee.html">Description générale</a>
       </li>
       <li>
-        <a href="downloads.html">Téléchargements et usage</a>
+        <a href="api_prosanteconnectee_web.html">Application web</a>
       </li>
       <li>
-        <a target="_blank" href="https://interop.esante.gouv.fr/ig/documentation/">Documentation sur les IG</a>
+        <a href="api_prosanteconnectee_web_erreurs.html">Application web - cas d&apos;erreurs</a>
       </li>
       <li>
-        <a target="_blank" href="https://esante.gouv.fr/">Site de l&apos;ANS </a>
+        <a href="api_prosanteconnectee_client_lourd.html">Application client lourd ou mobile</a>
+      </li>
+      <li>
+        <a href="api_prosanteconnectee_userinfo.html">Récupération et utilisation du jeton userinfo PSC</a>
+      </li>
+      <li>
+        <a href="api_prosanteconnectee_donnees_metiers.html">Passage de données métiers de l&apos;application cliente vers l&apos;API</a>
+      </li>
+    </ul>
+  </li>
+  <li class="dropdown">
+    <a data-toggle="dropdown" href="#" class="dropdown-toggle">Glossaire et documents de référence
+      <b class="caret"></b>
+    </a>
+    <ul class="dropdown-menu">
+      <li>
+        <a href="glossaire.html">Glossaire</a>
+      </li>
+      <li>
+        <a href="documents_de_reference.html">Documents de référence</a>
       </li>
     </ul>
   </li>
@@ -143,15 +162,15 @@
     <div id="segment-breadcrumb" class="segment">  <!-- segment-breadcrumb -->
       <div class="container">  <!-- container -->
         <ul class="breadcrumb">
-          <li><a href='toc.html'><b>Table of Contents</b></a></li><li><a href='specifications_techniques.html'><b>Specifications Techniques</b></a></li><li><b>Construction Des Flux</b></li>
+          <li><a href='toc.html'><b>Table of Contents</b></a></li><li><b>API ProSantéConnectée</b></li>
 
           <span style="float:right;">
 
-            <a href="specifications_techniques.html">&lt;prev</a> | 
+            <a href="principes_securisation.html">&lt;prev</a> | 
 
             <a href="#bottom">bottom</a>
 
-          | <a href="st_flux1.html">next&gt;</a>
+          | <a href="api_prosanteconnectee_web.html">next&gt;</a>
 
           </span>
 
@@ -173,8 +192,8 @@ h5:before{color:silver;counter-increment:detail;content:var(--heading-prefix) ".
 h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefix) "." counter(sub-section) "." counter(composite) "." counter(detail) "." counter(more-detail)" ";}
 </style>
 <div class="col-12">
-  <!--ReleaseHeader--><p id="publish-box">Publication Build: This will be filled in by the publication tooling</p><!--EndReleaseHeader-->
-  <h2>Construction Des Flux</h2>
+  <!--ReleaseHeader--><p id="publish-box">Sécurisation de la couche transport API REST Pro Santé Connectée - Local Development build (v1.2.0) built by the FHIR (HL7® FHIR® Standard) Build Tools. See the <a href="https://interop.esante.gouv.fr/ig/securisation-transport/history.html">Directory of published versions</a></p><!--EndReleaseHeader-->
+  <h2>API ProSantéConnectée</h2>
   
 
 
@@ -189,20 +208,23 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 
 
     <p><!-- white space is critical inside of capture --></p>
-<div class="markdown-toc">
-<ul id="markdown-toc">
-  <li><a href="#flux-1" id="markdown-toc-flux-1">Flux 1</a></li>
-  <li><a href="#flux-2" id="markdown-toc-flux-2">Flux 2</a></li>
-</ul>
-
+<div>
+<!-- do not remove - needed to prevent Jekyll from adding a p tag to any non block level element in the markdown.-->
 </div>
-<h3 id="flux-1">Flux 1</h3>
 
-<p>Description du flux avec schémas et liens hypertextes vers le  <a href="st_flux1.html">flux 01</a></p>
+<p>Cas d’usage pour lequel le système cible nécessite une authentification de l’utilisateur par <strong>Pro Santé Connect</strong> pour l’accès à ses données. 
+Pour ce faire, le fournisseur de services redirige d’abord l’utilisateur vers Pro Santé Connect pour l’authentifier.</p>
 
-<h3 id="flux-2">Flux 2</h3>
+<p>Cependant, si le fournisseur de services dispose déjà d’un <code class="language-plaintext highlighter-rouge">subject_token</code> valide délivré par Pro Santé Connect la première étape d’authentification n’est pas nécessaire.
+Pour en savoir plus, rendez-vous sur la page du <a href="api_prosanteconnectee_web_erreurs.html">cas d’utilisation 1a</a>.</p>
 
-<p>Description du flux avec schémas et liens hypertextes vers le  <a href="st_flux2.html">flux 02</a></p>
+<p>Une fois l’utilisateur authentifié, le fournisseur de services utilise le protocole <code class="language-plaintext highlighter-rouge">OAuth 2.0</code> pour initier une requête au nom de l’utilisateur pour récupérer ses données auprès du service cible au sein du système cible.
+Le système initiateur peut être une application web ou un client lourd.</p>
+
+<p>Dans le cadre du <strong>token exchange RFC 8693 [12]</strong>, le jeton échangé contre l’<code class="language-plaintext highlighter-rouge">access_token</code> délivré par le serveur d’autorisation <code class="language-plaintext highlighter-rouge">OAuth 2.0</code> permet d’identifier l’utilisateur, il se nomme <code class="language-plaintext highlighter-rouge">subject_token</code>.</p>
+
+<p><strong>Afin de garantir une cohérence avec les paramètres de la RFC et dans le cas des API Pro Santé connectées : <code class="language-plaintext highlighter-rouge">subject_token</code> = <code class="language-plaintext highlighter-rouge">Access Token PSC</code></strong></p>
+
 
 
 
@@ -232,7 +254,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
             <tr>
               <td style="text-align:left">&#xA0;
 
-                <a href="specifications_techniques.html">&lt;prev</a>
+                <a href="principes_securisation.html">&lt;prev</a>
 
               </td>
               <td style="text-align:center">
@@ -240,7 +262,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
               </td>
               <td style="text-align:right">&#xA0;
 
-                <a href="st_flux1.html">next&gt;</a>
+                <a href="api_prosanteconnectee_web.html">next&gt;</a>
 
               </td>
             </tr>
@@ -250,7 +272,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 
       <div class="inner-wrapper">
         <p>
-          IG &#169; 2020+ <a style="color:var(--footer-hyperlink-text-color)" href="https://esante.gouv.fr">ANS</a>.  Package ans.fr.securisation-transport#0.1.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Fri, Oct 20, 2023 12:25+0000">2023-10-20</span>
+          IG &#169; 2020+ <a style="color:var(--footer-hyperlink-text-color)" href="https://esante.gouv.fr">ANS</a>.  Package ans.fr.securisation-transport#1.2.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Mon, Dec 4, 2023 14:48+0000">2023-12-04</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)"></span>
                       Liens: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table des matières </a> |

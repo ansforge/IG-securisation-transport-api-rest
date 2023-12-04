@@ -6,11 +6,11 @@
     <status value="extensions"/><div xmlns="http://www.w3.org/1999/xhtml"><h2>IGsecurisationtransportapirest</h2><p>The official URL for this implementation guide is: </p><pre>https://interop.esante.gouv.fr/ig/securisation-transport/ImplementationGuide/ans.fr.securisation-transport</pre></div>
   </text>
   <url value="https://interop.esante.gouv.fr/ig/securisation-transport/ImplementationGuide/ans.fr.securisation-transport"/>
-  <version value="0.1.0"/>
+  <version value="1.2.0"/>
   <name value="IGsecurisationtransportapirest"/>
-  <title value="Sécurisation de la couche transport API REST"/>
-  <status value="draft"/>
-  <date value="2023-10-20T12:25:12+00:00"/>
+  <title value="Sécurisation de la couche transport API REST Pro Santé Connectée"/>
+  <status value="active"/>
+  <date value="2023-12-04T14:48:56+00:00"/>
   <publisher value="ANS"/>
   <contact>
     <name value="ANS"/>
@@ -482,66 +482,98 @@
       </page>
       <page>
         <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-page-name">
-          <valueUrl value="specifications_techniques.html"/>
+          <valueUrl value="principes_generaux_du_volet.html"/>
         </extension>
-        <nameUrl value="specifications_techniques.html"/>
-        <title value="Specifications Techniques"/>
+        <nameUrl value="principes_generaux_du_volet.html"/>
+        <title value="Principes généraux de ce volet"/>
         <generation value="markdown"/>
         <page>
           <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-page-name">
-            <valueUrl value="construction_des_flux.html"/>
+            <valueUrl value="archi_documentaire.html"/>
           </extension>
-          <nameUrl value="construction_des_flux.html"/>
-          <title value="Construction Des Flux"/>
+          <nameUrl value="archi_documentaire.html"/>
+          <title value="Architecture documentaire"/>
           <generation value="markdown"/>
         </page>
         <page>
           <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-page-name">
-            <valueUrl value="st_flux1.html"/>
+            <valueUrl value="standards.html"/>
           </extension>
-          <nameUrl value="st_flux1.html"/>
-          <title value="Flux 01"/>
+          <nameUrl value="standards.html"/>
+          <title value="Standards d'échange"/>
           <generation value="markdown"/>
         </page>
         <page>
           <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-page-name">
-            <valueUrl value="st_flux2.html"/>
+            <valueUrl value="principes_securisation.html"/>
           </extension>
-          <nameUrl value="st_flux2.html"/>
-          <title value="Flux 02"/>
+          <nameUrl value="principes_securisation.html"/>
+          <title value="Principes de sécurisation"/>
           <generation value="markdown"/>
         </page>
       </page>
       <page>
         <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-page-name">
-          <valueUrl value="autres_ressources.html"/>
+          <valueUrl value="api_prosanteconnectee.html"/>
         </extension>
-        <nameUrl value="autres_ressources.html"/>
-        <title value="Autres Ressources"/>
+        <nameUrl value="api_prosanteconnectee.html"/>
+        <title value="API ProSantéConnectée"/>
         <generation value="markdown"/>
         <page>
           <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-page-name">
-            <valueUrl value="securite.html"/>
+            <valueUrl value="api_prosanteconnectee_web.html"/>
           </extension>
-          <nameUrl value="securite.html"/>
-          <title value="Sécurité"/>
+          <nameUrl value="api_prosanteconnectee_web.html"/>
+          <title value="Appel d'une API ProSantéConnectée depuis une application web"/>
           <generation value="markdown"/>
         </page>
         <page>
           <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-page-name">
-            <valueUrl value="downloads.html"/>
+            <valueUrl value="api_prosanteconnectee_web_erreurs.html"/>
           </extension>
-          <nameUrl value="downloads.html"/>
-          <title value="Téléchargements et usages"/>
+          <nameUrl value="api_prosanteconnectee_web_erreurs.html"/>
+          <title value="Appel d'une API ProSantéConnectée depuis une application web - cas d'erreurs"/>
+          <generation value="markdown"/>
+        </page>
+        <page>
+          <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-page-name">
+            <valueUrl value="api_prosanteconnectee_client_lourd.html"/>
+          </extension>
+          <nameUrl value="api_prosanteconnectee_client_lourd.html"/>
+          <title value="Appel d'une API ProSantéConnectée depuis une application client lourd ou mobile"/>
+          <generation value="markdown"/>
+        </page>
+        <page>
+          <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-page-name">
+            <valueUrl value="api_prosanteconnectee_userinfo.html"/>
+          </extension>
+          <nameUrl value="api_prosanteconnectee_userinfo.html"/>
+          <title value="Récupération et utilisation du jeton userinfo PSC"/>
+          <generation value="markdown"/>
+        </page>
+        <page>
+          <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-page-name">
+            <valueUrl value="api_prosanteconnectee_donnees_metiers.html"/>
+          </extension>
+          <nameUrl value="api_prosanteconnectee_donnees_metiers.html"/>
+          <title value="Appel d'une API ProSantéConnectée avec des données métiers complémentaires"/>
           <generation value="markdown"/>
         </page>
       </page>
       <page>
         <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-page-name">
-          <valueUrl value="tests.html"/>
+          <valueUrl value="glossaire.html"/>
         </extension>
-        <nameUrl value="tests.html"/>
-        <title value="Tests"/>
+        <nameUrl value="glossaire.html"/>
+        <title value="Glossaires"/>
+        <generation value="markdown"/>
+      </page>
+      <page>
+        <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-page-name">
+          <valueUrl value="documents_de_reference.html"/>
+        </extension>
+        <nameUrl value="documents_de_reference.html"/>
+        <title value="Documents de référence"/>
         <generation value="markdown"/>
       </page>
       <page>

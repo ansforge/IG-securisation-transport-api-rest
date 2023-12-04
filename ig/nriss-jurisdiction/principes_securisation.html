@@ -3,7 +3,7 @@
 <html xml:lang="en" xmlns="http://www.w3.org/1999/xhtml" lang="en">
   <head>
     <meta content="text/html;charset=utf-8" http-equiv="Content-Type"/>
-    <title>Table of Contents - Sécurisation de la couche transport API REST Pro Santé Connectée v1.2.0</title>
+    <title>Principes de sécurisation - Sécurisation de la couche transport API REST Pro Santé Connectée v1.2.0</title>
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <meta name="author" content="http://hl7.org/fhir"/>
@@ -41,8 +41,8 @@
 
 	  <script src="assets/js/prism.js"></script>
 
-    <style type="text/css">h2{--heading-prefix:"0"}
-    h3,h4,h5,h6{--heading-prefix:"0.0"}</style>
+    <style type="text/css">h2{--heading-prefix:"2.3"}
+    h3,h4,h5,h6{--heading-prefix:"2.3"}</style>
     <div id="segment-header" class="segment">  <!-- segment-header -->
       <div class="container">  <!-- container -->
         <!-- Placeholder for child template header declarations -->
@@ -162,13 +162,15 @@
     <div id="segment-breadcrumb" class="segment">  <!-- segment-breadcrumb -->
       <div class="container">  <!-- container -->
         <ul class="breadcrumb">
-          <li><b>Table of Contents</b></li>
+          <li><a href='toc.html'><b>Table of Contents</b></a></li><li><a href='principes_generaux_du_volet.html'><b>Principes généraux de ce volet</b></a></li><li><b>Principes de sécurisation</b></li>
 
           <span style="float:right;">
 
+            <a href="standards.html">&lt;prev</a> | 
+
             <a href="#bottom">bottom</a>
 
-          | <a href="index.html">next&gt;</a>
+          | <a href="api_prosanteconnectee.html">next&gt;</a>
 
           </span>
 
@@ -191,11 +193,180 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 </style>
 <div class="col-12">
   <!--ReleaseHeader--><p id="publish-box">Sécurisation de la couche transport API REST Pro Santé Connectée - Local Development build (v1.2.0) built by the FHIR (HL7® FHIR® Standard) Build Tools. See the <a href="https://interop.esante.gouv.fr/ig/securisation-transport/history.html">Directory of published versions</a></p><!--EndReleaseHeader-->
-  <h2>Table of Contents</h2>
+  <h2>Principes de sécurisation</h2>
   
-  
-  
-  <?xml version="1.0" encoding="UTF-8"?><div style="col-12"><table style="border:0px;font-size:11px;font-family:verdana;vertical-align:top;" cellpadding="0" border="0" cellspacing="0"><tbody><tr style="border:0px;padding:0px;vertical-align:top;background-color:inherit;" id="!"><td style="vertical-align:top;text-align:left;background-color:inherit;padding:0px 4px 0px 4px;white-space:nowrap;background-image:url(tbl_bck0.png)" class="hierarchy"><img style="background-color:inherit" alt="." class="hierarchy" src="tbl_spacer.png"/><img style="background-color:inherit" alt="." class="hierarchy" src="icon_page-child.gif"/><a title="Table of Contents" href="toc.html"> 0 Table of Contents</a></td></tr><tr style="border:0px;padding:0px;vertical-align:top;background-color:inherit;" id="!&quot;"><td style="vertical-align:top;text-align:left;background-color:inherit;padding:0px 4px 0px 4px;white-space:nowrap;background-image:url(tbl_bck0.png)" class="hierarchy"><img style="background-color:inherit" alt="." class="hierarchy" src="tbl_spacer.png"/><img style="background-color:inherit" alt="." class="hierarchy" src="tbl_vjoin.png"/><img style="background-color:inherit" alt="." class="hierarchy" src="icon_page.gif"/><a title="Accueil" href="index.html"> 1 Accueil</a></td></tr><tr style="border:0px;padding:0px;vertical-align:top;background-color:inherit;" id="!#"><td style="vertical-align:top;text-align:left;background-color:inherit;padding:0px 4px 0px 4px;white-space:nowrap;background-image:url(tbl_bck0.png)" class="hierarchy"><img style="background-color:inherit" alt="." class="hierarchy" src="tbl_spacer.png"/><img onClick="tableRowAction(this)" src="tbl_vjoin-open.png" alt="." style="background-color: inherit" class="hierarchy"/><img style="background-color:inherit" alt="." class="hierarchy" src="icon_page-child.gif"/><a title="Principes généraux de ce volet" href="principes_generaux_du_volet.html"> 2 Principes généraux de ce volet</a></td></tr><tr style="border:0px;padding:0px;vertical-align:top;background-color:inherit;" id="!#&quot;"><td style="vertical-align:top;text-align:left;background-color:inherit;padding:0px 4px 0px 4px;white-space:nowrap;background-image:url(tbl_bck0.png)" class="hierarchy"><img style="background-color:inherit" alt="." class="hierarchy" src="tbl_spacer.png"/><img style="background-color:inherit" alt="." class="hierarchy" src="tbl_vline.png"/><img style="background-color:inherit" alt="." class="hierarchy" src="tbl_vjoin.png"/><img style="background-color:inherit" alt="." class="hierarchy" src="icon_page.gif"/><a title="Architecture documentaire" href="archi_documentaire.html"> 2.1 Architecture documentaire</a></td></tr><tr style="border:0px;padding:0px;vertical-align:top;background-color:inherit;" id="!##"><td style="vertical-align:top;text-align:left;background-color:inherit;padding:0px 4px 0px 4px;white-space:nowrap;background-image:url(tbl_bck0.png)" class="hierarchy"><img style="background-color:inherit" alt="." class="hierarchy" src="tbl_spacer.png"/><img style="background-color:inherit" alt="." class="hierarchy" src="tbl_vline.png"/><img style="background-color:inherit" alt="." class="hierarchy" src="tbl_vjoin.png"/><img style="background-color:inherit" alt="." class="hierarchy" src="icon_page.gif"/><a title="Standards d'échange" href="standards.html"> 2.2 Standards d'échange</a></td></tr><tr style="border:0px;padding:0px;vertical-align:top;background-color:inherit;" id="!#$"><td style="vertical-align:top;text-align:left;background-color:inherit;padding:0px 4px 0px 4px;white-space:nowrap;background-image:url(tbl_bck0.png)" class="hierarchy"><img style="background-color:inherit" alt="." class="hierarchy" src="tbl_spacer.png"/><img style="background-color:inherit" alt="." class="hierarchy" src="tbl_vline.png"/><img style="background-color:inherit" alt="." class="hierarchy" src="tbl_vjoin_end.png"/><img style="background-color:inherit" alt="." class="hierarchy" src="icon_page.gif"/><a title="Principes de sécurisation" href="principes_securisation.html"> 2.3 Principes de sécurisation</a></td></tr><tr style="border:0px;padding:0px;vertical-align:top;background-color:inherit;" id="!$"><td style="vertical-align:top;text-align:left;background-color:inherit;padding:0px 4px 0px 4px;white-space:nowrap;background-image:url(tbl_bck0.png)" class="hierarchy"><img style="background-color:inherit" alt="." class="hierarchy" src="tbl_spacer.png"/><img onClick="tableRowAction(this)" src="tbl_vjoin-open.png" alt="." style="background-color: inherit" class="hierarchy"/><img style="background-color:inherit" alt="." class="hierarchy" src="icon_page-child.gif"/><a title="API ProSantéConnectée" href="api_prosanteconnectee.html"> 3 API ProSantéConnectée</a></td></tr><tr style="border:0px;padding:0px;vertical-align:top;background-color:inherit;" id="!$&quot;"><td style="vertical-align:top;text-align:left;background-color:inherit;padding:0px 4px 0px 4px;white-space:nowrap;background-image:url(tbl_bck0.png)" class="hierarchy"><img style="background-color:inherit" alt="." class="hierarchy" src="tbl_spacer.png"/><img style="background-color:inherit" alt="." class="hierarchy" src="tbl_vline.png"/><img style="background-color:inherit" alt="." class="hierarchy" src="tbl_vjoin.png"/><img style="background-color:inherit" alt="." class="hierarchy" src="icon_page.gif"/><a title="Appel d'une API ProSantéConnectée depuis une application web" href="api_prosanteconnectee_web.html"> 3.1 Appel d'une API ProSantéConnectée depuis une application web</a></td></tr><tr style="border:0px;padding:0px;vertical-align:top;background-color:inherit;" id="!$#"><td style="vertical-align:top;text-align:left;background-color:inherit;padding:0px 4px 0px 4px;white-space:nowrap;background-image:url(tbl_bck0.png)" class="hierarchy"><img style="background-color:inherit" alt="." class="hierarchy" src="tbl_spacer.png"/><img style="background-color:inherit" alt="." class="hierarchy" src="tbl_vline.png"/><img style="background-color:inherit" alt="." class="hierarchy" src="tbl_vjoin.png"/><img style="background-color:inherit" alt="." class="hierarchy" src="icon_page.gif"/><a title="Appel d'une API ProSantéConnectée depuis une application web - cas d'erreurs" href="api_prosanteconnectee_web_erreurs.html"> 3.2 Appel d'une API ProSantéConnectée depuis une application web - cas d'erreurs</a></td></tr><tr style="border:0px;padding:0px;vertical-align:top;background-color:inherit;" id="!$$"><td style="vertical-align:top;text-align:left;background-color:inherit;padding:0px 4px 0px 4px;white-space:nowrap;background-image:url(tbl_bck0.png)" class="hierarchy"><img style="background-color:inherit" alt="." class="hierarchy" src="tbl_spacer.png"/><img style="background-color:inherit" alt="." class="hierarchy" src="tbl_vline.png"/><img style="background-color:inherit" alt="." class="hierarchy" src="tbl_vjoin.png"/><img style="background-color:inherit" alt="." class="hierarchy" src="icon_page.gif"/><a title="Appel d'une API ProSantéConnectée depuis une application client lourd ou mobile" href="api_prosanteconnectee_client_lourd.html"> 3.3 Appel d'une API ProSantéConnectée depuis une application client lourd ou mobile</a></td></tr><tr style="border:0px;padding:0px;vertical-align:top;background-color:inherit;" id="!$%"><td style="vertical-align:top;text-align:left;background-color:inherit;padding:0px 4px 0px 4px;white-space:nowrap;background-image:url(tbl_bck0.png)" class="hierarchy"><img style="background-color:inherit" alt="." class="hierarchy" src="tbl_spacer.png"/><img style="background-color:inherit" alt="." class="hierarchy" src="tbl_vline.png"/><img style="background-color:inherit" alt="." class="hierarchy" src="tbl_vjoin.png"/><img style="background-color:inherit" alt="." class="hierarchy" src="icon_page.gif"/><a title="Récupération et utilisation du jeton userinfo PSC" href="api_prosanteconnectee_userinfo.html"> 3.4 Récupération et utilisation du jeton userinfo PSC</a></td></tr><tr style="border:0px;padding:0px;vertical-align:top;background-color:inherit;" id="!$&amp;"><td style="vertical-align:top;text-align:left;background-color:inherit;padding:0px 4px 0px 4px;white-space:nowrap;background-image:url(tbl_bck0.png)" class="hierarchy"><img style="background-color:inherit" alt="." class="hierarchy" src="tbl_spacer.png"/><img style="background-color:inherit" alt="." class="hierarchy" src="tbl_vline.png"/><img style="background-color:inherit" alt="." class="hierarchy" src="tbl_vjoin_end.png"/><img style="background-color:inherit" alt="." class="hierarchy" src="icon_page.gif"/><a title="Appel d'une API ProSantéConnectée avec des données métiers complémentaires" href="api_prosanteconnectee_donnees_metiers.html"> 3.5 Appel d'une API ProSantéConnectée avec des données métiers complémentaires</a></td></tr><tr style="border:0px;padding:0px;vertical-align:top;background-color:inherit;" id="!%"><td style="vertical-align:top;text-align:left;background-color:inherit;padding:0px 4px 0px 4px;white-space:nowrap;background-image:url(tbl_bck0.png)" class="hierarchy"><img style="background-color:inherit" alt="." class="hierarchy" src="tbl_spacer.png"/><img style="background-color:inherit" alt="." class="hierarchy" src="tbl_vjoin.png"/><img style="background-color:inherit" alt="." class="hierarchy" src="icon_page.gif"/><a title="Glossaires" href="glossaire.html"> 4 Glossaires</a></td></tr><tr style="border:0px;padding:0px;vertical-align:top;background-color:inherit;" id="!&amp;"><td style="vertical-align:top;text-align:left;background-color:inherit;padding:0px 4px 0px 4px;white-space:nowrap;background-image:url(tbl_bck0.png)" class="hierarchy"><img style="background-color:inherit" alt="." class="hierarchy" src="tbl_spacer.png"/><img style="background-color:inherit" alt="." class="hierarchy" src="tbl_vjoin.png"/><img style="background-color:inherit" alt="." class="hierarchy" src="icon_page.gif"/><a title="Documents de référence" href="documents_de_reference.html"> 5 Documents de référence</a></td></tr><tr style="border:0px;padding:0px;vertical-align:top;background-color:inherit;" id="!'"><td style="vertical-align:top;text-align:left;background-color:inherit;padding:0px 4px 0px 4px;white-space:nowrap;background-image:url(tbl_bck0.png)" class="hierarchy"><img style="background-color:inherit" alt="." class="hierarchy" src="tbl_spacer.png"/><img style="background-color:inherit" alt="." class="hierarchy" src="tbl_vjoin.png"/><img style="background-color:inherit" alt="." class="hierarchy" src="icon_page.gif"/><a title="A propos de ce guide" href="about.html"> 6 A propos de ce guide</a></td></tr><tr style="border:0px;padding:0px;vertical-align:top;background-color:inherit;" id="!("><td style="vertical-align:top;text-align:left;background-color:inherit;padding:0px 4px 0px 4px;white-space:nowrap;background-image:url(tbl_bck0.png)" class="hierarchy"><img style="background-color:inherit" alt="." class="hierarchy" src="tbl_spacer.png"/><img style="background-color:inherit" alt="." class="hierarchy" src="tbl_vjoin_end.png"/><img style="background-color:inherit" alt="." class="hierarchy" src="icon_page.gif"/><a title="Artifacts Summary" href="artifacts.html"> 7 Artifacts Summary</a></td></tr></tbody></table></div>
+
+
+
+
+
+
+
+
+
+
+
+
+    <p><!-- white space is critical inside of capture --></p>
+<div class="markdown-toc">
+<ul id="markdown-toc">
+  <li><a href="#confidentialité" id="markdown-toc-confidentialité">Confidentialité</a></li>
+  <li><a href="#intégrité" id="markdown-toc-intégrité">Intégrité</a></li>
+  <li><a href="#la-sécurisation-de-larchitecture-selon-les-cas-dusages" id="markdown-toc-la-sécurisation-de-larchitecture-selon-les-cas-dusages">La sécurisation de l’architecture selon les cas d’usages</a></li>
+</ul>
+
+</div>
+<h3 id="confidentialité">Confidentialité</h3>
+<p>Dans le volet transport synchrone pour application mobile : la confidentialité des échanges au niveau du transport est gérée par l’encapsulation du flux dans une connexion sécurisée TLS.
+L’usage du <strong>TLS version 1.3 ou supérieure est recommandé</strong> et celui de la version 1.2 encore supporté.
+<strong>Les version 1.0 et 1.1 sont interdites</strong>. L’usage de SSL 3.0 ou inférieure est interdit.</p>
+
+<h3 id="intégrité">Intégrité</h3>
+<p>L’intégrité des échanges au niveau du transport est gérée par l’encapsulation du flux dans une connexion sécurisée TLS.</p>
+
+<h3 id="la-sécurisation-de-larchitecture-selon-les-cas-dusages">La sécurisation de l’architecture selon les cas d’usages</h3>
+<h4 id="les-niveaux-de-sensibilité-des-données">Les niveaux de sensibilité des données</h4>
+<p>La PGSSI-S met en avant des référentiels d’identification électronique pour personnes physiques et morales définis dans les documents suivants [11] et [12].</p>
+
+<p>Dans le cadre des <strong>API Pro Santé Connectées</strong>, les données échangées sont des données sensibles qui nécessitent une architecture sécurisée.</p>
+
+<p>Dans le cadre des <strong>API non Pro Santé Connectées</strong> et du cas d’usage authentification d’une structure par 
+<code class="language-plaintext highlighter-rouge">OAuth 2.0</code> , les données échangées sont des données non-sensibles et sont dites restreintes.</p>
+
+<p>Dans le cadre d’une authentification par mTLS et par <strong>mTLS + <code class="language-plaintext highlighter-rouge">OAuth 2.0</code></strong>, les données échangées sont des données sensibles qui nécessitent une architecture sécurisée.</p>
+
+<p><strong>Le présent volet tranport du CI-SIS a pour objectif de présenter les méthodes pour sécuriser les échanges de données selon la sensibilité de la donnée échangée.</strong>
+ </p>
+<h4 id="la-déclinaison-des-spécifications-par-cas-dusages-et-exigences-de-sécurité">La déclinaison des spécifications par cas d’usages et exigences de sécurité</h4>
+<p>L’objectif de la section présentée ci-dessous est de décrire les spécifications techniques permettant les échanges entre les différents SI Santé de façon sécurisée.</p>
+
+<p>Les éléments permettant de déterminer le niveau de sensibilité de la donnée sont explicités dans la documentation de la PGSSI-S.</p>
+
+<ul>
+  <li>
+    <p>Si l’API appelée est <strong>publique</strong> :</p>
+
+    <ul>
+      <li>L’appel aux ressources/services cibles se fait par clé API fournie par le service cible à la suite d’un enrôlement de l’application appelante.</li>
+      <li>Le service cible n’exige pas d’authentification en plus de la part du système initiateur, car les données exposées sont publiques.</li>
+    </ul>
+  </li>
+  <li>
+    <p>Si l’API appelée est <strong>privée</strong> :</p>
+
+    <ul>
+      <li>
+        <p>Cas de <strong>l’authentification indirecte de l’utilisateur au sein d’une structure</strong></p>
+
+        <p>On parle d’identification indirecte d’un professionnel de santé dans la mesure où le service cible s’appuie sur une authentification du professionnel réalisée localement par la structure.</p>
+
+        <p>Dans le cas où seule la personne morale (structure) a besoin de s’authentifier, celle-ci est directe et réalisée par la <strong>connexion mTLS avec le certificat de structure</strong>.</p>
+
+        <p>L’accès à l’API se fait avec <strong><code class="language-plaintext highlighter-rouge">OAuth 2.0</code> et/ou mTLS</strong>. Si les données sont sensibles, l’utilisation d’une connexion mTLS à minima est nécessaire.</p>
+
+        <p>Le mTLS permet d’authentifier le client par un <strong><code class="language-plaintext highlighter-rouge">Client_ID_AS</code> + mTLS</strong> au lieu de s’authentifier avec son client_secret/Client_ID_AS. Dans ce cas le client_secret n’est pas nécessaire car l’authentification est portée par le mTLS (certificat client).</p>
+
+        <p>La structure appelante doit fournir les informations utilisateur selon les besoins / cas d’usage métier.
+(ex : RPPS, profession, autres informations utilisateur).</p>
+      </li>
+      <li>
+        <p>Cas <strong>d’authentification directe d’un professionnel de santé</strong></p>
+
+        <ul>
+          <li>
+            <p>Cas d’authentification avec Pro Santé Connect :
+<strong>NB : Ce cas est décrit dans cette version du CI-SIS</strong></p>
+
+            <p>Dans le cas où l’utilisateur a besoin de s’authentifier avec Pro Santé Connect (pour accéder à des données sensibles), l’utilisateur s’authentifie avec son MIE PSC et l’accès à l’API du système cible se fait avec <code class="language-plaintext highlighter-rouge">OAuth 2.0</code>.</p>
+
+            <ul>
+              <li>
+                <p>Soit le PS s’authentifie à un FS avec PSC qui fournit lui-même des données de santé.</p>
+              </li>
+              <li>
+                <p>Soit le PS accède à un service avec PSC, et doit accéder à un autre service fournisseur de données de santé par des API Pro Santé connectées.</p>
+              </li>
+            </ul>
+
+            <p>Pour plus de détail sur le mode d’authentification sur les APIs Pro Santé Connectées, rendez-vous sur les pages :
+<a href="api_prosanteconnectee_web.html">Appel d’une API Pro Santé Connectée depuis une application web</a> et 
+<a href="api_prosanteconnectee_client_lourd.html">Appel d’une API Pro Santé Connectée depuis une application client lourd ou mobile</a></p>
+          </li>
+          <li>
+            <p>Cas d’authentification sans Pro Santé Connect :</p>
+
+            <p>Dans le cas où l’utilisateur a besoin de s’authentifier physiquement avec un fournisseur d’identité tiers au service cible, l’utilisateur s’authentifie selon les modalités spécifiques requises et l’accès à l’API du système cible se fait avec <code class="language-plaintext highlighter-rouge">OAuth 2.0</code> avec <code class="language-plaintext highlighter-rouge">PKCE</code>.</p>
+
+            <p><strong>Un serveur d’autorisation est mis à disposition à par la/les structure(s) cible(s)/appelée(s) dans le cadre de la réalisation du protocole <code class="language-plaintext highlighter-rouge">OAuth 2.0</code>.</strong></p>
+          </li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+</ul>
+
+<h4 id="la-définition-des-proxys">La définition des proxys</h4>
+<p>Le proxy est un serveur applicatif mis à disposition par le système initiateur qui souhaite accéder aux données du système cible.</p>
+
+<p>L’utilisation d’un proxy est motivée par des enjeux de :</p>
+
+<p><strong>Sécurisation :</strong></p>
+<ul>
+  <li>Par la gestion des credentials pour s’authentifier sur PSC et sur le serveur d’autorisation du service cible. Chaque proxy détiendra un <code class="language-plaintext highlighter-rouge">Client_ID_AS</code> et un <strong>certificat TLS client</strong>.</li>
+  <li>Séparation de la gestion des credentials entre le module qui utilise l’<code class="language-plaintext highlighter-rouge">access_token</code> (Fournisseur des services pour le cas web et Proxy API/LPS pour le cas client lourd) et le module qui le demande (navigateur, mobile ou LPS). Le proxy évite donc la remontée de ces informations au niveau de l’instance qui les demandent.</li>
+  <li>Un contrôle d’accès d’un proxy au service cible réalisé grâce aux <code class="language-plaintext highlighter-rouge">scopes</code></li>
+</ul>
+
+<p><strong>Découplage des requêtes au service cible et des requêtes vers PSC :</strong></p>
+<ul>
+  <li>L’<code class="language-plaintext highlighter-rouge">access token</code> PSC est utilisé une seule fois pour initier l’authentification sur le service cible lors de l’échange de jetons : <code class="language-plaintext highlighter-rouge">subject_token</code> (<code class="language-plaintext highlighter-rouge">access_token PSC</code>) contre un <code class="language-plaintext highlighter-rouge">access_token API</code>.</li>
+  <li>La durée de validité de l’<code class="language-plaintext highlighter-rouge">access_token API</code> est de 1h contre 2 minutes pour l’access_token PSC.
+Cela évite une sursollicitation de PSC lors de l’envoie des requêtes vers le service cible.</li>
+</ul>
+
+<p style="text-align:center">
+<object data="role_proxy.png" type="image/png"></object>
+</p>
+
+<p><strong>Un proxy est soumis aux exigences de sécurité suivantes :</strong></p>
+
+<ul>
+  <li>Sécurisation de la connexion entre chaque instance qui demande les tokens (Navigateur ou LPS) et l’instance qui l’utilise (FS pour le cas web et proxy LPS FS/API pour le cas client lourd).</li>
+  <li>Fiabilité dans le mapping entre l’instance demandant les tokens et celle qui l’utilise.</li>
+</ul>
+
+<p>Par exemple, on souhaite s’assurer que <code class="language-plaintext highlighter-rouge">subject_token</code> délivré par PSC est bien distingué par le proxy de l’<code class="language-plaintext highlighter-rouge">access_token</code> délivré par le serveur d’autorisation.</p>
+
+<p><strong>L’outil utilisé pour la sécurisation des échanges et la bonne affection des jetons entre le client et le proxy varient selon le type de client :</strong></p>
+
+<ul>
+  <li>Si le client est un navigateur, un cookie applicatif avec une durée de vie limitée est initié par le proxy et est utilisé par le navigateur pour chaque nouvelle requête.</li>
+  <li>Si le client est un client lourd, un jeton applicatif avec une durée de vie limitée est initié par le proxy et est utilisé par le client lourd pour chaque nouvelle requête</li>
+</ul>
+
+<p><strong>Dans les deux cas, un mapping par couple (clé,valeur) du type (ID jeton applicatif / ID cookie applicatif ; token ) est utilisé pour permettre au proxy qui manipulent ces tokens de les distinguer.</strong></p>
+
+<p>Dans le cas des clients lourds, les <strong>différences quantitatives de cardinalités</strong> entre les instances LPS client, les proxys LPS et les serveurs d’autorisation sont décrites ci-dessous, du point de vue des éditeurs, pour l’accès à un seul service cible :</p>
+
+<p style="text-align:center">
+<object data="cardinalites_LPS_proxy_SA.png" type="image/png"></object>
+</p>
+
+<p>Selon les éditeurs, il est possible qu’un seul proxy LPS FS soit mis à disposition et dans ce cas, la cardinalité entre le proxy LPS FS et le proxy LPS API est (1,1).</p>
+
+<p>Du point de vue du serveur d’autorisation du service cible, les cardinalités sont décrites ci-dessous :</p>
+
+<p style="text-align:center">
+<object data="cardinalites_SA_proxy.png" type="image/png"></object>
+</p>
+
+<p><strong>Les proxys LPS API et LPS FS ont été rendus distincts car leurs rôles le sont. Il est toutefois possible pour un éditeur de regrouper ces deux fonctions au sein d’une même structure logicielle lors de l’implémentation de la sécurisation de l’architecture.</strong></p>
+
+<p> </p>
+
+
+
+
 </div>
         </div>  <!-- /inner-wrapper -->
       </div>  <!-- /row -->
@@ -222,7 +393,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
             <tr>
               <td style="text-align:left">&#xA0;
 
-                <span style="visibility:hidden">&lt;prev</span>
+                <a href="standards.html">&lt;prev</a>
 
               </td>
               <td style="text-align:center">
@@ -230,7 +401,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
               </td>
               <td style="text-align:right">&#xA0;
 
-                <a href="index.html">next&gt;</a>
+                <a href="api_prosanteconnectee.html">next&gt;</a>
 
               </td>
             </tr>

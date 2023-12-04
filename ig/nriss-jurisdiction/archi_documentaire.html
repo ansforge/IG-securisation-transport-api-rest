@@ -3,7 +3,7 @@
 <html xml:lang="en" xmlns="http://www.w3.org/1999/xhtml" lang="en">
   <head>
     <meta content="text/html;charset=utf-8" http-equiv="Content-Type"/>
-    <title>Flux 01 - Sécurisation de la couche transport API REST v0.1.0</title>
+    <title>Architecture documentaire - Sécurisation de la couche transport API REST Pro Santé Connectée v1.2.0</title>
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <meta name="author" content="http://hl7.org/fhir"/>
@@ -41,8 +41,8 @@
 
 	  <script src="assets/js/prism.js"></script>
 
-    <style type="text/css">h2{--heading-prefix:"2.2"}
-    h3,h4,h5,h6{--heading-prefix:"2.2"}</style>
+    <style type="text/css">h2{--heading-prefix:"2.1"}
+    h3,h4,h5,h6{--heading-prefix:"2.1"}</style>
     <div id="segment-header" class="segment">  <!-- segment-header -->
       <div class="container">  <!-- container -->
         <!-- Placeholder for child template header declarations -->
@@ -54,9 +54,9 @@
 </div>
 
         <div id="ig-status">
-          <p><span style="font-size:12pt;font-weight:bold">Sécurisation de la couche transport API REST</span>
+          <p><span style="font-size:12pt;font-weight:bold">Sécurisation de la couche transport API REST Pro Santé Connectée</span>
             <br/>
-            <span style="display:inline-block;">0.1.0 - ci-build
+            <span style="display:inline-block;">1.2.0 - ci-build
 
 
 
@@ -91,40 +91,59 @@
     <a href="index.html">Accueil</a>
   </li>
   <li class="dropdown">
-    <a data-toggle="dropdown" href="#" class="dropdown-toggle">Description des flux
+    <a data-toggle="dropdown" href="#" class="dropdown-toggle">Description générale des flux
       <b class="caret"></b>
     </a>
     <ul class="dropdown-menu">
       <li>
-        <a href="construction_des_flux.html">Construction des flux</a>
+        <a href="principes_generaux_du_volet.html">Principes généraux de ce volet</a>
       </li>
       <li>
-        <a href="st_flux1.html">Flux 01</a>
+        <a href="archi_documentaire.html">Architecture documentaire</a>
       </li>
       <li>
-        <a href="st_flux2.html">Flux 02</a>
+        <a href="standards.html">Standards utilisés (REST, OAUTH 2.0 ET OIDC)</a>
+      </li>
+      <li>
+        <a href="principes_securisation.html">Principes de sécurisation</a>
       </li>
     </ul>
   </li>
-  <li>
-    <a href="tests.html">Tests</a>
-  </li>
   <li class="dropdown">
-    <a data-toggle="dropdown" href="#" class="dropdown-toggle">Autres ressources
+    <a data-toggle="dropdown" href="#" class="dropdown-toggle">API ProSantéConnectée
       <b class="caret"></b>
     </a>
     <ul class="dropdown-menu">
       <li>
-        <a href="securite.html">Sécurité</a>
+        <a href="api_prosanteconnectee.html">Description générale</a>
       </li>
       <li>
-        <a href="downloads.html">Téléchargements et usage</a>
+        <a href="api_prosanteconnectee_web.html">Application web</a>
       </li>
       <li>
-        <a target="_blank" href="https://interop.esante.gouv.fr/ig/documentation/">Documentation sur les IG</a>
+        <a href="api_prosanteconnectee_web_erreurs.html">Application web - cas d&apos;erreurs</a>
       </li>
       <li>
-        <a target="_blank" href="https://esante.gouv.fr/">Site de l&apos;ANS </a>
+        <a href="api_prosanteconnectee_client_lourd.html">Application client lourd ou mobile</a>
+      </li>
+      <li>
+        <a href="api_prosanteconnectee_userinfo.html">Récupération et utilisation du jeton userinfo PSC</a>
+      </li>
+      <li>
+        <a href="api_prosanteconnectee_donnees_metiers.html">Passage de données métiers de l&apos;application cliente vers l&apos;API</a>
+      </li>
+    </ul>
+  </li>
+  <li class="dropdown">
+    <a data-toggle="dropdown" href="#" class="dropdown-toggle">Glossaire et documents de référence
+      <b class="caret"></b>
+    </a>
+    <ul class="dropdown-menu">
+      <li>
+        <a href="glossaire.html">Glossaire</a>
+      </li>
+      <li>
+        <a href="documents_de_reference.html">Documents de référence</a>
       </li>
     </ul>
   </li>
@@ -143,15 +162,15 @@
     <div id="segment-breadcrumb" class="segment">  <!-- segment-breadcrumb -->
       <div class="container">  <!-- container -->
         <ul class="breadcrumb">
-          <li><a href='toc.html'><b>Table of Contents</b></a></li><li><a href='specifications_techniques.html'><b>Specifications Techniques</b></a></li><li><b>Flux 01</b></li>
+          <li><a href='toc.html'><b>Table of Contents</b></a></li><li><a href='principes_generaux_du_volet.html'><b>Principes généraux de ce volet</b></a></li><li><b>Architecture documentaire</b></li>
 
           <span style="float:right;">
 
-            <a href="construction_des_flux.html">&lt;prev</a> | 
+            <a href="principes_generaux_du_volet.html">&lt;prev</a> | 
 
             <a href="#bottom">bottom</a>
 
-          | <a href="st_flux2.html">next&gt;</a>
+          | <a href="standards.html">next&gt;</a>
 
           </span>
 
@@ -173,8 +192,8 @@ h5:before{color:silver;counter-increment:detail;content:var(--heading-prefix) ".
 h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefix) "." counter(sub-section) "." counter(composite) "." counter(detail) "." counter(more-detail)" ";}
 </style>
 <div class="col-12">
-  <!--ReleaseHeader--><p id="publish-box">Publication Build: This will be filled in by the publication tooling</p><!--EndReleaseHeader-->
-  <h2>Flux 01</h2>
+  <!--ReleaseHeader--><p id="publish-box">Sécurisation de la couche transport API REST Pro Santé Connectée - Local Development build (v1.2.0) built by the FHIR (HL7® FHIR® Standard) Build Tools. See the <a href="https://interop.esante.gouv.fr/ig/securisation-transport/history.html">Directory of published versions</a></p><!--EndReleaseHeader-->
+  <h2>Architecture documentaire</h2>
   
 
 
@@ -189,21 +208,90 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 
 
     <p><!-- white space is critical inside of capture --></p>
-<div class="markdown-toc">
-<ul id="markdown-toc">
-  <li><a href="#nom-du-flux" id="markdown-toc-nom-du-flux">Nom du flux</a></li>
-  <li><a href="#construction-du-flux" id="markdown-toc-construction-du-flux">Construction du flux</a></li>
+<div>
+<!-- do not remove - needed to prevent Jekyll from adding a p tag to any non block level element in the markdown.-->
+</div>
+<p>Ce volet du CI-SIS s’insère dans l’ensemble documentaire décrit ci-dessous :</p>
+
+<p style="text-align:center">
+<object data="architecture_documentaire.png" type="image/png"></object>
+</p>
+
+<h3 id="descriptif-des-acteurs-et-des-composants-du-volet-transport">Descriptif des acteurs et des composants du volet transport</h3>
+
+<p>La PGSSI-S distingue :</p>
+<ul>
+  <li>Les personnes physiques : acteurs des secteurs sanitaire, médico-social et social et les usagers des SI santé.</li>
+  <li>Les usagers sont identifiés par :
+    <ul>
+      <li>L’identité INS (Identité Nationale de Santé).</li>
+      <li>L’identité locale fournie par un fournisseur de service.</li>
+    </ul>
+  </li>
+  <li>Les acteurs des secteurs sanitaire, médico-social et social sont identifiés par leur :
+    <ul>
+      <li>Numéro RPPS, (Répertoire Partagé des Professionnels de Santé) à utiliser en priorité s’il existe pour la personne à identifier : utilisé dans les cartes CPx et e-CPS.</li>
+      <li>Numéros locaux composés d’identifiants privés à portée nationale (ex : identifiants portés dans le VIHF).</li>
+    </ul>
+  </li>
 </ul>
 
-</div>
+<p><strong>N.B. (en cours de migration) : Le numéro ADELI (Automatisation DEs LIstes) est toléré de façon transitoire jusqu’à son remplacement définitif par l’identifiant RPPS.</strong></p>
 
-<h3 id="nom-du-flux">Nom du flux</h3>
+<ul>
+  <li>Les personnes morales : toutes les structures de soins, telles que les maisons et centres de santé, mais aussi les laboratoires de biologie médicale, les services de protection maternelle infantile ou encore les services de santé au travail. Ces dernières sont identifiées par :
+    <ul>
+      <li>Le numéro FINESS juridique (FINESS EJ) ou géographique (FINESS ET ou EG).</li>
+      <li>Le numéro SIREN ou SIRET.</li>
+    </ul>
+  </li>
+</ul>
 
-<p>Description du flux</p>
+<p>Pour toute information sur les référentiels d’identification des personnes physiques ou morales, se référer au corpus documentaire [3]</p>
 
-<h3 id="construction-du-flux">Construction du flux</h3>
+<p>Les systèmes en jeu dans le cadre de ce volet du CI-SIS sont les suivants :</p>
 
-<p>Explication de comment doit être construit le flux</p>
+<table width="680">
+<tbody>
+<tr>
+<td width="196">
+<p><strong>Composant</strong></p>
+</td>
+<td width="484">
+<p><strong>Typologie de client</strong></p>
+</td>
+</tr>
+<tr>
+<td width="196">
+<p><strong>Syst&egrave;me initiateur </strong></p>
+<p><strong>(client)</strong></p>
+</td>
+<td width="484">
+<p>o <strong>Client lourd</strong>&nbsp;: logiciel d&rsquo;un professionnel de sant&eacute; install&eacute; sur le poste de travail. Il peut &ecirc;tre chez un lib&eacute;ral ou bien un &eacute;tablissement de sant&eacute;.</p>
+<p>o <strong>Application mobile ou native</strong> utilis&eacute;e par un PS</p>
+<p>o <strong>Application web</strong> (client l&eacute;ger)&nbsp;: application disponible sur un navigateur web utilisable par un PS</p>
+<p>o <strong>Client applicatif</strong>&nbsp;: serveur applicatif appartenant &agrave; une structure identifi&eacute;e (la personne morale). Ce client utilise une API propos&eacute;e par le syst&egrave;me cible</p>
+</td>
+</tr>
+<tr>
+<td width="196">
+<p><strong>Syst&egrave;me cible</strong></p>
+</td>
+<td width="484">
+<p>o <strong>Serveur applicatif</strong>&nbsp;: serveur applicatif appartenant &agrave; une structure identifi&eacute;e (la personne morale). Ce serveur expose une API</p>
+</td>
+</tr>
+<tr>
+<td width="196">
+<p><strong>Fournisseur d&rsquo;identit&eacute; (Identity Provider ou IDP)</strong></p>
+</td>
+<td width="484">
+<p>o <strong>Pro Sant&eacute; Connect (PSC)</strong>&nbsp;: Fournisseur d&rsquo;identit&eacute; permettant aux PS de s&rsquo;authentifier via les MIE PSC compatibles</p>
+<p>o <strong>SI local</strong>&nbsp;: fournisseur d&rsquo;identit&eacute; propre &agrave; un service (applications non pro-sant&eacute; connect&eacute;e)</p>
+</td>
+</tr>
+</tbody>
+</table>
 
 
 
@@ -233,7 +321,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
             <tr>
               <td style="text-align:left">&#xA0;
 
-                <a href="construction_des_flux.html">&lt;prev</a>
+                <a href="principes_generaux_du_volet.html">&lt;prev</a>
 
               </td>
               <td style="text-align:center">
@@ -241,7 +329,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
               </td>
               <td style="text-align:right">&#xA0;
 
-                <a href="st_flux2.html">next&gt;</a>
+                <a href="standards.html">next&gt;</a>
 
               </td>
             </tr>
@@ -251,7 +339,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 
       <div class="inner-wrapper">
         <p>
-          IG &#169; 2020+ <a style="color:var(--footer-hyperlink-text-color)" href="https://esante.gouv.fr">ANS</a>.  Package ans.fr.securisation-transport#0.1.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Fri, Oct 20, 2023 12:25+0000">2023-10-20</span>
+          IG &#169; 2020+ <a style="color:var(--footer-hyperlink-text-color)" href="https://esante.gouv.fr">ANS</a>.  Package ans.fr.securisation-transport#1.2.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Mon, Dec 4, 2023 14:48+0000">2023-12-04</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)"></span>
                       Liens: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table des matières </a> |

@@ -3,7 +3,7 @@
 <html xml:lang="en" xmlns="http://www.w3.org/1999/xhtml" lang="en">
   <head>
     <meta content="text/html;charset=utf-8" http-equiv="Content-Type"/>
-    <title>Autres Ressources - Sécurisation de la couche transport API REST v0.1.0</title>
+    <title>Principes généraux de ce volet - Sécurisation de la couche transport API REST Pro Santé Connectée v1.2.0</title>
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <meta name="author" content="http://hl7.org/fhir"/>
@@ -41,8 +41,8 @@
 
 	  <script src="assets/js/prism.js"></script>
 
-    <style type="text/css">h2{--heading-prefix:"3"}
-    h3,h4,h5,h6{--heading-prefix:"3.0"}</style>
+    <style type="text/css">h2{--heading-prefix:"2"}
+    h3,h4,h5,h6{--heading-prefix:"2.0"}</style>
     <div id="segment-header" class="segment">  <!-- segment-header -->
       <div class="container">  <!-- container -->
         <!-- Placeholder for child template header declarations -->
@@ -54,9 +54,9 @@
 </div>
 
         <div id="ig-status">
-          <p><span style="font-size:12pt;font-weight:bold">Sécurisation de la couche transport API REST</span>
+          <p><span style="font-size:12pt;font-weight:bold">Sécurisation de la couche transport API REST Pro Santé Connectée</span>
             <br/>
-            <span style="display:inline-block;">0.1.0 - ci-build
+            <span style="display:inline-block;">1.2.0 - ci-build
 
 
 
@@ -91,40 +91,59 @@
     <a href="index.html">Accueil</a>
   </li>
   <li class="dropdown">
-    <a data-toggle="dropdown" href="#" class="dropdown-toggle">Description des flux
+    <a data-toggle="dropdown" href="#" class="dropdown-toggle">Description générale des flux
       <b class="caret"></b>
     </a>
     <ul class="dropdown-menu">
       <li>
-        <a href="construction_des_flux.html">Construction des flux</a>
+        <a href="principes_generaux_du_volet.html">Principes généraux de ce volet</a>
       </li>
       <li>
-        <a href="st_flux1.html">Flux 01</a>
+        <a href="archi_documentaire.html">Architecture documentaire</a>
       </li>
       <li>
-        <a href="st_flux2.html">Flux 02</a>
+        <a href="standards.html">Standards utilisés (REST, OAUTH 2.0 ET OIDC)</a>
+      </li>
+      <li>
+        <a href="principes_securisation.html">Principes de sécurisation</a>
       </li>
     </ul>
   </li>
-  <li>
-    <a href="tests.html">Tests</a>
-  </li>
   <li class="dropdown">
-    <a data-toggle="dropdown" href="#" class="dropdown-toggle">Autres ressources
+    <a data-toggle="dropdown" href="#" class="dropdown-toggle">API ProSantéConnectée
       <b class="caret"></b>
     </a>
     <ul class="dropdown-menu">
       <li>
-        <a href="securite.html">Sécurité</a>
+        <a href="api_prosanteconnectee.html">Description générale</a>
       </li>
       <li>
-        <a href="downloads.html">Téléchargements et usage</a>
+        <a href="api_prosanteconnectee_web.html">Application web</a>
       </li>
       <li>
-        <a target="_blank" href="https://interop.esante.gouv.fr/ig/documentation/">Documentation sur les IG</a>
+        <a href="api_prosanteconnectee_web_erreurs.html">Application web - cas d&apos;erreurs</a>
       </li>
       <li>
-        <a target="_blank" href="https://esante.gouv.fr/">Site de l&apos;ANS </a>
+        <a href="api_prosanteconnectee_client_lourd.html">Application client lourd ou mobile</a>
+      </li>
+      <li>
+        <a href="api_prosanteconnectee_userinfo.html">Récupération et utilisation du jeton userinfo PSC</a>
+      </li>
+      <li>
+        <a href="api_prosanteconnectee_donnees_metiers.html">Passage de données métiers de l&apos;application cliente vers l&apos;API</a>
+      </li>
+    </ul>
+  </li>
+  <li class="dropdown">
+    <a data-toggle="dropdown" href="#" class="dropdown-toggle">Glossaire et documents de référence
+      <b class="caret"></b>
+    </a>
+    <ul class="dropdown-menu">
+      <li>
+        <a href="glossaire.html">Glossaire</a>
+      </li>
+      <li>
+        <a href="documents_de_reference.html">Documents de référence</a>
       </li>
     </ul>
   </li>
@@ -143,15 +162,15 @@
     <div id="segment-breadcrumb" class="segment">  <!-- segment-breadcrumb -->
       <div class="container">  <!-- container -->
         <ul class="breadcrumb">
-          <li><a href='toc.html'><b>Table of Contents</b></a></li><li><b>Autres Ressources</b></li>
+          <li><a href='toc.html'><b>Table of Contents</b></a></li><li><b>Principes généraux de ce volet</b></li>
 
           <span style="float:right;">
 
-            <a href="st_flux2.html">&lt;prev</a> | 
+            <a href="index.html">&lt;prev</a> | 
 
             <a href="#bottom">bottom</a>
 
-          | <a href="securite.html">next&gt;</a>
+          | <a href="archi_documentaire.html">next&gt;</a>
 
           </span>
 
@@ -173,8 +192,8 @@ h5:before{color:silver;counter-increment:detail;content:var(--heading-prefix) ".
 h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefix) "." counter(sub-section) "." counter(composite) "." counter(detail) "." counter(more-detail)" ";}
 </style>
 <div class="col-12">
-  <!--ReleaseHeader--><p id="publish-box">Publication Build: This will be filled in by the publication tooling</p><!--EndReleaseHeader-->
-  <h2>Autres Ressources</h2>
+  <!--ReleaseHeader--><p id="publish-box">Sécurisation de la couche transport API REST Pro Santé Connectée - Local Development build (v1.2.0) built by the FHIR (HL7® FHIR® Standard) Build Tools. See the <a href="https://interop.esante.gouv.fr/ig/securisation-transport/history.html">Directory of published versions</a></p><!--EndReleaseHeader-->
+  <h2>Principes généraux de ce volet</h2>
   
 
 
@@ -189,9 +208,61 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 
 
     <p><!-- white space is critical inside of capture --></p>
-<div>
-<!-- do not remove - needed to prevent Jekyll from adding a p tag to any non block level element in the markdown.-->
+<div class="markdown-toc">
+<ul id="markdown-toc">
+  <li><a href="#les-différents-type-de-volets-du-ci-sis" id="markdown-toc-les-différents-type-de-volets-du-ci-sis">Les différents type de volets du CI-SIS</a></li>
+  <li><a href="#typologie-des-appplications-et-services-concernés-par-le-volet-transport-du-ci-sis" id="markdown-toc-typologie-des-appplications-et-services-concernés-par-le-volet-transport-du-ci-sis">Typologie des appplications et services concernés par le volet transport du CI-SIS</a></li>
+</ul>
+
 </div>
+
+<p>Ce volet spécifie la couche Transport qui identifie les standards de transport des données et qui permet la communication des éléments d’identification et d’authentification des utilisateurs, physiques ou moraux, nécessaires à la mise en place des contrôles d’accès.</p>
+
+<p>Il spécifie la couche Transport pour :</p>
+
+<ul>
+  <li>Un système cible offrant un service auquel il est possible de se connecter de façon synchrone.</li>
+  <li>Un système initiateur (application Web, client lourd, client natif) se connectant au service de façon synchrone.</li>
+</ul>
+
+<p style="text-align:center">
+<object data="role_systeme.png" type="image/png"></object>
+</p>
+
+<p>Le <strong>Cadre d’Interopérabilité des Systèmes d’Information de Santé (CI-SIS)</strong> établit les règles pour une informatique communicative dans le domaine de la santé, du médico-social et du social. Le CI-SIS préconise des normes techniques et sémantiques pour les acteurs de la santé impliqués dans des projets d’échange et de partage de données de santé.</p>
+
+<p>La mise en place des volets du cadre d’interopérabilité permet de minimiser les coûts d’intégration de nouvelles interfaces et les difficultés techniques d’interopérabilité, de même que de faciliter l’utilisation de produits d’éditeurs.</p>
+
+<p>Les SI de santé en France sont composés de plusieurs entités indépendantes proposant un certain nombre d’applications et de services de nature hétérogène (client léger/web, client lourd, client applicatif). 
+<strong>Les applications des différents Fournisseurs de Services (FS) sont susceptibles de communiquer entre elles</strong>.</p>
+
+<p>Afin de faciliter les échanges et d’assurer l’intégrité des données transmises d’un SI à l’autre, il est indispensable de standardiser les échanges.</p>
+
+<p><strong>C’est ainsi qu’intervient le Cadre d’Interopérabilité des SI de Santé (CI-SIS) pour résoudre les problèmes d’interopérabilité des applications de santé</strong>.
+ </p>
+<p style="text-align:center">
+<object data="composants_flux_REST.png" type="image/png"></object>
+</p>
+
+<h3 id="les-différents-type-de-volets-du-ci-sis">Les différents type de volets du CI-SIS</h3>
+
+<p>En dehors du volet transport du CI-SIS, il existe des référentiels d’interopérabilité à la maille :</p>
+<ul>
+  <li>
+    <p><strong>Sémantique :</strong> décrivent les normes et terminologies standardisées et partagées qui doivent être utilisées pour décrire différentes catégories de données (diagnostics, médicaments, examens de biologie médicale, etc.). [2]</p>
+  </li>
+  <li>
+    <p><strong>Syntaxique :</strong> l’interopérabilité syntaxique permet à deux ou plusieurs systèmes de communiquer et d’échanger des données. Pour être efficace, la conception de toute solution d’interopérabilité doit tenir compte de la granularité des données à partager.<br />
+Afin de sécuriser les échanges entre les SI de santé, le présent volet du CI-SIS définit les modalités d’autorisation d’accès à un service de santé et se base sur les protocoles OAuth 2.0 et OIDC.<br /></p>
+  </li>
+</ul>
+
+<h3 id="typologie-des-appplications-et-services-concernés-par-le-volet-transport-du-ci-sis">Typologie des appplications et services concernés par le volet transport du CI-SIS</h3>
+<p>Les normes d’interopérabilité décrite dans le présent volet sont applicables aux applications Pro Santé Connectées et non Pro Santé Connectées.</p>
+<ul>
+  <li>Une application Pro Santé Connectée est une application qui permet aux professionnels de santé de se connecter à un réseau d’échange d’informations de santé, afin de faciliter la gestion des informations médicales via les MIE PSC compatibles.</li>
+  <li>Une application non Pro Santé Connectée est une application qui ne nécessite pas d’utiliser Pro Santé Connect pour accéder aux informations de santé.</li>
+</ul>
 
 
 
@@ -222,7 +293,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
             <tr>
               <td style="text-align:left">&#xA0;
 
-                <a href="st_flux2.html">&lt;prev</a>
+                <a href="index.html">&lt;prev</a>
 
               </td>
               <td style="text-align:center">
@@ -230,7 +301,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
               </td>
               <td style="text-align:right">&#xA0;
 
-                <a href="securite.html">next&gt;</a>
+                <a href="archi_documentaire.html">next&gt;</a>
 
               </td>
             </tr>
@@ -240,7 +311,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 
       <div class="inner-wrapper">
         <p>
-          IG &#169; 2020+ <a style="color:var(--footer-hyperlink-text-color)" href="https://esante.gouv.fr">ANS</a>.  Package ans.fr.securisation-transport#0.1.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Fri, Oct 20, 2023 12:25+0000">2023-10-20</span>
+          IG &#169; 2020+ <a style="color:var(--footer-hyperlink-text-color)" href="https://esante.gouv.fr">ANS</a>.  Package ans.fr.securisation-transport#1.2.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Mon, Dec 4, 2023 14:48+0000">2023-12-04</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)"></span>
                       Liens: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table des matières </a> |
