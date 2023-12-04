@@ -1,5 +1,5 @@
 {
-  "date" : "Mon, 04 Dec, 2023 15:32:57 +0000",
+  "date" : "Mon, 04 Dec, 2023 16:26:37 +0000",
   "doco" : "For each file: start is seconds after start activity occurred. Length = milliseconds activity took",
   "files" : [
     {
@@ -7,59 +7,49 @@
       "size" : 3707,
       "processes" : [
         {
-          "activity" : "scan",
-          "start" : 22,
-          "length" : 1
-        },
-        {
           "activity" : "load",
-          "start" : 22,
-          "length" : 51
-        },
-        {
-          "activity" : "checkR4R4B",
-          "start" : 22,
-          "length" : 5
-        },
-        {
-          "activity" : "generateNarratives",
-          "start" : 22,
+          "start" : 26,
           "length" : 68
         },
         {
+          "activity" : "checkR4R4B",
+          "start" : 26,
+          "length" : 6
+        },
+        {
+          "activity" : "generateNarratives",
+          "start" : 26,
+          "length" : 93
+        },
+        {
           "activity" : "validate",
-          "start" : 22,
-          "length" : 2298
+          "start" : 27,
+          "length" : 2250
         },
         {
           "activity" : "scanForUsageStats",
-          "start" : 24,
+          "start" : 29,
           "length" : 1
         },
         {
           "activity" : "generate1",
-          "start" : 24,
-          "length" : 110
+          "start" : 29,
+          "length" : 104
         },
         {
           "activity" : "generate2",
-          "start" : 27,
-          "length" : 126
-        },
-        {
-          "activity" : "generateExampleZip",
-          "start" : 164,
-          "length" : 1
+          "start" : 33,
+          "length" : 115
         },
         {
           "activity" : "generateValidationPack",
-          "start" : 165,
-          "length" : 4
+          "start" : 170,
+          "length" : 2
         },
         {
           "activity" : "scanExamplesForR5",
-          "start" : 167,
-          "length" : 2
+          "start" : 174,
+          "length" : 1
         }
       ]
     }
