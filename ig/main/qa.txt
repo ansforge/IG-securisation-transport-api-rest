@@ -3,7 +3,7 @@
 
 err = 1, warn = 4, info = 0
 IG Publisher Version: 1.5.5
-Generated Mon Dec 04 15:05:12 UTC 2023. FHIR version 4.0.1 for ans.fr.securisation-transport#1.2.0 (canonical = https://interop.esante.gouv.fr/ig/securisation-transport)
+Generated Mon Dec 04 15:25:54 UTC 2023. FHIR version 4.0.1 for ans.fr.securisation-transport#1.2.0 (canonical = https://interop.esante.gouv.fr/ig/securisation-transport)
  Build Errors : 1 / 4 / 0
  /home/runner/work/IG-securisation-transport-api-rest/IG-securisation-transport-api-rest/fsh-generated/resources/ImplementationGuide-ans.fr.securisation-transport : 1 / 0 / 1
 </table>
