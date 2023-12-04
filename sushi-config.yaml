@@ -1,8 +1,8 @@
 # Documentation à propos de cette page : https://fshschool.org/docs/sushi/configuration/
 
-id: ans.fr.securisation-transport
-canonical: https://interop.esante.gouv.fr/ig/securisation-transport # the last part of canonical and id must be the same
-name: IG-securisation-transport-api-rest
+id: ans.fr.securisationtransport
+canonical: https://interop.esante.gouv.fr/ig/securisationtransport # the last part of canonical and id must be the same
+name: IG-securisationtransport-api-rest
 title: Sécurisation de la couche transport API REST Pro Santé Connectée
 publisher:
   name: ANS
