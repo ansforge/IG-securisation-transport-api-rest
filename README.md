@@ -4,10 +4,12 @@ Le README ci-dessous constitue un template à adapter et compléter pour chaque 
 # Contexte
 
 ## Contexte métier du projet
-[A COMPLETER : doit contenir la description fonctionnelle du projet destinée à un profil non technique]
+La rédaction de ce volet est le résultat des travaux de co-construction menés avec l’Assurance Maladie, le GIE SESAM VITALE entre octobre 2022 et mai 2023.  
+
+Ce volet décrit la sécurisation des APIs qui permettent d’accéder à des données de santé et qui nécessitent l’authentification des professionnels personnes physiques intervenant dans les secteurs sanitaire, social et médico-social via Pro Santé Connect.  
 
 ## Contexte technique du projet
-[A COMPLETER : doit expliquer brièvement quelles ressources / profils sont utilisés, exemple implémentation où IG est utilisé]
+L'objectif de ce projet est de décrire les architectures de référence permettant de sécuriser les APIs REST qui utilisent ProSantéConnect pour authentifier les professionnels de santé sur des services cibles à partir de leur logiciels métiers (LPS).
 
 # CI/CD
 Les workflows associés à ce repository (.github/workflows) permettent : 
@@ -27,5 +29,11 @@ Un commentaire ? Une remarque ? Utilisez les GitHub [issues](https://docs.github
 * FHIR : Fast Healthcare Interoperability Resources
 * FIG : FHIR Implementation Guide
 * HL7 : Health Level Seven
+* API (application programming interface ou « interface de programmation d'application »)
+* IDentity Provider ou Fournisseur d’identité
+* MIE PSC Moyen d’Identification Electronique Pro Santé Connect
+* OAUTH2 Open Authorization Protocole de sécurité mis en place pour permettre d'accéder aux ressources hébergées
+* OIDC Openid connect
+* PGSSIS Politique Générale de Sécurité des Systèmes d’Information de Santé
+* REST Representational State Transfer Interface de programmation qui suit les principes de l'architecture REST.
 
-[A COMPLETER : acronymes utilisés dans le cadre de ce projet]

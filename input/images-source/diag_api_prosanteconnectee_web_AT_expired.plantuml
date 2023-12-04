@@ -1,0 +1,57 @@
+@startuml
+scale 1024*768
+
+box  "Systeme appelant / initiateur" #palegreen
+participant "Navigateur" as n
+participant "Fournisseur de services et proxy LPS/API" as appserver
+end box
+participant "ProSanteConnect" as psc
+box  "Systeme cible" #paleturquoise
+participant "Serveur d'autorisation" as AS
+participant "Service cible" as API
+end box
+
+n->appserver:1. demande d'acces a un nouveau service (user deja Connecte sur PSC)
+	activate appserver
+    
+
+
+group OAUTH2.0 flow
+appserver -> AS:2. subject_token(parametre) + Client_ID_AS(header) + scope(parametre)
+	deactivate appserver
+    activate AS
+AS->psc:3. subject_token (introspection)
+	activate psc
+psc->>psc: <font color=red><b>subject_token non valide 
+psc->AS:4. erreur + URL authentification PSC
+	deactivate psc
+AS->appserver: 5. erreur + URL authentification PSC
+	deactivate AS
+    activate appserver
+end 
+
+
+appserver->psc : 6. Refresh Token PSC
+	deactivate appserver
+    activate psc
+psc->appserver : 7. subject_token
+	deactivate psc
+
+group OAUTH2.0 flow
+appserver -> AS:8. subject_token(parametre) + Client_ID_AS(header) + scope(parametre)
+	deactivate appserver
+    activate AS
+AS->psc:9. subject_token (introspection)
+	activate psc
+psc->AS:OK
+	deactivate psc
+AS->AS : Controle d'acces (Client ID_AS x scope)
+AS->appserver:10. access_token
+	activate appserver
+	deactivate AS
+end
+appserver->API:11. access_token + acces aux donnees  
+	deactivate appserver
+	
+@enduml
+

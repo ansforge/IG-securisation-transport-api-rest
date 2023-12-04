@@ -1,0 +1,50 @@
+@startuml
+scale 1024*768
+box  "Systeme appelant / initiateur" #palegreen
+participant "Navigateur" as n
+participant "Fournisseur de services et proxy LPS/API" as appserver
+end box
+participant "ProSanteConnect" as psc
+box  "Systeme cible" #paleturquoise
+participant "Serveur d'autorisation" as AS
+participant "Service cible" as API
+end box
+
+n->appserver:1. acces initial avec cookie de session (user deja Connecte sur PSC)
+	activate appserver
+    
+    
+
+    
+group OAUTH2.0 flow
+appserver -> AS:2. subject_token(parametre) + Client ID_AS(header) + scope(parametre)
+	deactivate appserver
+    activate AS
+AS->psc:3. subject_token (introspection)
+	activate psc
+psc->>psc: <font color=red><b>subject_token non valide 
+psc->AS:4. erreur 
+	deactivate psc
+AS->appserver:5. erreur
+	deactivate AS
+    activate appserver
+end 
+
+
+appserver->psc : 6. Refresh Token PSC
+    activate psc
+    activate appserver
+psc->>psc: <font color=red><b>Refresh Token PSC ou cookie de session non valide
+psc->appserver : 7.  URL authentification PSC
+	deactivate psc
+
+appserver->n : 8. Redirect to PSC
+	activate n
+	deactivate appserver
+n->psc:9. client_id, scope "all" PSC
+	activate psc
+    deactivate n
+psc<->n:10. authentification user (CPS/eCPS)
+	deactivate psc
+
+@enduml

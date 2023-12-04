@@ -1,0 +1,53 @@
+@startuml
+scale 1024*768
+box  "Systeme appelant / initiateur" #palegreen
+participant "Navigateur" as n
+participant "Fournisseur de Services et proxy LPS/API" as appserver
+end box
+participant "Pro Sante Connect" as psc
+
+box  "Systeme cible" #paleturquoise
+participant "Serveur d'autorisation" as AS
+participant "Service cible" as API
+end box
+
+n->appserver:1. acces initial 
+appserver->n:2. redirect
+	activate n
+
+group Authentification Pro Sante Connect
+n->psc:3  client_id, scope "all" PSC
+	activate psc
+	deactivate n
+psc<->n:4. authentification user (CPS/eCPS)
+activate n
+psc->n:5. authorization code PSC
+	deactivate psc
+n->appserver:6. authorization code PSC
+	activate appserver
+    deactivate n
+appserver->psc: 7. authorization code PSC + 	Client_ID_FS/secret
+	activate psc
+psc->appserver: 8. ID Token + AT + Refresh Token (PSC)
+	deactivate psc
+end 
+
+
+group OAUTH2.0 flow
+appserver->AS:9. subject_token (paramètre) + Client_ID_AS (header) + scope (parametre)
+	deactivate appserver
+	activate AS
+AS->psc:10. subject_token (introspection)
+	activate psc
+psc->AS:OK
+	deactivate psc
+AS->AS : Controle d'accès (Client_ID_AS x scope)
+AS->appserver:11. access_token
+	activate appserver
+	deactivate AS
+end 
+appserver->API:12. access_token + accès aux donnees
+	deactivate appserver
+	
+@enduml	
+	
