@@ -74,7 +74,12 @@ jobs:
       - name: 📥 Download IG Publisher
         run: wget -q https://github.com/HL7/fhir-ig-publisher/releases/download/1.4.16/publisher.jar
 
-  
+      - name: Update submodules
+        run: |
+          git submodule deinit -f .
+          git submodule update --init
+          git submodule update --init --recursive
+          
       - name: Build and test with Rake        
         run: |
           sudo apt-get install ruby-full
