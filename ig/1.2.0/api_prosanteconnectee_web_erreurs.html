@@ -1,0 +1,448 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE HTML>
+<html xml:lang="en" xmlns="http://www.w3.org/1999/xhtml" lang="en">
+  <head>
+    <meta content="text/html;charset=utf-8" http-equiv="Content-Type"/>
+    <title>Appel d&#39;une API ProSantéConnectée depuis une application web - cas d&#39;erreurs - Sécurisation de la couche transport API REST Pro Santé Connectée v1.2.0</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta name="author" content="http://hl7.org/fhir"/>
+
+    <link href="fhir.css" rel="stylesheet"/>
+
+    <!-- Bootstrap core CSS -->
+    <link href="assets/css/bootstrap-fhir.css" rel="stylesheet"/>
+
+    <!-- Project extras -->
+    <link href="assets/css/project.css" rel="stylesheet"/>
+    <link href="assets/css/pygments-manni.css" rel="stylesheet"/>
+    <link href="assets/css/jquery-ui.css" rel="stylesheet"/>
+  	<link href="assets/css/prism.css" rel="stylesheet" />
+    <link rel="stylesheet" href="assets/css/style-ans.css"/>
+    <link rel="stylesheet" href="assets/css/style-add-ans.css"/>
+    <!-- Placeholder for child template CSS declarations -->
+
+    <script type="text/javascript" src="fhir-table-scripts.js"> </script>
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script src="assets/js/html5shiv.js"></script>
+    <script src="assets/js/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- Favicons -->
+    <link rel="fhir-logo" sizes="144x144" href="assets/ico/icon-fhir-144.png"/>
+    <link rel="fhir-logo" sizes="114x114" href="assets/ico/icon-fhir-114.png"/>
+    <link rel="fhir-logo" sizes="72x72" href="assets/ico/icon-fhir-72.png"/>
+    <link rel="fhir-logo" href="assets/ico/icon-fhir-57.png"/>
+    <link rel="shortcut icon" href="assets/ico/favicon.png"/>
+  </head>
+  <body onload="document.body.style.opacity='1'">
+
+	  <script src="assets/js/prism.js"></script>
+
+    <style type="text/css">h2{--heading-prefix:"3.2"}
+    h3,h4,h5,h6{--heading-prefix:"3.2"}</style>
+    <div id="segment-header" class="segment">  <!-- segment-header -->
+      <div class="container">  <!-- container -->
+        <!-- Placeholder for child template header declarations -->
+<div id="family-nav">
+  <a id="hl7-search-lnk" no-external="true" href="http://hl7.org/fhir"><img height="50" alt="Visit the FHIR website" src="assets/images/fhir-logo-www.png"/> </a>
+</div>
+<div id="ans-nav" style="line-height: 50px; float: left; margin-top: 4px; margin-bottom: 8px; color: #808080; ">
+  <a id="hl7-logo" no-external="true" href="https://esante.gouv.fr/"><img height="50" alt="ANS Logo" src="assets/images/logo-ANS.svg"/></a>
+</div>
+
+        <div id="ig-status">
+          <p><span style="font-size:12pt;font-weight:bold">Sécurisation de la couche transport API REST Pro Santé Connectée</span>
+            <br/>
+            <span style="display:inline-block;">1.2.0 - ci-build
+
+
+
+  <img alt="France flag" src="assets/images/fra.svg" height="16" title="France"/>
+
+
+            </span>
+          </p>
+        </div>
+      </div> <!-- /container -->
+    </div>  <!-- /segment-header -->
+
+    <div id="segment-navbar" class="segment">  <!-- segment-navbar -->
+      <div id="stripe"> </div>
+      <div class="container">  <!-- container -->
+        <!-- HEADER CONTENT -->
+
+        <nav class="navbar navbar-inverse">
+          <!--status-bar-->
+          <div class="container">
+            <button data-target=".navbar-inverse-collapse" class="navbar-toggle" data-toggle="collapse" type="button">
+              <span class="icon-bar"> </span>
+              <span class="icon-bar"> </span>
+              <span class="icon-bar"> </span>
+            </button>
+            <a class="navbar-brand hidden" href="http://hl7.org/fhir/R4/index.html">FHIR</a>
+            <div class="nav-collapse collapse navbar-inverse-collapse">
+              <!-- menu.xml  -->
+
+<ul xmlns="http://www.w3.org/1999/xhtml" class="nav navbar-nav">
+  <li>
+    <a href="index.html">Accueil</a>
+  </li>
+  <li class="dropdown">
+    <a data-toggle="dropdown" href="#" class="dropdown-toggle">Description générale des flux
+      <b class="caret"></b>
+    </a>
+    <ul class="dropdown-menu">
+      <li>
+        <a href="principes_generaux_du_volet.html">Principes généraux de ce volet</a>
+      </li>
+      <li>
+        <a href="archi_documentaire.html">Architecture documentaire</a>
+      </li>
+      <li>
+        <a href="standards.html">Standards utilisés (REST, OAUTH 2.0 ET OIDC)</a>
+      </li>
+      <li>
+        <a href="principes_securisation.html">Principes de sécurisation</a>
+      </li>
+    </ul>
+  </li>
+  <li class="dropdown">
+    <a data-toggle="dropdown" href="#" class="dropdown-toggle">API ProSantéConnectée
+      <b class="caret"></b>
+    </a>
+    <ul class="dropdown-menu">
+      <li>
+        <a href="api_prosanteconnectee.html">Description générale</a>
+      </li>
+      <li>
+        <a href="api_prosanteconnectee_web.html">Application web</a>
+      </li>
+      <li>
+        <a href="api_prosanteconnectee_web_erreurs.html">Application web - cas d&apos;erreurs</a>
+      </li>
+      <li>
+        <a href="api_prosanteconnectee_client_lourd.html">Application client lourd ou mobile</a>
+      </li>
+      <li>
+        <a href="api_prosanteconnectee_userinfo.html">Récupération et utilisation du jeton userinfo PSC</a>
+      </li>
+      <li>
+        <a href="api_prosanteconnectee_donnees_metiers.html">Passage de données métiers de l&apos;application cliente vers l&apos;API</a>
+      </li>
+    </ul>
+  </li>
+  <li class="dropdown">
+    <a data-toggle="dropdown" href="#" class="dropdown-toggle">Glossaire et documents de référence
+      <b class="caret"></b>
+    </a>
+    <ul class="dropdown-menu">
+      <li>
+        <a href="glossaire.html">Glossaire</a>
+      </li>
+      <li>
+        <a href="documents_de_reference.html">Documents de référence</a>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <a target="_blank" href="https://interop.esante.gouv.fr/ig/">Liste des guides</a>
+  </li>
+</ul>
+            </div>  <!-- /.nav-collapse -->
+          </div>  <!-- /.container -->
+        </nav>  <!-- /.navbar -->
+      <!-- /HEADER CONTENT -->
+      </div>  <!-- /container -->
+    </div>  <!-- /segment-navbar -->
+    <!--status-bar-->
+
+    <div id="segment-breadcrumb" class="segment">  <!-- segment-breadcrumb -->
+      <div class="container">  <!-- container -->
+        <ul class="breadcrumb">
+          <li><a href='toc.html'><b>Table of Contents</b></a></li><li><a href='api_prosanteconnectee.html'><b>API ProSantéConnectée</b></a></li><li><b>Appel d'une API ProSantéConnectée depuis une application web - cas d'erreurs</b></li>
+
+          <span style="float:right;">
+
+            <a href="api_prosanteconnectee_web.html">&lt;prev</a> | 
+
+            <a href="#bottom">bottom</a>
+
+          | <a href="api_prosanteconnectee_client_lourd.html">next&gt;</a>
+
+          </span>
+
+        </ul>
+      </div>  <!-- /container -->
+    </div>  <!-- /segment-breadcrumb -->
+
+    <a name="top"> </a>
+    <div id="segment-content" class="segment">  <!-- segment-content -->
+      <div class="container">  <!-- container -->
+        <div class="row">
+          <div class="inner-wrapper">
+
+<style type="text/css">
+h2:before{color:silver;counter-increment:section;content:var(--heading-prefix) " ";}
+h3:before{color:silver;counter-increment:sub-section;content:var(--heading-prefix) "." counter(sub-section) " ";}
+h4:before{color:silver;counter-increment:composite;content:var(--heading-prefix) "." counter(sub-section) "." counter(composite) " ";}
+h5:before{color:silver;counter-increment:detail;content:var(--heading-prefix) "." counter(sub-section) "." counter(composite) "." counter(detail) " ";}
+h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefix) "." counter(sub-section) "." counter(composite) "." counter(detail) "." counter(more-detail)" ";}
+</style>
+<div class="col-12">
+  <!--ReleaseHeader--><p id="publish-box">Sécurisation de la couche transport API REST Pro Santé Connectée - Local Development build (v1.2.0) built by the FHIR (HL7® FHIR® Standard) Build Tools. See the <a href="https://interop.esante.gouv.fr/ig/securisation-transport/history.html">Directory of published versions</a></p><!--EndReleaseHeader-->
+  <h2>Appel d&#39;une API ProSantéConnectée depuis une application web - cas d&#39;erreurs</h2>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+    <p><!-- white space is critical inside of capture --></p>
+<div class="markdown-toc">
+<ul id="markdown-toc">
+  <li><a href="#cas-derreur-1a--un-utilisateur-déjà-pro-santé-connecté-a-besoin-du-refresh-token-psc-pour-poursuivre-sa-navigation-et-accéder-à-une-ressource" id="markdown-toc-cas-derreur-1a--un-utilisateur-déjà-pro-santé-connecté-a-besoin-du-refresh-token-psc-pour-poursuivre-sa-navigation-et-accéder-à-une-ressource">Cas d’erreur 1a : un utilisateur déjà Pro Santé Connecté a besoin du Refresh Token PSC pour poursuivre sa navigation et accéder à une ressource</a></li>
+  <li><a href="#cas-derreur-1b--la-session-psc-est-expirée-lutilisateur-doit-se-réauthentifier-sur-la-mire-dauthentification" id="markdown-toc-cas-derreur-1b--la-session-psc-est-expirée-lutilisateur-doit-se-réauthentifier-sur-la-mire-dauthentification">Cas d’erreur 1b : La session PSC est expirée, l’utilisateur doit se réauthentifier sur la mire d’authentification</a></li>
+</ul>
+
+</div>
+<h3 id="cas-derreur-1a--un-utilisateur-déjà-pro-santé-connecté-a-besoin-du-refresh-token-psc-pour-poursuivre-sa-navigation-et-accéder-à-une-ressource">Cas d’erreur 1a : un utilisateur déjà Pro Santé Connecté a besoin du Refresh Token PSC pour poursuivre sa navigation et accéder à une ressource</h3>
+
+<p>Dans ce cas, <strong>l’utilisateur est déjà authentifié auprès de Pro Santé Connect et souhaite accéder à une ressource d’un service cible, mais son subject_token a expiré</strong>. 
+Afin de poursuivre son parcours, le fournisseur de services a besoin de récupérer un nouveau <code class="language-plaintext highlighter-rouge">subject_token</code> grâce à son <code class="language-plaintext highlighter-rouge">Refresh Token</code> PSC encore valide (&lt;2 min).</p>
+
+<p>Ici, lorsque le serveur d’autorisation effectue une introspection auprès de PSC pour vérifier la validité des jetons, PSC détecte que le <code class="language-plaintext highlighter-rouge">subject_token</code> n’est plus valide (<strong>durée de validité limitée à 2 minutes</strong> [4] ).
+Le fournisseur de services effectue alors une demande de renouvellement de jetons auprès de Pro Santé Connect. Il utilise son <code class="language-plaintext highlighter-rouge">Refresh Token</code>  [4] encore valide (&lt;30 minutes) afin d’obtenir un nouveau <code class="language-plaintext highlighter-rouge">subject_token</code>.</p>
+
+<p>Une fois le <code class="language-plaintext highlighter-rouge">subject_token</code> récupéré, le serveur d’application relance une nouvelle cinématique OAuth 2.0.</p>
+
+<div style="text-align: center;"><?xml version="1.0" encoding="us-ascii" standalone="no"?><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" contentStyleType="text/css" height="480.035px" preserveAspectRatio="none" style="width:1024px;height:480px;background:#FFFFFF;" version="1.1" viewBox="0 0 1024 480" width="1024.3739px" zoomAndPan="magnify"><defs /><g><rect fill="#98FB98" height="471.6992" style="stroke:#181818;stroke-width:0.3738590726542534;" width="510.6915" x="0.7477" y="4.4863" /><text fill="#000000" font-family="sans-serif" font-size="9.7203" font-weight="bold" lengthAdjust="spacing" textLength="160.7594" x="175.7138" y="13.5089">Systeme appelant / initiateur</text><rect fill="#AFEEEE" height="471.6992" style="stroke:#181818;stroke-width:0.3738590726542534;" width="310.303" x="709.9584" y="4.4863" /><text fill="#000000" font-family="sans-serif" font-size="9.7203" font-weight="bold" lengthAdjust="spacing" textLength="77.015" x="826.6024" y="13.5089">Systeme cible</text><rect fill="#FFFFFF" height="39.8277" style="stroke:#181818;stroke-width:0.7477181453085068;" width="7.4772" x="395.169" y="65.4721" /><rect fill="#FFFFFF" height="27.0172" style="stroke:#181818;stroke-width:0.7477181453085068;" width="7.4772" x="395.169" y="202.1526" /><rect fill="#FFFFFF" height="49.4487" style="stroke:#181818;stroke-width:0.7477181453085068;" width="7.4772" x="395.169" y="387.6334" /><rect fill="#FFFFFF" height="53.2866" style="stroke:#181818;stroke-width:0.7477181453085068;" width="7.4772" x="563.0318" y="127.0829" /><rect fill="#FFFFFF" height="21.7831" style="stroke:#181818;stroke-width:0.7477181453085068;" width="7.4772" x="563.0318" y="229.1698" /><rect fill="#FFFFFF" height="21.7831" style="stroke:#181818;stroke-width:0.7477181453085068;" width="7.4772" x="563.0318" y="312.5637" /><rect fill="#FFFFFF" height="96.8529" style="stroke:#181818;stroke-width:0.7477181453085068;" width="7.4772" x="770.5235" y="105.2997" /><rect fill="#FFFFFF" height="119.2844" style="stroke:#181818;stroke-width:0.7477181453085068;" width="7.4772" x="770.5235" y="290.7806" /><rect fill="none" height="131.4465" style="stroke:#000000;stroke-width:1.12157721796276;" width="561.1625" x="281.8897" y="76.6878" /><rect fill="none" height="153.8781" style="stroke:#000000;stroke-width:1.12157721796276;" width="697.9949" x="281.8897" y="262.1687" /><line style="stroke:#181818;stroke-width:0.3738590726542534;stroke-dasharray:5.0,5.0;" x1="35.8905" x2="35.8905" y1="42.1935" y2="450.5411" /><line style="stroke:#181818;stroke-width:0.3738590726542534;stroke-dasharray:5.0,5.0;" x1="398.5338" x2="398.5338" y1="42.1935" y2="450.5411" /><line style="stroke:#181818;stroke-width:0.3738590726542534;stroke-dasharray:5.0,5.0;" x1="566.7704" x2="566.7704" y1="42.1935" y2="450.5411" /><line style="stroke:#181818;stroke-width:0.3738590726542534;stroke-dasharray:5.0,5.0;" x1="774.2621" x2="774.2621" y1="42.1935" y2="450.5411" /><line style="stroke:#181818;stroke-width:0.3738590726542534;stroke-dasharray:5.0,5.0;" x1="979.8846" x2="979.8846" y1="42.1935" y2="450.5411" /><rect fill="#E2E2F0" height="22.6535" rx="1.8693" ry="1.8693" style="stroke:#181818;stroke-width:0.3738590726542534;" width="65.0515" x="3.7386" y="18.7923" /><text fill="#000000" font-family="sans-serif" font-size="10.4681" lengthAdjust="spacing" textLength="54.5834" x="8.9726" y="33.743">Navigateur</text><rect fill="#E2E2F0" height="22.6535" rx="1.8693" ry="1.8693" style="stroke:#181818;stroke-width:0.3738590726542534;" width="65.0515" x="3.7386" y="449.7934" /><text fill="#000000" font-family="sans-serif" font-size="10.4681" lengthAdjust="spacing" textLength="54.5834" x="8.9726" y="464.7441">Navigateur</text><rect fill="#E2E2F0" height="22.6535" rx="1.8693" ry="1.8693" style="stroke:#181818;stroke-width:0.3738590726542534;" width="219.0814" x="289.3669" y="18.7923" /><text fill="#000000" font-family="sans-serif" font-size="10.4681" lengthAdjust="spacing" textLength="208.6134" x="294.6009" y="33.743">Fournisseur de services et proxy LPS/API</text><rect fill="#E2E2F0" height="22.6535" rx="1.8693" ry="1.8693" style="stroke:#181818;stroke-width:0.3738590726542534;" width="219.0814" x="289.3669" y="449.7934" /><text fill="#000000" font-family="sans-serif" font-size="10.4681" lengthAdjust="spacing" textLength="208.6134" x="294.6009" y="464.7441">Fournisseur de services et proxy LPS/API</text><rect fill="#E2E2F0" height="22.6535" rx="1.8693" ry="1.8693" style="stroke:#181818;stroke-width:0.3738590726542534;" width="101.6897" x="515.9255" y="18.7923" /><text fill="#000000" font-family="sans-serif" font-size="10.4681" lengthAdjust="spacing" textLength="91.2216" x="521.1595" y="33.743">ProSanteConnect</text><rect fill="#E2E2F0" height="22.6535" rx="1.8693" ry="1.8693" style="stroke:#181818;stroke-width:0.3738590726542534;" width="101.6897" x="515.9255" y="449.7934" /><text fill="#000000" font-family="sans-serif" font-size="10.4681" lengthAdjust="spacing" textLength="91.2216" x="521.1595" y="464.7441">ProSanteConnect</text><rect fill="#E2E2F0" height="22.6535" rx="1.8693" ry="1.8693" style="stroke:#181818;stroke-width:0.3738590726542534;" width="122.6258" x="712.9493" y="18.7923" /><text fill="#000000" font-family="sans-serif" font-size="10.4681" lengthAdjust="spacing" textLength="112.1577" x="718.1833" y="33.743">Serveur d'autorisation</text><rect fill="#E2E2F0" height="22.6535" rx="1.8693" ry="1.8693" style="stroke:#181818;stroke-width:0.3738590726542534;" width="122.6258" x="712.9493" y="449.7934" /><text fill="#000000" font-family="sans-serif" font-size="10.4681" lengthAdjust="spacing" textLength="112.1577" x="718.1833" y="464.7441">Serveur d'autorisation</text><rect fill="#E2E2F0" height="22.6535" rx="1.8693" ry="1.8693" style="stroke:#181818;stroke-width:0.3738590726542534;" width="74.7718" x="942.4987" y="18.7923" /><text fill="#000000" font-family="sans-serif" font-size="10.4681" lengthAdjust="spacing" textLength="64.3038" x="947.7327" y="33.743">Service cible</text><rect fill="#E2E2F0" height="22.6535" rx="1.8693" ry="1.8693" style="stroke:#181818;stroke-width:0.3738590726542534;" width="74.7718" x="942.4987" y="449.7934" /><text fill="#000000" font-family="sans-serif" font-size="10.4681" lengthAdjust="spacing" textLength="64.3038" x="947.7327" y="464.7441">Service cible</text><rect fill="#FFFFFF" height="39.8277" style="stroke:#181818;stroke-width:0.7477181453085068;" width="7.4772" x="395.169" y="65.4721" /><rect fill="#FFFFFF" height="27.0172" style="stroke:#181818;stroke-width:0.7477181453085068;" width="7.4772" x="395.169" y="202.1526" /><rect fill="#FFFFFF" height="49.4487" style="stroke:#181818;stroke-width:0.7477181453085068;" width="7.4772" x="395.169" y="387.6334" /><rect fill="#FFFFFF" height="53.2866" style="stroke:#181818;stroke-width:0.7477181453085068;" width="7.4772" x="563.0318" y="127.0829" /><rect fill="#FFFFFF" height="21.7831" style="stroke:#181818;stroke-width:0.7477181453085068;" width="7.4772" x="563.0318" y="229.1698" /><rect fill="#FFFFFF" height="21.7831" style="stroke:#181818;stroke-width:0.7477181453085068;" width="7.4772" x="563.0318" y="312.5637" /><rect fill="#FFFFFF" height="96.8529" style="stroke:#181818;stroke-width:0.7477181453085068;" width="7.4772" x="770.5235" y="105.2997" /><rect fill="#FFFFFF" height="119.2844" style="stroke:#181818;stroke-width:0.7477181453085068;" width="7.4772" x="770.5235" y="290.7806" /><polygon fill="#181818" points="386.1964,62.4812,393.6736,65.4721,386.1964,68.4629,389.1873,65.4721" style="stroke:#181818;stroke-width:0.7477181453085068;" /><line style="stroke:#181818;stroke-width:0.7477181453085068;" x1="36.2643" x2="390.6827" y1="65.4721" y2="65.4721" /><text fill="#000000" font-family="sans-serif" font-size="9.7203" lengthAdjust="spacing" textLength="344.6981" x="41.4984" y="61.6842">1. demande d'acces a un nouveau service (user deja Connecte sur PSC)</text><path d="M281.8897,76.6878 L397.0383,76.6878 L397.0383,82.0212 L389.5612,89.4984 L281.8897,89.4984 L281.8897,76.6878 " fill="#EEEEEE" style="stroke:#000000;stroke-width:1.12157721796276;" /><rect fill="none" height="131.4465" style="stroke:#000000;stroke-width:1.12157721796276;" width="561.1625" x="281.8897" y="76.6878" /><text fill="#000000" font-family="sans-serif" font-size="9.7203" font-weight="bold" lengthAdjust="spacing" textLength="81.5013" x="293.1055" y="86.4582">OAUTH2.0 flow</text><polygon fill="#181818" points="761.5509,102.3089,769.0281,105.2997,761.5509,108.2906,764.5418,105.2997" style="stroke:#181818;stroke-width:0.7477181453085068;" /><line style="stroke:#181818;stroke-width:0.7477181453085068;" x1="398.9076" x2="766.0372" y1="105.2997" y2="105.2997" /><text fill="#000000" font-family="sans-serif" font-size="9.7203" lengthAdjust="spacing" textLength="353.6707" x="404.1417" y="101.5119">2. subject_token(parametre) + Client_ID_AS(header) + scope(parametre)</text><polygon fill="#181818" points="578.7338,124.092,571.2567,127.0829,578.7338,130.0737,575.743,127.0829" style="stroke:#181818;stroke-width:0.7477181453085068;" /><line style="stroke:#181818;stroke-width:0.7477181453085068;" x1="574.2475" x2="769.7758" y1="127.0829" y2="127.0829" /><text fill="#000000" font-family="sans-serif" font-size="9.7203" lengthAdjust="spacing" textLength="151.0391" x="583.2202" y="123.295">3. subject_token (introspection)</text><line style="stroke:#181818;stroke-width:0.7477181453085068;" x1="570.5089" x2="601.9131" y1="148.866" y2="148.866" /><line style="stroke:#181818;stroke-width:0.7477181453085068;" x1="601.9131" x2="601.9131" y1="148.866" y2="158.5863" /><line style="stroke:#181818;stroke-width:0.7477181453085068;" x1="571.2567" x2="601.9131" y1="158.5863" y2="158.5863" /><line style="stroke:#181818;stroke-width:0.7477181453085068;" x1="571.2567" x2="578.7338" y1="158.5863" y2="155.5955" /><line style="stroke:#181818;stroke-width:0.7477181453085068;" x1="571.2567" x2="578.7338" y1="158.5863" y2="161.5772" /><text fill="#FF0000" font-family="sans-serif" font-size="9.7203" font-weight="bold" lengthAdjust="spacing" textLength="137.5801" x="575.743" y="145.0781">subject_token non valide</text><polygon fill="#181818" points="761.5509,177.3786,769.0281,180.3695,761.5509,183.3604,764.5418,180.3695" style="stroke:#181818;stroke-width:0.7477181453085068;" /><line style="stroke:#181818;stroke-width:0.7477181453085068;" x1="566.7704" x2="766.0372" y1="180.3695" y2="180.3695" /><text fill="#000000" font-family="sans-serif" font-size="9.7203" lengthAdjust="spacing" textLength="173.4706" x="572.0044" y="176.5816">4. erreur + URL authentification PSC</text><polygon fill="#181818" points="410.8711,199.1617,403.3939,202.1526,410.8711,205.1435,407.8802,202.1526" style="stroke:#181818;stroke-width:0.7477181453085068;" /><line style="stroke:#181818;stroke-width:0.7477181453085068;" x1="406.3848" x2="773.5144" y1="202.1526" y2="202.1526" /><text fill="#000000" font-family="sans-serif" font-size="9.7203" lengthAdjust="spacing" textLength="173.4706" x="415.3574" y="198.3647">5. erreur + URL authentification PSC</text><polygon fill="#181818" points="554.0591,226.1789,561.5363,229.1698,554.0591,232.1606,557.05,229.1698" style="stroke:#181818;stroke-width:0.7477181453085068;" /><line style="stroke:#181818;stroke-width:0.7477181453085068;" x1="398.9076" x2="558.5455" y1="229.1698" y2="229.1698" /><text fill="#000000" font-family="sans-serif" font-size="9.7203" lengthAdjust="spacing" textLength="101.6897" x="404.1417" y="225.3819">6. Refresh Token PSC</text><polygon fill="#181818" points="407.1325,247.962,399.6553,250.9529,407.1325,253.9438,404.1417,250.9529" style="stroke:#181818;stroke-width:0.7477181453085068;" /><line style="stroke:#181818;stroke-width:0.7477181453085068;" x1="402.6462" x2="566.0226" y1="250.9529" y2="250.9529" /><text fill="#000000" font-family="sans-serif" font-size="9.7203" lengthAdjust="spacing" textLength="78.5104" x="411.6188" y="247.165">7. subject_token</text><path d="M281.8897,262.1687 L397.0383,262.1687 L397.0383,267.502 L389.5612,274.9792 L281.8897,274.9792 L281.8897,262.1687 " fill="#EEEEEE" style="stroke:#000000;stroke-width:1.12157721796276;" /><rect fill="none" height="153.8781" style="stroke:#000000;stroke-width:1.12157721796276;" width="697.9949" x="281.8897" y="262.1687" /><text fill="#000000" font-family="sans-serif" font-size="9.7203" font-weight="bold" lengthAdjust="spacing" textLength="81.5013" x="293.1055" y="271.939">OAUTH2.0 flow</text><polygon fill="#181818" points="761.5509,287.7897,769.0281,290.7806,761.5509,293.7714,764.5418,290.7806" style="stroke:#181818;stroke-width:0.7477181453085068;" /><line style="stroke:#181818;stroke-width:0.7477181453085068;" x1="398.9076" x2="766.0372" y1="290.7806" y2="290.7806" /><text fill="#000000" font-family="sans-serif" font-size="9.7203" lengthAdjust="spacing" textLength="353.6707" x="404.1417" y="286.9927">8. subject_token(parametre) + Client_ID_AS(header) + scope(parametre)</text><polygon fill="#181818" points="578.7338,309.5728,571.2567,312.5637,578.7338,315.5546,575.743,312.5637" style="stroke:#181818;stroke-width:0.7477181453085068;" /><line style="stroke:#181818;stroke-width:0.7477181453085068;" x1="574.2475" x2="769.7758" y1="312.5637" y2="312.5637" /><text fill="#000000" font-family="sans-serif" font-size="9.7203" lengthAdjust="spacing" textLength="151.0391" x="583.2202" y="308.7758">9. subject_token (introspection)</text><polygon fill="#181818" points="761.5509,331.356,769.0281,334.3468,761.5509,337.3377,764.5418,334.3468" style="stroke:#181818;stroke-width:0.7477181453085068;" /><line style="stroke:#181818;stroke-width:0.7477181453085068;" x1="566.7704" x2="766.0372" y1="334.3468" y2="334.3468" /><text fill="#000000" font-family="sans-serif" font-size="9.7203" lengthAdjust="spacing" textLength="13.4589" x="572.0044" y="330.559">OK</text><line style="stroke:#181818;stroke-width:0.7477181453085068;" x1="778.0007" x2="809.4049" y1="356.13" y2="356.13" /><line style="stroke:#181818;stroke-width:0.7477181453085068;" x1="809.4049" x2="809.4049" y1="356.13" y2="365.8503" /><line style="stroke:#181818;stroke-width:0.7477181453085068;" x1="778.7484" x2="809.4049" y1="365.8503" y2="365.8503" /><polygon fill="#181818" points="786.2256,362.8594,778.7484,365.8503,786.2256,368.8412,783.2348,365.8503" style="stroke:#181818;stroke-width:0.7477181453085068;" /><text fill="#000000" font-family="sans-serif" font-size="9.7203" lengthAdjust="spacing" textLength="187.6773" x="783.2348" y="352.3421">Controle d'acces (Client ID_AS x scope)</text><polygon fill="#181818" points="410.8711,384.6426,403.3939,387.6334,410.8711,390.6243,407.8802,387.6334" style="stroke:#181818;stroke-width:0.7477181453085068;" /><line style="stroke:#181818;stroke-width:0.7477181453085068;" x1="406.3848" x2="769.7758" y1="387.6334" y2="387.6334" /><text fill="#000000" font-family="sans-serif" font-size="9.7203" lengthAdjust="spacing" textLength="82.9967" x="415.3574" y="383.8456">10. access_token</text><polygon fill="#181818" points="970.912,434.0913,978.3892,437.0821,970.912,440.073,973.9029,437.0821" style="stroke:#181818;stroke-width:0.7477181453085068;" /><line style="stroke:#181818;stroke-width:0.7477181453085068;" x1="398.9076" x2="975.3983" y1="437.0821" y2="437.0821" /><text fill="#000000" font-family="sans-serif" font-size="9.7203" lengthAdjust="spacing" textLength="189.1727" x="404.1417" y="433.2943">11. access_token + acces aux donnees</text></g></svg></div>
+
+<h3 id="cas-derreur-1b--la-session-psc-est-expirée-lutilisateur-doit-se-réauthentifier-sur-la-mire-dauthentification">Cas d’erreur 1b : La session PSC est expirée, l’utilisateur doit se réauthentifier sur la mire d’authentification</h3>
+
+<p><strong>L’utilisateur est déjà authentifié auprès de Pro Santé Connect et souhaite accéder à une ressource d’un service cible mais sa session a expiré (cookie de session &gt; 4 heures ou 30 min d’inactivité) [4]</strong>.
+Par conséquent, son <code class="language-plaintext highlighter-rouge">subject_token</code> ainsi que son <code class="language-plaintext highlighter-rouge">Refresh Token</code> PSC sont expirés 
+(<code class="language-plaintext highlighter-rouge">subject_token</code> &gt; 2min et <code class="language-plaintext highlighter-rouge">Refresh Token</code> &gt; 30min).</p>
+
+<h4 id="cas-dusage-1b1--le-cookie-de-session-de-lutilisateur-est-expiré-et-redirection-vers-mire-authentification---application-web">Cas d’usage 1b.1 : Le cookie de session de l’utilisateur est expiré et redirection vers mire authentification - Application Web</h4>
+
+<p>Dans la navigation, si l’utilisateur a besoin des ressources nécessitant d’être connecté à <strong>PSC</strong>, le fournisseur de services va vérifier que la session est valide auprès de <strong>PSC</strong> via <strong>cookie de session</strong>. 
+Lors du contrôle du cookie de session par PSC, ce dernier ne valide pas son cookie de session car il a expiré (&gt;4 heures). 
+PSC renvoie une réponse d’erreur et l’URL de sa mire d’authentification afin que le fournisseur de services redirige l’utilisateur vers PSC pour s’authentifier à nouveau.</p>
+
+<div style="text-align: center;"><?xml version="1.0" encoding="us-ascii" standalone="no"?><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" contentStyleType="text/css" height="315.0769px" preserveAspectRatio="none" style="width:1024px;height:315px;background:#FFFFFF;" version="1.1" viewBox="0 0 1024 315" width="1024.3998px" zoomAndPan="magnify"><defs /><g><rect fill="#98FB98" height="306.1117" style="stroke:#181818;stroke-width:0.39984381101132377;" width="505.0027" x="0.7997" y="4.7981" /><text fill="#000000" font-family="sans-serif" font-size="10.3959" font-weight="bold" lengthAdjust="spacing" textLength="171.9328" x="167.3346" y="14.4479">Systeme appelant / initiateur</text><rect fill="#AFEEEE" height="306.1117" style="stroke:#181818;stroke-width:0.39984381101132377;" width="225.5119" x="794.4897" y="4.7981" /><text fill="#000000" font-family="sans-serif" font-size="10.3959" font-weight="bold" lengthAdjust="spacing" textLength="82.3678" x="866.0617" y="14.4479">Systeme cible</text><rect fill="#FFFFFF" height="47.2878" style="stroke:#181818;stroke-width:0.7996876220226475;" width="7.9969" x="34.7864" y="198.5037" /><rect fill="#FFFFFF" height="152.4717" style="stroke:#181818;stroke-width:0.7996876220226475;" width="7.9969" x="381.0512" y="70.0226" /><rect fill="#FFFFFF" height="68.9856" style="stroke:#181818;stroke-width:0.7996876220226475;" width="7.9969" x="663.3409" y="112.6185" /><rect fill="#FFFFFF" height="23.2971" style="stroke:#181818;stroke-width:0.7996876220226475;" width="7.9969" x="663.3409" y="245.7915" /><rect fill="none" height="93.9883" style="stroke:#000000;stroke-width:1.1995314330339713;" width="603.7642" x="259.4986" y="82.018" /><line style="stroke:#181818;stroke-width:0.39984381101132377;stroke-dasharray:5.0,5.0;" x1="38.385" x2="38.385" y1="45.1261" y2="283.483" /><line style="stroke:#181818;stroke-width:0.39984381101132377;stroke-dasharray:5.0,5.0;" x1="385.0496" x2="385.0496" y1="45.1261" y2="283.483" /><line style="stroke:#181818;stroke-width:0.39984381101132377;stroke-dasharray:5.0,5.0;" x1="667.3393" x2="667.3393" y1="45.1261" y2="283.483" /><line style="stroke:#181818;stroke-width:0.39984381101132377;stroke-dasharray:5.0,5.0;" x1="863.2628" x2="863.2628" y1="45.1261" y2="283.483" /><line style="stroke:#181818;stroke-width:0.39984381101132377;stroke-dasharray:5.0,5.0;" x1="976.8184" x2="976.8184" y1="45.1261" y2="283.483" /><rect fill="#E2E2F0" height="24.228" rx="1.9992" ry="1.9992" style="stroke:#181818;stroke-width:0.39984381101132377;" width="69.5728" x="3.9984" y="20.0984" /><text fill="#000000" font-family="sans-serif" font-size="11.1956" lengthAdjust="spacing" textLength="58.3772" x="9.5963" y="36.0882">Navigateur</text><rect fill="#E2E2F0" height="24.228" rx="1.9992" ry="1.9992" style="stroke:#181818;stroke-width:0.39984381101132377;" width="69.5728" x="3.9984" y="282.6833" /><text fill="#000000" font-family="sans-serif" font-size="11.1956" lengthAdjust="spacing" textLength="58.3772" x="9.5963" y="298.6732">Navigateur</text><rect fill="#E2E2F0" height="24.228" rx="1.9992" ry="1.9992" style="stroke:#181818;stroke-width:0.39984381101132377;" width="235.1082" x="267.4955" y="20.0984" /><text fill="#000000" font-family="sans-serif" font-size="11.1956" lengthAdjust="spacing" textLength="223.9125" x="273.0933" y="36.0882">Fournisseur de Services et proxy LSP/API</text><rect fill="#E2E2F0" height="24.228" rx="1.9992" ry="1.9992" style="stroke:#181818;stroke-width:0.39984381101132377;" width="235.1082" x="267.4955" y="282.6833" /><text fill="#000000" font-family="sans-serif" font-size="11.1956" lengthAdjust="spacing" textLength="223.9125" x="273.0933" y="298.6732">Fournisseur de Services et proxy LSP/API</text><rect fill="#E2E2F0" height="24.228" rx="1.9992" ry="1.9992" style="stroke:#181818;stroke-width:0.39984381101132377;" width="115.155" x="609.7618" y="20.0984" /><text fill="#000000" font-family="sans-serif" font-size="11.1956" lengthAdjust="spacing" textLength="103.9594" x="615.3596" y="36.0882">Pro Sante Connect</text><rect fill="#E2E2F0" height="24.228" rx="1.9992" ry="1.9992" style="stroke:#181818;stroke-width:0.39984381101132377;" width="115.155" x="609.7618" y="282.6833" /><text fill="#000000" font-family="sans-serif" font-size="11.1956" lengthAdjust="spacing" textLength="103.9594" x="615.3596" y="298.6732">Pro Sante Connect</text><rect fill="#E2E2F0" height="24.228" rx="1.9992" ry="1.9992" style="stroke:#181818;stroke-width:0.39984381101132377;" width="131.1488" x="797.6884" y="20.0984" /><text fill="#000000" font-family="sans-serif" font-size="11.1956" lengthAdjust="spacing" textLength="119.9531" x="803.2862" y="36.0882">Serveur d'autorisation</text><rect fill="#E2E2F0" height="24.228" rx="1.9992" ry="1.9992" style="stroke:#181818;stroke-width:0.39984381101132377;" width="131.1488" x="797.6884" y="282.6833" /><text fill="#000000" font-family="sans-serif" font-size="11.1956" lengthAdjust="spacing" textLength="119.9531" x="803.2862" y="298.6732">Serveur d'autorisation</text><rect fill="#E2E2F0" height="24.228" rx="1.9992" ry="1.9992" style="stroke:#181818;stroke-width:0.39984381101132377;" width="79.9688" x="936.834" y="20.0984" /><text fill="#000000" font-family="sans-serif" font-size="11.1956" lengthAdjust="spacing" textLength="68.7731" x="942.4319" y="36.0882">Service cible</text><rect fill="#E2E2F0" height="24.228" rx="1.9992" ry="1.9992" style="stroke:#181818;stroke-width:0.39984381101132377;" width="79.9688" x="936.834" y="282.6833" /><text fill="#000000" font-family="sans-serif" font-size="11.1956" lengthAdjust="spacing" textLength="68.7731" x="942.4319" y="298.6732">Service cible</text><rect fill="#FFFFFF" height="47.2878" style="stroke:#181818;stroke-width:0.7996876220226475;" width="7.9969" x="34.7864" y="198.5037" /><rect fill="#FFFFFF" height="152.4717" style="stroke:#181818;stroke-width:0.7996876220226475;" width="7.9969" x="381.0512" y="70.0226" /><rect fill="#FFFFFF" height="68.9856" style="stroke:#181818;stroke-width:0.7996876220226475;" width="7.9969" x="663.3409" y="112.6185" /><rect fill="#FFFFFF" height="23.2971" style="stroke:#181818;stroke-width:0.7996876220226475;" width="7.9969" x="663.3409" y="245.7915" /><polygon fill="#181818" points="371.4549,66.8239,379.4518,70.0226,371.4549,73.2214,374.6537,70.0226" style="stroke:#181818;stroke-width:0.7996876220226475;" /><line style="stroke:#181818;stroke-width:0.7996876220226475;" x1="38.7848" x2="376.253" y1="70.0226" y2="70.0226" /><text fill="#000000" font-family="sans-serif" font-size="10.3959" lengthAdjust="spacing" textLength="327.0722" x="44.3827" y="65.9715">1. acces initial&#160;avec cookie de session (user deja PSC Connecte)</text><path d="M259.4986,82.018 L502.6037,82.018 L502.6037,87.722 L494.6068,95.7189 L259.4986,95.7189 L259.4986,82.018 " fill="#EEEEEE" style="stroke:#000000;stroke-width:1.1995314330339713;" /><rect fill="none" height="93.9883" style="stroke:#000000;stroke-width:1.1995314330339713;" width="603.7642" x="259.4986" y="82.018" /><text fill="#000000" font-family="sans-serif" font-size="10.3959" font-weight="bold" lengthAdjust="spacing" textLength="207.1191" x="271.4939" y="92.4674">Authentification Pro Sante Connect</text><polygon fill="#181818" points="653.7446,109.4198,661.7415,112.6185,653.7446,115.8173,656.9434,112.6185" style="stroke:#181818;stroke-width:0.7996876220226475;" /><line style="stroke:#181818;stroke-width:0.7996876220226475;" x1="389.048" x2="658.5428" y1="112.6185" y2="112.6185" /><text fill="#000000" font-family="sans-serif" font-size="10.3959" lengthAdjust="spacing" textLength="259.0988" x="394.6458" y="108.5674">2  Demande de subject_token + cookie de session</text><line style="stroke:#181818;stroke-width:0.7996876220226475;" x1="671.3378" x2="704.9246" y1="135.9157" y2="135.9157" /><line style="stroke:#181818;stroke-width:0.7996876220226475;" x1="704.9246" x2="704.9246" y1="135.9157" y2="146.3116" /><line style="stroke:#181818;stroke-width:0.7996876220226475;" x1="672.1374" x2="704.9246" y1="146.3116" y2="146.3116" /><line style="stroke:#181818;stroke-width:0.7996876220226475;" x1="672.1374" x2="680.1343" y1="146.3116" y2="143.1128" /><line style="stroke:#181818;stroke-width:0.7996876220226475;" x1="672.1374" x2="680.1343" y1="146.3116" y2="149.5103" /><text fill="#FF0000" font-family="sans-serif" font-size="10.3959" font-weight="bold" lengthAdjust="spacing" textLength="176.731" x="676.9356" y="131.8645">controle du cookie de session</text><polygon fill="#181818" points="397.8446,166.41,389.8477,169.6087,397.8446,172.8075,394.6458,169.6087" style="stroke:#181818;stroke-width:0.7996876220226475;" /><line style="stroke:#181818;stroke-width:0.7996876220226475;" x1="393.0465" x2="662.5412" y1="169.6087" y2="169.6087" /><text fill="#000000" font-family="sans-serif" font-size="10.3959" lengthAdjust="spacing" textLength="43.9828" x="402.6427" y="165.5576">3. erreur</text><polygon fill="#181818" points="51.5799,195.305,43.583,198.5037,51.5799,201.7025,48.3811,198.5037" style="stroke:#181818;stroke-width:0.7996876220226475;" /><line style="stroke:#181818;stroke-width:0.7996876220226475;" x1="46.7817" x2="380.2515" y1="198.5037" y2="198.5037" /><text fill="#000000" font-family="sans-serif" font-size="10.3959" lengthAdjust="spacing" textLength="118.3538" x="56.378" y="194.4526">4. Redirection vers PSC</text><polygon fill="#181818" points="653.7446,242.5927,661.7415,245.7915,653.7446,248.9902,656.9434,245.7915" style="stroke:#181818;stroke-width:0.7996876220226475;" /><line style="stroke:#181818;stroke-width:0.7996876220226475;" x1="38.7848" x2="658.5428" y1="245.7915" y2="245.7915" /><text fill="#000000" font-family="sans-serif" font-size="10.3959" lengthAdjust="spacing" textLength="137.5463" x="44.3827" y="241.7403">5. client_id, scope "all" PSC</text><polygon fill="#181818" points="47.5814,265.8899,39.5845,269.0886,47.5814,272.2874,44.3827,269.0886" style="stroke:#181818;stroke-width:0.7996876220226475;" /><line style="stroke:#181818;stroke-width:0.7996876220226475;" x1="42.7833" x2="666.5396" y1="269.0886" y2="269.0886" /><text fill="#000000" font-family="sans-serif" font-size="10.3959" lengthAdjust="spacing" textLength="166.335" x="52.3795" y="265.0375">6. authentification use (MIE PSC)</text></g></svg></div>
+
+<h4 id="cas-dusage-1b2--tentative-daccès-aux-ressources-avec-un-subject_token-expiré-suivi-dune-tentative-de-nouvellement-avec-refresh-token-psc-lui-aussi-expiré-puis-redirection-vers-la-mire-authentification---application-web">Cas d’usage 1b.2 : Tentative d’accès aux ressources avec un subject_token expiré, suivi d’une tentative de nouvellement avec Refresh Token PSC lui aussi expiré, puis redirection vers la mire authentification - Application Web</h4>
+
+<p>Lors de l’introspection du <code class="language-plaintext highlighter-rouge">subject_token</code>, <strong>PSC</strong> ne le valide pas car il a expiré. PSC renvoie une réponse d’erreur au fournisseur de services qui tente de renouveler son <code class="language-plaintext highlighter-rouge">subject_token</code> avec son <code class="language-plaintext highlighter-rouge">Refresh Token</code> <strong>PSC</strong>.
+Cependant, ce dernier est lui aussi expiré, amenant PSC à rediriger le PS vers l’URL de la mire d’authentification PSC pour s’authentifier de nouveau.</p>
+
+<div style="text-align: center;"><?xml version="1.0" encoding="us-ascii" standalone="no"?><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" contentStyleType="text/css" height="446.8503px" preserveAspectRatio="none" style="width:1024px;height:446px;background:#FFFFFF;" version="1.1" viewBox="0 0 1024 446" width="1024.7665px" zoomAndPan="magnify"><defs /><g><rect fill="#98FB98" height="438" style="stroke:#181818;stroke-width:0.3832335329341318;" width="502.0359" x="0.7665" y="4.5988" /><text fill="#000000" font-family="sans-serif" font-size="9.9641" font-weight="bold" lengthAdjust="spacing" textLength="164.7904" x="169.3892" y="13.8477">Systeme appelant / initiateur</text><rect fill="#AFEEEE" height="438" style="stroke:#181818;stroke-width:0.3832335329341318;" width="216.1437" x="804.024" y="4.5988" /><text fill="#000000" font-family="sans-serif" font-size="9.9641" font-weight="bold" lengthAdjust="spacing" textLength="78.9461" x="872.6228" y="13.8477">Systeme cible</text><rect fill="#FFFFFF" height="68.3174" style="stroke:#181818;stroke-width:0.7664670658682636;" width="7.6647" x="33.3413" y="311.8683" /><rect fill="#FFFFFF" height="40.8263" style="stroke:#181818;stroke-width:0.7664670658682636;" width="7.6647" x="383.6168" y="67.1138" /><rect fill="#FFFFFF" height="202.1916" style="stroke:#181818;stroke-width:0.7664670658682636;" width="7.6647" x="383.6168" y="207.2216" /><rect fill="#FFFFFF" height="99.9461" style="stroke:#181818;stroke-width:0.7664670658682636;" width="7.6647" x="387.4491" y="234.9162" /><rect fill="#FFFFFF" height="54.6228" style="stroke:#181818;stroke-width:0.7664670658682636;" width="7.6647" x="555.6886" y="130.2695" /><rect fill="#FFFFFF" height="54.6228" style="stroke:#181818;stroke-width:0.7664670658682636;" width="7.6647" x="555.6886" y="234.9162" /><rect fill="#FFFFFF" height="45.3234" style="stroke:#181818;stroke-width:0.7664670658682636;" width="7.6647" x="555.6886" y="357.1916" /><rect fill="#FFFFFF" height="99.2814" style="stroke:#181818;stroke-width:0.7664670658682636;" width="7.6647" x="866.1078" y="107.9401" /><rect fill="none" height="134.7425" style="stroke:#000000;stroke-width:1.1497005988023954;" width="672.9581" x="267.497" y="78.6108" /><line style="stroke:#181818;stroke-width:0.3832335329341318;stroke-dasharray:5.0,5.0;" x1="36.7904" x2="36.7904" y1="43.2515" y2="416.3114" /><line style="stroke:#181818;stroke-width:0.3832335329341318;stroke-dasharray:5.0,5.0;" x1="387.0659" x2="387.0659" y1="43.2515" y2="416.3114" /><line style="stroke:#181818;stroke-width:0.3832335329341318;stroke-dasharray:5.0,5.0;" x1="559.521" x2="559.521" y1="43.2515" y2="416.3114" /><line style="stroke:#181818;stroke-width:0.3832335329341318;stroke-dasharray:5.0,5.0;" x1="869.9401" x2="869.9401" y1="43.2515" y2="416.3114" /><line style="stroke:#181818;stroke-width:0.3832335329341318;stroke-dasharray:5.0,5.0;" x1="978.7784" x2="978.7784" y1="43.2515" y2="416.3114" /><rect fill="#E2E2F0" height="23.2216" rx="1.9162" ry="1.9162" style="stroke:#181818;stroke-width:0.3832335329341318;" width="66.6826" x="3.8323" y="19.2635" /><text fill="#000000" font-family="sans-serif" font-size="10.7305" lengthAdjust="spacing" textLength="55.9521" x="9.1976" y="34.5891">Navigateur</text><rect fill="#E2E2F0" height="23.2216" rx="1.9162" ry="1.9162" style="stroke:#181818;stroke-width:0.3832335329341318;" width="66.6826" x="3.8323" y="415.5449" /><text fill="#000000" font-family="sans-serif" font-size="10.7305" lengthAdjust="spacing" textLength="55.9521" x="9.1976" y="430.8705">Navigateur</text><rect fill="#E2E2F0" height="23.2216" rx="1.9162" ry="1.9162" style="stroke:#181818;stroke-width:0.3832335329341318;" width="224.5749" x="275.1617" y="19.2635" /><text fill="#000000" font-family="sans-serif" font-size="10.7305" lengthAdjust="spacing" textLength="213.8443" x="280.5269" y="34.5891">Fournisseur de services et proxy LPS/API</text><rect fill="#E2E2F0" height="23.2216" rx="1.9162" ry="1.9162" style="stroke:#181818;stroke-width:0.3832335329341318;" width="224.5749" x="275.1617" y="415.5449" /><text fill="#000000" font-family="sans-serif" font-size="10.7305" lengthAdjust="spacing" textLength="213.8443" x="280.5269" y="430.8705">Fournisseur de services et proxy LPS/API</text><rect fill="#E2E2F0" height="23.2216" rx="1.9162" ry="1.9162" style="stroke:#181818;stroke-width:0.3832335329341318;" width="104.2395" x="507.4012" y="19.2635" /><text fill="#000000" font-family="sans-serif" font-size="10.7305" lengthAdjust="spacing" textLength="93.509" x="512.7665" y="34.5891">ProSanteConnect</text><rect fill="#E2E2F0" height="23.2216" rx="1.9162" ry="1.9162" style="stroke:#181818;stroke-width:0.3832335329341318;" width="104.2395" x="507.4012" y="415.5449" /><text fill="#000000" font-family="sans-serif" font-size="10.7305" lengthAdjust="spacing" textLength="93.509" x="512.7665" y="430.8705">ProSanteConnect</text><rect fill="#E2E2F0" height="23.2216" rx="1.9162" ry="1.9162" style="stroke:#181818;stroke-width:0.3832335329341318;" width="125.7006" x="807.0898" y="19.2635" /><text fill="#000000" font-family="sans-serif" font-size="10.7305" lengthAdjust="spacing" textLength="114.9701" x="812.4551" y="34.5891">Serveur d'autorisation</text><rect fill="#E2E2F0" height="23.2216" rx="1.9162" ry="1.9162" style="stroke:#181818;stroke-width:0.3832335329341318;" width="125.7006" x="807.0898" y="415.5449" /><text fill="#000000" font-family="sans-serif" font-size="10.7305" lengthAdjust="spacing" textLength="114.9701" x="812.4551" y="430.8705">Serveur d'autorisation</text><rect fill="#E2E2F0" height="23.2216" rx="1.9162" ry="1.9162" style="stroke:#181818;stroke-width:0.3832335329341318;" width="76.6467" x="940.4551" y="19.2635" /><text fill="#000000" font-family="sans-serif" font-size="10.7305" lengthAdjust="spacing" textLength="65.9162" x="945.8204" y="34.5891">Service cible</text><rect fill="#E2E2F0" height="23.2216" rx="1.9162" ry="1.9162" style="stroke:#181818;stroke-width:0.3832335329341318;" width="76.6467" x="940.4551" y="415.5449" /><text fill="#000000" font-family="sans-serif" font-size="10.7305" lengthAdjust="spacing" textLength="65.9162" x="945.8204" y="430.8705">Service cible</text><rect fill="#FFFFFF" height="68.3174" style="stroke:#181818;stroke-width:0.7664670658682636;" width="7.6647" x="33.3413" y="311.8683" /><rect fill="#FFFFFF" height="40.8263" style="stroke:#181818;stroke-width:0.7664670658682636;" width="7.6647" x="383.6168" y="67.1138" /><rect fill="#FFFFFF" height="202.1916" style="stroke:#181818;stroke-width:0.7664670658682636;" width="7.6647" x="383.6168" y="207.2216" /><rect fill="#FFFFFF" height="99.9461" style="stroke:#181818;stroke-width:0.7664670658682636;" width="7.6647" x="387.4491" y="234.9162" /><rect fill="#FFFFFF" height="54.6228" style="stroke:#181818;stroke-width:0.7664670658682636;" width="7.6647" x="555.6886" y="130.2695" /><rect fill="#FFFFFF" height="54.6228" style="stroke:#181818;stroke-width:0.7664670658682636;" width="7.6647" x="555.6886" y="234.9162" /><rect fill="#FFFFFF" height="45.3234" style="stroke:#181818;stroke-width:0.7664670658682636;" width="7.6647" x="555.6886" y="357.1916" /><rect fill="#FFFFFF" height="99.2814" style="stroke:#181818;stroke-width:0.7664670658682636;" width="7.6647" x="866.1078" y="107.9401" /><polygon fill="#181818" points="374.4192,64.0479,382.0838,67.1138,374.4192,70.1796,377.485,67.1138" style="stroke:#181818;stroke-width:0.7664670658682636;" /><line style="stroke:#181818;stroke-width:0.7664670658682636;" x1="37.1737" x2="379.018" y1="67.1138" y2="67.1138" /><text fill="#000000" font-family="sans-serif" font-size="9.9641" lengthAdjust="spacing" textLength="331.8802" x="42.5389" y="63.2309">1. acces initial avec cookie de session (user deja Connecte sur PSC)</text><path d="M267.497,78.6108 L385.5329,78.6108 L385.5329,84.0778 L377.8683,91.7425 L267.497,91.7425 L267.497,78.6108 " fill="#EEEEEE" style="stroke:#000000;stroke-width:1.1497005988023954;" /><rect fill="none" height="134.7425" style="stroke:#000000;stroke-width:1.1497005988023954;" width="672.9581" x="267.497" y="78.6108" /><text fill="#000000" font-family="sans-serif" font-size="9.9641" font-weight="bold" lengthAdjust="spacing" textLength="83.5449" x="278.994" y="88.6261">OAUTH2.0 flow</text><polygon fill="#181818" points="856.9102,104.8743,864.5749,107.9401,856.9102,111.006,859.976,107.9401" style="stroke:#181818;stroke-width:0.7664670658682636;" /><line style="stroke:#181818;stroke-width:0.7664670658682636;" x1="387.4491" x2="861.509" y1="107.9401" y2="107.9401" /><text fill="#000000" font-family="sans-serif" font-size="9.9641" lengthAdjust="spacing" textLength="360.2395" x="392.8144" y="104.0573">2. subject_token(parametre) + Client ID_AS(header) + scope(parametre)</text><polygon fill="#181818" points="571.7844,127.2036,564.1198,130.2695,571.7844,133.3353,568.7186,130.2695" style="stroke:#181818;stroke-width:0.7664670658682636;" /><line style="stroke:#181818;stroke-width:0.7664670658682636;" x1="567.1856" x2="865.3413" y1="130.2695" y2="130.2695" /><text fill="#000000" font-family="sans-serif" font-size="9.9641" lengthAdjust="spacing" textLength="154.8263" x="576.3832" y="126.3866">3. subject_token (introspection)</text><line style="stroke:#181818;stroke-width:0.7664670658682636;" x1="563.3533" x2="595.5449" y1="152.5988" y2="152.5988" /><line style="stroke:#181818;stroke-width:0.7664670658682636;" x1="595.5449" x2="595.5449" y1="152.5988" y2="162.5629" /><line style="stroke:#181818;stroke-width:0.7664670658682636;" x1="564.1198" x2="595.5449" y1="162.5629" y2="162.5629" /><line style="stroke:#181818;stroke-width:0.7664670658682636;" x1="564.1198" x2="571.7844" y1="162.5629" y2="159.497" /><line style="stroke:#181818;stroke-width:0.7664670658682636;" x1="564.1198" x2="571.7844" y1="162.5629" y2="165.6287" /><text fill="#FF0000" font-family="sans-serif" font-size="9.9641" font-weight="bold" lengthAdjust="spacing" textLength="141.0299" x="568.7186" y="148.7159">subject_token non valide</text><polygon fill="#181818" points="856.9102,181.8263,864.5749,184.8922,856.9102,187.9581,859.976,184.8922" style="stroke:#181818;stroke-width:0.7664670658682636;" /><line style="stroke:#181818;stroke-width:0.7664670658682636;" x1="559.521" x2="861.509" y1="184.8922" y2="184.8922" /><text fill="#000000" font-family="sans-serif" font-size="9.9641" lengthAdjust="spacing" textLength="42.1557" x="564.8862" y="181.0094">4. erreur</text><polygon fill="#181818" points="399.7126,204.1557,392.0479,207.2216,399.7126,210.2874,396.6467,207.2216" style="stroke:#181818;stroke-width:0.7664670658682636;" /><line style="stroke:#181818;stroke-width:0.7664670658682636;" x1="395.1138" x2="869.1737" y1="207.2216" y2="207.2216" /><text fill="#000000" font-family="sans-serif" font-size="9.9641" lengthAdjust="spacing" textLength="42.1557" x="404.3114" y="203.3387">5. erreur</text><polygon fill="#181818" points="546.491,231.8503,554.1557,234.9162,546.491,237.982,549.5569,234.9162" style="stroke:#181818;stroke-width:0.7664670658682636;" /><line style="stroke:#181818;stroke-width:0.7664670658682636;" x1="395.1138" x2="551.0898" y1="234.9162" y2="234.9162" /><text fill="#000000" font-family="sans-serif" font-size="9.9641" lengthAdjust="spacing" textLength="104.2395" x="400.479" y="231.0333">6. Refresh Token PSC</text><line style="stroke:#181818;stroke-width:0.7664670658682636;" x1="563.3533" x2="595.5449" y1="257.2455" y2="257.2455" /><line style="stroke:#181818;stroke-width:0.7664670658682636;" x1="595.5449" x2="595.5449" y1="257.2455" y2="267.2096" /><line style="stroke:#181818;stroke-width:0.7664670658682636;" x1="564.1198" x2="595.5449" y1="267.2096" y2="267.2096" /><line style="stroke:#181818;stroke-width:0.7664670658682636;" x1="564.1198" x2="571.7844" y1="267.2096" y2="264.1437" /><line style="stroke:#181818;stroke-width:0.7664670658682636;" x1="564.1198" x2="571.7844" y1="267.2096" y2="270.2754" /><text fill="#FF0000" font-family="sans-serif" font-size="9.9641" font-weight="bold" lengthAdjust="spacing" textLength="292.024" x="568.7186" y="253.3626">Refresh Token PSC ou cookie de session non valide</text><polygon fill="#181818" points="403.5449,286.4731,395.8802,289.5389,403.5449,292.6048,400.479,289.5389" style="stroke:#181818;stroke-width:0.7664670658682636;" /><line style="stroke:#181818;stroke-width:0.7664670658682636;" x1="398.9461" x2="558.7545" y1="289.5389" y2="289.5389" /><text fill="#000000" font-family="sans-serif" font-size="9.9641" lengthAdjust="spacing" textLength="136.4311" x="408.1437" y="285.6561">7.  URL authentification PSC</text><polygon fill="#181818" points="49.4371,308.8024,41.7725,311.8683,49.4371,314.9341,46.3713,311.8683" style="stroke:#181818;stroke-width:0.7664670658682636;" /><line style="stroke:#181818;stroke-width:0.7664670658682636;" x1="44.8383" x2="386.6826" y1="311.8683" y2="311.8683" /><text fill="#000000" font-family="sans-serif" font-size="9.9641" lengthAdjust="spacing" textLength="88.1437" x="54.0359" y="307.9854">8. Redirect to PSC</text><polygon fill="#181818" points="546.491,354.1257,554.1557,357.1916,546.491,360.2575,549.5569,357.1916" style="stroke:#181818;stroke-width:0.7664670658682636;" /><line style="stroke:#181818;stroke-width:0.7664670658682636;" x1="41.006" x2="551.0898" y1="357.1916" y2="357.1916" /><text fill="#000000" font-family="sans-serif" font-size="9.9641" lengthAdjust="spacing" textLength="131.8323" x="46.3713" y="353.3088">9. client_id, scope "all" PSC</text><polygon fill="#181818" points="45.6048,399.4491,37.9401,402.515,45.6048,405.5808,42.5389,402.515" style="stroke:#181818;stroke-width:0.7664670658682636;" /><polygon fill="#181818" points="550.3234,399.4491,557.988,402.515,550.3234,405.5808,553.3892,402.515" style="stroke:#181818;stroke-width:0.7664670658682636;" /><line style="stroke:#181818;stroke-width:0.7664670658682636;" x1="41.006" x2="554.9222" y1="402.515" y2="402.515" /><text fill="#000000" font-family="sans-serif" font-size="9.9641" lengthAdjust="spacing" textLength="178.5868" x="50.2036" y="398.6321">10. authentification user (CPS/eCPS)</text></g></svg></div>
+
+
+
+</div>
+        </div>  <!-- /inner-wrapper -->
+      </div>  <!-- /row -->
+    </div>  <!-- /container -->
+  </div>  <!-- /segment-content -->
+
+  <script type="text/javascript" src="assets/js/jquery.js"> </script>     <!-- note keep space here, otherwise it will be transformed to empty tag -> fails -->
+  <script type="text/javascript" src="assets/js/jquery-ui.min.js"> </script>
+
+  <script type="text/javascript">
+    $(document).ready(function(){
+      if(window.location.hash != "") {
+          $('a[href="' + window.location.hash + '"]').click()
+      }
+    });
+  </script>
+  <a name="bottom"> </a>
+  <div id="segment-footer" igtool="footer" class="segment">  <!-- segment-footer -->
+    <div class="container">  <!-- container -->
+
+      <div style="background-color:var(--footer-nav-bg-color)">
+        <table style="width:100%">
+          <tbody>
+            <tr>
+              <td style="text-align:left">&#xA0;
+
+                <a href="api_prosanteconnectee_web.html">&lt;prev</a>
+
+              </td>
+              <td style="text-align:center">
+                <a href="#top">top</a>
+              </td>
+              <td style="text-align:right">&#xA0;
+
+                <a href="api_prosanteconnectee_client_lourd.html">next&gt;</a>
+
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="inner-wrapper">
+        <p>
+          IG &#169; 2020+ <a style="color:var(--footer-hyperlink-text-color)" href="https://esante.gouv.fr">ANS</a>.  Package ans.fr.securisation-transport#1.2.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Tue, Dec 5, 2023 14:29+0000">2023-12-05</span>
+          <br/>
+          <span style="color: var(--footer-highlight-text-color)"></span>
+                      Liens: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table des matières </a> |
+                 <a style="color: var(--footer-hyperlink-text-color)" href="qa.html">QA </a> |
+                 <a style="color: var(--footer-hyperlink-text-color)" target="_blank" href="https://interop.esante.gouv.fr/ig/securisation-transport/history.html">Historique des versions </a>
+                  | <a style="color: var(--footer-hyperlink-text-color)" target="_blank" href="https://github.com/ansforge/IG-securisation-transport-api-rest/issues/new">New Issue</a>
+                
+
+          </span>
+        </p>
+      </div>  <!-- /inner-wrapper -->
+    </div>  <!-- /container -->
+  </div>  <!-- /segment-footer -->
+  
+  <div id="segment-post-footer" class="segment hidden">  <!-- segment-post-footer -->
+    <div class="container">  <!-- container -->
+    </div>  <!-- /container -->
+  </div>  <!-- /segment-post-footer -->
+  
+  <!-- JS and analytics only. -->
+  <!-- Bootstrap core JavaScript
+  ================================================== -->
+  <!-- Placed at the end of the document so the pages load faster -->
+  <script type="text/javascript" src="assets/js/bootstrap.min.js"> </script>
+  <script type="text/javascript" src="assets/js/respond.min.js"> </script>
+  <script type="text/javascript" src="assets/js/anchor.min.js"> </script>
+  <script type="text/javascript" src="assets/js/clipboard.min.js"> </script>
+  <script type="text/javascript" src="assets/js/clipboard-btn.js"> </script>
+
+  <!-- Ajout ANS -->
+  <script src="assets/js/app.js" type="text/javascript"> </script>
+  <script src="assets/js/vendor.js" type="text/javascript"> </script>
+  <!-- Fin ajout ANS -->
+
+  <script>anchors.options.visible = 'hover'
+anchors.add()</script>
+  
+<!-- feedback form - Google forms -->
+<!-- v0.1, 2021-01-09 -->
+
+
+  
+    
+  
+
+
+
+<!-- / feedback form  -->
+
+  <!-- Analytics Below
+  ================================================== -->
+
+
+  <!-- AJOUT ANS -->
+
+<footer class="footer footer-principal" role="contentinfo">
+  <div class="footer__region1">
+    <div class="container">
+      <div class="row">
+
+        <div class="col-md-6 col-lg-4 text-center text-md-left">
+          <div class="logos">        
+            <div class="logo logo--0">
+              <a href="https://solidarites-sante.gouv.fr" title="Ministère des Solidarités et de la Santé (nouvelle fenêtre)" target="_blank" rel="nofollow">
+                
+                <img src="assets/images/logo-ministere.svg" alt="Ministère des Solidarités et de la Santé" width="133" height="77" loading="lazy" />
+                
+              </a>
+            </div>
+        
+            <div class="logo logo--1">
+              <a href="https://esante.gouv.fr/" title="Agence du numérique en santé (nouvelle fenêtre)" target="_blank" rel="nofollow">
+                
+                <img src="assets/images/logo-ANS-footer.svg" alt="Agence du numérique en santé" width="106" height="74" loading="lazy" />
+              </a>
+            </div>
+          </div>
+        </div>
+        
+        <div class="col-md-6 col-lg-4 text-center text-md-left">
+          <p class="footer__title">Agence du Numérique en Santé</p>
+          <p>2-10 Rue d'Oradour-sur-Glane 75015 Paris</p>
+
+          <!-- <div class="m-social">
+            <ul class="m-social__list">        
+              <li class="m-social__item">
+                <a class="m-social__link" href="https://www.linkedin.com/company/agence-du-numerique-en-sante/" target="_blank" rel="nofollow">
+                  <div class="m-social__icon">
+                    <svg class="svg-icon svg-linkedin" aria-hidden="true" focusable="false"><use href="assets/images/icon-sprite.svg#linkedin"></use></svg>
+                  </div>
+                  <span class="sr-only">linkedin</span>
+                </a>
+              </li>
+              <li class="m-social__item">
+                <a class="m-social__link" href="https://twitter.com/esante_gouv_fr" target="_blank" rel="nofollow">
+                  <div class="m-social__icon">
+                    <svg class="svg-icon svg-twitter" aria-hidden="true" focusable="false"><use href="assets/images/icon-sprite.svg#twitter"></use></svg>
+                  </div>
+                  <span class="sr-only">twitter</span>
+                </a>
+              </li>
+              <li class="m-social__item">
+                <a class="m-social__link" href="https://www.youtube.com/channel/UCd1zuSaU5cE1lRCpwv_HSMA" target="_blank" rel="nofollow">
+                  <div class="m-social__icon">
+                    <svg class="svg-icon svg-youtube" aria-hidden="true" focusable="false"><use href="assets/images/icon-sprite.svg#youtube"></use></svg>
+                  </div>
+                  <span class="sr-only">youtube</span>
+                </a>
+              </li>
+              <li class="m-social__item">
+                <a class="m-social__link" href="https://esante.gouv.fr/rss.xml" target="_blank" rel="nofollow">
+                  <div class="m-social__icon">
+                    <svg class="svg-icon svg-rss" aria-hidden="true" focusable="false"><use href="assets/images/icon-sprite.svg#rss"></use></svg>
+                  </div>
+                  <span class="sr-only">rss</span>
+                </a>
+              </li>
+            </ul>
+          </div> -->
+        </div>
+        
+        <div class="col-6 col-lg-4">
+          <ul class="footer-list">
+            <li class="footer-list__item footer-list__item--hasIcon">
+              <a href="mailto:ci-sis@esante.gouv.fr" class="mailto-link">
+                <svg class="svg-icon svg-angle-right" aria-hidden="true" focusable="false"><use href="assets/images/icon-sprite.svg#angle-right"></use></svg>Contact</a>
+              </li>
+              <!-- <li class="footer-list__item">
+                <a href="https://interop-pprod.esante.gouv.fr/ci-sis-specifications/wp-content/uploads/CGU_espace_de_tests_v1.1.pdf" class="file-link">Mentions légales</a>
+              </li>
+               -->
+            </ul>
+          </div>
+
+        </div>
+      </div>
+    </div>
+    
+    <!-- <div class="footer__region2">
+      <div class="container">
+        <div class="footer-contentinfo">
+          <ul class="footer-list footer-list--inline">
+
+          </ul>
+        </div>
+      </div>
+    </div> -->
+  </footer>
+  </body>
+</html>
+
