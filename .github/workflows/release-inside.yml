@@ -91,7 +91,7 @@ jobs:
       - name: 🏃‍♂️ Run  Publisher to release
         run :   java -Dfile.encoding=UTF-8 -jar publisher.jar -go-publish -source igRepo -web  ./IG-website-release/www/ig -registry ./IG-website-release/ig-registry/fhir-ig-list.json -history ./IG-website-release/fhir-ig-history-template -templates ./IG-website-release/templates 
         
-      - name: Commit change
+      - name: Commit change on IG-website-release
         run: |
           cd  IG-website-release
           git config --local user.email "github-actions[bot]@users.noreply.github.com"
@@ -99,7 +99,7 @@ jobs:
           git add -A 
           git commit -m updated
           
-      - name: Push changes 
+      - name: Push changes on IG-website-release
         uses: ad-m/github-push-action@master
         with:
           github_token: ${{ secrets.ANS_IG_API_TOKEN }}
