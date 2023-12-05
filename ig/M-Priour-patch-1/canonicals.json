@@ -1,0 +1,9 @@
+[
+  {
+    "id" : "ans.fr.securisation-transport",
+    "type" : "ImplementationGuide",
+    "url" : "https://interop.esante.gouv.fr/ig/securisation-transport/ImplementationGuide/ans.fr.securisation-transport",
+    "version" : "1.2.0",
+    "name" : "IGsecurisationtransportapirest"
+  }
+]
